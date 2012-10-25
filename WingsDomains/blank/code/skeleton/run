@@ -1,0 +1,59 @@
+#!/bin/sh
+
+BASEDIR=`dirname $0`
+
+# EDIT these numbers: the first is the number of input arguments, the
+#second the number of parameter arguments, and the third is the number
+#of output arguments your component expects
+. $BASEDIR/io.sh 2 1 3 "$@"
+
+
+# -- IGNORE
+# print the file names in inputs
+for ((x=1; x<=$INUM; x++)) 
+do
+    for file in ${INPUTS[$x][@]}
+    do
+	echo "Input: $file"
+    done
+done
+
+# print the value of parameters
+for ((y=1; y<=$PNUM; y++)) 
+do
+    for v in ${PARAMS[$y][@]}
+    do
+	echo "Parameter: $v"
+    done
+done
+
+# print the file names in outputs
+for ((z=1; z<=$ONUM; z++)) 
+do
+for file in ${OUTPUTS[$z][@]}
+do
+    echo "output: $file"
+done
+done
+# ----------
+
+
+### EDIT --- your code here
+# e.g. $BASEDIR/merge.sh -files=$INPUTS1 -threshold=$INPUTS2 > $OUTPUTS1
+# using $BASEDIR/scriptname... is a good idea, since this script shall
+# be able to run anywhere, i.e., not depend on a specific path.
+# Note: if one of the arguments is a collection of size N, then the
+# respective script variable (e.g., $INPUTS1) contains as its value a
+# space separated list of N elements (e.g., "File1 File2 File3").
+
+## for example:
+export LC_ALL='C' ## avoids problem with illegal characters in tr
+cat $INPUTS1 | tr ' ' '\n' | tr -d ' ' | tr -d '\t' | tr -s '\n' | grep "[a-zA-Z]" | sort > $OUTPUTS1
+
+###  ------------------
+
+# IGNORE report any errors
+if [ $? -ne 0 ]; then 
+    echo "Error"
+    exit 1;
+fi

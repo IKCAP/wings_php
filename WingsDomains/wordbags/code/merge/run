@@ -1,0 +1,23 @@
+#!/bin/sh
+
+checkExitCode() {
+ if [ $? -ne 0 ]; then 
+     echo "Error"
+     exit 1; 
+ fi
+}
+
+BASEDIR=`dirname $0`
+. $BASEDIR/io.sh 1 0 1 "$@"
+
+
+for file in ${INPUTS1[@]}
+do
+    echo "Input1: $file"
+done
+
+echo "Outputs1: $OUTPUTS1"
+
+$BASEDIR/merge.py $INPUTS1 > $OUTPUTS1
+checkExitCode
+

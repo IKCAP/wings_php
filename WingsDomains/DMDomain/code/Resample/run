@@ -1,0 +1,161 @@
+#!/bin/sh
+
+FATAL_EXIT_CODE=1
+FATAL_EXIT_MESSAGE=Failure
+SUCCESS_EXIT_CODE=0
+SUCCESS_EXIT_MESSAGE=Success
+COMMAND_EXIT_CODE=0
+ERROR_LOG_FILE_NAME=error.log
+BASEDIR=`dirname $0`
+
+WEKAHOME=$BASEDIR/../lib
+export CLASSPATH="$WEKAHOME/weka.jar:."
+
+rm -f $ERROR_LOG_FILE_NAME
+
+if [ -z "$1" ] || [ "$1" = "-h" ]; then
+  echo "Argument list for Resample version:  3.6.2"
+  echo "-i inputData"
+  echo "-o outputData"
+  echo "-N numberToSample"
+  echo "-S randomSeed"
+  echo "Use ./Resample --help for more details."
+  exit 0
+elif [ "$1" = "--help" ]; then
+  echo "Docstring for Resample version:  3.6.2"
+  echo "Produces a random subsample of a dataset using sampling with replacement. "
+  echo "The original dataset must fit entirely in memory. The number of instances "
+  echo "in the generated dataset may be specified using the -N option.  Note that "
+  echo "the WEKA component uses -Z to specify a percentage of the dataset to sample. "
+  echo "The wrapper script will compute the value of -Z from -N."
+  echo ""
+  echo "-i inputData"
+  echo "-o outputData"
+  echo "-N numberToSample"
+  echo "-S randomSeed"
+  exit 0
+elif [ "$1" = "--version" ]; then
+  echo Resample 3.6.2
+  exit 0
+elif [ "$1" = "--BCE" ]; then
+  echo "<?xml version="1.0" encoding="UTF-8" standalone="yes"?>"
+  echo "<component author="Len Trigg" vendor="WEKA" version="3.6.2">"
+  echo "    <description>"
+  echo "        <environment>"
+  echo "            <name>JAVA_HOME</name>"
+  echo "            <name>CLASSPATH</name>"
+  echo "            <name>WEKAHOME</name>"
+  echo "        </environment>"
+  echo "        <files>"
+  echo "            <file type="input" id="inputData"/>"
+  echo "            <file type="output" id="outputData"/>"
+  echo "        </files>"
+  echo "        <parameters>"
+  echo "            <param type="int" id="numberToSample"/>"
+  echo "            <param type="int" id="randomSeed"/>"
+  echo "        </parameters>"
+  echo "        <arguments>"
+  echo "            <arg option="-i" type="file">"
+  echo "                <file idref="inputData"/>"
+  echo "            </arg>"
+  echo "            <arg option="-o" type="file">"
+  echo "                <file idref="outputData"/>"
+  echo "            </arg>"
+  echo "            <arg option="-N" type="parameter">"
+  echo "                <param idref="numberToSample"/>"
+  echo "            </arg>"
+  echo "            <arg option="-S" type="parameter">"
+  echo "                <param idref="randomSeed"/>"
+  echo "            </arg>"
+  echo "        </arguments>"
+  echo "        <exitcodes>"
+  echo "            <exit code="0">Success</exit>"
+  echo "            <exit code="1">Failure</exit>"
+  echo "        </exitcodes>"
+  echo "    </description>"
+  echo "    <unit_test>"
+  echo "        <file idref="inputData">iris.arff</file>"
+  echo "        <file idref="outputData">iris-sampled.arff</file>"
+  echo "        <param idref="numberToSample">20</param>"
+  echo "        <param idref="randomSeed">1</param>"
+  echo "        <invocation_string>Resample -i iris.arff -o iris-sampled.arff -N 20 -S 1</invocation_string>"
+  echo "        <exit code="0">Success</exit>"
+  echo "    </unit_test>"
+  echo "    <unit_test>"
+  echo "        <file idref="inputData">iris.arff</file>"
+  echo "        <file idref="outputData">iris-sampled.arff</file>"
+  echo "        <param idref="numberToSample">-1</param>"
+  echo "        <param idref="randomSeed"/>"
+  echo "        <invocation_string>Resample -i iris.arff -o iris-sampled.arff -N -1 -S null</invocation_string>"
+  echo "        <exit code="1">Failure</exit>"
+  echo "    </unit_test>"
+  echo "</component>"
+elif [ "$#" != 8 ]; then
+  counter=0
+  for arg in "$@"; do
+    counter=`expr $counter + 1`
+  done
+  pairnumber=`expr $counter / 2`
+  echo "Resample was passed $pairnumber option/argument pairs, but requires 4"
+  echo "Use --help for more information."
+  echo $FATAL_EXIT_MESSAGE
+  exit $FATAL_EXIT_CODE
+else
+
+  options=""
+  args=("$@")
+  counter=0
+  for arg in $args; do
+    options="$options ${args[$counter]}"
+    counter=`expr $counter + 2`
+  done
+
+  for option in $options; do
+    case $option in
+     -i) ;;
+     -o) ;;
+     -N) ;;
+     -S) ;;
+      *)  echo "Option $option is not valid.  Valid options are: -i, -o, -N, -S"
+          echo "Use --help for more information."
+          echo $FATAL_EXIT_MESSAGE
+          exit $FATAL_EXIT_CODE ;;
+    esac
+  done
+
+  args=("$@")
+  valueCounter=0
+  for arg in $@; do
+    valueCounter=`expr $valueCounter + 1`
+    if [ "$arg" == "-S" ]; then arg4=${args[$valueCounter]}; fi
+    if [ "$arg" == "-N" ]; then arg3=${args[$valueCounter]}; fi
+    if [ "$arg" == "-o" ]; then arg2=${args[$valueCounter]}; fi
+    if [ "$arg" == "-i" ]; then arg1=${args[$valueCounter]}; fi
+  done
+
+  NUMBER_OF_LINES=`cat $arg1|wc -l`
+  EMPTY_LINES=`grep -c '^$' $arg1`
+  COMMENT_LINES=`grep -c "%" $arg1`
+  ATTRIBUTE_LINES=`grep -c "@" $arg1`
+  DATA_LINES=`expr $NUMBER_OF_LINES - $EMPTY_LINES - $COMMENT_LINES - $ATTRIBUTE_LINES`
+  PERCENT=`echo "scale=2; $arg3 / $DATA_LINES * 100" | bc -l`
+
+  OUTPUT=`java weka.filters.unsupervised.instance.Resample -i $arg1 -o $arg2 -Z $PERCENT -S $arg4  2> $ERROR_LOG_FILE_NAME`
+  COMMAND_EXIT_CODE=$?
+  LINES_IN_ERROR_LOG=`cat $ERROR_LOG_FILE_NAME|wc -l`
+
+fi
+
+if [ "$COMMAND_EXIT_CODE" -ne 0 ] ||  [ "$LINES_IN_ERROR_LOG" -ne 0 ]; then
+  cat $ERROR_LOG_FILE_NAME | while read linevar
+  do
+    echo $linevar
+  done
+  rm -f $ERROR_LOG_FILE_NAME
+  echo $FATAL_EXIT_MESSAGE
+  exit $FATAL_EXIT_CODE
+else
+  rm -f $ERROR_LOG_FILE_NAME
+  echo $SUCCESS_EXIT_MESSAGE
+  exit $SUCCESS_EXIT_CODE
+fi

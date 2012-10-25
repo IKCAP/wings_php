@@ -1,0 +1,120 @@
+% randomly generated dataset
+@relation labor
+@attribute duration REAL
+@attribute wage-increase-first-year REAL
+@attribute wage-increase-second-year REAL
+@attribute wage-increase-third-year REAL
+@attribute cost-of-living-adjustment {none,tcf,tc}
+@attribute working-hours REAL
+@attribute pension {none,ret_allw,empl_contr}
+@attribute standby-pay REAL
+@attribute shift-differential REAL
+@attribute education-allowance {yes,no}
+@attribute statutory-holidays REAL
+@attribute vacation {below_average,average,generous}
+@attribute longterm-disability-assistance {yes,no}
+@attribute contribution-to-dental-plan {none,half,full}
+@attribute bereavement-assistance {yes,no}
+@attribute contribution-to-health-plan {none,half,full}
+@attribute class {bad,good}
+@data
+1,5,2,?,tcf,?,empl_contr,?,3,?,15,generous,?,?,?,half,bad
+3,2,4,2,none,38,?,?,5,?,11,average,?,half,yes,half,bad
+2,2,?,?,none,40,empl_contr,14,5,yes,13,average,?,full,?,full,bad
+2,4.5,?,?,none,37,?,?,3,yes,11,average,?,?,yes,full,good
+1,4.5,4,2,?,38,empl_contr,?,6,no,12,average,?,half,yes,half,good
+2,2.5,?,?,?,35,?,?,2,?,11,average,yes,?,?,?,good
+3,5,4.6,?,?,40,none,?,?,no,11,below_average,?,half,?,half,bad
+3,3.5,4.5,?,none,35,?,?,?,no,10,below_average,yes,full,yes,?,bad
+2,4,2.5,?,tc,40,none,?,10,?,12,average,no,half,yes,none,good
+2,6,4.5,?,tc,40,?,?,3,?,12,below_average,?,full,yes,full,bad
+2,2,4,?,tc,36,ret_allw,?,?,no,11,below_average,no,?,yes,?,bad
+2,5.7,2.5,4.5,?,40,empl_contr,?,25,yes,10,average,yes,half,?,full,bad
+?,2.8,2,?,?,?,none,12,?,no,10,generous,yes,full,?,?,good
+3,3.5,2,?,?,40,empl_contr,?,?,?,9,average,?,half,?,full,bad
+3,3,2.5,?,?,40,?,?,3,?,12,average,?,half,?,full,bad
+3,2,4.6,?,none,38,none,?,?,?,11,?,?,full,yes,?,good
+2,5,2.5,?,?,40,empl_contr,?,14,?,?,average,?,?,yes,none,good
+3,4.5,4.8,?,?,38,?,?,?,?,12,generous,?,?,no,?,good
+2,3,3,?,none,38,?,?,5,?,9,generous,?,?,yes,?,good
+3,3.5,5.8,?,none,35,ret_allw,?,2,?,11,below_average,?,?,yes,?,bad
+2,6.4,2.5,?,?,38,?,?,?,?,11,generous,?,full,yes,full,bad
+3,6.9,?,?,?,40,?,?,3,?,10,generous,no,?,yes,full,good
+1,4.5,3,5,?,38,?,?,3,?,?,generous,?,none,yes,half,bad
+2,2.5,3.5,?,?,?,?,?,5,?,15,average,yes,?,?,?,bad
+1,5,4.5,?,none,40,?,?,4,?,12,?,no,half,yes,full,good
+3,4.5,5,5.1,?,38,empl_contr,?,4,yes,11,average,?,?,yes,full,bad
+2,4.5,?,?,none,38,?,?,?,?,11,average,yes,half,?,none,bad
+2,3,?,?,tc,40,none,14,?,?,12,generous,?,?,yes,?,good
+3,3.5,4.8,?,none,27,empl_contr,?,25,?,?,average,yes,none,yes,?,good
+3,3.5,3,?,tc,40,none,?,?,?,10,generous,yes,?,?,none,good
+2,4,4,?,?,40,empl_contr,4,?,?,11,generous,?,half,?,half,bad
+3,3.5,4,?,?,40,none,?,2,?,12,generous,?,full,yes,?,good
+1,4.6,?,?,tcf,40,?,?,?,yes,11,below_average,yes,?,yes,?,good
+2,2,4,2.3,none,33,?,4,?,no,12,below_average,yes,full,?,none,bad
+2,4.5,6.4,?,none,?,ret_allw,?,4,no,12,below_average,no,?,yes,full,good
+2,3,2,4,none,36,empl_contr,?,?,no,9,average,yes,full,?,half,bad
+1,4.5,?,4.5,tc,38,?,?,?,?,11,generous,yes,full,yes,?,good
+3,2.5,4.5,?,tcf,36,empl_contr,?,6,no,12,generous,?,half,no,?,good
+2,3.5,4.5,?,?,40,?,2,?,?,11,below_average,yes,?,yes,?,good
+2,4.5,3,?,none,35,empl_contr,?,?,yes,12,below_average,?,full,yes,none,good
+2,7,4,?,none,40,none,?,?,?,11,generous,yes,full,yes,none,bad
+3,4.5,4,?,tc,?,?,?,1,?,10,average,?,none,no,?,good
+2,2.1,?,?,tcf,?,none,?,?,?,11,generous,yes,?,yes,full,good
+2,4,?,2.5,none,40,ret_allw,?,5,?,12,generous,?,?,?,full,good
+1,3.5,?,?,none,37,?,?,?,yes,12,below_average,no,half,?,none,good
+2,3,?,?,?,?,empl_contr,?,?,yes,10,generous,yes,none,yes,?,good
+2,3.5,3,4.6,none,36,empl_contr,?,25,?,11,generous,yes,full,yes,full,bad
+3,2,5.8,4.6,?,40,empl_contr,2,2,no,11,average,yes,half,yes,none,good
+3,4.5,3,?,tcf,40,empl_contr,?,?,?,10,generous,yes,half,?,full,good
+3,2.5,5,?,?,40,none,?,?,yes,13,generous,?,?,?,full,good
+3,3.5,5,?,none,38,none,?,?,?,9,average,yes,half,?,half,good
+1,6,4.4,?,none,40,empl_contr,2,?,?,11,generous,no,?,?,half,good
+3,4.5,5.3,?,none,37,none,?,4,?,11,generous,yes,full,?,?,good
+1,2.8,5,?,tc,?,?,10,25,no,10,below_average,?,half,yes,?,good
+1,7,?,?,tc,?,ret_allw,?,3,?,11,generous,yes,?,?,?,good
+2,2.1,4.5,?,?,40,empl_contr,?,?,?,10,generous,?,full,yes,full,bad
+3,4.5,?,?,tc,?,?,?,?,?,11,below_average,yes,full,?,full,good
+2,2.5,4.4,?,none,27,?,?,?,yes,12,generous,?,full,?,full,bad
+3,2,4,?,none,40,?,?,?,?,10,generous,?,?,?,?,good
+?,4,?,?,tcf,40,?,?,0,yes,10,?,yes,full,?,half,bad
+2,3.5,4.8,?,?,40,?,?,5,?,10,below_average,?,?,?,half,good
+1,4,5,?,?,35,?,14,4,?,10,generous,yes,none,yes,full,bad
+1,4.5,?,?,tcf,35,empl_contr,?,?,?,12,below_average,?,full,?,full,good
+3,5,2.5,?,none,33,none,?,5,?,12,below_average,yes,?,yes,none,good
+3,3,4.6,5,none,37,empl_contr,?,?,no,12,generous,yes,none,yes,full,good
+1,4,3,?,none,40,?,?,?,no,10,?,yes,?,yes,?,bad
+2,2.8,4.5,?,none,37,?,?,3,yes,11,below_average,yes,full,?,?,bad
+2,4,3,?,?,40,?,?,5,no,12,below_average,?,none,?,?,good
+3,4,?,?,?,40,none,?,4,?,12,generous,?,?,no,full,good
+3,2,4,?,tcf,39,none,?,2,no,10,below_average,yes,?,yes,none,good
+2,3.5,4,?,none,35,none,?,?,yes,?,average,?,full,yes,?,good
+1,3,4,?,?,35,?,?,?,?,10,generous,?,?,?,full,bad
+2,4.5,4.5,?,none,40,none,?,?,?,10,below_average,?,half,?,half,good
+1,4.5,3,4.5,?,40,empl_contr,?,?,?,10,generous,yes,?,yes,half,good
+2,2,4,?,none,40,ret_allw,2,?,?,11,below_average,no,?,yes,?,good
+2,2.8,4,?,none,40,empl_contr,?,3,yes,11,generous,?,full,yes,half,good
+2,3.5,?,?,tc,40,?,?,3,?,11,below_average,no,none,?,full,good
+1,2,?,?,tcf,38,?,14,3,yes,10,below_average,yes,full,yes,half,good
+3,2.8,3,?,none,?,?,?,?,?,11,?,?,?,yes,full,good
+2,4,4,?,none,38,?,13,2,?,11,average,no,?,yes,?,good
+2,4.5,5.8,?,none,35,none,14,3,?,15,generous,?,?,yes,full,bad
+1,4,?,?,?,40,none,?,3,yes,12,average,yes,half,yes,full,good
+2,4.5,2,2.1,?,?,?,?,3,?,10,average,yes,?,yes,full,good
+2,4.3,6.4,4.6,tcf,38,?,?,5,?,13,below_average,?,?,?,full,bad
+3,4,?,?,?,?,?,?,4,no,15,generous,?,?,?,full,bad
+2,5,?,?,?,38,empl_contr,?,?,yes,10,below_average,yes,half,yes,full,good
+2,3.5,4,?,?,38,?,?,?,?,?,average,yes,none,yes,full,good
+1,2,4.6,?,?,38,ret_allw,?,?,no,?,generous,no,full,?,full,good
+3,4.5,3,?,?,35,?,?,4,?,11,?,no,?,yes,full,good
+2,4.5,?,?,?,27,none,?,?,no,13,below_average,yes,half,yes,?,bad
+3,?,4.8,?,tc,40,none,?,?,?,11,average,yes,?,?,?,good
+3,2,7,?,tcf,?,none,?,4,no,11,generous,no,half,?,full,good
+1,5,?,4.6,tcf,40,none,?,?,yes,?,below_average,no,none,yes,half,good
+1,3.7,2.5,?,tc,40,?,?,?,?,10,below_average,yes,none,?,none,bad
+2,3.5,?,?,tc,40,none,?,2,no,11,average,?,?,yes,half,good
+2,4.5,4,?,none,38,ret_allw,4,3,?,11,average,yes,none,yes,full,bad
+3,3.5,4.4,?,?,40,?,?,5,?,12,generous,?,half,yes,half,good
+?,4.3,?,?,tc,35,empl_contr,4,3,no,11,average,yes,?,yes,half,bad
+2,2,?,?,?,40,?,?,3,?,9,below_average,?,none,?,?,good
+2,6,5,?,none,?,none,?,4,no,10,generous,?,half,yes,?,good

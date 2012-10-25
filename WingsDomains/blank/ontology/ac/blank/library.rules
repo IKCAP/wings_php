@@ -1,0 +1,20 @@
+# You can use the following prefixes in your rules:
+# - pc: Refers to the top level Component/Process Catalog Ontology
+# - pcdom: Refers to the domain's Component/Process Catalog Ontology/Library
+# - dc: Refers to the top level Data Catalog Ontology
+# - dcdom: Refers to the domain's Data Catalog Ontology
+#[ExampleRule:
+#	(?c rdf:type pcdom:ComponentClass)
+#	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "InputRole")
+#	(?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "OutputRole")
+#	(?idv dcdom:hasSomeDataMetricsProperty ?prop)
+#	-> (?odv1 dcdom:hasSomeOtherDataMetricsProperty ?prop)
+
+
+#[ExampleRule:
+#	(?c rdf:type pcdom:ComponentClass)
+#	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "InputRole")
+#	(?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "OutputRole")
+#	(?idv dcdom:hasSomeDataMetricsProperty ?prop)
+#	-> (?odv1 dcdom:hasSomeOtherDataMetricsProperty ?prop)
+

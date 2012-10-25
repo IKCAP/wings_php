@@ -1,0 +1,45 @@
+
+Naive Bayes Classifier
+
+Class Iris-setosa: Prior probability = 0.36
+
+sepallength:  Discrete Estimator. Counts =  93 133 84 34  (Total = 344)
+sepalwidth:  Discrete Estimator. Counts =  55 174 90 20  (Total = 339)
+petallength:  Discrete Estimator. Counts =  114 27 143 64  (Total = 348)
+petalwidth:  Discrete Estimator. Counts =  100 53 110 80  (Total = 343)
+
+
+Class Iris-versicolor: Prior probability = 0.3 
+
+sepallength:  Discrete Estimator. Counts =  90 86 92 19  (Total = 287)
+sepalwidth:  Discrete Estimator. Counts =  53 150 75 13  (Total = 291)
+petallength:  Discrete Estimator. Counts =  85 21 115 69  (Total = 290)
+petalwidth:  Discrete Estimator. Counts =  97 49 94 53  (Total = 293)
+
+
+Class Iris-virginica: Prior probability = 0.34
+
+sepallength:  Discrete Estimator. Counts =  107 116 80 30  (Total = 333)
+sepalwidth:  Discrete Estimator. Counts =  60 175 79 15  (Total = 329)
+petallength:  Discrete Estimator. Counts =  119 17 123 76  (Total = 335)
+petalwidth:  Discrete Estimator. Counts =  112 73 87 65  (Total = 337)
+
+
+
+=== Error on test data ===
+
+Correctly Classified Instances        3368               33.68   %
+Incorrectly Classified Instances      6632               66.32   %
+Kappa statistic                          0.0076
+Mean absolute error                      0.4441
+Root mean squared error                  0.4753
+Total Number of Instances            10000     
+
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1514  595 1217 |    a = Iris-setosa
+ 1534  615 1265 |    b = Iris-versicolor
+ 1453  568 1239 |    c = Iris-virginica
+

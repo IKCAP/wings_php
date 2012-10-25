@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<component author="Fayyad and Irani" vendor="WEKA" version="3.6.2">
+    <description>
+        <environment>
+            <name>JAVA_HOME</name>
+            <name>CLASSPATH</name>
+            <name>WEKAHOME</name>
+        </environment>
+        <files>
+            <file type="input" id="inputData"/>
+            <file type="output" id="outputData"/>
+        </files>
+        <parameters>
+            <param type="int" id="numberOfBins"/>
+            <param type="int" id="classIndex"/>
+        </parameters>
+        <arguments>
+            <arg option="-i" type="file">
+                <file idref="inputData"/>
+            </arg>
+            <arg option="-o" type="file">
+                <file idref="outputData"/>
+            </arg>
+            <arg option="-B" type="parameter">
+                <param idref="numberOfBins"/>
+            </arg>
+            <arg option="-c" type="parameter">
+                <param idref="classIndex"/>
+            </arg>
+        </arguments>
+        <exitcodes>
+            <exit code="0">Success</exit>
+            <exit code="1">Failure</exit>
+        </exitcodes>
+    </description>
+    <unit_test>
+        <file idref="inputData">iris.arff</file>
+        <file idref="outputData">iris-binned.arff</file>
+        <param idref="numberOfBins">10</param>
+        <param idref="classIndex">5</param>
+        <invocation_string>Discretize -i iris.arff -o iris-binned.arff -B 10 -c 5</invocation_string>
+        <exit code="0">Success</exit>
+    </unit_test>
+    <unit_test>
+        <file idref="inputData">iris.arff</file>
+        <file idref="outputData">iris-binned.arff</file>
+        <param idref="numberOfBins">10</param>
+        <param idref="classIndex">10</param>
+        <invocation_string>Discretize -i iris.arff -o iris-binned.arff -B 10 -c 10</invocation_string>
+        <exit code="1">Failure</exit>
+    </unit_test>
+</component>

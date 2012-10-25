@@ -1,0 +1,18 @@
+#!/bin/sh
+
+checkExitCode() {
+ if [ $? -ne 0 ]; then 
+     echo "Error"
+     exit 1; 
+ fi
+}
+
+BASEDIR=`dirname $0`
+. $BASEDIR/io.sh 1 0 1 "$@"
+
+echo "Input1: $INPUTS1"
+echo "Outputs1: $OUTPUTS1"
+
+cat $INPUTS1 | python $BASEDIR/html2txt.py | sed 's///' > $OUTPUTS1
+checkExitCode
+

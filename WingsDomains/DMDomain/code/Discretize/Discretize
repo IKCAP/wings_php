@@ -1,0 +1,151 @@
+#!/bin/sh
+
+FATAL_EXIT_CODE=1
+FATAL_EXIT_MESSAGE=Failure
+SUCCESS_EXIT_CODE=0
+SUCCESS_EXIT_MESSAGE=Success
+COMMAND_EXIT_CODE=0
+ERROR_LOG_FILE_NAME=error.log
+BASEDIR=`dirname $0`
+
+WEKAHOME=$BASEDIR/../lib
+export CLASSPATH="$WEKAHOME/weka.jar:."
+
+rm -f $ERROR_LOG_FILE_NAME
+
+if [ -z "$1" ] || [ "$1" = "-h" ]; then
+  echo "Argument list for Discretize version:  3.6.2"
+  echo "-i inputData"
+  echo "-o outputData"
+  echo "-B numberOfBins"
+  echo "-c classIndex"
+  echo "Use ./Discretize --help for more details."
+  exit 0
+elif [ "$1" = "--help" ]; then
+  echo "Docstring for Discretize version:  3.6.2"
+  echo "An instance filter that discretizes a range of numeric "
+  echo "attributes in the dataset into nominal attributes. "
+  echo "Discretization is by Fayyad and Irani's MDL method (the default)."
+  echo ""
+  echo "-i inputData"
+  echo "-o outputData"
+  echo "-B numberOfBins"
+  echo "-c classIndex"
+  exit 0
+elif [ "$1" = "--version" ]; then
+  echo Discretize 3.6.2
+  exit 0
+elif [ "$1" = "--BCE" ]; then
+  echo "<?xml version="1.0" encoding="UTF-8" standalone="yes"?>"
+  echo "<component author="Fayyad and Irani" vendor="WEKA" version="3.6.2">"
+  echo "    <description>"
+  echo "        <environment>"
+  echo "            <name>JAVA_HOME</name>"
+  echo "            <name>CLASSPATH</name>"
+  echo "            <name>WEKAHOME</name>"
+  echo "        </environment>"
+  echo "        <files>"
+  echo "            <file type="input" id="inputData"/>"
+  echo "            <file type="output" id="outputData"/>"
+  echo "        </files>"
+  echo "        <parameters>"
+  echo "            <param type="int" id="numberOfBins"/>"
+  echo "            <param type="int" id="classIndex"/>"
+  echo "        </parameters>"
+  echo "        <arguments>"
+  echo "            <arg option="-i" type="file">"
+  echo "                <file idref="inputData"/>"
+  echo "            </arg>"
+  echo "            <arg option="-o" type="file">"
+  echo "                <file idref="outputData"/>"
+  echo "            </arg>"
+  echo "            <arg option="-B" type="parameter">"
+  echo "                <param idref="numberOfBins"/>"
+  echo "            </arg>"
+  echo "            <arg option="-c" type="parameter">"
+  echo "                <param idref="classIndex"/>"
+  echo "            </arg>"
+  echo "        </arguments>"
+  echo "        <exitcodes>"
+  echo "            <exit code="0">Success</exit>"
+  echo "            <exit code="1">Failure</exit>"
+  echo "        </exitcodes>"
+  echo "    </description>"
+  echo "    <unit_test>"
+  echo "        <file idref="inputData">iris.arff</file>"
+  echo "        <file idref="outputData">iris-binned.arff</file>"
+  echo "        <param idref="numberOfBins">10</param>"
+  echo "        <param idref="classIndex">5</param>"
+  echo "        <invocation_string>Discretize -i iris.arff -o iris-binned.arff -B 10 -c 5</invocation_string>"
+  echo "        <exit code="0">Success</exit>"
+  echo "    </unit_test>"
+  echo "    <unit_test>"
+  echo "        <file idref="inputData">iris.arff</file>"
+  echo "        <file idref="outputData">iris-binned.arff</file>"
+  echo "        <param idref="numberOfBins">10</param>"
+  echo "        <param idref="classIndex">10</param>"
+  echo "        <invocation_string>Discretize -i iris.arff -o iris-binned.arff -B 10 -c 10</invocation_string>"
+  echo "        <exit code="1">Failure</exit>"
+  echo "    </unit_test>"
+  echo "</component>"
+elif [ "$#" != 8 ]; then
+  counter=0
+  for arg in "$@"; do
+    counter=`expr $counter + 1`
+  done
+  pairnumber=`expr $counter / 2`
+  echo "Discretize was passed $pairnumber option/argument pairs, but requires 4"
+  echo "Use --help for more information."
+  echo $FATAL_EXIT_MESSAGE
+  exit $FATAL_EXIT_CODE
+else
+
+  options=""
+  args=("$@")
+  counter=0
+  for arg in $args; do
+    options="$options ${args[$counter]}"
+    counter=`expr $counter + 2`
+  done
+
+  for option in $options; do
+    case $option in
+     -i) ;;
+     -o) ;;
+     -B) ;;
+     -c) ;;
+      *)  echo "Option $option is not valid.  Valid options are: -i, -o, -B, -c"
+          echo "Use --help for more information."
+          echo $FATAL_EXIT_MESSAGE
+          exit $FATAL_EXIT_CODE ;;
+    esac
+  done
+
+  args=("$@")
+  valueCounter=0
+  for arg in $@; do
+    valueCounter=`expr $valueCounter + 1`
+    if [ "$arg" == "-c" ]; then arg4=${args[$valueCounter]}; fi
+    if [ "$arg" == "-B" ]; then arg3=${args[$valueCounter]}; fi
+    if [ "$arg" == "-o" ]; then arg2=${args[$valueCounter]}; fi
+    if [ "$arg" == "-i" ]; then arg1=${args[$valueCounter]}; fi
+  done
+
+  OUTPUT=`java weka.filters.unsupervised.attribute.Discretize -i $arg1 -o $arg2 -B $arg3 -c $arg4  2> $ERROR_LOG_FILE_NAME`
+  COMMAND_EXIT_CODE=$?
+  LINES_IN_ERROR_LOG=`cat $ERROR_LOG_FILE_NAME|wc -l`
+fi
+
+if [ "$COMMAND_EXIT_CODE" -ne 0 ] ||  [ "$LINES_IN_ERROR_LOG" -ne 0 ]; then
+  cat $ERROR_LOG_FILE_NAME | while read linevar
+  do
+    echo $linevar
+  done
+  rm -f $ERROR_LOG_FILE_NAME
+  echo $FATAL_EXIT_MESSAGE
+  exit $FATAL_EXIT_CODE
+else
+  rm -f $ERROR_LOG_FILE_NAME
+  echo $SUCCESS_EXIT_MESSAGE
+  exit $SUCCESS_EXIT_CODE
+fi

@@ -1,0 +1,160 @@
+{
+	component : {
+		"c": {
+			"mapping": "c",
+			data: {
+				"classifier":["Classifier"],
+				"modeler":["Modeler"],
+				"id3 modeler":["ID3Modeler"],
+				"j48 modeler":["J48Modeler"],
+				"bayes modeler":["NaiveBayesModeler", "HNBModeler"],
+				"naive bayes modeler":["NaiveBayesModeler"],
+				"hnb modeler":["HNBModeler"],
+				"hidden naive bayes modeler":["HNBModeler"],
+				"id3 classifier":["ID3Classifier"],
+				"j48 classifier":["J48Classifier"],
+				"bayes classifier":["NaiveBayesClassifier", "HNBClassifier"],
+				"naive bayes classifier":["NaiveBayesClassifier"],
+				"hnb classifier":["HNBClassifier"],
+				"hidden naive bayes classifier":["HNBClassifier"],
+				"randomization":["Randomize"],
+				"resampling":["Resample"],
+				"sampling":["Resample"]
+			}
+		},
+		"cv": {
+			"mapping": "c",
+			data: {
+				"classify":["Classifier"],
+				"test":["Classifier", "HNBClassifier", "NaiveBayesClassifier", "ID3Classifier", "J48Classifier"], 
+				"model":["Modeler"],
+				"model id3":["ID3Modeler"],
+				"model j48":["J48Modeler"],
+				"model naive bayes":["NaiveBayesModeler"],
+				"model hnb":["HNBModeler"],
+				"model hidden naive bayes":["HNBModeler"],
+				"classify id3":["ID3Classifier"],
+				"classify j48":["J48Classifier"],
+				"classify naive bayes":["NaiveBayesClassifier"],
+				"classify hnb":["HNBClassifier"],
+				"classify hidden naive bayes":["HNBClassifier"],
+				"test id3":["ID3Classifier"],
+				"test j48":["J48Classifier"],
+				"test naive bayes":["NaiveBayesClassifier"],
+				"test hnb":["HNBClassifier"],
+				"test hidden naive bayes":["HNBClassifier"],
+				"sample":["Resample"],
+				"resample":["Resample"],
+				"randomize":["Randomize"],
+				"randomise":["Randomize"]
+			}
+		},
+		"cg": {
+			"mapping": "c",
+			data: {
+				"classifying":["Classifier", "HNBClassifier", "NaiveBayesClassifier", "ID3Classifier", "J48Classifier"], 
+				"testing":["Classifier", "HNBClassifier", "NaiveBayesClassifier", "ID3Classifier", "J48Classifier"], 
+				"modelling":["Modeler", "HNBModeler", "NaiveBayesModeler", "ID3Modeler", "J48Modeler"],
+				"modelling id3":["ID3Modeler"],
+				"modelling j48":["J48Modeler"],
+				"modelling naive bayes":["NaiveBayesModeler"],
+				"modelling hnb":["HNBModeler"],
+				"modelling hidden naive bayes":["HNBModeler"],
+				"classifying id3":["ID3Classifier"],
+				"classifying j48":["J48Classifier"],
+				"classifying naive bayes":["NaiveBayesClassifier"],
+				"classifying hnb":["HNBClassifier"],
+				"classifying hidden naive bayes":["HNBClassifier"],
+				"testing id3":["ID3Classifier"],
+				"testing j48":["J48Classifier"],
+				"testing naive bayes":["NaiveBayesClassifier"],
+				"testing hnb":["HNBClassifier"],
+				"testing hidden naive bayes":["HNBClassifier"],
+				"randomizing":["Randomize"],
+				"randomising":["Randomize"],
+				"sampling":["Resample"],
+				"resampling":["Resample"],
+			}
+		}
+	},
+
+	data : {
+		"d": {
+			"mapping": "d",
+			data: {
+				"classification":["Classification", "BayesClassification", "DTClassification"],
+				"instance":["Instance", "ContinuousInstance", "DiscreteInstance"],
+				"data":["Instance", "ContinuousInstance", "DiscreteInstance"],
+				"model":["Model", "BayesModel", "DTModel"],
+				"bayes classification":["BayesClassification"],
+				"decision tree classification":["DTClassification"],
+				"continuous instance":["ContinuousInstance"],
+				"continuous data":["ContinuousInstance"],
+				"discrete instance":["DiscreteInstance"],
+				"discrete data":["DiscreteInstance"],
+				"bayes model":["BayesModel"],
+				"human readable model":["DTModel"],
+				"readable model":["DTModel"],
+				"model readable by a human":["DTModel"],
+				"decision tree model":["DTModel"],
+				"dt model":["DTModel"],
+				"decision tree":["DTModel"]
+			}
+		},
+		"ds": {
+			"mapping": "d",
+			data: {
+				"classifications":["Classification", "BayesClassification", "DTClassification"],
+				"instances":["Instance"],
+				"models":["Model", "BayesModel", "DTModel"],
+				"bayes classifications":["BayesClassification"],
+				"decision tree classifications":["DTClassification"],
+				"continuous instances":["ContinuousInstance"],
+				"discrete instances":["DiscreteInstance"],
+				"bayes models":["BayesModel"],
+				"human readable models":["DTModel"],
+				"readable models":["DTModel"],
+				"models readable by humans":["DTModel"],
+				"decision tree models":["DTModel"],
+				"dt models":["DTModel"],
+				"decision trees":["DTModel"]
+			}
+		}
+	},
+
+	property : {
+		"p": {
+			"mapping": "p",
+			data: {
+				"has missing values":["hasMissingValues"],
+				"missing values":["hasMissingValues"],
+				"bins":["hasNumberOfBins"],
+				"classes":["hasNumberOfClasses"],
+				"instances":["hasNumberOfInstances"],
+				"domain":["hasDomain"]
+			}
+		},
+		"pb": {
+			"mapping": "p",
+			data: {
+				"discrete":["isDiscrete"],
+				"normalized":["isNormalized"],
+				"randomized":["isRandomized"],
+				"sampled":["isSampled"]
+			}
+		},
+		"domain": {
+			"mapping": "val",
+			data: {
+				"iris":["dcdom:iris"],
+				"weather":["dcdom:weather"],
+				"cpu":["dcdom:cpu"],
+				"labor":["dcdom:labor"],
+				"segment":["dcdom:segment"],
+				"soybean":["dcdom:soybean"],
+				"contact lens":["dcdom:contact-lenses"],
+				"nominal weather":["weather-nominal"]
+			}
+		}
+	}
+}

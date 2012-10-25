@@ -1,0 +1,155 @@
+#!/bin/sh
+
+FATAL_EXIT_CODE=1
+FATAL_EXIT_MESSAGE=Failure
+SUCCESS_EXIT_CODE=0
+SUCCESS_EXIT_MESSAGE=Success
+COMMAND_EXIT_CODE=0
+ERROR_LOG_FILE_NAME=error.log
+BASEDIR=`dirname $0`
+
+WEKAHOME=$BASEDIR/../lib
+export CLASSPATH="$WEKAHOME/weka.jar:."
+
+rm -f $ERROR_LOG_FILE_NAME
+
+if [ -z "$1" ] || [ "$1" = "-h" ]; then
+  echo "Argument list for NaiveBayesModeler version:  3.6.2"
+  echo "-t trainingData"
+  echo "-d model"
+  echo "-Xmx javaHeapSize"
+  echo "-c classIndex"
+  echo "Use ./NaiveBayesModeler --help for more details."
+  exit 0
+elif [ "$1" = "--help" ]; then
+  echo "Docstring for NaiveBayesModeler version:  3.6.2"
+  echo "Class for a Naive Bayes classifier using estimator classes. Numeric estimator "
+  echo "precision values are chosen based on analysis of the training data. For this "
+  echo "reason, the classifier is not an UpdateableClassifier (which in typical usage "
+  echo "are initialized with zero training instances) -- if you need the "
+  echo "UpdateableClassifier functionality, use the NaiveBayesUpdateable classifier. "
+  echo "The NaiveBayesUpdateable classifier will use a default precision of 0.1 for "
+  echo "numeric attributes when buildClassifier is called with zero training instances."
+  echo ""
+  echo "-t trainingData"
+  echo "-d model"
+  echo "-Xmx javaHeapSize"
+  echo "-c classIndex"
+  exit 0
+elif [ "$1" = "--version" ]; then
+  echo NaiveBayesModeler 3.6.2
+  exit 0
+elif [ "$1" = "--BCE" ]; then
+  echo "<?xml version="1.0" encoding="UTF-8" standalone="yes"?>"
+  echo "<component author="Len Trigg and Eibe Frank" vendor="WEKA" version="3.6.2">"
+  echo "    <description>"
+  echo "        <environment>"
+  echo "            <name>JAVA_HOME</name>"
+  echo "            <name>CLASSPATH</name>"
+  echo "            <name>WEKAHOME</name>"
+  echo "        </environment>"
+  echo "        <files>"
+  echo "            <file type="input" id="trainingData"/>"
+  echo "            <file type="output" id="model"/>"
+  echo "        </files>"
+  echo "        <parameters>"
+  echo "            <param type="int" id="javaHeapSize"/>"
+  echo "            <param type="int" id="classIndex"/>"
+  echo "        </parameters>"
+  echo "        <arguments>"
+  echo "            <arg option="-t" type="file">"
+  echo "                <file idref="trainingData"/>"
+  echo "            </arg>"
+  echo "            <arg option="-d" type="file">"
+  echo "                <file idref="model"/>"
+  echo "            </arg>"
+  echo "            <arg option="-Xmx" type="parameter">"
+  echo "                <param idref="javaHeapSize"/>"
+  echo "            </arg>"
+  echo "            <arg option="-c" type="parameter">"
+  echo "                <param idref="classIndex"/>"
+  echo "            </arg>"
+  echo "        </arguments>"
+  echo "        <exitcodes>"
+  echo "            <exit code="0">Success</exit>"
+  echo "            <exit code="1">Failure</exit>"
+  echo "        </exitcodes>"
+  echo "    </description>"
+  echo "    <unit_test>"
+  echo "        <file idref="trainingData">soybean.arff</file>"
+  echo "        <file idref="model">naivebayes-soybean.model</file>"
+  echo "        <param idref="javaHeapSize">256M</param>"
+  echo "        <param idref="classIndex">36</param>"
+  echo "        <invocation_string>NaiveBayesModeler -t soybean.arff -d naivebayes-soybean.model -Xmx 256M -c 36</invocation_string>"
+  echo "        <exit code="0">Success</exit>"
+  echo "    </unit_test>"
+  echo "    <unit_test>"
+  echo "        <file idref="trainingData">soybean.arff</file>"
+  echo "        <file idref="model">naivebayes-soybean.model</file>"
+  echo "        <param idref="javaHeapSize">256M</param>"
+  echo "        <param idref="classIndex">40</param>"
+  echo "        <invocation_string>NaiveBayesModeler -t soybean.arff -d naivebayes-soybean.model -Xmx 256M -c 40</invocation_string>"
+  echo "        <exit code="1">Failure</exit>"
+  echo "    </unit_test>"
+  echo "</component>"
+elif [ "$#" != 8 ]; then
+  counter=0
+  for arg in "$@"; do
+    counter=`expr $counter + 1`
+  done
+  pairnumber=`expr $counter / 2`
+  echo "NaiveBayesModeler was passed $pairnumber option/argument pairs, but requires 4"
+  echo "Use --help for more information."
+  echo $FATAL_EXIT_MESSAGE
+  exit $FATAL_EXIT_CODE
+else
+
+  options=""
+  args=("$@")
+  counter=0
+  for arg in $args; do
+    options="$options ${args[$counter]}"
+    counter=`expr $counter + 2`
+  done
+
+  for option in $options; do
+    case $option in
+     -t) ;;
+     -d) ;;
+     -Xmx) ;;
+     -c) ;;
+      *)  echo "Option $option is not valid.  Valid options are: -t, -d, -Xmx, -c"
+          echo "Use --help for more information."
+          echo $FATAL_EXIT_MESSAGE
+          exit $FATAL_EXIT_CODE ;;
+    esac
+  done
+
+  args=("$@")
+  valueCounter=0
+  for arg in $@; do
+    valueCounter=`expr $valueCounter + 1`
+    if [ "$arg" == "-c" ]; then arg4=${args[$valueCounter]}; fi
+    if [ "$arg" == "-d" ]; then arg2=${args[$valueCounter]}; fi
+    if [ "$arg" == "-t" ]; then arg1=${args[$valueCounter]}; fi
+    if [ "$arg" == "-Xmx" ]; then arg3=${args[$valueCounter]}; fi
+  done
+
+  OUTPUT=`java -Xmx$arg3 weka.classifiers.bayes.NaiveBayes -t $arg1 -d $arg2 -c $arg4  2> $ERROR_LOG_FILE_NAME`
+  COMMAND_EXIT_CODE=$?
+  LINES_IN_ERROR_LOG=`cat $ERROR_LOG_FILE_NAME|wc -l`
+fi
+
+if [ "$COMMAND_EXIT_CODE" -ne 0 ] ||  [ "$LINES_IN_ERROR_LOG" -ne 0 ]; then
+  cat $ERROR_LOG_FILE_NAME | while read linevar
+  do
+    echo $linevar
+  done
+  rm -f $ERROR_LOG_FILE_NAME
+  echo $FATAL_EXIT_MESSAGE
+  exit $FATAL_EXIT_CODE
+else
+  rm -f $ERROR_LOG_FILE_NAME
+  echo $SUCCESS_EXIT_MESSAGE
+  exit $SUCCESS_EXIT_CODE
+fi

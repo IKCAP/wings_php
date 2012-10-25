@@ -1,0 +1,719 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" dir="ltr">
+<head>
+<title>Chicago - Wikipedia, la enciclopedia libre</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="generator" content="MediaWiki 1.16alpha-wmf" />
+<link rel="alternate" type="application/x-wiki" title="Editar" href="/w/index.php?title=Chicago&amp;action=edit" />
+<link rel="edit" title="Editar" href="/w/index.php?title=Chicago&amp;action=edit" />
+<link rel="apple-touch-icon" href="http://es.wikipedia.org/apple-touch-icon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (es)" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/rss+xml" title="Wikipedia RSS feed" href="/w/index.php?title=Especial:CambiosRecientes&amp;feed=rss" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Especial:CambiosRecientes&amp;feed=atom" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?257z24" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?257z24" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/main.css?257z24" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/chick/main.css?257z24" type="text/css" media="handheld" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE50Fixes.css?257z24" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE55Fixes.css?257z24" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE60Fixes.css?257z24" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/monobook/IE70Fixes.css?257z24" type="text/css" media="screen" /><![endif]-->
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="print" />
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Handheld.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="handheld" />
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
+<link rel="stylesheet" href="/w/index.php?title=-&amp;action=raw&amp;maxage=2678400&amp;gen=css" type="text/css" media="all" />
+<script type="text/javascript">
+var skin="monobook",
+stylepath="http://bits.wikimedia.org/skins-1.5",
+wgUrlProtocols="http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/wiki/$1",
+wgScriptPath="/w",
+wgScriptExtension=".php",
+wgScript="/w/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://es.wikipedia.org",
+wgCanonicalNamespace="",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=0,
+wgPageName="Chicago",
+wgTitle="Chicago",
+wgAction="view",
+wgArticleId=12924,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="es",
+wgContentLanguage="es",
+wgBreakFrames=false,
+wgCurRevisionId=34943412,
+wgVersion="1.16alpha-wmf",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=[",	.", ".	,"],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Wikipedia:Portada",
+wgFormattedNamespaces={"-2": "Media", "-1": "Especial", "0": "", "1": "Discusión", "2": "Usuario", "3": "Usuario Discusión", "4": "Wikipedia", "5": "Wikipedia Discusión", "6": "Archivo", "7": "Archivo Discusión", "8": "MediaWiki", "9": "MediaWiki Discusión", "10": "Plantilla", "11": "Plantilla Discusión", "12": "Ayuda", "13": "Ayuda Discusión", "14": "Categoría", "15": "Categoría Discusión", "100": "Portal", "101": "Portal Discusión", "102": "Wikiproyecto", "103": "Wikiproyecto Discusión", "104": "Anexo", "105": "Anexo Discusión"},
+wgNamespaceIds={"media": -2, "especial": -1, "": 0, "discusión": 1, "usuario": 2, "usuario_discusión": 3, "wikipedia": 4, "wikipedia_discusión": 5, "archivo": 6, "archivo_discusión": 7, "mediawiki": 8, "mediawiki_discusión": 9, "plantilla": 10, "plantilla_discusión": 11, "ayuda": 12, "ayuda_discusión": 13, "categoría": 14, "categoría_discusión": 15, "portal": 100, "portal_discusión": 101, "wikiproyecto": 102, "wikiproyecto_discusión": 103, "anexo": 104, "anexo_discusión": 105, "imagen": 6, "imagen_discusión": 7, "image": 6, "image_talk": 7},
+wgMWSuggestTemplate="http://es.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest",
+wgDBname="eswiki",
+wgSearchNamespaces=[0, 100, 104],
+wgMWSuggestMessages=["con sugerencias", "sin sugerencias"],
+wgRestrictionEdit=[],
+wgRestrictionMove=[],
+wgTrackingToken="4927065428a13375839abfc2d45fc09e",
+wgClickTrackingIsThrottled=true,
+wgNotice="",
+wgNoticeLocal="";
+</script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?urid=257z24_1264870003" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?urid=257z24" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?urid=257z24" type="text/javascript"></script>
+<script type="text/javascript" src="http://upload.wikimedia.org/centralnotice/wikipedia/es/centralnotice.js?257z24"></script>
+
+<!--[if lt IE 7]><script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/IEFixes.js?257z24"></script>
+	<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook&amp;urid=257z24_32870427" type="text/javascript"></script>
+
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Chicago skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a id="top"></a>
+		<div id="siteNotice"><script type='text/javascript'>if (wgNotice != '') document.writeln(wgNotice);</script></div>		<h1 id="firstHeading" class="firstHeading">Chicago</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">De Wikipedia, la enciclopedia libre</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Saltar a <a href="#column-one">navegación</a>, <a href="#searchInput">búsqueda</a></div>			<!-- start content -->
+			<div class="noprint" style="margin-left: 2em"><i>Para otros usos de este término, véase <a href="/wiki/Chicago_(desambiguaci%C3%B3n)" title="Chicago (desambiguación)">Chicago (desambiguación)</a>.</i></div>
+<table class="infobox geography" style="text-align:left; font-size:90%; width:23em">
+<tr>
+<th colspan="2" style="background-color:transparent; text-align:center; font-weight:bold; font-size:135%; color:#000" class="cabecera mapa">Chicago, Illinois</th>
+</tr>
+<tr class="mergedtoprow">
+<td class="maptable" colspan="2" style="text-align:center">
+<table style="width:100%; background-color:inherit; padding-top:0.4em">
+<tr>
+<td style="vertical-align:middle"><a href="/wiki/Archivo:Municipal_Flag_of_Chicago.svg" class="image" title="Bandera&#160;de Chicago"><img alt="Bandera&#160;de Chicago" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Municipal_Flag_of_Chicago.svg/120px-Municipal_Flag_of_Chicago.svg.png" width="120" height="80" class="thumbborder" /></a><br />
+<span style="font-size:smaller"><a href="/wiki/Bandera_de_Chicago" title="Bandera de Chicago">Bandera</a></span></td>
+<td style="vertical-align:middle"><a href="/wiki/Archivo:ChicagoSeal2.png" class="image" title="Sello&#160;de Chicago"><img alt="Sello&#160;de Chicago" src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/ChicagoSeal2.png/90px-ChicagoSeal2.png" width="90" height="90" /></a><br />
+<span style="font-size:smaller">Sello</span></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="maptable" colspan="2" align="center" style="padding:0em 0.8em 0.4em 0.8em">
+<table style="text-align:left; width:100%; font-size:100%; background-color:inherit; border-collapse:collapse; margin:0; padding:0; border:0">
+<tr class="mergedrow">
+<td colspan="2" style="text-align:center; padding-top:0.5em">
+<div class="floatnone"><a href="/wiki/Archivo:Sears_Tower_from_Hancock_Observatory.jpg" class="image" title="Panorama urbano de"><img alt="Panorama urbano de" src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Sears_Tower_from_Hancock_Observatory.jpg/250px-Sears_Tower_from_Hancock_Observatory.jpg" width="250" height="188" /></a></div>
+</td>
+</tr>
+<tr class="mergedrow">
+<td colspan="2" align="center" style="background-color:inherit">
+<div class="floatnone"><a href="/wiki/Archivo:US-IL-Chicago.png" class="image" title="Localización respecto al área metropolitana y a Illinois"><img alt="Localización respecto al área metropolitana y a Illinois" src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/US-IL-Chicago.png/250px-US-IL-Chicago.png" width="250" height="168" /></a></div>
+<small>Localización respecto al <a href="/wiki/%C3%81rea_metropolitana" title="Área metropolitana">área metropolitana</a> y a <a href="/wiki/Illinois" title="Illinois">Illinois</a></small></td>
+</tr>
+<tr class="mergedrow">
+<td colspan="2" style="text-align:center"><a href="/wiki/Apodo" title="Apodo" class="mw-redirect">Apodo</a>: The Windy City, The Second City, Chi Town</td>
+</tr>
+<tr class="mergedrow">
+<td colspan="2" style="text-align:center"><a href="/wiki/Lema" title="Lema">Lema</a>: Urbs In Horto" (en <a href="/wiki/Lat%C3%ADn" title="Latín">latín</a>: "Ciudad en un Jardín"), "I Will</td>
+</tr>
+<tr style="border-top:1px solid #ccd2d9">
+<td style="padding:1px 5px; font-weight:bold"><a href="/wiki/Pa%C3%ADs" title="País">País</a></td>
+<td style="padding: 1px 5px; background-color:#f9f9f9"><span class="flagicon"><a href="/wiki/Archivo:Flag_of_the_United_States.svg" class="image" title="Bandera de los Estados Unidos"><img alt="Bandera de los Estados Unidos" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/20px-Flag_of_the_United_States.svg.png" width="20" height="11" class="thumbborder" /></a>&#160;</span><a href="/wiki/Estados_Unidos" title="Estados Unidos">Estados Unidos</a></td>
+</tr>
+<tr>
+<td style="padding:1px 5px">•&#160;<a href="/wiki/Estado_de_los_Estados_Unidos_de_Am%C3%A9rica" title="Estado de los Estados Unidos de América">Estado</a></td>
+<td style="padding:1px 5px; background-color:#f9f9f9"><a href="/wiki/Archivo:Flag_of_Illinois.svg" class="image"><img alt="Flag of Illinois.svg" src="http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_Illinois.svg/20px-Flag_of_Illinois.svg.png" width="20" height="12" /></a> <a href="/wiki/Illinois" title="Illinois">Illinois</a></td>
+</tr>
+<tr>
+<td style="padding:1px 5px">•&#160;<a href="/wiki/Anexo:Condados_de_Illinois" title="Anexo:Condados de Illinois">Condados</a></td>
+<td style="padding:1px 5px; background-color:#f9f9f9"><a href="/w/index.php?title=Condado_de_Cook_(Illinois)&amp;action=edit&amp;redlink=1" class="new" title="Condado de Cook (Illinois) (aún no redactado)">Cook</a>, <a href="/w/index.php?title=Condado_de_DuPage&amp;action=edit&amp;redlink=1" class="new" title="Condado de DuPage (aún no redactado)">DuPage</a></td>
+<td></td>
+</tr>
+<tr style="border-top:1px #ccd2d9 solid">
+<td style="padding:1px 5px; font-weight:bold">Ubicación</td>
+<td style="padding:1px 5px; background-color:#f9f9f9"><span style="font-size: 95%"><span class="plainlinksneverexpand"><a href="http://stable.toolserver.org/geohack/geohack.php?pagename=Chicago&amp;language=es&amp;params=41_54__N_87_39__W_type:city" class="external text" rel="nofollow"><span class="geo-default"><span class="geo-dms" title="Mapas, fotos y otros datos de 41°54′″N 87°39′″O"><span class="latitude">41°54′″N</span> <span class="longitude">87°39′″O</span></span></span><span class="geo-multi-punct">﻿ / ﻿</span><span class="geo-nondefault">&lt;span class="geo-dec geo" title="Fotos, mapas y otros datos de <strong class="error">Expresión errónea: operador / inesperado</strong> <strong class="error">Expresión errónea: operador / inesperado</strong>"&gt;<span class="latitude"><strong class="error">Expresión errónea: operador / inesperado</strong></span>, <span class="longitude"><strong class="error">Expresión errónea: operador / inesperado</strong></span></span></a></span><span id="coordinates"><span class="plainlinksneverexpand"><a href="http://stable.toolserver.org/geohack/geohack.php?pagename=Chicago&amp;language=es&amp;params=41_54__N_87_39__W_type:city" class="external text" rel="nofollow"><span class="geo-default"><span class="geo-dms" title="Mapas, fotos y otros datos de 41°54′″N 87°39′″O"><span class="latitude">41°54′″N</span> <span class="longitude">87°39′″O</span></span></span><span class="geo-multi-punct">﻿ / ﻿</span><span class="geo-nondefault">&lt;span class="geo-dec geo" title="Fotos, mapas y otros datos de <strong class="error">Expresión errónea: operador / inesperado</strong> <strong class="error">Expresión errónea: operador / inesperado</strong>"&gt;<span class="latitude"><strong class="error">Expresión errónea: operador / inesperado</strong></span>, <span class="longitude"><strong class="error">Expresión errónea: operador / inesperado</strong></span></span></a></span></span></span></td>
+</tr>
+<tr style="border-top:1px #ccd2d9 solid">
+<td style="padding:1px 5px; font-weight:bold"><a href="/wiki/%C3%81rea" title="Área">Superficie</a></td>
+<td>&#160;</td>
+</tr>
+<tr>
+<td style="padding:1px 5px">•&#160;Total</td>
+<td style="padding:1px 5px; background-color:#f9f9f9">606,2 <a href="/wiki/Kil%C3%B3metro_cuadrado" title="Kilómetro cuadrado">km²</a></td>
+</tr>
+<tr>
+<td style="padding:1px 5px">•&#160;Tierra firme</td>
+<td style="padding:1px 5px; background-color:#f9f9f9">588,3 km²</td>
+</tr>
+<tr>
+<td style="padding:1px 5px">•&#160;Agua</td>
+<td style="padding:1px 5px background-color:#f9f9f9">17,9 km² &#160;(1,0%)</td>
+</tr>
+<tr>
+<td style="padding:1px 5px">•&#160;Urbana</td>
+<td style="padding:1px 5px background-color:#f9f9f9">1.498,1 km²</td>
+</tr>
+<tr>
+<td style="padding:1px 5px">•&#160;Metropolitana</td>
+<td style="padding:1px 5px background-color:#f9f9f9">2.163 km²</td>
+</tr>
+<tr style="border-top:1px #ccd2d9 solid">
+<td style="padding:1px 5px; font-weight:bold">Incorporada</td>
+<td style="padding:1px 5px; background-color:#f9f9f9">El <a href="/wiki/4_de_marzo" title="4 de marzo">4 de marzo</a> de <a href="/wiki/1837" title="1837">1837</a></td>
+</tr>
+<tr style="border-top:1px #ccd2d9 solid">
+<td style="padding:1px 5px"><b><a href="/wiki/Poblaci%C3%B3n_mundial" title="Población mundial">Población</a></b></td>
+<td>&#160;</td>
+</tr>
+<tr>
+<td style="padding:1px 5px;">•&#160;Total <span style="font-size: 95%;">(2008)</span></td>
+<td style="padding:1px 5px; background-color:#f9f9f9;">2.853.114 hab.</td>
+</tr>
+<tr>
+<td style="padding:1px 5px;">•&#160;Urbana</td>
+<td style="padding:1px 5px; background-color:#f9f9f9;">8.711.000 hab.</td>
+</tr>
+<tr>
+<td style="padding:1px 5px;">•&#160;Metropolitana</td>
+<td style="padding:1px 5px; background-color:#f9f9f9">9.750.845 hab.</td>
+</tr>
+<tr>
+<td style="padding:1px 5px;">•&#160;<a href="/wiki/Densidad_de_poblaci%C3%B3n" title="Densidad de población">Densidad</a></td>
+<td style="padding:1px 5px; background-color:#f9f9f9;">4.867 hab./km²</td>
+</tr>
+<tr style="border-top: 1px #ccd2d9 solid">
+<td style="padding:1px 5px; font-weight:bold"><a href="/wiki/Huso_horario" title="Huso horario">Huso horario</a></td>
+<td style="padding:1px 5px; background-color:#f9f9f9"><a href="/wiki/CST" title="CST" class="mw-redirect">CST</a></td>
+</tr>
+<tr style="border-top:1px #ccd2d9 solid">
+<td style="padding:1px 5px; font-weight:bold"><a href="/wiki/Alcalde" title="Alcalde">Alcalde</a></td>
+<td style="padding:1px 5px; background-color:#f9f9f9"><a href="/wiki/Richard_M._Daley" title="Richard M. Daley">Richard M. Daley</a> (<a href="/wiki/Partido_Dem%C3%B3crata_de_los_Estados_Unidos" title="Partido Demócrata de los Estados Unidos">D</a>)</td>
+</tr>
+<tr style="border-top:1px #ccd2d9 solid">
+<td style="padding:1px 5px; font-weight:bold"><a href="/wiki/Sitio_web" title="Sitio web">Sitio web</a></td>
+<td style="padding:1px 5px; background-color:#f9f9f9"><a href="http://egov.cityofchicago.org/" class="external text" rel="nofollow">egov.cityofchicago.org</a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><b>Chicago</b>, conocida coloquialmente como "Second City" (La Segunda Ciudad) o "Windy City" (La Ciudad del Viento), es la tercera ciudad con mayor número de población en <a href="/wiki/Estados_Unidos" title="Estados Unidos">Estados Unidos</a>, tras <a href="/wiki/Nueva_York" title="Nueva York">Nueva York</a> y <a href="/wiki/Los_%C3%81ngeles_(California)" title="Los Ángeles (California)" class="mw-redirect">Los Ángeles</a>.</p>
+<p>Chicago se ubica en el estado de <a href="/wiki/Illinois" title="Illinois">Illinois</a>, a lo largo de la costa suroeste del <a href="/wiki/Lago_M%C3%ADchigan" title="Lago Míchigan">lago Míchigan</a>. Forma parte de <a href="/w/index.php?title=Chicagoland&amp;action=edit&amp;redlink=1" class="new" title="Chicagoland (aún no redactado)">Chicagoland</a>, una conurbación integrada además por los condados periféricos.</p>
+<table id="toc" class="toc">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contenido</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Clima"><span class="tocnumber">1</span> <span class="toctext">Clima</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Historia"><span class="tocnumber">2</span> <span class="toctext">Historia</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Comunidades_en_Chicago"><span class="tocnumber">3</span> <span class="toctext">Comunidades en Chicago</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Demograf.C3.ADa"><span class="tocnumber">4</span> <span class="toctext">Demografía</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Transporte"><span class="tocnumber">5</span> <span class="toctext">Transporte</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Cultura"><span class="tocnumber">6</span> <span class="toctext">Cultura</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Museos_y_galer.C3.ADas_de_arte"><span class="tocnumber">6.1</span> <span class="toctext">Museos y galerías de arte</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#M.C3.BAsica"><span class="tocnumber">6.2</span> <span class="toctext">Música</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Educaci.C3.B3n"><span class="tocnumber">7</span> <span class="toctext">Educación</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Educaci.C3.B3n_p.C3.BAblica"><span class="tocnumber">7.1</span> <span class="toctext">Educación pública</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Salud"><span class="tocnumber">8</span> <span class="toctext">Salud</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Deporte"><span class="tocnumber">9</span> <span class="toctext">Deporte</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Ciudades_hermanadas"><span class="tocnumber">10</span> <span class="toctext">Ciudades hermanadas</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Personajes_famosos"><span class="tocnumber">11</span> <span class="toctext">Personajes famosos</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#V.C3.A9ase_tambi.C3.A9n"><span class="tocnumber">12</span> <span class="toctext">Véase también</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Referencias"><span class="tocnumber">13</span> <span class="toctext">Referencias</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Bibliograf.C3.ADa"><span class="tocnumber">14</span> <span class="toctext">Bibliografía</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Enlaces_externos"><span class="tocnumber">15</span> <span class="toctext">Enlaces externos</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+//<![CDATA[
+if (window.showTocToggle) { var tocShowText = "mostrar"; var tocHideText = "ocultar"; showTocToggle(); } 
+//]]>
+</script>
+<h2><span class="editsection">[<a href="/w/index.php?title=Chicago&amp;action=edit&amp;section=1" title="Editar sección: Clima">editar</a>]</span> <span class="mw-headline" id="Clima">Clima</span></h2>
+<p>El clima en Chicago se define como <a href="/wiki/Clima_continental" title="Clima continental">clima continental</a> y por consiguiente es muy variado, ya que en verano se pueden registrar temperaturas máximas entre 33 y 40&#160;°C, y mínimas desde 24 hasta 30&#160;°C. En invierno las temperaturas máximas abarcan desde los -10° hasta los 5&#160;°C y las mínimas desde los -20&#160;°C hasta los -5&#160;°C. El lago sólo atempera el clima levemente. Las precipitaciones máximas se concentran en los meses de primavera y verano, siendo agosto el mes más húmedo en general; aunque las precipitaciones están repartidas a lo largo de todo el año. Las nevadas o ventiscas son frecuentes durante finales del otoño, y el invierno y pueden ser muy intensas, al encontrarse en pleno subcontinente <a href="/wiki/Am%C3%A9rica_del_Norte" title="América del Norte">norteamericano</a>, y cerca de las tierras de Canadá (aunque se encuentre a la misma latitud que <a href="/wiki/Madrid" title="Madrid">Madrid</a>).</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Chicago&amp;action=edit&amp;section=2" title="Editar sección: Historia">editar</a>]</span> <span class="mw-headline" id="Historia">Historia</span></h2>
+<p>Está situada en el norte de <a href="/wiki/Estados_Unidos_de_Am%C3%A9rica" title="Estados Unidos de América" class="mw-redirect">Estados Unidos de América</a>, en las orillas del <a href="/wiki/Lago_M%C3%ADchigan" title="Lago Míchigan">lago Míchigan</a>.</p>
+<p>Según los relatos de los exploradores españoles del <a href="/wiki/Siglo_XVII" title="Siglo XVII">siglo XVII</a>, los indios de <a href="/wiki/Illinois" title="Illinois">Illinois</a> (Potawatomis) fueron los primeros en reclamar un territorio que llamaron "Chicaugou", y que significa <i>poderoso</i>, <i>fuerte</i> o <i>grande</i>, y que fue utilizado por muchos jefes de tribu para significar que eran “grandes” jefes. En <a href="/wiki/1795" title="1795">1795</a> el área fue cedida por los nativo-americanos a EEUU por el <a href="/w/index.php?title=Tratado_de_Greenville&amp;action=edit&amp;redlink=1" class="new" title="Tratado de Greenville (aún no redactado)">Tratado de Greenville</a> para su uso militar.</p>
+<p>Los primeros exploradores europeos en poner pie en el lugar destinado a convertirse en Chicago fueron <a href="/w/index.php?title=Louis_Joliet&amp;action=edit&amp;redlink=1" class="new" title="Louis Joliet (aún no redactado)">Louis Joliet</a> y el <a href="/w/index.php?title=P._Jacques_Marquette&amp;action=edit&amp;redlink=1" class="new" title="P. Jacques Marquette (aún no redactado)">P. Jacques Marquette</a>. Los dos exploradores fueron comisionados por el Gobierno francés en <a href="/wiki/1673" title="1673">1673</a>. El padre Marquette regresó a la zona sólo un año después para establecer una misión india.</p>
+<p>El primer colonizador europeo de Chicago, <a href="/wiki/Jean_Baptiste_Point_DuSable" title="Jean Baptiste Point DuSable">Jean Baptiste Point DuSable</a>, llegó a la zona hacia <a href="/wiki/1780" title="1780">1780</a>. Se casó con una india <a href="/wiki/Potawatomi" title="Potawatomi">potawatomi</a> llamada Kittihawa y tuvo dos hijos, Jean y Susanne. En 1779 partió de Peoria y exploró el norte hasta una zona llamada Eschikagou, (Chicago) por los indios. DuSable, reconociendo su potencial, decidió instalarse en Chicago y construyó la primera vivienda permanente a las orillas del río.</p>
+<p>Estableció un puesto comercial que se convirtió en el principal punto de suministro para comerciantes y tramperos que iban hacia el Oeste. El puesto de Du Sable prosperó mucho y él se hizo bastante rico. En <a href="/wiki/1796" title="1796">1796</a> nació una nieta, convirtiéndose en el primer niño nacido en la recién creada Chicago.</p>
+<p>Aunque Chicago sufrió una serie de problemas, incluyendo la masacre de <a href="/w/index.php?title=Fort_Dearborn&amp;action=edit&amp;redlink=1" class="new" title="Fort Dearborn (aún no redactado)">Fort Dearborn</a> por una tribu de indios hostiles y la Guerra de 1812 entre Estados Unidos y Gran Bretaña, logró mantener sus posesiones territoriales y expandir sus límites.</p>
+<p>Fort Dearborn - Chicago 1803 Con el desarrollo del ferrocarril y el canal Illinois/Míchigan (en <a href="/wiki/1848" title="1848">1848</a> se construyen los canales Illinois y Míchigan, interconectando los <a href="/wiki/Grandes_Lagos" title="Grandes Lagos" class="mw-redirect">Grandes Lagos</a> con el <a href="/wiki/R%C3%ADo_Misisipi" title="Río Misisipi">río Misisipi</a>), Chicago se hizo el líder en las industrias ganadera, de virutas de madera, de leña y de trigo. Se corrió la voz de que la ciudad estaba llena de oportunidades, y para mediados de la década de 1850, llegaban hasta cien mil inmigrantes a la ciudad anualmente buscando tierra y trabajo.</p>
+<p>En <a href="/wiki/1860" title="1860">1860</a>, Chicago acogió la Convención Nacional Republicana que nombró al propio <a href="/wiki/Abraham_Lincoln" title="Abraham Lincoln">Abraham Lincoln</a>, como el candidato presidencial. Un año después, durante su mandato, comenzó la Guerra Civil.</p>
+<p>El Chicago de la posguerra fue imparable. Creció la población, se duplicaron los envíos de cereal y los comerciantes prosperaron.</p>
+<p>El 10 de octubre de <a href="/wiki/1871" title="1871">1871</a>, el Gran Incendio de Chicago destruyó la mayor parte de la zona central de la ciudad. Comenzó en el distrito maderero de la zona oeste de la ciudad. Dicen que la vaca de Mrs. O'Leary golpeó una lámpara de queroseno que inició el incendio. Para el 10 de octubre, el fuego había destruido casi 6,5 km de la ciudad, se llevó al menos 250 vidas y dejó a 100.000 residentes sin hogar. Más de 17.000 edificios fueron destruidos y las propiedades dañadas se estimaron en 200 millones de dólares.</p>
+<div class="thumb tleft">
+<div class="thumbinner" style="width:182px;"><a href="/wiki/Archivo:Chicago_postal001.jpg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Chicago_postal001.jpg/180px-Chicago_postal001.jpg" width="180" height="289" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/Archivo:Chicago_postal001.jpg" class="internal" title="Aumentar"><img src="http://bits.wikimedia.org/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Michigan Boulevard. principios de siglo XX</div>
+</div>
+</div>
+<p>Después del incendio, surgió un Chicago más grande. Arquitectos de fama internacional vinieron a la ciudad para su reconstrucción. En pocos años, Chicago resurgió y fue elegido para acoger la Exposición mundial colombina de 1893 para dos millones y medio de visitantes.</p>
+<p>En <a href="/wiki/1933" title="1933">1933</a> y <a href="/wiki/1934" title="1934">1934</a> se organizó la Feria mundial de Chicago, conocida como “Un siglo de progreso”, como una sociedad no lucrativa en enero de <a href="/wiki/1928" title="1928">1928</a>. Su finalidad era celebrar una feria mundial en Chicago en 1933.</p>
+<p>La exposición “Un siglo de progreso” fue ideada como un centenario conmemorando la ciudad de Chicago y un testimonio de los logros científicos e industriales de ese tiempo.</p>
+<p>Situada al sur de Navy Pier (Muelle De La Armada) en Chicago, Dicha exposición, "A century of Progres", tenía 112 ha a la orilla del Lago y estaba constituida por dos lagunas artificiales y Notherly Island.</p>
+<p>La feria se inauguró el 27 de mayo de <a href="/wiki/1933" title="1933">1933</a> con el encendido de las luces con los rayos de la estrella Arcturus. Los rayos se concentraron en células fotoeléctricas en una serie de observatorios astronómicos y luego se transformaron en energía eléctrica que se transmitió a Chicago.</p>
+<p>A diferencia de cualquier feria anterior, ‘A Century of Progress’ celebró el color y el alumbrado. La arquitectura de la feria se vio influida por la Gran Depresión de la época. Más que centrarse en la arquitectura, la feria se centró en el progreso científico y tecnológico y en los procesos de fabricación relacionados con ello.</p>
+<p>La "A Century of Progress Exposition" fue un éxito sin precedentes y acogió a más de 48 millones de visitantes en los dos años que duró. Ofreció un vislumbre animador en un futuro materializado por la tecnología mientras honraba los logros del pasado.</p>
+<p>En la actualidad, Chicago es una ciudad dinámica y culturalmente diversa. Es un centro internacional para los negocios y los viajes de ocio, debido en parte a la accesibilidad de la ciudad mediante el transporte, una próspera comunidad de negocios y hoteles, restaurantes, lugares de compras, etc.</p>
+<p>En esta ciudad de <a href="/wiki/Illinois" title="Illinois">Illinois</a> vivió el famoso mafioso <a href="/wiki/Al_Capone" title="Al Capone">Al Capone</a> que gobernaba en el sector oriental de Chicago.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Chicago&amp;action=edit&amp;section=3" title="Editar sección: Comunidades en Chicago">editar</a>]</span> <span class="mw-headline" id="Comunidades_en_Chicago">Comunidades en Chicago</span></h2>
+<div class="noprint AP" style="margin:0 0 0.2ex 1em"><i><span style="font-size:87%">Artículo principal:</span> <a href="/wiki/Lista_de_Comunidades_en_Chicago" title="Lista de Comunidades en Chicago" class="mw-redirect">Lista de Comunidades en Chicago</a></i></div>
+<div class="center">
+<div class="thumb tnone">
+<div class="thumbinner" style="width:1002px;"><a href="/wiki/Archivo:Chicago_Skyline_at_Sunset.png" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Chicago_Skyline_at_Sunset.png/1000px-Chicago_Skyline_at_Sunset.png" width="1000" height="147" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/Archivo:Chicago_Skyline_at_Sunset.png" class="internal" title="Aumentar"><img src="http://bits.wikimedia.org/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Panorámica de Chicago al atardecer.</div>
+</div>
+</div>
+</div>
+<p>La Ciudad de Chicago está dividido en setenta y siete (77) comunidades. La designación Comunidad es más útil como una curiosidad histórica, ya que se consideran más duraderas que los nombres de los barrios, ya que estos pueden cambiar con el tiempo debido a la renovación urbana, la elitización y a la constante absorción de la población inmigrante.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Chicago&amp;action=edit&amp;section=4" title="Editar sección: Demografía">editar</a>]</span> <span class="mw-headline" id="Demograf.C3.ADa">Demografía</span></h2>
+<p>En 2008, la ciudad de Chicago tiene una población de 2.853.114 personas,<sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span class="corchete-llamada">[</span>1<span class="corchete-llamada">]</span></a></sup> de los cuales son:</p>
+<ul>
+<li>El 35,3% Afroamericanos.</li>
+<li>El 30,6% blancos (europeos o descendientes de europeos).</li>
+<li>El 28,2% Latinoamericanos</li>
+<li>El 4,9% asiáticos.</li>
+</ul>
+<ul>
+<li>El resto lo conforman personas de otras etnias.</li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=Chicago&amp;action=edit&amp;section=5" title="Editar sección: Transporte">editar</a>]</span> <span class="mw-headline" id="Transporte">Transporte</span></h2>
+<p><a href="/wiki/Chicago_Transit_Authority" title="Chicago Transit Authority" class="mw-redirect">Chicago Transit Authority</a> (CTA por sus siglas en inglés) es la operadora del segundo sistema de transporte público más grande de los <a href="/wiki/Estados_Unidos" title="Estados Unidos">Estados Unidos</a> (tras el <a href="/w/index.php?title=Metropolitan_Transportation_Authority&amp;action=edit&amp;redlink=1" class="new" title="Metropolitan Transportation Authority (aún no redactado)">Metropolitan Transportation Authority</a> de <a href="/wiki/Nueva_York" title="Nueva York">Nueva York</a>) y cubre la ciudad de Chicago y 40 zonas residenciales periféricas. La CTA opera autobuses y el <a href="/wiki/Metro_de_Chicago" title="Metro de Chicago">Chicago «EL»</a>,<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="corchete-llamada">[</span>2<span class="corchete-llamada">]</span></a></sup> un sistema de transporte rápido de trenes que prestan servicio en el área metropolitana las 24 horas del día.</p>
+<p>Chicago ha sido reconocida a lo largo de los años como una ciudad pro bicicleta, y con más de 160 km (100 millas) de ciclovías, Chicago es el paraíso de los ciclistas. El programa para bicicletas del Departamento de Transporte de Chicago, ha instalado recientemente 10,000 portabicicletas y 266 km (165 miles) de nuevas rutas para bicicletas.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span class="corchete-llamada">[</span>3<span class="corchete-llamada">]</span></a></sup> Las bicicletas son permitidas en todos los autobuses y trenes a todas horas.</p>
+<p>En el siglo XX, Chicago obtuvo la denominación de núcleo del transporte de la nación tras la construcción de tres aeropuertos: <a href="/wiki/Aeropuerto_Internacional_O%27Hare" title="Aeropuerto Internacional O'Hare" class="mw-redirect">Aeropuerto Internacional O'Hare</a>, <a href="/wiki/Aeropuerto_Internacional_Midway" title="Aeropuerto Internacional Midway">Aeropuerto Internacional Midway</a> y <a href="/w/index.php?title=Meigs_Field&amp;action=edit&amp;redlink=1" class="new" title="Meigs Field (aún no redactado)">Meigs Field</a>.</p>
+<p>En el siglo XXI, Chicago trabaja para mantener su estado de núcleo del transporte con la ampliación del <a href="/wiki/Aeropuerto_Internacional_O%27Hare" title="Aeropuerto Internacional O'Hare" class="mw-redirect">Aeropuerto Internacional O'Hare</a>. Adicionalmente, un nuevo aeropuerto ha sido propuesto para <a href="/w/index.php?title=Peotone&amp;action=edit&amp;redlink=1" class="new" title="Peotone (aún no redactado)">Peotone</a>, <a href="/wiki/Illinois" title="Illinois">Illinois</a>, y la ciudad está trabajando para ampliar sus lazos con el <a href="/w/index.php?title=Aeropuerto_Internacional_Gary/Chicago&amp;action=edit&amp;redlink=1" class="new" title="Aeropuerto Internacional Gary/Chicago (aún no redactado)">Aeropuerto Internacional Gary/Chicago</a> en <a href="/wiki/Gary,_Indiana" title="Gary, Indiana" class="mw-redirect">Gary</a>, <a href="/wiki/Indiana" title="Indiana">Indiana</a>.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Chicago&amp;action=edit&amp;section=6" title="Editar sección: Cultura">editar</a>]</span> <span class="mw-headline" id="Cultura">Cultura</span></h2>
+<h3><span class="editsection">[<a href="/w/index.php?title=Chicago&amp;action=edit&amp;section=7" title="Editar sección: Museos y galerías de arte">editar</a>]</span> <span class="mw-headline" id="Museos_y_galer.C3.ADas_de_arte">Museos y galerías de arte</span></h3>
+<div class="thumb tright">
+<div class="thumbinner" style="width:222px;"><a href="/wiki/Archivo:Art-institute-of-chicago-in-chicago-ill-usa.jpg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Art-institute-of-chicago-in-chicago-ill-usa.jpg/220px-Art-institute-of-chicago-in-chicago-ill-usa.jpg" width="220" height="165" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/Archivo:Art-institute-of-chicago-in-chicago-ill-usa.jpg" class="internal" title="Aumentar"><img src="http://bits.wikimedia.org/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+<b>The Art Institute</b> of Chicago.</div>
+</div>
+</div>
+<p>En <a href="/wiki/1998" title="1998">1998</a>, la ciudad de Chicago inauguró oficialmente el <a href="/w/index.php?title=Museum_Campus_Chicago&amp;action=edit&amp;redlink=1" class="new" title="Museum Campus Chicago (aún no redactado)">Museum Campus Chicago</a>, un parque de 10 acres frente al lago y que reúne a los tres principales museos de la ciudad: el <a href="/wiki/Field_Museum_of_Natural_History" title="Field Museum of Natural History" class="mw-redirect">Field Museum of Natural History</a>, el <a href="/w/index.php?title=Shedd_Aquarium&amp;action=edit&amp;redlink=1" class="new" title="Shedd Aquarium (aún no redactado)">Shedd Aquarium</a> y el <a href="/w/index.php?title=Adler_Planetarium&amp;action=edit&amp;redlink=1" class="new" title="Adler Planetarium (aún no redactado)">Adler Planetarium</a>. Museum Campus Chicago fue construido en la sección sur del <a href="/w/index.php?title=Grant_Park&amp;action=edit&amp;redlink=1" class="new" title="Grant Park (aún no redactado)">Grant Park</a>. Algunos de los museos y galerías de arte más importantes son:</p>
+<ul>
+<li><a href="/wiki/Art_Institute_of_Chicago" title="Art Institute of Chicago" class="mw-redirect">Art Institute of Chicago</a></li>
+<li><a href="/w/index.php?title=Chicago_Cultural_Center&amp;action=edit&amp;redlink=1" class="new" title="Chicago Cultural Center (aún no redactado)">Chicago Cultural Center</a></li>
+<li><a href="/wiki/Field_Museum" title="Field Museum" class="mw-redirect">Field Museum</a> of Natural History.</li>
+<li><a href="/w/index.php?title=Museum_of_Contemporary_Art_of_Chicago&amp;action=edit&amp;redlink=1" class="new" title="Museum of Contemporary Art of Chicago (aún no redactado)">Museum of Contemporary Art of Chicago</a></li>
+<li><a href="/w/index.php?title=Oriental_Institute&amp;action=edit&amp;redlink=1" class="new" title="Oriental Institute (aún no redactado)">Oriental Institute</a></li>
+<li><a href="/w/index.php?title=Shedd_Aquarium&amp;action=edit&amp;redlink=1" class="new" title="Shedd Aquarium (aún no redactado)">Shedd Aquarium</a></li>
+<li><a href="/w/index.php?title=Museum_of_Science_and_Industry_in_Chicago&amp;action=edit&amp;redlink=1" class="new" title="Museum of Science and Industry in Chicago (aún no redactado)">Museum of Science and Industry in Chicago</a></li>
+<li><a href="/w/index.php?title=Adler_Planetarium&amp;action=edit&amp;redlink=1" class="new" title="Adler Planetarium (aún no redactado)">Adler Planetarium</a></li>
+</ul>
+<h3><span class="editsection">[<a href="/w/index.php?title=Chicago&amp;action=edit&amp;section=8" title="Editar sección: Música">editar</a>]</span> <span class="mw-headline" id="M.C3.BAsica">Música</span></h3>
+<p>Chicago ha hecho significativos aportes a la cultura popular. En el campo de la música, Chicago es conocida por su <i>Chicago blues</i>, <i>Chicago soul</i>, <i>Jazz</i> y su música <a href="/wiki/Gospel" title="Gospel">Gospel</a>. Es conocida además como la cuna del House, cuya historia está relacionada con el desarrollo y adopción de la música tecno - electrónica de <a href="/wiki/Detroit" title="Detroit">Detroit</a>. La escena <a href="/wiki/Hip-Hop" title="Hip-Hop" class="mw-redirect">Hip-Hop</a> en Chicago, es muy influyente, de la cual sus mayores exponentes son artistas como <a href="/wiki/Kanye_West" title="Kanye West">Kanye West</a> y <a href="/wiki/Common" title="Common">Common</a>.</p>
+<p>Chicago además presenta la <a href="/wiki/Orquesta_Sinf%C3%B3nica_de_Chicago" title="Orquesta Sinfónica de Chicago">Orquesta Sinfónica de Chicago</a>, rivales directos de su símil en <a href="/wiki/Nueva_York" title="Nueva York">Nueva York</a>. La compañía de ópera de la ciudad es la <a href="/wiki/%C3%93pera_L%C3%ADrica_de_Chicago" title="Ópera Lírica de Chicago" class="mw-redirect">Ópera Lírica de Chicago</a>.</p>
+<p>En 1967 nace la banda "The Big Thing", siendo esta la primera en incorporar metales (tales como Saxofón, trompeta y trombón) dentro del género del rock. En 1969 lanzan su primer álbum, ahora bajo el nombre de <a href="/wiki/Chicago_Transit_Authority_(%C3%A1lbum)" title="Chicago Transit Authority (álbum)">Chicago Transit Authority</a>, el cual cambian simplemente a "<a href="/wiki/Chicago_(banda)" title="Chicago (banda)">Chicago</a>" a finales del mismo año. Chicago en su amplia trayectoria (poco más de 35 años) ha cosechado innumerables éxitos como "Saturday in the park", "If you leave me now", "Hard to say I'm sorry", "You're the inspiration", entre otros.</p>
+<p>La cantante <a href="/wiki/Minnie_Riperton" title="Minnie Riperton">Minnie Riperton</a>, con una impresionante voz y un colorido y variado registro, además de ser un ícono del <a href="/wiki/Soul" title="Soul">Soul</a>, es proveniente de Chicago.</p>
+<p>Uno de los grupos musicales más influyentes de mediados de los años 90 en la música alternativa fue <a href="/wiki/The_Smashing_Pumpkins" title="The Smashing Pumpkins">The Smashing Pumpkins</a>, proveniente de Chicago.</p>
+<p>En Chicago nace además lo que hoy conocemos como <a href="/wiki/House" title="House">House</a>, el nombre proviene del club <a href="/w/index.php?title=The_Warehouse&amp;action=edit&amp;redlink=1" class="new" title="The Warehouse (aún no redactado)">The Warehouse</a>, donde apareció, todas las variantes actuales del House vienen de la rama del House primitivo del <a href="/w/index.php?title=Chicago_House&amp;action=edit&amp;redlink=1" class="new" title="Chicago House (aún no redactado)">Chicago House</a>.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Chicago&amp;action=edit&amp;section=9" title="Editar sección: Educación">editar</a>]</span> <span class="mw-headline" id="Educaci.C3.B3n">Educación</span></h2>
+<h3><span class="editsection">[<a href="/w/index.php?title=Chicago&amp;action=edit&amp;section=10" title="Editar sección: Educación pública">editar</a>]</span> <span class="mw-headline" id="Educaci.C3.B3n_p.C3.BAblica">Educación pública</span></h3>
+<div class="thumb tright">
+<div class="thumbinner" style="width:182px;"><a href="/wiki/Archivo:Chicago_Library_Downtown.png" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Chicago_Library_Downtown.png/180px-Chicago_Library_Downtown.png" width="180" height="135" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/Archivo:Chicago_Library_Downtown.png" class="internal" title="Aumentar"><img src="http://bits.wikimedia.org/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Harold Washington Library, la biblioteca central de la <a href="/wiki/Biblioteca_P%C3%BAblica_de_Chicago" title="Biblioteca Pública de Chicago">Biblioteca Pública de Chicago</a></div>
+</div>
+</div>
+<p><a href="/w/index.php?title=Chicago_Public_Schools&amp;action=edit&amp;redlink=1" class="new" title="Chicago Public Schools (aún no redactado)">Chicago Public Schools</a> (CPS) es la autoridad que controla alrededor de 600 escuelas públicas elementales y secundarias en Chicago. Actualmente es la tercera autoridad más grande de los <a href="/wiki/Estados_Unidos" title="Estados Unidos">Estados Unidos</a>, con más de 400.000 estudiantes inscritos. Es dirigida por <a href="/wiki/Arne_Duncan" title="Arne Duncan">Arne Duncan</a>. La CPS incluye además a cierto número de escuelas de admisión selectiva, incluyendo algunas de las mejores del país. <a href="/w/index.php?title=Whitney_Young_Magnet_High_School&amp;action=edit&amp;redlink=1" class="new" title="Whitney Young Magnet High School (aún no redactado)">Whitney Young Magnet High School</a> (ganadores consecutivos de <i>United States Academic Decathlon</i>), <a href="/w/index.php?title=Walter_Payton_College_Prep&amp;action=edit&amp;redlink=1" class="new" title="Walter Payton College Prep (aún no redactado)">Walter Payton College Prep</a> y <a href="/w/index.php?title=Northside_College_Preparatory_High_School&amp;action=edit&amp;redlink=1" class="new" title="Northside College Preparatory High School (aún no redactado)">Northside College Preparatory High School</a> son algunas de sus escuelas destacadas.</p>
+<p>La <a href="/wiki/Biblioteca_P%C3%BAblica_de_Chicago" title="Biblioteca Pública de Chicago">Biblioteca Pública de Chicago</a> tiene bibliotecas públicas.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Chicago&amp;action=edit&amp;section=11" title="Editar sección: Salud">editar</a>]</span> <span class="mw-headline" id="Salud">Salud</span></h2>
+<p><a href="/wiki/Estados_Unidos" title="Estados Unidos">Estados Unidos</a> posee el sistema de salud más grande del mundo y Chicago podría considerarse como la capital de este sistema. Es el hogar del <a href="/w/index.php?title=Illinois_Medical_District&amp;action=edit&amp;redlink=1" class="new" title="Illinois Medical District (aún no redactado)">Illinois Medical District</a>, que incluye la <a href="/w/index.php?title=Rush_University_Medical_Center&amp;action=edit&amp;redlink=1" class="new" title="Rush University Medical Center (aún no redactado)">Rush University Medical Center</a>, el centro médico de la <a href="/wiki/Universidad_de_Illinois" title="Universidad de Illinois">Universidad de Illinois</a>, el <a href="/w/index.php?title=Cook_County_Hospital&amp;action=edit&amp;redlink=1" class="new" title="Cook County Hospital (aún no redactado)">Cook County Hospital</a>, la <a href="/wiki/Asociaci%C3%B3n_M%C3%A9dica_Estadounidense" title="Asociación Médica Estadounidense">Asociación Médica Estadounidense</a>, la <a href="/w/index.php?title=Asociaci%C3%B3n_Estadounidense_de_Hospitales&amp;action=edit&amp;redlink=1" class="new" title="Asociación Estadounidense de Hospitales (aún no redactado)">Asociación Estadounidense de Hospitales</a>, la <a href="/w/index.php?title=Asociaci%C3%B3n_Dental_Estadounidense&amp;action=edit&amp;redlink=1" class="new" title="Asociación Dental Estadounidense (aún no redactado)">Asociación Dental Estadounidense</a> y la <a href="/w/index.php?title=Colegio_Estadounidense_de_Cirujanos&amp;action=edit&amp;redlink=1" class="new" title="Colegio Estadounidense de Cirujanos (aún no redactado)">Colegio Estadounidense de Cirujanos</a>. La <a href="/wiki/Universidad_de_Illinois" title="Universidad de Illinois">Universidad de Illinois</a> posee una de las escuelas de medicina más grandes de <a href="/wiki/Estados_Unidos" title="Estados Unidos">Estados Unidos</a>. Chicago es además, hogar de numerosas escuelas médicas de reconocimiento nacional, entre las que se incluye la escuela de medicina de la <a href="/wiki/Universidad_de_Illinois" title="Universidad de Illinois">University of Illinois</a>, el <a href="/w/index.php?title=Rush_Medical_College&amp;action=edit&amp;redlink=1" class="new" title="Rush Medical College (aún no redactado)">Rush Medical College</a>, el <a href="/w/index.php?title=Chicago_Medical_School&amp;action=edit&amp;redlink=1" class="new" title="Chicago Medical School (aún no redactado)">Chicago Medical School</a>, la <a href="/wiki/Universidad_de_Chicago" title="Universidad de Chicago">University of Chicago</a>, la <a href="/w/index.php?title=Loyola_University_Chicago&amp;action=edit&amp;redlink=1" class="new" title="Loyola University Chicago (aún no redactado)">Loyola University Chicago</a> y la <a href="/wiki/Northwestern_University" title="Northwestern University" class="mw-redirect">Northwestern University</a>. La <a href="/w/index.php?title=Asociaci%C3%B3n_Osteop%C3%A1tica_Estadounidense&amp;action=edit&amp;redlink=1" class="new" title="Asociación Osteopática Estadounidense (aún no redactado)">Asociación Osteopática Estadounidense</a> se encuentra localizada en Chicago.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Chicago&amp;action=edit&amp;section=12" title="Editar sección: Deporte">editar</a>]</span> <span class="mw-headline" id="Deporte">Deporte</span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width:222px;"><a href="/wiki/Archivo:Wrigley-field-sign-daytime-in-chicago-ill-usa.jpg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Wrigley-field-sign-daytime-in-chicago-ill-usa.jpg/220px-Wrigley-field-sign-daytime-in-chicago-ill-usa.jpg" width="220" height="150" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/Archivo:Wrigley-field-sign-daytime-in-chicago-ill-usa.jpg" class="internal" title="Aumentar"><img src="http://bits.wikimedia.org/skins-1.5/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Wrigley Field.</div>
+</div>
+</div>
+<p><a href="/wiki/Chicago_Bulls" title="Chicago Bulls">Chicago Bulls</a> es uno de los equipos de baloncesto más conocidos del mundo gracias a la popularidad de uno de los mejores baloncestistas del mundo: <a href="/wiki/Michael_Jordan" title="Michael Jordan">Michael Jordan</a>.</p>
+<p><a href="/wiki/Chicago_Bears" title="Chicago Bears">Chicago Bears</a> es el equipo de fútbol americano.</p>
+<p><a href="/wiki/Chicago_Fire" title="Chicago Fire">Chicago Fire</a> es el equipo de fútbol "soccer".</p>
+<p>Chicago fue <a href="/wiki/Chicago_2016" title="Chicago 2016" class="mw-redirect">ciudad candidata</a> a la organización de los <a href="/wiki/Juegos_Ol%C3%ADmpicos_de_2016" title="Juegos Olímpicos de 2016" class="mw-redirect">Juegos Olímpicos de 2016</a>.Fue eliminada de la candidatura a los Juegos Olímpicos de 2016 en la primera ronda de votaciones del día 2 de octubre de 2009.</p>
+<table class="wikitable">
+<tr bgcolor="#CCCCCC">
+<th>Equipo</th>
+<th>Deporte</th>
+<th>Liga</th>
+<th>Estadio</th>
+</tr>
+<tr>
+<td><a href="/wiki/Chicago_Bears" title="Chicago Bears">Chicago Bears</a></td>
+<td><a href="/wiki/F%C3%BAtbol_americano" title="Fútbol americano">Fútbol americano</a></td>
+<td><a href="/wiki/National_Football_League" title="National Football League">National Football League</a></td>
+<td><a href="/wiki/Soldier_Field" title="Soldier Field">Soldier Field</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Chicago_Blackhawks" title="Chicago Blackhawks">Chicago Blackhawks</a></td>
+<td><a href="/wiki/Hockey_sobre_hielo" title="Hockey sobre hielo">Hockey sobre hielo</a></td>
+<td><a href="/wiki/National_Hockey_League" title="National Hockey League">National Hockey League</a></td>
+<td><a href="/wiki/United_Center" title="United Center">United Center</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Chicago_Bulls" title="Chicago Bulls">Chicago Bulls</a></td>
+<td><a href="/wiki/Baloncesto" title="Baloncesto">Baloncesto</a></td>
+<td><a href="/wiki/National_Basketball_Association" title="National Basketball Association">National Basketball Association</a></td>
+<td><a href="/wiki/United_Center" title="United Center">United Center</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Chicago_Cubs" title="Chicago Cubs">Chicago Cubs</a></td>
+<td><a href="/wiki/B%C3%A9isbol" title="Béisbol">Béisbol</a></td>
+<td><a href="/wiki/Major_League_Baseball" title="Major League Baseball" class="mw-redirect">Major League Baseball</a><b>:</b> <a href="/wiki/National_League" title="National League" class="mw-redirect">National League</a></td>
+<td><a href="/wiki/Wrigley_Field" title="Wrigley Field">Wrigley Field</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Chicago_Fire" title="Chicago Fire">Chicago Fire</a></td>
+<td><a href="/wiki/F%C3%BAtbol" title="Fútbol">Fútbol</a></td>
+<td><a href="/wiki/Major_League_Soccer" title="Major League Soccer">Major League Soccer</a></td>
+<td><a href="/wiki/Toyota_Park" title="Toyota Park">Toyota Park</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Chicago_White_Sox" title="Chicago White Sox">Chicago White Sox</a></td>
+<td><a href="/wiki/B%C3%A9isbol" title="Béisbol">Béisbol</a></td>
+<td><a href="/wiki/Major_League_Baseball" title="Major League Baseball" class="mw-redirect">Major League Baseball</a><b>:</b> <a href="/wiki/American_League" title="American League" class="mw-redirect">American League</a></td>
+<td><a href="/wiki/U.S._Cellular_Field" title="U.S. Cellular Field">U.S. Cellular Field (New Comiskey Park)</a></td>
+</tr>
+</table>
+<h2><span class="editsection">[<a href="/w/index.php?title=Chicago&amp;action=edit&amp;section=13" title="Editar sección: Ciudades hermanadas">editar</a>]</span> <span class="mw-headline" id="Ciudades_hermanadas">Ciudades hermanadas</span></h2>
+<ul>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Ghana.svg" class="image" title="Bandera de Ghana"><img alt="Bandera de Ghana" src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Ghana.svg/20px-Flag_of_Ghana.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Accra" title="Accra">Accra</a>, <a href="/wiki/Gran_Accra" title="Gran Accra">Gran Accra</a>, <a href="/wiki/Ghana" title="Ghana">Ghana</a>, desde 1989</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Jordan.svg" class="image"><img alt="Flag of Jordan.svg" src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_Jordan.svg/20px-Flag_of_Jordan.svg.png" width="20" height="10" class="thumbborder" /></a></span> <a href="/wiki/Amm%C3%A1n" title="Ammán">Ammán</a>, <a href="/wiki/Amm%C3%A1n" title="Ammán">Ammán</a>, <a href="/wiki/Amm%C3%A1n" title="Ammán">Ammán</a>, <a href="/wiki/Jordania" title="Jordania">Jordania</a>, desde 2004</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Peru.svg" class="image" title="Bandera del Perú"><img alt="Bandera del Perú" src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Flag_of_Peru.svg/20px-Flag_of_Peru.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Arequipa" title="Arequipa">Arequipa</a>, <a href="/wiki/Per%C3%BA" title="Perú">Perú</a>, desde 2005</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Greece.svg" class="image" title="Bandera de Grecia"><img alt="Bandera de Grecia" src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Greece.svg/20px-Flag_of_Greece.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Atenas" title="Atenas">Atenas</a>, <a href="/wiki/%C3%81tica" title="Ática" class="mw-redirect">Ática</a>, <a href="/wiki/Grecia" title="Grecia">Grecia</a>, desde 1997</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Venezuela.svg" class="image" title="Bandera de Venezuela"><img alt="Bandera de Venezuela" src="http://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Flag_of_Venezuela.svg/20px-Flag_of_Venezuela.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Barquisimeto" title="Barquisimeto">Barquisimeto</a>, <a href="/wiki/Venezuela" title="Venezuela">Venezuela</a>, desde 2009</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_South_Korea.svg" class="image" title="Bandera de Corea del Sur"><img alt="Bandera de Corea del Sur" src="http://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/20px-Flag_of_South_Korea.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Bus%C3%A1n" title="Busán">Busán</a>, <a href="/w/index.php?title=Yeongnam&amp;action=edit&amp;redlink=1" class="new" title="Yeongnam (aún no redactado)">Yeongnam</a>, <a href="/wiki/Corea_del_Sur" title="Corea del Sur">Corea del Sur</a>, desde 2007</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Serbia.svg" class="image" title="Bandera de Serbia"><img alt="Bandera de Serbia" src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Flag_of_Serbia.svg/20px-Flag_of_Serbia.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Belgrado" title="Belgrado">Belgrado</a>, <a href="/wiki/Ciudad_de_Belgrado" title="Ciudad de Belgrado" class="mw-redirect">Ciudad de Belgrado</a>, <a href="/wiki/Serbia" title="Serbia">Serbia</a>, desde 2005</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_the_United_Kingdom.svg" class="image" title="Bandera del Reino Unido"><img alt="Bandera del Reino Unido" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Flag_of_the_United_Kingdom.svg/20px-Flag_of_the_United_Kingdom.svg.png" width="20" height="10" class="thumbborder" /></a></span> <a href="/wiki/Birmingham" title="Birmingham">Birmingham</a>, <a href="/w/index.php?title=Ciudad_de_Birmingham&amp;action=edit&amp;redlink=1" class="new" title="Ciudad de Birmingham (aún no redactado)">Ciudad de Birmingham</a>, <a href="/w/index.php?title=Regi%C3%B3n_de_Midlands_Occidental&amp;action=edit&amp;redlink=1" class="new" title="Región de Midlands Occidental (aún no redactado)">Región de Midlands Occidental</a>, <a href="/wiki/Inglaterra" title="Inglaterra">Inglaterra</a>, <a href="/wiki/Reino_Unido" title="Reino Unido">Reino Unido</a>, desde 1993</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Morocco.svg" class="image" title="Bandera de Marruecos"><img alt="Bandera de Marruecos" src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flag_of_Morocco.svg/20px-Flag_of_Morocco.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Casablanca" title="Casablanca">Casablanca</a>, <a href="/w/index.php?title=Regi%C3%B3n_de_Casablanca&amp;action=edit&amp;redlink=1" class="new" title="Región de Casablanca (aún no redactado)">Región de Casablanca</a>, <a href="/wiki/Marruecos" title="Marruecos">Marruecos</a>, desde 1982</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_India.svg" class="image" title="Bandera de India"><img alt="Bandera de India" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/20px-Flag_of_India.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Nueva_Delhi" title="Nueva Delhi">Nueva Delhi</a>, <a href="/wiki/Delhi" title="Delhi">Delhi</a>, <a href="/wiki/India" title="India">India</a>, desde 2001</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_South_Africa.svg" class="image" title="Bandera de Sudáfrica"><img alt="Bandera de Sudáfrica" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/20px-Flag_of_South_Africa.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Durban" title="Durban">Durban</a>, <a href="/w/index.php?title=Kwazulu-Natal&amp;action=edit&amp;redlink=1" class="new" title="Kwazulu-Natal (aún no redactado)">Kwazulu-Natal</a>, <a href="/wiki/Sud%C3%A1frica" title="Sudáfrica">Sudáfrica</a>, desde 1973</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Ireland.svg" class="image" title="Bandera de Irlanda"><img alt="Bandera de Irlanda" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Flag_of_Ireland.svg/20px-Flag_of_Ireland.svg.png" width="20" height="10" class="thumbborder" /></a></span> <a href="/wiki/Galway" title="Galway">Galway</a>, <a href="/wiki/Galway" title="Galway">Galway</a>, <a href="/wiki/Irlanda" title="Irlanda">Irlanda</a>, desde 1997</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Sweden.svg" class="image" title="Bandera de Suecia"><img alt="Bandera de Suecia" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Sweden.svg/20px-Flag_of_Sweden.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Gotemburgo" title="Gotemburgo">Gotemburgo</a>, <a href="/w/index.php?title=V%C3%A4stra_Got%C3%A4land&amp;action=edit&amp;redlink=1" class="new" title="Västra Gotäland (aún no redactado)">Västra Gotäland</a>, <a href="/wiki/Suecia" title="Suecia">Suecia</a>, desde 1987</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Germany.svg" class="image" title="Bandera de Alemania"><img alt="Bandera de Alemania" src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/20px-Flag_of_Germany.svg.png" width="20" height="12" class="thumbborder" /></a></span> <a href="/wiki/Hamburgo" title="Hamburgo">Hamburgo</a>, <a href="/wiki/Hamburgo" title="Hamburgo">Hamburgo</a>, <a href="/wiki/Alemania" title="Alemania">Alemania</a>, desde 1994</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Ukraine.svg" class="image" title="Bandera de Ucrania"><img alt="Bandera de Ucrania" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/20px-Flag_of_Ukraine.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Kiev" title="Kiev">Kiev</a>, <a href="/wiki/Kiev" title="Kiev">Kiev</a>, <a href="/wiki/Ucrania" title="Ucrania">Ucrania</a>, desde 1991</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Switzerland.svg" class="image"><img alt="Flag of Switzerland.svg" src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/20px-Flag_of_Switzerland.svg.png" width="20" height="20" class="thumbborder" /></a></span> <a href="/wiki/Lucerna" title="Lucerna">Lucerna</a>, <a href="/wiki/Lucerna" title="Lucerna">Lucerna</a>, <a href="/wiki/Suiza" title="Suiza">Suiza</a>, desde 1998</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Mexico.svg" class="image" title="Bandera de México"><img alt="Bandera de México" src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/20px-Flag_of_Mexico.svg.png" width="20" height="11" class="thumbborder" /></a></span> <a href="/wiki/Ciudad_de_M%C3%A9xico" title="Ciudad de México" class="mw-redirect">Ciudad de México</a>, <a href="/wiki/Distrito_Federal" title="Distrito Federal">Distrito Federal</a>, <a href="/wiki/M%C3%A9xico" title="México">México</a>, desde 1991</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Pakistan.svg" class="image"><img alt="Flag of Pakistan.svg" src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Flag_of_Pakistan.svg/20px-Flag_of_Pakistan.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Lahore" title="Lahore">Lahore</a>, <a href="/wiki/Punjab" title="Punjab" class="mw-redirect">Punjab</a>, <a href="/wiki/Paquist%C3%A1n" title="Paquistán" class="mw-redirect">Paquistán</a>, desde 2007</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Italy.svg" class="image" title="Bandera de Italia"><img alt="Bandera de Italia" src="http://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/20px-Flag_of_Italy.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Mil%C3%A1n" title="Milán">Milán</a>, <a href="/wiki/Lombard%C3%ADa" title="Lombardía">Lombardía</a>, <a href="/wiki/Italia" title="Italia">Italia</a>, desde 1973</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Russia.svg" class="image" title="Bandera de Rusia"><img alt="Bandera de Rusia" src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Russia.svg/20px-Flag_of_Russia.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Mosc%C3%BA" title="Moscú">Moscú</a>, <a href="/w/index.php?title=Ciudad_Federal_de_Mosc%C3%BA&amp;action=edit&amp;redlink=1" class="new" title="Ciudad Federal de Moscú (aún no redactado)">Ciudad Federal de Moscú</a>, <a href="/wiki/Rusia" title="Rusia">Rusia</a>, desde 1997</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Japan.svg" class="image" title="Bandera de Japón"><img alt="Bandera de Japón" src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/20px-Flag_of_Japan.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Osaka" title="Osaka">Osaka</a>, <a href="/wiki/Osaka" title="Osaka">Osaka</a>, <a href="/wiki/Jap%C3%B3n" title="Japón">Japón</a>, desde 1973</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_France.svg" class="image" title="Bandera de Francia"><img alt="Bandera de Francia" src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/20px-Flag_of_France.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Par%C3%ADs" title="París">París</a>, <a href="/wiki/Isla_de_Francia" title="Isla de Francia">Isla de Francia</a>, <a href="/wiki/Francia" title="Francia">Francia</a>, desde 1996</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Israel.svg" class="image" title="Bandera de Israel"><img alt="Bandera de Israel" src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Flag_of_Israel.svg/20px-Flag_of_Israel.svg.png" width="20" height="15" class="thumbborder" /></a></span> <a href="/wiki/Petaj_Tikva" title="Petaj Tikva">Petaj Tikva</a>, <a href="/wiki/Centro" title="Centro">Centro</a>, <a href="/wiki/Israel" title="Israel">Israel</a>, desde 1994</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_the_Czech_Republic.svg" class="image" title="Bandera de la República Checa"><img alt="Bandera de la República Checa" src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/20px-Flag_of_the_Czech_Republic.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Praga" title="Praga">Praga</a>, <a href="/wiki/Praga" title="Praga">Praga</a>, <a href="/wiki/Rep%C3%BAblica_Checa" title="República Checa">República Checa</a>, desde 1990</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_the_People%27s_Republic_of_China.svg" class="image" title="Bandera de la República Popular China"><img alt="Bandera de la República Popular China" src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/20px-Flag_of_the_People%27s_Republic_of_China.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Shangh%C3%A1i" title="Shanghái">Shanghái</a>, <a href="/wiki/Shangh%C3%A1i" title="Shanghái">Shanghái</a>, <a href="/wiki/China" title="China" class="mw-redirect">China</a>, desde 1985</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_the_People%27s_Republic_of_China.svg" class="image" title="Bandera de la República Popular China"><img alt="Bandera de la República Popular China" src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/20px-Flag_of_the_People%27s_Republic_of_China.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Shenyang" title="Shenyang">Shenyang</a>, <a href="/wiki/Liaoning" title="Liaoning">Liaoning</a>, <a href="/wiki/China" title="China" class="mw-redirect">China</a>, desde 1985</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Canada.svg" class="image" title="Bandera de Canadá"><img alt="Bandera de Canadá" src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Flag_of_Canada.svg/20px-Flag_of_Canada.svg.png" width="20" height="10" class="thumbborder" /></a></span> <a href="/wiki/Toronto" title="Toronto">Toronto</a>, <a href="/wiki/Ontario" title="Ontario">Ontario</a>, <a href="/wiki/Canad%C3%A1" title="Canadá">Canadá</a>, desde 1991</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Lithuania.svg" class="image" title="Bandera de Lituania"><img alt="Bandera de Lituania" src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Flag_of_Lithuania.svg/20px-Flag_of_Lithuania.svg.png" width="20" height="12" class="thumbborder" /></a></span> <a href="/wiki/Vilna" title="Vilna">Vilna</a>, <a href="/wiki/Vilna" title="Vilna">Vilna</a>, <a href="/wiki/Lituania" title="Lituania">Lituania</a>, desde 1993</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Poland.svg" class="image" title="Bandera de Polonia"><img alt="Bandera de Polonia" src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_Poland.svg/20px-Flag_of_Poland.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Varsovia" title="Varsovia">Varsovia</a>, <a href="/wiki/Mazovia" title="Mazovia" class="mw-redirect">Mazovia</a>, <a href="/wiki/Polonia" title="Polonia">Polonia</a>, desde 1960</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Colombia.svg" class="image" title="Bandera de Colombia"><img alt="Bandera de Colombia" src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/20px-Flag_of_Colombia.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Bogot%C3%A1" title="Bogotá" class="mw-redirect">Bogotá</a>, <a href="/wiki/Bogot%C3%A1" title="Bogotá" class="mw-redirect">Bogotá</a>, <a href="/wiki/Colombia" title="Colombia">Colombia</a>, desde 2009</li>
+<li><span class="flagicon"><a href="/wiki/Archivo:Flag_of_Spain.svg" class="image" title="Bandera de España"><img alt="Bandera de España" src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/20px-Flag_of_Spain.svg.png" width="20" height="13" class="thumbborder" /></a></span> <a href="/wiki/Barcelona" title="Barcelona">Barcelona</a>, desde 2009</li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=Chicago&amp;action=edit&amp;section=14" title="Editar sección: Personajes famosos">editar</a>]</span> <span class="mw-headline" id="Personajes_famosos">Personajes famosos</span></h2>
+<ul>
+<li><a href="/wiki/CM_Punk" title="CM Punk" class="mw-redirect">CM Punk</a>, luchador profesional (1978)</li>
+<li><a href="/wiki/Derrick_Rose" title="Derrick Rose">Derrick Rose</a>, jugador de baloncesto</li>
+<li><a href="/wiki/Anastacia_(cantante)" title="Anastacia (cantante)">Anastacia</a>, cantante</li>
+<li><a href="/wiki/Robin_Williams" title="Robin Williams">Robin Williams</a>, actor (1951)</li>
+<li><a href="/wiki/Billy_Corgan" title="Billy Corgan">Billy Corgan</a>, cantante (1967)</li>
+<li><a href="/wiki/Michael_Jordan" title="Michael Jordan">Michael Jordan</a>, ex-jugador de baloncesto e icono del baloncesto mundial, considerado el mejor jugador.</li>
+<li><a href="/wiki/Harrison_Ford" title="Harrison Ford">Harrison Ford</a>, actor (1942)</li>
+<li><a href="/wiki/Philip_K._Dick" title="Philip K. Dick">Philip K. Dick</a>, escritor (1928-1982)</li>
+<li><a href="/wiki/Bob_Bryar" title="Bob Bryar">Bob Bryar</a>, Baterista</li>
+<li><a href="/wiki/Patrick_Stump" title="Patrick Stump">Patrick Stump</a>, cantante</li>
+<li><a href="/wiki/Pete_Wentz" title="Pete Wentz">Pete Wentz</a>, bajista</li>
+<li><a href="/wiki/Joe_Trohman" title="Joe Trohman">Joe Trohman</a>, guitarrista</li>
+<li><a href="/wiki/Andrew_Hurley" title="Andrew Hurley">Andrew Hurley</a>, baterista</li>
+<li><a href="/wiki/William_Beckett" title="William Beckett">William Beckett</a>, cantante</li>
+<li><a href="/wiki/R._Kelly" title="R. Kelly">R. Kelly</a>, cantante (1967)</li>
+<li><a href="/wiki/Sarah_Wayne_Callies" title="Sarah Wayne Callies">Sarah Wayne Callies</a>, actriz</li>
+<li><a href="/wiki/Jennifer_Morrison" title="Jennifer Morrison">Jennifer Morrison</a>, actriz</li>
+<li><a href="/wiki/Jennifer_Beals" title="Jennifer Beals">Jennifer Beals</a>, actriz</li>
+<li><a href="/wiki/Bernie_Mac" title="Bernie Mac">Bernie Mac</a>, actor</li>
+<li><a href="/wiki/Barack_Obama" title="Barack Obama">Barack Obama</a>, presidente</li>
+<li><a href="/wiki/Edward_Cullen" title="Edward Cullen">Edward Cullen</a>,personaje de saga Crepúsculo.</li>
+<li><a href="/wiki/Kanye_West" title="Kanye West">Kanye West</a>, productor y rapero, se trasladó a Chicago a los tres años y ha vivido allí la mayor parte de su vida.</li>
+</ul>
+<p>(<a href="/w/index.php?title=Tim_Mcilrath&amp;action=edit&amp;redlink=1" class="new" title="Tim Mcilrath (aún no redactado)">Tim Mcilrath</a>, <a href="/w/index.php?title=Joe_Pr%C3%ADncipe&amp;action=edit&amp;redlink=1" class="new" title="Joe Príncipe (aún no redactado)">Joe Príncipe</a>, <a href="/w/index.php?title=Brandon_Barnes&amp;action=edit&amp;redlink=1" class="new" title="Brandon Barnes (aún no redactado)">Brandon Barnes</a> y <a href="/w/index.php?title=Zach_Blair&amp;action=edit&amp;redlink=1" class="new" title="Zach Blair (aún no redactado)">Zach Blair</a> son miembros de la banda <a href="/wiki/Rise_Against" title="Rise Against">Rise Against</a> aunque sólo Tim y Joe nacieron en <a href="/wiki/Illinois" title="Illinois">Illinois</a>)</p>
+<p>(<a href="/wiki/Pete_Wentz" title="Pete Wentz">Pete Wentz</a>, <a href="/wiki/Patrick_Stump" title="Patrick Stump">Patrick Stump</a>, <a href="/wiki/Joe_Trohman" title="Joe Trohman">Joe Trohman</a> y <a href="/wiki/Andrew_Hurley" title="Andrew Hurley">Andrew Hurley</a> son miembros de la banda <a href="/wiki/Fall_Out_Boy" title="Fall Out Boy">Fall Out Boy</a> formada en Chicago aunque solo Patrick y Pete nacieron en <a href="/wiki/Illinois" title="Illinois">Illinois</a>).</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Chicago&amp;action=edit&amp;section=15" title="Editar sección: Véase también">editar</a>]</span> <span class="mw-headline" id="V.C3.A9ase_tambi.C3.A9n">Véase también</span></h2>
+<ul>
+<li><a href="/wiki/Archivo:Chicago_city_seal.png" class="image" title="Ver el portal sobre Chicago"><img alt="Ver el portal sobre Chicago" src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Chicago_city_seal.png/20px-Chicago_city_seal.png" width="20" height="21" /></a> <a href="/wiki/Portal:Chicago" title="Portal:Chicago">Portal:Chicago</a>. Contenido relacionado con <b><strong class="selflink">Chicago</strong></b>.</li>
+<li><a href="/wiki/Mies_van_der_Rohe" title="Mies van der Rohe" class="mw-redirect">Mies van der Rohe</a></li>
+<li><a href="/wiki/Torre_Sears" title="Torre Sears" class="mw-redirect">Torre Sears</a></li>
+<li><a href="/wiki/John_Hancock_Center" title="John Hancock Center">John Hancock Center</a></li>
+<li><a href="/wiki/Millenium_park" title="Millenium park">Millenium park</a></li>
+<li><a href="/wiki/Templo_de_Chicago" title="Templo de Chicago">Templo de Chicago</a></li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=Chicago&amp;action=edit&amp;section=16" title="Editar sección: Referencias">editar</a>]</span> <span class="mw-headline" id="Referencias">Referencias</span></h2>
+<div class="listaref references-small">
+<ol class="references">
+<li id="cite_note-0"><a href="#cite_ref-0">↑</a> <a href="http://factfinder.census.gov/servlet/STTable?_bm=y&amp;-geo_id=16000US1714000&amp;-qr_name=ACS_2006_EST_G00_S0501&amp;-ds_name=ACS_2006_EST_G00_&amp;-redoLog=false" class="external text" rel="nofollow">U.S. Census</a>, (en inglés) Consultado el 2008-11-05</li>
+<li id="cite_note-1"><a href="#cite_ref-1">↑</a> <a href="http://www.encyclopedia.chicagohistory.org/pages/2468.html" class="external text" rel="nofollow"><i>Encyclopedia of Chicago</i></a>, (en inglés) Consultado el 2008-11-05</li>
+<li id="cite_note-2"><a href="#cite_ref-2">↑</a> <a href="http://www.chicagobikes.org/" class="external text" rel="nofollow"><i>Chicago Bike Program</i></a>, (en inglés) Consultado el 2008-11-05</li>
+</ol>
+</div>
+<h2><span class="editsection">[<a href="/w/index.php?title=Chicago&amp;action=edit&amp;section=17" title="Editar sección: Bibliografía">editar</a>]</span> <span class="mw-headline" id="Bibliograf.C3.ADa">Bibliografía</span></h2>
+<ul>
+<li><a href="http://www.cityofchicago.org/" class="external text" rel="nofollow">City of Chicago</a></li>
+<li><i>The Encyclopedia of Chicago</i> <a href="/wiki/Especial:FuentesDeLibros/0226310159" class="internal mw-magiclink-isbn">ISBN 0-226-31015-9</a></li>
+<li><a href="http://www.encyclopedia.chicagohistory.org/" class="external text" rel="nofollow">The Encyclopedia of Chicago</a>, versión en línea.</li>
+<li><i>City of the Century: The Epic of Chicago and the Making of America</i> por Donald L. Miller <a href="/wiki/Especial:FuentesDeLibros/0684801949" class="internal mw-magiclink-isbn">ISBN 0-684-80194-9</a></li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=Chicago&amp;action=edit&amp;section=18" title="Editar sección: Enlaces externos">editar</a>]</span> <span class="mw-headline" id="Enlaces_externos">Enlaces externos</span></h2>
+<ul>
+<li><a href="/wiki/Archivo:Seal_of_Illinois.svg" class="image" title="Ver el portal sobre Chicago"><img alt="Ver el portal sobre Chicago" src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Seal_of_Illinois.svg/20px-Seal_of_Illinois.svg.png" width="20" height="20" /></a> <a href="/wiki/Portal:Illinois" title="Portal:Illinois">Portal:Illinois</a>. Contenido relacionado con <b><a href="/wiki/Illinois" title="Illinois">Illinois</a></b>.</li>
+<li><a href="/wiki/Archivo:Commons-logo.svg" class="image" title="Colabora en Commons."><img alt="Colabora en Commons." src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/15px-Commons-logo.svg.png" width="15" height="20" /></a> <a href="/wiki/Wikimedia_Commons" title="Wikimedia Commons">Wikimedia Commons</a> alberga contenido multimedia sobre <b><a href="http://commons.wikimedia.org/wiki/Chicago" class="extiw" title="commons:Chicago">Chicago</a></b>.<span class="interProject"><a href="http://commons.wikimedia.org/wiki/Chicago" class="extiw" title="commons:Chicago">Commons</a></span></li>
+<li><a href="http://www.cityofchicago.org/" class="external text" rel="nofollow">City of Chicago</a>, sitio web oficial en inglés.</li>
+<li><a href="http://www.chicagotraveler.com/" class="external text" rel="nofollow">Convention &amp; Visitors Bureau</a>.</li>
+<li><a href="http://www.tourismchicago.org/" class="external text" rel="nofollow">Chicago Tourism Information</a>.</li>
+<li><a href="http://www.chicagoneighborhoods.cc/" class="external text" rel="nofollow">Guía Sobre Barrios</a>, sitio en inglés.</li>
+<li><a href="http://www.hispago.com/mas-info/chicago-historia/chicago-breve-historia/" class="external text" rel="nofollow">Historia de Chicago</a>.</li>
+<li><a href="http://www.chicagolandchamber.org/" class="external text" rel="nofollow">Chicagoland Chamber of Commerce</a>.</li>
+<li><a href="http://www.encyclopedia.chicagohistory.org/pages/658.html" class="external text" rel="nofollow">The Italian Community of Chicago</a>.</li>
+<li><a href="http://http://www.encyclopedia.chicagohistory.org/pages/982.html" class="external text" rel="nofollow">The Polish Community of Chicago</a>.</li>
+<li><a href="http://www.schwabenverein.org/history.htm" class="external text" rel="nofollow">The German-American Community of Chicago</a>.</li>
+<li><a href="http://www.bh.org.il/Communities/Archive/chicago.asp" class="external text" rel="nofollow">The Jewish Community of Chicago</a>.</li>
+<li><a href="http://www.theatreinchicago.com/" class="external text" rel="nofollow">Theatre In Chicago</a>.</li>
+<li><a href="http://www.hispago.com/" class="external text" rel="nofollow">Guía de Chicago en Español</a>.</li>
+<li><a href="http://www.earthinpictures.com/es/mundo/estados_unidos_de_américa/chicago/" class="external text" rel="nofollow">Imágenes de Chicago</a></li>
+<li><a href="http://www.cervantes.es/seg_nivel/mundo/Marcos_mundo_principal.jsp" class="external text" rel="nofollow">Chicago alberga una sede del</a> <a href="/wiki/Instituto_Cervantes" title="Instituto Cervantes">Instituto Cervantes</a></li>
+</ul>
+<p><span class="bueno" id="de" style="display:none;"></span></p>
+<p><span class="destacado" id="af" style="display:none;"></span></p>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 3629/1000000
+Post-expand include size: 37141/2048000 bytes
+Template argument size: 6593/2048000 bytes
+Expensive parser function count: 3/500
+-->
+
+<!-- Saved in parser cache with key eswiki:pcache:idhash:12924-0!1!0!!es!2 and timestamp 20100311134619 -->
+<div class="printfooter">
+Obtenido de "<a href="http://es.wikipedia.org/wiki/Chicago">http://es.wikipedia.org/wiki/Chicago</a>"</div>
+			<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Especial:Categor%C3%ADas" title="Especial:Categorías">Categoría</a>: <span dir='ltr'><a href="/wiki/Categor%C3%ADa:Chicago" title="Categoría:Chicago">Chicago</a></span></div><div id="mw-hidden-catlinks" class="mw-hidden-cats-hidden">Categorías ocultas: <span dir='ltr'><a href="/wiki/Categor%C3%ADa:Wikipedia:Art%C3%ADculos_buenos_en_w:de" title="Categoría:Wikipedia:Artículos buenos en w:de">Wikipedia:Artículos buenos en w:de</a></span> | <span dir='ltr'><a href="/wiki/Categor%C3%ADa:Wikipedia:Art%C3%ADculos_destacados_en_w:af" title="Categoría:Wikipedia:Artículos destacados en w:af">Wikipedia:Artículos destacados en w:af</a></span></div></div>			<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Vistas</h5>
+		<div class="pBody">
+			<ul lang="es" xml:lang="es">
+	
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Chicago" title="Ver el artículo [c]" accesskey="c">Artículo</a></li>
+				 <li id="ca-talk"><a href="/wiki/Discusi%C3%B3n:Chicago" title="Discusión acerca del artículo [t]" accesskey="t">Discusión</a></li>
+				 <li id="ca-edit"><a href="/w/index.php?title=Chicago&amp;action=edit" title="Puede editar esta página. Por favor, use el botón de previsualización antes de grabar. [e]" accesskey="e">Editar</a></li>
+				 <li id="ca-history"><a href="/w/index.php?title=Chicago&amp;action=history" title="Versiones anteriores de esta página y sus autores [h]" accesskey="h">Historial</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Herramientas personales</h5>
+		<div class="pBody">
+			<ul lang="es" xml:lang="es">
+				<li id="pt-optin-try"><a href="http://es.wikipedia.org/w/index.php?title=Especial:UsabilityInitiativeOptIn&amp;from=Chicago" title="Probar nuevas características" class="no-text-transform">Probar Beta</a></li>
+				<li id="pt-login"><a href="/w/index.php?title=Especial:Entrar&amp;returnto=Chicago" title="Le animamos a registrarse, aunque no es obligatorio [o]" accesskey="o">Registrarse/Entrar</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(http://upload.wikimedia.org/wikipedia/commons/7/74/Wikipedia-logo-es.png);" href="/wiki/Wikipedia:Portada" title="Portada"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div id="p-search" class="portlet">
+		<h5 lang="es" xml:lang="es"><label for="searchInput">Buscar</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/w/index.php" id="searchform">
+				<input type='hidden' name="title" value="Especial:Buscar"/>
+				<input id="searchInput" title="Buscar en este wiki" accesskey="f" value="" name="search" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Ir" title="Ir al artículo con este nombre exacto si existe" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Buscar" title="Busca páginas con este texto." />
+			</form>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5 lang="es" xml:lang="es">Navegación</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/wiki/Wikipedia:Portada" title="Visitar la página principal [z]" accesskey="z">Portada</a></li>
+				<li id="n-portal"><a href="/wiki/Portal:Comunidad" title="Acerca del proyecto, qué puede hacer, dónde encontrar información">Portal de la comunidad</a></li>
+				<li id="n-currentevents"><a href="/wiki/Portal:Actualidad" title="Información de contexto sobre acontecimientos actuales">Actualidad</a></li>
+				<li id="n-recentchanges"><a href="/wiki/Especial:CambiosRecientes" title="La lista de cambios recientes en el wiki [r]" accesskey="r">Cambios recientes</a></li>
+				<li id="n-randompage"><a href="/wiki/Especial:Aleatoria" title="Cargar una página aleatoriamente [x]" accesskey="x">Página aleatoria</a></li>
+				<li id="n-help"><a href="/wiki/Ayuda:Contenidos" title="El lugar para aprender">Ayuda</a></li>
+				<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Donaciones" title="Apóyenos">Donaciones</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-coll-print_export'>
+		<h5 lang="es" xml:lang="es">Imprimir/exportar</h5>
+		<div class='pBody'>
+<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Especial:Libro&amp;bookcmd=book_creator&amp;referer=Chicago" title="Crear un libro o colección de página" rel="nofollow">Crear un libro</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Especial:Libro&amp;bookcmd=render_article&amp;arttitle=Chicago&amp;oldid=34943412&amp;writer=rl" title="Descargar una versión PDF de esta página wiki" rel="nofollow">Descargar como PDF</a></li><li id="t-print"><a href="/w/index.php?title=Chicago&amp;printable=yes" title="Versión imprimible de la página [p]" accesskey="p">Versión para imprimir</a></li></ul>		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5 lang="es" xml:lang="es">Herramientas</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/wiki/Especial:LoQueEnlazaAqu%C3%AD/Chicago" title="Lista de todas las páginas del wiki que enlazan con ésta [j]" accesskey="j">Lo que enlaza aquí</a></li>
+				<li id="t-recentchangeslinked"><a href="/wiki/Especial:CambiosEnEnlazadas/Chicago" title="Cambios recientes en las páginas que enlazan con ésta [k]" accesskey="k">Cambios en enlazadas</a></li>
+<li id="t-upload"><a href="http://commons.wikimedia.org/wiki/Commons:Upload/es" title="Subir imágenes o archivos multimedia [u]" accesskey="u">Subir archivo</a></li>
+<li id="t-specialpages"><a href="/wiki/Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [q]" accesskey="q">Páginas especiales</a></li>
+				<li id="t-permalink"><a href="/w/index.php?title=Chicago&amp;oldid=34943412" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li><li id="t-cite"><a href="/w/index.php?title=Especial:Citar&amp;page=Chicago&amp;id=34943412" title="Información de como citar esta página">Citar este artículo</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5 lang="es" xml:lang="es">En otros idiomas</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-af"><a href="http://af.wikipedia.org/wiki/Chicago">Afrikaans</a></li>
+				<li class="interwiki-an"><a href="http://an.wikipedia.org/wiki/Chicago">Aragonés</a></li>
+				<li class="interwiki-ar"><a href="http://ar.wikipedia.org/wiki/%D8%B4%D9%8A%D9%83%D8%A7%D8%BA%D9%88">العربية</a></li>
+				<li class="interwiki-arc"><a href="http://arc.wikipedia.org/wiki/%DC%AB%DC%9D%DC%A9%DC%93%DC%98">ܐܪܡܝܐ</a></li>
+				<li class="interwiki-az"><a href="http://az.wikipedia.org/wiki/%C3%87ikaqo">Azərbaycan</a></li>
+				<li class="interwiki-bar"><a href="http://bar.wikipedia.org/wiki/Chicago">Boarisch</a></li>
+				<li class="interwiki-be"><a href="http://be.wikipedia.org/wiki/%D0%93%D0%BE%D1%80%D0%B0%D0%B4_%D0%A7%D1%8B%D0%BA%D0%B0%D0%B3%D0%B0">Беларуская</a></li>
+				<li class="interwiki-be-x-old"><a href="http://be-x-old.wikipedia.org/wiki/%D0%A7%D1%8B%D0%BA%D0%B0%D0%B3%D0%B0">Беларуская (тарашкевіца)</a></li>
+				<li class="interwiki-bg"><a href="http://bg.wikipedia.org/wiki/%D0%A7%D0%B8%D0%BA%D0%B0%D0%B3%D0%BE">Български</a></li>
+				<li class="interwiki-bn"><a href="http://bn.wikipedia.org/wiki/%E0%A6%B6%E0%A6%BF%E0%A6%95%E0%A6%BE%E0%A6%97%E0%A7%8B">বাংলা</a></li>
+				<li class="interwiki-br"><a href="http://br.wikipedia.org/wiki/Chicago">Brezhoneg</a></li>
+				<li class="interwiki-bs"><a href="http://bs.wikipedia.org/wiki/Chicago">Bosanski</a></li>
+				<li class="interwiki-ca"><a href="http://ca.wikipedia.org/wiki/Chicago">Català</a></li>
+				<li class="interwiki-cs"><a href="http://cs.wikipedia.org/wiki/Chicago">Česky</a></li>
+				<li class="interwiki-cy"><a href="http://cy.wikipedia.org/wiki/Chicago">Cymraeg</a></li>
+				<li class="interwiki-da"><a href="http://da.wikipedia.org/wiki/Chicago">Dansk</a></li>
+				<li class="interwiki-de"><a href="http://de.wikipedia.org/wiki/Chicago">Deutsch</a></li>
+				<li class="interwiki-diq"><a href="http://diq.wikipedia.org/wiki/Chicago">Zazaki</a></li>
+				<li class="interwiki-el"><a href="http://el.wikipedia.org/wiki/%CE%A3%CE%B9%CE%BA%CE%AC%CE%B3%CE%BF">Ελληνικά</a></li>
+				<li class="interwiki-en"><a href="http://en.wikipedia.org/wiki/Chicago">English</a></li>
+				<li class="interwiki-eo"><a href="http://eo.wikipedia.org/wiki/%C4%88ikago">Esperanto</a></li>
+				<li class="interwiki-et"><a href="http://et.wikipedia.org/wiki/Chicago">Eesti</a></li>
+				<li class="interwiki-eu"><a href="http://eu.wikipedia.org/wiki/Chicago">Euskara</a></li>
+				<li class="interwiki-ext"><a href="http://ext.wikipedia.org/wiki/Chicago">Estremeñu</a></li>
+				<li class="interwiki-fa"><a href="http://fa.wikipedia.org/wiki/%D8%B4%DB%8C%DA%A9%D8%A7%DA%AF%D9%88">فارسی</a></li>
+				<li class="interwiki-fi"><a href="http://fi.wikipedia.org/wiki/Chicago">Suomi</a></li>
+				<li class="interwiki-fo"><a href="http://fo.wikipedia.org/wiki/Chicago">Føroyskt</a></li>
+				<li class="interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Chicago">Français</a></li>
+				<li class="interwiki-fy"><a href="http://fy.wikipedia.org/wiki/Chicago">Frysk</a></li>
+				<li class="interwiki-ga"><a href="http://ga.wikipedia.org/wiki/Chicago">Gaeilge</a></li>
+				<li class="interwiki-gd"><a href="http://gd.wikipedia.org/wiki/Chicago">Gàidhlig</a></li>
+				<li class="interwiki-gl"><a href="http://gl.wikipedia.org/wiki/Chicago,_Illinois">Galego</a></li>
+				<li class="interwiki-haw"><a href="http://haw.wikipedia.org/wiki/Kikako,_%CA%BBIlinoe">Hawai`i</a></li>
+				<li class="interwiki-he"><a href="http://he.wikipedia.org/wiki/%D7%A9%D7%99%D7%A7%D7%92%D7%95">עברית</a></li>
+				<li class="interwiki-hi"><a href="http://hi.wikipedia.org/wiki/%E0%A4%B6%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%97%E0%A5%8B">हिन्दी</a></li>
+				<li class="interwiki-hr"><a href="http://hr.wikipedia.org/wiki/Chicago,_Illinois">Hrvatski</a></li>
+				<li class="interwiki-ht"><a href="http://ht.wikipedia.org/wiki/Chikago">Kreyòl ayisyen</a></li>
+				<li class="interwiki-hu"><a href="http://hu.wikipedia.org/wiki/Chicago">Magyar</a></li>
+				<li class="interwiki-hy"><a href="http://hy.wikipedia.org/wiki/%D5%89%D5%AB%D5%AF%D5%A1%D5%A3%D5%B8">Հայերեն</a></li>
+				<li class="interwiki-id"><a href="http://id.wikipedia.org/wiki/Chicago">Bahasa Indonesia</a></li>
+				<li class="interwiki-io"><a href="http://io.wikipedia.org/wiki/Chicago">Ido</a></li>
+				<li class="interwiki-is"><a href="http://is.wikipedia.org/wiki/Chicago">Íslenska</a></li>
+				<li class="interwiki-it"><a href="http://it.wikipedia.org/wiki/Chicago">Italiano</a></li>
+				<li class="interwiki-iu"><a href="http://iu.wikipedia.org/wiki/%E1%93%B0%E1%96%84%E1%91%AF/siiqaaku">ᐃᓄᒃᑎᑐᑦ/inuktitut</a></li>
+				<li class="interwiki-ja"><a href="http://ja.wikipedia.org/wiki/%E3%82%B7%E3%82%AB%E3%82%B4">日本語</a></li>
+				<li class="interwiki-ka"><a href="http://ka.wikipedia.org/wiki/%E1%83%A9%E1%83%98%E1%83%99%E1%83%90%E1%83%92%E1%83%9D">ქართული</a></li>
+				<li class="interwiki-ko"><a href="http://ko.wikipedia.org/wiki/%EC%8B%9C%EC%B9%B4%EA%B3%A0">한국어</a></li>
+				<li class="interwiki-ku"><a href="http://ku.wikipedia.org/wiki/Chicago">Kurdî / كوردی</a></li>
+				<li class="interwiki-kw"><a href="http://kw.wikipedia.org/wiki/Chicago,_Illinois">Kernowek</a></li>
+				<li class="interwiki-la"><a href="http://la.wikipedia.org/wiki/Sicagum">Latina</a></li>
+				<li class="interwiki-lb"><a href="http://lb.wikipedia.org/wiki/Chicago">Lëtzebuergesch</a></li>
+				<li class="interwiki-li"><a href="http://li.wikipedia.org/wiki/Chicago">Limburgs</a></li>
+				<li class="interwiki-lij"><a href="http://lij.wikipedia.org/wiki/Chicago">Líguru</a></li>
+				<li class="interwiki-lmo"><a href="http://lmo.wikipedia.org/wiki/Chicago">Lumbaart</a></li>
+				<li class="interwiki-lt"><a href="http://lt.wikipedia.org/wiki/%C4%8Cikaga">Lietuvių</a></li>
+				<li class="interwiki-lv"><a href="http://lv.wikipedia.org/wiki/%C4%8Cik%C4%81ga">Latviešu</a></li>
+				<li class="interwiki-mk"><a href="http://mk.wikipedia.org/wiki/%D0%A7%D0%B8%D0%BA%D0%B0%D0%B3%D0%BE">Македонски</a></li>
+				<li class="interwiki-ml"><a href="http://ml.wikipedia.org/wiki/%E0%B4%B7%E0%B4%BF%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B4%BE%E0%B4%97%E0%B5%8B">മലയാളം</a></li>
+				<li class="interwiki-mr"><a href="http://mr.wikipedia.org/wiki/%E0%A4%B6%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%97%E0%A5%8B">मराठी</a></li>
+				<li class="interwiki-ms"><a href="http://ms.wikipedia.org/wiki/Chicago">Bahasa Melayu</a></li>
+				<li class="interwiki-nds"><a href="http://nds.wikipedia.org/wiki/Chicago">Plattdüütsch</a></li>
+				<li class="interwiki-nl"><a href="http://nl.wikipedia.org/wiki/Chicago">Nederlands</a></li>
+				<li class="interwiki-nn"><a href="http://nn.wikipedia.org/wiki/Chicago">‪Norsk (nynorsk)‬</a></li>
+				<li class="interwiki-no"><a href="http://no.wikipedia.org/wiki/Chicago">‪Norsk (bokmål)‬</a></li>
+				<li class="interwiki-oc"><a href="http://oc.wikipedia.org/wiki/Chicago">Occitan</a></li>
+				<li class="interwiki-os"><a href="http://os.wikipedia.org/wiki/%D0%A7%D0%B8%D0%BA%D0%B0%D0%B3%D0%BE">Иронау</a></li>
+				<li class="interwiki-pam"><a href="http://pam.wikipedia.org/wiki/Chicago">Kapampangan</a></li>
+				<li class="interwiki-pdc"><a href="http://pdc.wikipedia.org/wiki/Chicago">Deitsch</a></li>
+				<li class="interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Chicago">Polski</a></li>
+				<li class="interwiki-pnb"><a href="http://pnb.wikipedia.org/wiki/%D8%B4%DA%A9%D8%A7%DA%AF%D9%88">پنجابی</a></li>
+				<li class="interwiki-pt"><a href="http://pt.wikipedia.org/wiki/Chicago">Português</a></li>
+				<li class="interwiki-qu"><a href="http://qu.wikipedia.org/wiki/Chicago">Runa Simi</a></li>
+				<li class="interwiki-ro"><a href="http://ro.wikipedia.org/wiki/Chicago,_Illinois">Română</a></li>
+				<li class="interwiki-ru"><a href="http://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D0%BA%D0%B0%D0%B3%D0%BE">Русский</a></li>
+				<li class="interwiki-sah"><a href="http://sah.wikipedia.org/wiki/%D0%A7%D0%B8%D0%BA%D0%B0%D0%B3%D0%BE">Саха тыла</a></li>
+				<li class="interwiki-scn"><a href="http://scn.wikipedia.org/wiki/Chicagu">Sicilianu</a></li>
+				<li class="interwiki-sco"><a href="http://sco.wikipedia.org/wiki/Chicago">Scots</a></li>
+				<li class="interwiki-sh"><a href="http://sh.wikipedia.org/wiki/Chicago">Srpskohrvatski / Српскохрватски</a></li>
+				<li class="interwiki-simple"><a href="http://simple.wikipedia.org/wiki/Chicago,_Illinois">Simple English</a></li>
+				<li class="interwiki-sk"><a href="http://sk.wikipedia.org/wiki/Chicago">Slovenčina</a></li>
+				<li class="interwiki-sl"><a href="http://sl.wikipedia.org/wiki/Chicago">Slovenščina</a></li>
+				<li class="interwiki-sq"><a href="http://sq.wikipedia.org/wiki/Chicago">Shqip</a></li>
+				<li class="interwiki-sr"><a href="http://sr.wikipedia.org/wiki/%D0%A7%D0%B8%D0%BA%D0%B0%D0%B3%D0%BE">Српски / Srpski</a></li>
+				<li class="interwiki-sv"><a href="http://sv.wikipedia.org/wiki/Chicago">Svenska</a></li>
+				<li class="interwiki-sw"><a href="http://sw.wikipedia.org/wiki/Chicago">Kiswahili</a></li>
+				<li class="interwiki-szl"><a href="http://szl.wikipedia.org/wiki/Chicago">Ślůnski</a></li>
+				<li class="interwiki-ta"><a href="http://ta.wikipedia.org/wiki/%E0%AE%9A%E0%AE%BF%E0%AE%95%E0%AE%BE%E0%AE%95%E0%AF%8B">தமிழ்</a></li>
+				<li class="interwiki-te"><a href="http://te.wikipedia.org/wiki/%E0%B0%9A%E0%B0%BF%E0%B0%95%E0%B0%BE%E0%B0%97%E0%B1%8B">తెలుగు</a></li>
+				<li class="interwiki-tg"><a href="http://tg.wikipedia.org/wiki/%D0%A7%D0%B8%D0%BA%D0%B0%D0%B3%D0%BE">Тоҷикӣ</a></li>
+				<li class="interwiki-th"><a href="http://th.wikipedia.org/wiki/%E0%B8%8A%E0%B8%B4%E0%B8%84%E0%B8%B2%E0%B9%82%E0%B8%81">ไทย</a></li>
+				<li class="interwiki-tl"><a href="http://tl.wikipedia.org/wiki/Tsikago">Tagalog</a></li>
+				<li class="interwiki-tr"><a href="http://tr.wikipedia.org/wiki/%C5%9Eikago,_Illinois">Türkçe</a></li>
+				<li class="interwiki-ug"><a href="http://ug.wikipedia.org/wiki/Chikago">Uyghurche‎ / ئۇيغۇرچە</a></li>
+				<li class="interwiki-uk"><a href="http://uk.wikipedia.org/wiki/%D0%A7%D0%B8%D0%BA%D0%B0%D0%B3%D0%BE">Українська</a></li>
+				<li class="interwiki-vec"><a href="http://vec.wikipedia.org/wiki/Cicago">Vèneto</a></li>
+				<li class="interwiki-vi"><a href="http://vi.wikipedia.org/wiki/Chicago">Tiếng Việt</a></li>
+				<li class="interwiki-vo"><a href="http://vo.wikipedia.org/wiki/Chicago">Volapük</a></li>
+				<li class="interwiki-war"><a href="http://war.wikipedia.org/wiki/Chicago">Winaray</a></li>
+				<li class="interwiki-yi"><a href="http://yi.wikipedia.org/wiki/%D7%A9%D7%99%D7%A7%D7%90%D7%92%D7%90">ייִדיש</a></li>
+				<li class="interwiki-zh"><a href="http://zh.wikipedia.org/wiki/%E8%8A%9D%E5%8A%A0%E5%93%A5">中文</a></li>
+				<li class="interwiki-zh-min-nan"><a href="http://zh-min-nan.wikipedia.org/wiki/Chicago">Bân-lâm-gú</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/skins-1.5/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> Esta página fue modificada por última vez el 13:45, 11 mar 2010.</li>
+					<li id="copyright">El texto está disponible bajo la <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.es">Licencia Creative Commons Reconocimiento Compartir Igual 3.0</a>; podrían ser aplicables cláusulas adicionales. Lee los <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">términos de uso</a> para más información.</li>
+					<li id="privacy"><a href="http://wikimediafoundation.org/wiki/Pol%C3%ADtica_de_privacidad" title="wikimedia:Política de privacidad">Política de privacidad</a></li>
+					<li id="about"><a href="/wiki/Wikipedia:Acerca_de" title="Wikipedia:Acerca de">Acerca de Wikipedia</a></li>
+					<li id="disclaimer"><a href="/wiki/Wikipedia:Limitaci%C3%B3n_general_de_responsabilidad" title="Wikipedia:Limitación general de responsabilidad">Descargo de responsabilidad</a></li>
+			</ul>
+		</div>
+</div>
+
+<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served by srv202 in 0.052 secs. --></body></html>

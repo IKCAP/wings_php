@@ -1,0 +1,262 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@base <http://www.isi.edu/ac/wordbags/library.owl> .
+@prefix : <http://www.isi.edu/ac/wordbags/library.owl#> .
+@prefix dc: <http://www.isi.edu/dc/ontology.owl#> .
+@prefix ac: <http://www.isi.edu/ac/ontology.owl#> .
+@prefix dcdom: <http://www.isi.edu/dc/wordbags/ontology.owl#> .
+@prefix library: <http://www.isi.edu/ac/wordbags/library.owl#> .
+
+<http://www.isi.edu/ac/wordbags/library.owl> rdf:type owl:Ontology;
+	owl:imports <http://www.isi.edu/dc/wordbags/ontology.owl>, <http://www.isi.edu/ac/ontology.owl> .
+
+# Paste Your Component Library Items Here
+
+#-------------------------------------------------
+# Component: removeMarkup
+#-------------------------------------------------
+:removeMarkupClass a owl:Class ;
+               rdfs:subClassOf ac:Component .
+
+:removeMarkupInput1 a ac:DataArgument ,
+                        dcdom:FormattedFile,
+                        owl:Thing ;
+               ac:hasDimensionality 0 ; 
+               ac:hasArgumentID "Input1FormattedFile" ;
+               ac:hasArgumentName "-i1" .
+
+:removeMarkupOutput1 a ac:DataArgument ,
+                        dcdom:TextFile,
+                        owl:Thing ;
+               ac:hasDimensionality 0 ; 
+               ac:hasArgumentID "Output1TextFile" ;
+               ac:hasArgumentName "-o1" .
+
+:removeMarkup a :removeMarkupClass , 
+               owl:Thing ;
+               ac:isConcrete "false"^^xsd:boolean ;
+               ac:hasInput :removeMarkupInput1 ;
+               ac:hasOutput :removeMarkupOutput1  .
+#-------------------------------------------------
+
+
+#-------------------------------------------------
+# Component: html2text
+#-------------------------------------------------
+:html2textClass rdf:type owl:Class ;
+               rdfs:subClassOf :removeMarkupClass .
+
+:html2textInput1 rdf:type ac:DataArgument ,
+                        dcdom:HTMLFile,
+                        owl:Thing ;
+               ac:hasDimensionality 0 ; 
+               ac:hasArgumentID "Input1FormattedFile" ;
+               ac:hasArgumentName "-i1" .
+
+:html2textOutput1 rdf:type ac:DataArgument ,
+                        dcdom:TextFile,
+                        owl:Thing ;
+               ac:hasDimensionality 0 ; 
+               ac:hasArgumentID "Output1TextFile" ;
+               ac:hasArgumentName "-o1" .
+
+:html2text rdf:type :html2textClass , 
+               owl:Thing ;
+               ac:isConcrete "true"^^xsd:boolean ;
+               ac:hasInput :html2textInput1 ;
+               ac:hasOutput :html2textOutput1  .
+#-------------------------------------------------
+
+#-------------------------------------------------
+# Component: pdf2text
+#-------------------------------------------------
+:pdf2textClass a owl:Class ;
+               rdfs:subClassOf :removeMarkupClass .
+
+:pdf2textInput1 a ac:DataArgument ,
+                        dcdom:PDFFile,
+                        owl:Thing ;
+               ac:hasDimensionality 0 ; 
+               ac:hasArgumentID "Input1FormattedFile" ;
+               ac:hasArgumentName "-i1" .
+
+:pdf2textOutput1 a ac:DataArgument ,
+                        dcdom:TextFile,
+                        owl:Thing ;
+               ac:hasDimensionality 0 ; 
+               ac:hasArgumentID "Output1TextFile" ;
+               ac:hasArgumentName "-o1" .
+
+:pdf2text a :pdf2textClass , 
+               owl:Thing ;
+               ac:isConcrete "true"^^xsd:boolean ;
+               ac:hasInput :pdf2textInput1 ;
+               ac:hasOutput :pdf2textOutput1  .
+#-------------------------------------------------
+
+
+#-------------------------------------------------
+# Component: getSortedWords
+#-------------------------------------------------
+:getSortedWordsClass rdf:type owl:Class ;
+               rdfs:subClassOf ac:Component .
+
+:getSortedWordsInput1 rdf:type ac:DataArgument ,
+                        dcdom:TextFile,
+                        owl:Thing ;
+               ac:hasDimensionality 0 ; 
+               ac:hasArgumentID "Input1TextFile" ;
+               ac:hasArgumentName "-i1" .
+
+:getSortedWordsOutput1 rdf:type ac:DataArgument ,
+                        dcdom:WordListFile,
+                        owl:Thing ;
+               ac:hasDimensionality 0 ; 
+               ac:hasArgumentID "Output1WordListFile" ;
+               ac:hasArgumentName "-o1" .
+
+:getSortedWords rdf:type :getSortedWordsClass , 
+               owl:Thing ;
+               ac:isConcrete "true"^^xsd:boolean ;
+               ac:hasInput :getSortedWordsInput1 ;
+               ac:hasOutput :getSortedWordsOutput1  .
+#-------------------------------------------------
+
+
+#-------------------------------------------------
+# Component: removePattern
+#-------------------------------------------------
+:removePatternClass rdf:type owl:Class ;
+               rdfs:subClassOf ac:Component .
+
+:removePatternInput1 rdf:type ac:DataArgument ,
+                        dcdom:WordListFile,
+                        owl:Thing ;
+               ac:hasDimensionality 0 ; 
+               ac:hasArgumentID "Input1WordListFile" ;
+               ac:hasArgumentName "-i1" .
+
+:removePatternInput2 rdf:type ac:DataArgument ,
+                        dcdom:PatternFile,
+                        owl:Thing ;
+               ac:hasDimensionality 0 ; 
+               ac:hasArgumentID "Input2PatternFile" ;
+               ac:hasArgumentName "-i2" .
+
+:removePatternOutput1 rdf:type ac:DataArgument ,
+                        dcdom:WordListFile,
+                        owl:Thing ;
+               ac:hasDimensionality 0 ; 
+               ac:hasArgumentID "Output1WordListFile" ;
+               ac:hasArgumentName "-o1" .
+
+:removePattern rdf:type :removePatternClass , 
+               owl:Thing ;
+               ac:isConcrete "true"^^xsd:boolean ;
+               ac:hasInput :removePatternInput1 ;
+               ac:hasInput :removePatternInput2 ;
+               ac:hasOutput :removePatternOutput1  .
+#-------------------------------------------------
+
+
+#-------------------------------------------------
+# Component: countDuplicates
+#-------------------------------------------------
+:countDuplicatesClass a owl:Class ;
+               rdfs:subClassOf ac:Component .
+
+:countDuplicatesInput1 a ac:DataArgument ,
+                        dcdom:WordListFile,
+                        owl:Thing ;
+               ac:hasDimensionality 0 ; 
+               ac:hasArgumentID "Input1WordListFile" ;
+               ac:hasArgumentName "-i1" .
+
+:countDuplicatesParam1 a ac:ParameterArgument ;
+               ac:hasValue "3"^^xsd:int ; 
+               ac:hasArgumentID "Param1threshold" ;
+               ac:hasArgumentName "-i2" .
+
+:countDuplicatesOutput1 a ac:DataArgument ,
+                        dcdom:WordCountFile,
+                        owl:Thing ;
+               ac:hasDimensionality 0 ; 
+               ac:hasArgumentID "Output1WordCountFile" ;
+               ac:hasArgumentName "-o1" .
+
+:countDuplicates a :countDuplicatesClass , 
+               owl:Thing ;
+               ac:isConcrete "true"^^xsd:boolean ;
+               ac:hasInput :countDuplicatesInput1 ;
+               ac:hasInput :countDuplicatesParam1 ;
+               ac:hasOutput :countDuplicatesOutput1  .
+#-------------------------------------------------
+
+
+#-------------------------------------------------
+# Component: merge
+#-------------------------------------------------
+:mergeClass rdf:type owl:Class ;
+               rdfs:subClassOf ac:Component .
+
+:mergeInput1 rdf:type ac:DataArgument ,
+                        dcdom:WordCountFile,
+                        owl:Thing ;
+               ac:hasDimensionality 1 ; 
+               ac:hasArgumentID "Input1WordCountFiles" ;
+               ac:hasArgumentName "-i1" .
+
+:mergeOutput1 rdf:type ac:DataArgument ,
+                        dcdom:WordCountFile,
+                        owl:Thing ;
+               ac:hasDimensionality 0 ; 
+               ac:hasArgumentID "Output1WordCountFile" ;
+               ac:hasArgumentName "-o1" .
+
+:merge rdf:type :mergeClass , 
+               owl:Thing ;
+               ac:isConcrete "true"^^xsd:boolean ;
+               ac:hasInput :mergeInput1 ;
+               ac:hasOutput :mergeOutput1  .
+#-------------------------------------------------
+
+
+
+
+#-------------------------------------------------
+# Component: compare
+#-------------------------------------------------
+:compareClass rdf:type owl:Class ;
+               rdfs:subClassOf ac:Component .
+
+:compareInput1 rdf:type ac:DataArgument ,
+                        dcdom:WordCountFile,
+                        owl:Thing ;
+               ac:hasDimensionality 0 ; 
+               ac:hasArgumentID "Input1WordCountFile" ;
+               ac:hasArgumentName "-i1" .
+
+:compareInput2 rdf:type ac:DataArgument ,
+                        dcdom:WordCountFile,
+                        owl:Thing ;
+               ac:hasDimensionality 0 ; 
+               ac:hasArgumentID "Input2WordCountFile" ;
+               ac:hasArgumentName "-i2" .
+
+:compareOutput1 rdf:type ac:DataArgument ,
+                        dcdom:LikelihoodFile,
+                        owl:Thing ;
+               ac:hasDimensionality 0 ; 
+               ac:hasArgumentID "Output1LikelihoodFile" ;
+               ac:hasArgumentName "-o1" .
+
+:compare rdf:type :compareClass , 
+               owl:Thing ;
+               ac:isConcrete "true"^^xsd:boolean ;
+               ac:hasInput :compareInput1 ;
+               ac:hasInput :compareInput2 ;
+               ac:hasOutput :compareOutput1  .
+#-------------------------------------------------
+

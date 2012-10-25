@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<component author="Len Trigg and Eibe Frank" vendor="WEKA" version="3.6.2">
+    <description>
+        <environment>
+            <name>JAVA_HOME</name>
+            <name>CLASSPATH</name>
+            <name>WEKAHOME</name>
+        </environment>
+        <files>
+            <file type="input" id="testData"/>
+            <file type="input" id="model"/>
+            <file type="output" id="classification"/>
+        </files>
+        <parameters>
+            <param type="int" id="classIndex"/>
+        </parameters>
+        <arguments>
+            <arg option="-T" type="file">
+                <file idref="testData"/>
+            </arg>
+            <arg option="-l" type="file">
+                <file idref="model"/>
+            </arg>
+            <arg option="-O" type="file">
+                <file idref="classification"/>
+            </arg>
+            <arg option="-c" type="parameter">
+                <param idref="classIndex"/>
+            </arg>
+        </arguments>
+        <exitcodes>
+            <exit code="0">Success</exit>
+            <exit code="1">Failure</exit>
+        </exitcodes>
+    </description>
+    <unit_test>
+        <file idref="testData">soybean.arff</file>
+        <file idref="model">naivebayes-soybean.model</file>
+        <file idref="classification">naivebayes-soybean.classification</file>
+        <param idref="classIndex">36</param>
+        <invocation_string>NaiveBayesClassifier -T soybean.arff -l naivebayes-soybean.model -O naivebayes-soybean.classification -c 36</invocation_string>
+        <exit code="0">Success</exit>
+    </unit_test>
+    <unit_test>
+        <file idref="testData">soybean.arff</file>
+        <file idref="model">j48-weather.model</file>
+        <file idref="classification">naivebayes-soybean.classification</file>
+        <param idref="classIndex">36</param>
+        <invocation_string>NaiveBayesClassifier -T soybean.arff -l j48-weather.model -O naivebayes-soybean.classification -c 36</invocation_string>
+        <exit code="1">Failure</exit>
+    </unit_test>
+</component>

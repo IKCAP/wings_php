@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<component author="Niels Landwehr" vendor="WEKA" version="3.6.2">
+    <description>
+        <environment>
+            <name>JAVA_HOME</name>
+            <name>CLASSPATH</name>
+            <name>WEKAHOME</name>
+        </environment>
+        <files>
+            <file type="input" id="testData"/>
+            <file type="input" id="model"/>
+            <file type="output" id="classification"/>
+        </files>
+        <parameters>
+            <param type="int" id="classIndex"/>
+        </parameters>
+        <arguments>
+            <arg option="-T" type="file">
+                <file idref="testData"/>
+            </arg>
+            <arg option="-l" type="file">
+                <file idref="model"/>
+            </arg>
+            <arg option="-O" type="file">
+                <file idref="classification"/>
+            </arg>
+            <arg option="-c" type="parameter">
+                <param idref="classIndex"/>
+            </arg>
+        </arguments>
+        <exitcodes>
+            <exit code="0">Success</exit>
+            <exit code="1">Failure</exit>
+        </exitcodes>
+    </description>
+    <unit_test>
+        <file idref="testData">iris.arff</file>
+        <file idref="model">lmt-iris.model</file>
+        <file idref="classification">lmt-iris.classification</file>
+        <param idref="classIndex">5</param>
+        <invocation_string>LMTClassifer -T iris.arff -l lmt-iris.model -O lmt-iris.classification -c 5</invocation_string>
+        <exit code="0">Success</exit>
+    </unit_test>
+    <unit_test>
+        <file idref="testData">iris.arff</file>
+        <file idref="model">lmt-weather.nominal.model</file>
+        <file idref="classification">lmt-iris.classification</file>
+        <param idref="classIndex">5</param>
+        <invocation_string>LMTClassifer -T iris.arff -l lmt-weather.nominal.model -O lmt-iris.classification -c 5</invocation_string>
+        <exit code="1">Failure</exit>
+    </unit_test>
+</component>

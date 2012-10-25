@@ -1,0 +1,19 @@
+#!/bin/sh
+
+checkExitCode() {
+ if [ $? -ne 0 ]; then 
+     echo "Error"
+     exit 1; 
+ fi
+}
+
+BASEDIR=`dirname $0`
+. $BASEDIR/io.sh 2 0 1 "$@"
+
+echo "Input1: $INPUTS1"
+echo "Input2: $INPUTS2"
+echo "Outputs1: $OUTPUTS1"
+
+$BASEDIR/compare.py $INPUTS1 $INPUTS2 > $OUTPUTS1
+checkExitCode
+

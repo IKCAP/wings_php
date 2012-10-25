@@ -1,0 +1,150 @@
+#!/bin/sh
+
+FATAL_EXIT_CODE=1
+FATAL_EXIT_MESSAGE=Failure
+SUCCESS_EXIT_CODE=0
+SUCCESS_EXIT_MESSAGE=Success
+COMMAND_EXIT_CODE=0
+ERROR_LOG_FILE_NAME=error.log
+BASEDIR=`dirname $0`
+
+WEKAHOME=$BASEDIR/../lib
+export CLASSPATH="$WEKAHOME/weka.jar:."
+
+rm -f $ERROR_LOG_FILE_NAME
+
+if [ -z "$1" ] || [ "$1" = "-h" ]; then
+  echo "Argument list for LMTClassifer version:  3.6.2"
+  echo "-T testData"
+  echo "-l model"
+  echo "-O classification"
+  echo "-c classIndex"
+  echo "Use ./LMTClassifer --help for more details."
+  exit 0
+elif [ "$1" = "--help" ]; then
+  echo "Docstring for LMTClassifer version:  3.6.2"
+  echo "Class for "logistic model tree" classifier. For more information, see "
+  echo "master thesis "Logistic Model Trees" (Niels Landwehr, 2003)"
+  echo ""
+  echo "-T testData"
+  echo "-l model"
+  echo "-O classification"
+  echo "-c classIndex"
+  exit 0
+elif [ "$1" = "--version" ]; then
+  echo LMTClassifer 3.6.2
+  exit 0
+elif [ "$1" = "--BCE" ]; then
+  echo "<?xml version="1.0" encoding="UTF-8" standalone="yes"?>"
+  echo "<component author="Niels Landwehr" vendor="WEKA" version="3.6.2">"
+  echo "    <description>"
+  echo "        <environment>"
+  echo "            <name>JAVA_HOME</name>"
+  echo "            <name>CLASSPATH</name>"
+  echo "            <name>WEKAHOME</name>"
+  echo "        </environment>"
+  echo "        <files>"
+  echo "            <file type="input" id="testData"/>"
+  echo "            <file type="input" id="model"/>"
+  echo "            <file type="output" id="classification"/>"
+  echo "        </files>"
+  echo "        <parameters>"
+  echo "            <param type="int" id="classIndex"/>"
+  echo "        </parameters>"
+  echo "        <arguments>"
+  echo "            <arg option="-T" type="file">"
+  echo "                <file idref="testData"/>"
+  echo "            </arg>"
+  echo "            <arg option="-l" type="file">"
+  echo "                <file idref="model"/>"
+  echo "            </arg>"
+  echo "            <arg option="-O" type="file">"
+  echo "                <file idref="classification"/>"
+  echo "            </arg>"
+  echo "            <arg option="-c" type="parameter">"
+  echo "                <param idref="classIndex"/>"
+  echo "            </arg>"
+  echo "        </arguments>"
+  echo "        <exitcodes>"
+  echo "            <exit code="0">Success</exit>"
+  echo "            <exit code="1">Failure</exit>"
+  echo "        </exitcodes>"
+  echo "    </description>"
+  echo "    <unit_test>"
+  echo "        <file idref="testData">iris.arff</file>"
+  echo "        <file idref="model">lmt-iris.model</file>"
+  echo "        <file idref="classification">lmt-iris.classification</file>"
+  echo "        <param idref="classIndex">5</param>"
+  echo "        <invocation_string>LMTClassifer -T iris.arff -l lmt-iris.model -O lmt-iris.classification -c 5</invocation_string>"
+  echo "        <exit code="0">Success</exit>"
+  echo "    </unit_test>"
+  echo "    <unit_test>"
+  echo "        <file idref="testData">iris.arff</file>"
+  echo "        <file idref="model">lmt-weather.nominal.model</file>"
+  echo "        <file idref="classification">lmt-iris.classification</file>"
+  echo "        <param idref="classIndex">5</param>"
+  echo "        <invocation_string>LMTClassifer -T iris.arff -l lmt-weather.nominal.model -O lmt-iris.classification -c 5</invocation_string>"
+  echo "        <exit code="1">Failure</exit>"
+  echo "    </unit_test>"
+  echo "</component>"
+elif [ "$#" != 8 ]; then
+  counter=0
+  for arg in "$@"; do
+    counter=`expr $counter + 1`
+  done
+  pairnumber=`expr $counter / 2`
+  echo "LMTClassifer was passed $pairnumber option/argument pairs, but requires 4"
+  echo "Use --help for more information."
+  echo $FATAL_EXIT_MESSAGE
+  exit $FATAL_EXIT_CODE
+else
+
+  options=""
+  args=("$@")
+  counter=0
+  for arg in $args; do
+    options="$options ${args[$counter]}"
+    counter=`expr $counter + 2`
+  done
+
+  for option in $options; do
+    case $option in
+     -T) ;;
+     -l) ;;
+     -O) ;;
+     -c) ;;
+      *)  echo "Option $option is not valid.  Valid options are: -T, -l, -O, -c"
+          echo "Use --help for more information."
+          echo $FATAL_EXIT_MESSAGE
+          exit $FATAL_EXIT_CODE ;;
+    esac
+  done
+
+  args=("$@")
+  valueCounter=0
+  for arg in $@; do
+    valueCounter=`expr $valueCounter + 1`
+    if [ "$arg" == "-T" ]; then arg1=${args[$valueCounter]}; fi
+    if [ "$arg" == "-l" ]; then arg2=${args[$valueCounter]}; fi
+    if [ "$arg" == "-c" ]; then arg3=${args[$valueCounter]}; fi
+    if [ "$arg" == "-O" ]; then arg4=${args[$valueCounter]}; fi
+  done
+
+  OUTPUT=`java weka.classifiers.trees.LMT -T $arg1 -l $arg2 -c $arg3 > $arg4  2> $ERROR_LOG_FILE_NAME`
+  COMMAND_EXIT_CODE=$?
+  LINES_IN_ERROR_LOG=`cat $ERROR_LOG_FILE_NAME|wc -l`
+fi
+
+if [ "$COMMAND_EXIT_CODE" -ne 0 ] ||  [ "$LINES_IN_ERROR_LOG" -ne 0 ]; then
+  cat $ERROR_LOG_FILE_NAME | while read linevar
+  do
+    echo $linevar
+  done
+  rm -f $ERROR_LOG_FILE_NAME
+  echo $FATAL_EXIT_MESSAGE
+  exit $FATAL_EXIT_CODE
+else
+  rm -f $ERROR_LOG_FILE_NAME
+  echo $SUCCESS_EXIT_MESSAGE
+  exit $SUCCESS_EXIT_CODE
+fi

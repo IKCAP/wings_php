@@ -1,0 +1,290 @@
+# You can use the following prefixes in your rules:
+# - pc: Refers to the top level Component/Process Catalog Ontology
+# - pcdom: Refers to the domain's Component/Process Catalog Ontology/Library
+# - dc: Refers to the top level Data Catalog Ontology
+# - dcdom: Refers to the domain's Data Catalog Ontology
+#[ExampleRule:
+#	(?c rdf:type pcdom:ComponentClass)
+#	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "InputRole")
+#	(?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "OutputRole")
+#	(?idv dcdom:hasSomeDataMetricsProperty ?prop)
+#	-> (?odv1 dcdom:hasSomeOtherDataMetricsProperty ?prop)
+
+
+#[ExampleRule:
+#	(?c rdf:type pcdom:ComponentClass)
+#	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "InputRole")
+#	(?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "OutputRole")
+#	(?idv dcdom:hasSomeDataMetricsProperty ?prop)
+#	-> (?odv1 dcdom:hasSomeOtherDataMetricsProperty ?prop)
+
+#[modelerInput_not_equal_to_classifierInput:
+#       (:Input1HTMLFile wflow:hasDataBinding ?ds1) (?ds1 rdf:li ?ds1item)
+#       (:Input1HTMLFile1 wflow:hasDataBinding ?ds2) (?ds2 rdf:li ?ds2item)
+#       equal(?ds1item, ?ds2item)
+#       (?t rdf:type wflow:WorkflowTemplate)
+#        -> (?t wflow:isInvalid "true"^^xsd:boolean)]
+
+
+#[modelerInput_not_equal_to_classifierInput1:
+#      (:Input1HTMLFile wflow:hasDataBinding ?ds1)
+#       (:Input1HTMLFile1 wflow:hasDataBinding ?ds2)
+#       equal(?ds1, ?ds2)
+#       (?t rdf:type wflow:WorkflowTemplate)
+#        -> (?t wflow:isInvalid "true"^^xsd:boolean)]
+
+#[all_same_topic_in_collection:
+#      	(:Input1HTMLFile wflow:hasDataBinding ?ds1)
+#
+#	listEntry(?ds1, ?i1, ?ds1item1)
+#	listEntry(?ds1, ?i2, ?ds1item2)
+#	(?ds1item1 dcdom:hasTopic ?x)
+#	(?ds1item2 dcdom:hasTopic ?y)
+#       notequal(?x, ?y)
+#       (?t rdf:type wflow:WorkflowTemplate)
+#        -> (?t wflow:isInvalid "true"^^xsd:boolean)]
+
+# a simple test, to make sure rules fire
+#[Precondition_compare_xxx:
+#	(?c rdf:type pcdom:compareClass)
+#	-> print('good')
+#]
+
+
+## PRECONDITION Rules:
+
+[Precondition_compare_1:
+	(?c rdf:type pcdom:compareClass)
+	(?c pc:hasInput ?idv1) (?idv1 pc:hasArgumentID "Input1WordCountFile")
+	(?c pc:hasInput ?idv2) (?idv2 pc:hasArgumentID "Input2WordCountFile")
+	(?idv1 dcdom:hasLanguage ?prop1) (?idv1 ac:hasBindingID ?ids1)
+	(?idv2 dcdom:hasLanguage ?prop2) (?idv2 ac:hasBindingID ?ids2)
+	notEqual(?prop1, ?prop2)
+        -> (?c ac:isInvalid "true"^^xsd:boolean)
+	print(Explanation :ERROR: Cannot compare the , ?prop1, language file ?idv1, {, ?ids1, } with the, ?prop2, language file, ?idv2, {, ?ids2, })
+]
+
+[Precondition_html2text:
+	(?c rdf:type pcdom:html2textClass)
+	(?c pc:hasInput ?idv1) (?idv1 pc:hasArgumentID "Input1FormattedFile")
+	noValue(?idv1 rdf:type dcdom:HTMLFile) (?idv1 ac:hasBindingID ?ids1)
+        -> (?c ac:isInvalid "true"^^xsd:boolean)
+	print(Explanation : Cannot use Non-HTML file, ?idv1, {, ?ids1, } with html2text)
+]
+
+[Precondition_html2text:
+	(?c rdf:type pcdom:pdf2textClass)
+	(?c pc:hasInput ?idv1) (?idv1 pc:hasArgumentID "Input1FormattedFile")
+	noValue(?idv1 rdf:type dcdom:PDFFile) (?idv1 ac:hasBindingID ?ids1)
+        -> (?c ac:isInvalid "true"^^xsd:boolean)
+	print(Explanation : Cannot use Non-PDF file, ?idv1, {, ?ids1,} with pdf2text)
+]
+
+## FORWARD Rules:
+
+[ForwardRule1:
+	(?c rdf:type pcdom:removeMarkupClass)
+	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input1FormattedFile") (?idv ac:hasBindingID ?ids)
+	(?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "Output1TextFile") (?odv1 ac:hasBindingID ?ods1)
+	(?idv dcdom:hasLanguage ?prop) noValue(?odv1 dcdom:hasLanguage)
+	-> (?odv1 dcdom:hasLanguage ?prop)
+print(Explanation :Setting language of , ?odv1 , {, ?ods1 ,}  to , ?prop , because the language of , ?idv , {, ?ids ,} is , ?prop )
+]
+
+[ForwardRule2:
+	(?c rdf:type pcdom:getSortedWordsClass)
+	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input1TextFile") (?idv ac:hasBindingID ?ids)
+	(?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "Output1WordListFile") (?odv1 ac:hasBindingID ?ods1)
+	(?idv dcdom:hasLanguage ?prop) noValue(?odv1 dcdom:hasLanguage)
+	-> (?odv1 dcdom:hasLanguage ?prop)
+print(Explanation :Setting language of , ?odv1 , {, ?ods1 ,}  to , ?prop , because the language of , ?idv , {, ?ids ,} is , ?prop )
+]
+
+[ForwardRule3:
+	(?c rdf:type pcdom:removePatternClass)
+	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input1WordListFile") (?idv ac:hasBindingID ?ids)
+	(?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "Output1WordListFile") (?odv1 ac:hasBindingID ?ods1)
+	(?idv dcdom:hasLanguage ?prop) noValue(?odv1 dcdom:hasLanguage)
+	-> (?odv1 dcdom:hasLanguage ?prop)
+print(Explanation :Setting language of , ?odv1 , {, ?ods1 ,}  to , ?prop , because the language of , ?idv , {, ?ids ,} is , ?prop )
+]
+
+[ForwardRule4:
+	(?c rdf:type pcdom:countDuplicatesClass)
+	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input1WordListFile") (?idv ac:hasBindingID ?ids)
+	(?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "Output1WordCountFile") (?odv1 ac:hasBindingID ?ods1)
+	(?idv dcdom:hasLanguage ?prop) noValue(?odv1 dcdom:hasLanguage)
+	-> (?odv1 dcdom:hasLanguage ?prop)
+print(Explanation :Setting language of , ?odv1 , {, ?ods1 ,}  to , ?prop , because the language of , ?idv , {, ?ids ,} is , ?prop )
+]
+
+
+## BACKWARD Rules:
+[BackwardRule1:
+	(?c rdf:type pcdom:removeMarkupClass)
+	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input1FormattedFile") (?idv ac:hasBindingID ?ids)
+	(?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "Output1TextFile") (?odv1 ac:hasBindingID ?ods1)
+	(?odv1 dcdom:hasLanguage ?prop) noValue(?idv dcdom:hasLanguage)
+	-> (?idv dcdom:hasLanguage ?prop)
+print(Explanation :Setting language of , ?idv , {, ?ids ,}  to , ?prop , because the language of , ?odv1 , {, ?ods1 ,} is , ?prop )
+]
+
+[BackwardRule2:
+	(?c rdf:type pcdom:getSortedWordsClass)
+	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input1TextFile") (?idv ac:hasBindingID ?ids)
+	(?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "Output1WordListFile") (?odv1 ac:hasBindingID ?ods1)
+	(?odv1 dcdom:hasLanguage ?prop) noValue(?idv dcdom:hasLanguage)
+	-> (?idv dcdom:hasLanguage ?prop)
+print(Explanation :Setting language of , ?idv , {, ?ids ,}  to , ?prop , because the language of , ?odv1 , {, ?ods1 ,} is , ?prop )
+]
+
+[BackwardRule3:
+	(?c rdf:type pcdom:removePatternClass)
+	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input1WordListFile") (?idv ac:hasBindingID ?ids)
+	(?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "Output1WordListFile") (?odv1 ac:hasBindingID ?ods1)
+	(?odv1 dcdom:hasLanguage ?prop) noValue(?idv dcdom:hasLanguage)
+	-> (?idv dcdom:hasLanguage ?prop)
+print(Explanation :Setting language of , ?idv , {, ?ids ,}  to , ?prop , because the language of , ?odv1 , {, ?ods1 ,} is , ?prop )
+]
+
+[BackwardRule4:
+	(?c rdf:type pcdom:countDuplicatesClass)
+	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input1WordListFile") (?idv ac:hasBindingID ?ids)
+	(?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "Output1WordCountFile") (?odv1 ac:hasBindingID ?ods1)
+	(?odv1 dcdom:hasLanguage ?prop) noValue(?idv dcdom:hasLanguage)
+	-> (?idv dcdom:hasLanguage ?prop)
+print(Explanation :Setting language of , ?idv , {, ?ids ,}  to , ?prop , because the language of , ?odv1 , {, ?ods1 ,} is , ?prop )
+]
+
+[BackwardRule5:
+	(?c rdf:type pcdom:mergeClass)
+	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input1WordCountFiles") (?idv ac:hasBindingID ?ids)
+	(?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "Output1WordCountFile") (?odv1 ac:hasBindingID ?ods1)
+	(?odv1 dcdom:hasLanguage ?prop) noValue(?idv dcdom:hasLanguage)
+	-> (?idv dcdom:hasLanguage ?prop)
+print(Explanation :Setting language of , ?idv , {, ?ids ,}  to , ?prop , because the language of , ?odv1 , {, ?ods1 ,} is , ?prop )
+]
+
+[BackwardRule6:
+	(?c rdf:type pcdom:compareClass)
+	(?c pc:hasInput ?idv1) (?idv1 pc:hasArgumentID "Input1WordCountFile") (?idv1 ac:hasBindingID ?ids1)
+	(?c pc:hasInput ?idv2) (?idv2 pc:hasArgumentID "Input2WordCountFile") (?idv2 ac:hasBindingID ?ids2)
+	noValue (?idv1 dcdom:hasLanguage) noValue (?idv2 dcdom:hasLanguage)
+	uriConcat(?idv1, "_lang", ?lang)
+	-> (?idv1 dcdom:hasLanguage ?lang) (?idv2 dcdom:hasLanguage ?lang)
+print(Explanation :Can only compare files of the same language. Therefore Setting language of , ?idv1, {, ?ids1 ,}  and , ?idv2, {, ?ids2 ,} to , ?lang )
+]
+
+## Set Pattern Files to be the same language as the Input File Language
+
+[PatternLanguage1:
+	(?c rdf:type pcdom:removePatternClass)
+	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input1WordListFile") (?idv ac:hasBindingID ?ids)
+	(?c pc:hasInput ?idv2) (?idv1 pc:hasArgumentID "Input2PatternFile") (?idv2 ac:hasBindingID ?ids2)
+	(?idv dcdom:hasLanguage ?prop) noValue( ?idv2 dcdom:hasLanguage )
+	noValue (?idv2 rdf:type dcdom:SpecialCharsFile)
+	-> (?idv2 dcdom:hasLanguage ?prop)
+print(Explanation :Setting language of , ?idv2 , {, ?ids2 ,}  to , ?prop , because the language of , ?idv , {, ?ids ,} is , ?prop )
+]
+
+[PatternLanguage2:
+	(?c rdf:type pcdom:removePatternClass)
+	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input1WordListFile") (?idv ac:hasBindingID ?ids)
+	(?c pc:hasInput ?idv2) (?idv1 pc:hasArgumentID "Input2PatternFile") (?idv2 ac:hasBindingID ?ids2)
+	(?idv2 dcdom:hasLanguage ?prop) noValue( ?idv dcdom:hasLanguage )
+	-> (?idv dcdom:hasLanguage ?prop)
+print(Explanation :Setting language of , ?idv , {, ?ids ,}  to , ?prop , because the language of , ?idv2 , {, ?ids2 ,} is , ?prop )
+]
+
+
+## Set Languages of both inputs of compare to be the same 
+[CompareLanguage1:
+	(?c rdf:type pcdom:compareClass)
+	(?c pc:hasInput ?idv1) (?idv1 pc:hasArgumentID "Input1WordCountFile") (?idv1 ac:hasBindingID ?ids1)
+	(?c pc:hasInput ?idv2) (?idv2 pc:hasArgumentID "Input2WordCountFile") (?idv2 ac:hasBindingID ?ids2)
+	(?idv1 dcdom:hasLanguage ?prop) noValue (?idv2 dcdom:hasLanguage)
+	-> (?idv2 dcdom:hasLanguage ?prop)
+print(Explanation :Compare can only compare files of same language. Therefore Setting language of , ?idv2 , {, ?ids2 ,}  to , ?prop ,because the language of, ?idv1 , {, ?ids1 ,} is, ?prop )
+]
+
+[CompareLanguage2:
+	(?c rdf:type pcdom:compareClass)
+	(?c pc:hasInput ?idv1) (?idv1 pc:hasArgumentID "Input1WordCountFile") (?idv1 ac:hasBindingID ?ids1)
+	(?c pc:hasInput ?idv2) (?idv2 pc:hasArgumentID "Input2WordCountFile") (?idv2 ac:hasBindingID ?ids2)
+	(?idv2 dcdom:hasLanguage ?prop) noValue(?idv1 dcdom:hasLanguage)
+	-> (?idv1 dcdom:hasLanguage ?prop)
+print(Explanation :Compare can only compare files of same language. Therefore Setting language of , ?idv1 , {, ?ids1 ,}  to , ?prop ,because the language of, ?idv2 , {, ?ids2 ,} is, ?prop )
+]
+
+
+#### RULES FOR PROPAGATING FILE SIZES
+
+[ForwardRule1Size:
+	(?c rdf:type pcdom:removeMarkupClass)
+	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input1FormattedFile") (?idv ac:hasBindingID ?ids)
+	(?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "Output1TextFile") (?odv1 ac:hasBindingID ?ods1)
+	(?idv dcdom:hasSize ?prop) noValue(?odv1 dcdom:hasSize)
+	-> (?odv1 dcdom:hasSize ?prop)
+print(Explanation :Setting size of , ?odv1 , {, ?ods1 ,}  to , ?prop , because the size of , ?idv , {, ?ids ,} is , ?prop )
+]
+
+[ForwardRule2Size:
+	(?c rdf:type pcdom:getSortedWordsClass)
+	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input1TextFile") (?idv ac:hasBindingID ?ids)
+	(?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "Output1WordListFile") (?odv1 ac:hasBindingID ?ods1)
+	(?idv dcdom:hasSize ?prop) noValue(?odv1 dcdom:hasSize)
+	-> (?odv1 dcdom:hasSize ?prop)
+print(Explanation :Setting size of , ?odv1 , {, ?ods1 ,}  to , ?prop , because the size of , ?idv , {, ?ids ,} is , ?prop )
+]
+
+[ForwardRule3Size:
+	(?c rdf:type pcdom:removePatternClass)
+	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input1WordListFile") (?idv ac:hasBindingID ?ids)
+	(?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "Output1WordListFile") (?odv1 ac:hasBindingID ?ods1)
+	(?idv dcdom:hasSize ?prop) noValue(?odv1 dcdom:hasSize)
+	-> (?odv1 dcdom:hasSize ?prop)
+print(Explanation :Setting size of , ?odv1 , {, ?ods1 ,}  to , ?prop , because the size of , ?idv , {, ?ids ,} is , ?prop )
+]
+
+
+####### Rule for setting parameter of countDuplicates
+
+[ParamRule1:
+	(?c rdf:type pcdom:countDuplicatesClass)
+	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input1WordListFile")
+	(?idv dcdom:hasSize ?size)
+	(?c pc:hasInput ?param) (?param pc:hasArgumentID "Param1threshold")
+	quotient(?size, 100000, ?size100KB) quotient(?size, 1000, ?sizeKB) (?idv ac:hasBindingID ?ids)
+	-> (?param ac:hasValue ?size100KB)
+	print(Explanation : ?idv, {, ?ids ,}  has size, ?sizeKB ,KB. Suggested value for parameter, ?param ,is, ?size100KB ,using rule :, ?sizeKB ,/100 rounded.)
+]
+
+
+#(?c rdf:type pcdom:countDuplicatesClass)
+#(?c pc:hasInput ?idv) 
+#(?idv pc:hasArgumentID "Param1threshold")
+#-> 
+#(?idv ac:hasValue 10)
+#print('Paraset1 done')
+#.
+
+
+[ForwardRule5:
+	(?c rdf:type pcdom:mergeClass)
+	(?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input1WordCountFiles") (?idv ac:hasBindingID ?ids)
+	(?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "Output1WordCountFile") (?odv1 ac:hasBindingID ?ods1)
+	(?idv dcdom:hasLanguage ?prop) noValue(?odv1 dcdom:hasLanguage)
+	-> (?odv1 dcdom:hasLanguage ?prop)
+print(Explanation :Setting language of , ?odv1 , {, ?ods1 ,}  to , ?prop , because the language of , ?idv , {, ?ids ,} is , ?prop )
+]
+
+[Precondition_removePattern_1: 
+	(?c rdf:type pcdom:removePatternClass)
+	(?c pc:hasInput ?idv1) (?idv1 pc:hasArgumentID "Input1WordListFile") (?idv ac:hasBindingID ?ids)
+	(?c pc:hasInput ?idv2) (?idv2 pc:hasArgumentID "Input2PatternFile") (?odv1 ac:hasBindingID ?ods1)
+	(?idv1 dcdom:hasLanguage ?prop1) (?idv1 ac:hasBindingID ?ids1)
+	(?idv2 dcdom:hasLanguage ?prop2) (?idv2 ac:hasBindingID ?ids2)
+	notEqual(?prop1, ?prop2)
+	-> (?c ac:isInvalid "true"^^xsd:boolean)
+	print(Explanation :ERROR: Cannot use the, ?prop1 ,text file, ?idv1 , {, ?ids1 ,} with the, ?prop2 ,pattern file, ?idv2 , {, ?ids2 ,})
+]

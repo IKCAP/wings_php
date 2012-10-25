@@ -1,0 +1,118 @@
+#!/bin/sh
+
+FATAL_EXIT_CODE=1
+FATAL_EXIT_MESSAGE=Failure
+SUCCESS_EXIT_CODE=0
+SUCCESS_EXIT_MESSAGE=Success
+COMMAND_EXIT_CODE=0
+ERROR_LOG_FILE_NAME=error.log
+BASEDIR=`dirname $0`
+
+WEKAHOME=$BASEDIR/../lib
+export CLASSPATH="$WEKAHOME/weka.jar:."
+
+rm -f $ERROR_LOG_FILE_NAME
+
+if [ -z "$1" ] || [ "$1" = "-h" ]; then
+  echo "Argument list for Randomize version:  3.6.2"
+  echo "-i inputData"
+  echo "-o outputData"
+  echo "Use ./Randomize --help for more details."
+  exit 0
+elif [ "$1" = "--help" ]; then
+  echo "Docstring for Randomize version:  3.6.2"
+  echo "This filter randomly shuffles the order of instances passed through it. "
+  echo "The random number generator is reset with the seed value whenever "
+  echo "setInputFormat() is called."
+  echo ""
+  echo "-i inputData"
+  echo "-o outputData"
+  exit 0
+elif [ "$1" = "--version" ]; then
+  echo Randomize 3.6.2
+  exit 0
+elif [ "$1" = "--BCE" ]; then
+  echo "<?xml version="1.0" encoding="UTF-8" standalone="yes"?>"
+  echo "<component author="Len Trigg" vendor="WEKA" version="3.6.2">"
+  echo "    <description>"
+  echo "        <environment>"
+  echo "            <name>JAVA_HOME</name>"
+  echo "            <name>CLASSPATH</name>"
+  echo "            <name>WEKAHOME</name>"
+  echo "        </environment>"
+  echo "        <files>"
+  echo "            <file type="input" id="inputData"/>"
+  echo "            <file type="output" id="outputData"/>"
+  echo "        </files>"
+  echo "        <parameters/>"
+  echo "        <arguments>"
+  echo "            <arg option="-i" type="file">"
+  echo "                <file idref="inputData"/>"
+  echo "            </arg>"
+  echo "            <arg option="-o" type="file">"
+  echo "                <file idref="outputData"/>"
+  echo "            </arg>"
+  echo "        </arguments>"
+  echo "        <exitcodes>"
+  echo "            <exit code="0">Success</exit>"
+  echo "            <exit code="1">Failure</exit>"
+  echo "        </exitcodes>"
+  echo "    </description>"
+  echo "</component>"
+elif [ "$#" != 4 ]; then
+  counter=0
+  for arg in "$@"; do
+    counter=`expr $counter + 1`
+  done
+  pairnumber=`expr $counter / 2`
+  echo "Randomize was passed $pairnumber option/argument pairs, but requires 2"
+  echo "Use --help for more information."
+  echo $FATAL_EXIT_MESSAGE
+  exit $FATAL_EXIT_CODE
+else
+
+  options=""
+  args=("$@")
+  counter=0
+  for arg in $args; do
+    options="$options ${args[$counter]}"
+    counter=`expr $counter + 2`
+  done
+
+  for option in $options; do
+    case $option in
+     -i) ;;
+     -o) ;;
+      *)  echo "Option $option is not valid.  Valid options are: -i, -o"
+          echo "Use --help for more information."
+          echo $FATAL_EXIT_MESSAGE
+          exit $FATAL_EXIT_CODE ;;
+    esac
+  done
+
+  args=("$@")
+  valueCounter=0
+  for arg in $@; do
+    valueCounter=`expr $valueCounter + 1`
+    if [ "$arg" == "-o" ]; then arg2=${args[$valueCounter]}; fi
+    if [ "$arg" == "-i" ]; then arg1=${args[$valueCounter]}; fi
+  done
+
+  OUTPUT=`java weka.filters.unsupervised.instance.Randomize -i $arg1 -o $arg2  2> $ERROR_LOG_FILE_NAME`
+  COMMAND_EXIT_CODE=$?
+  LINES_IN_ERROR_LOG=`cat $ERROR_LOG_FILE_NAME|wc -l`
+fi
+
+if [ "$COMMAND_EXIT_CODE" -ne 0 ] ||  [ "$LINES_IN_ERROR_LOG" -ne 0 ]; then
+  cat $ERROR_LOG_FILE_NAME | while read linevar
+  do
+    echo $linevar
+  done
+  rm -f $ERROR_LOG_FILE_NAME
+  echo $FATAL_EXIT_MESSAGE
+  exit $FATAL_EXIT_CODE
+else
+  rm -f $ERROR_LOG_FILE_NAME
+  echo $SUCCESS_EXIT_MESSAGE
+  exit $SUCCESS_EXIT_CODE
+fi

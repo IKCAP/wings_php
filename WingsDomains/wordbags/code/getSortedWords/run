@@ -1,0 +1,19 @@
+#!/bin/sh
+
+checkExitCode() {
+ if [ $? -ne 0 ]; then 
+     echo "Error"
+     exit 1; 
+ fi
+}
+
+BASEDIR=`dirname $0`
+. $BASEDIR/io.sh 1 0 1 "$@"
+
+echo "Input1: $INPUTS1"
+echo "Outputs1: $OUTPUTS1"
+
+export LC_ALL='C' ## avoids problem with illegal characters in tr
+cat $INPUTS1 | tr ' ' '\n' | tr -d ' ' | tr -d '\t' | tr -s '\n' | grep "[a-zA-Z]" | sort > $OUTPUTS1
+checkExitCode
+

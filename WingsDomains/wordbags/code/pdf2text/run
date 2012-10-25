@@ -1,0 +1,18 @@
+#!/bin/sh
+
+checkExitCode() {
+ if [ $? -ne 0 ]; then 
+     echo "Error"
+     exit 1; 
+ fi
+}
+
+BASEDIR=`dirname $0`
+. $BASEDIR/io.sh 1 0 1 "$@"
+
+echo "Input1: $INPUTS1"
+echo "Outputs1: $OUTPUTS1"
+
+wget -O $OUTPUTS1 --post-file=`python $BASEDIR/postencode.py $INPUTS1` http://seagull.isi.edu/fritz/cgi-bin/pdftotext.cgi
+checkExitCode
+

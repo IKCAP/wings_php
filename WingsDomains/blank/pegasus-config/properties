@@ -1,0 +1,41 @@
+## SELECT THE REPLICAT CATALOG MODE AND URL
+pegasus.catalog.replica = SimpleFile
+pegasus.catalog.replica.file = ${run.dir}/config/rc.data
+
+## SELECT THE SITE CATALOG MODE AND FILE
+pegasus.catalog.site = XML
+pegasus.catalog.site.file = ${run.dir}/config/sites.xml
+
+## SELECT THE TRANSFORMATION CATALOG MODE AND FILE
+pegasus.catalog.transformation = File
+pegasus.catalog.transformation.file = ${run.dir}/config/tc.data
+
+## SET UP THE WORK AND INVOCATION DATABASE
+pegasus.catalog.work = Database
+pegasus.catalog.provenance = InvocationSchema
+
+## Database related properties
+#pegasus.catalog.*.db.driver = MySQL
+#pegasus.catalog.*.db.url = jdbc:mysql://smarty.isi.edu/tg2007
+#pegasus.catalog.*.db.user = tg2007user
+#pegasus.catalog.*.db.password = Teragrid2007
+
+## USE DAGMAN RETRY FEATURE FOR FAILURES
+pegasus.dagman.retry=2
+
+## STAGE ALL OUR EXECUTABLES
+#pegasus.catalog.transformation.mapper = Staged
+
+## CHECK JOB EXIT CODES FOR FAILURE
+pegasus.exitcode.scope=all
+
+## OPTIMIZE DATA AND EXECUTABLE TRANSFERS
+pegasus.transfer.refiner=Bundle
+
+#STAGE DATA AND EXECUTABLES USING GRIDFTP 3rd PARTY MODE
+pegasus.transfer.*.thirdparty.sites=*
+
+## WORK AND STORAGE DIR
+
+pegasus.dir.storage = ${run.dir}/data
+pegasus.dir.exec = ${run.dir}/exec

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<component author="Eibe Frank" vendor="WEKA" version="3.6.2">
+    <description>
+        <environment>
+            <name>JAVA_HOME</name>
+            <name>CLASSPATH</name>
+            <name>WEKAHOME</name>
+        </environment>
+        <files>
+            <file type="input" id="testData"/>
+            <file type="input" id="model"/>
+            <file type="output" id="classification"/>
+        </files>
+        <parameters>
+            <param type="int" id="classIndex"/>
+        </parameters>
+        <arguments>
+            <arg option="-T" type="file">
+                <file idref="testData"/>
+            </arg>
+            <arg option="-l" type="file">
+                <file idref="model"/>
+            </arg>
+            <arg option="-O" type="file">
+                <file idref="classification"/>
+            </arg>
+            <arg option="-c" type="parameter">
+                <param idref="classIndex"/>
+            </arg>
+        </arguments>
+        <exitcodes>
+            <exit code="0">Success</exit>
+            <exit code="1">Failure</exit>
+        </exitcodes>
+    </description>
+    <unit_test>
+        <file idref="testData">soybean.arff</file>
+        <file idref="model">j48-soybean.model</file>
+        <file idref="classification">j48-soybean.classification</file>
+        <param idref="classIndex">36</param>
+        <invocation_string>J48Classifier -T soybean.arff -l j48-soybean.model -O j48-soybean.classification -c 36</invocation_string>
+        <exit code="0">Success</exit>
+    </unit_test>
+    <unit_test>
+        <file idref="testData">soybean.arff</file>
+        <file idref="model">id3-weather.nominal.model</file>
+        <file idref="classification">j48-soybean.classification</file>
+        <param idref="classIndex">36</param>
+        <invocation_string>J48Classifier -T soybean.arff -l id3-weather.nominal.model -O j48-soybean.classification -c 36</invocation_string>
+        <exit code="1">Failure</exit>
+    </unit_test>
+</component>

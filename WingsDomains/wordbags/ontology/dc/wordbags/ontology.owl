@@ -1,0 +1,71 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://www.isi.edu/dc/wordbags/ontology.owl#> .
+@prefix dc: <http://www.isi.edu/dc/ontology.owl#> .
+@prefix ontology: <http://www.isi.edu/dc/wordbags/ontology.owl#> .
+
+<http://www.isi.edu/dc/wordbags/ontology.owl> rdf:type owl:Ontology;
+	owl:imports <http://www.isi.edu/dc/ontology.owl> .
+
+# Paste Your Data Ontology Items Here
+
+
+
+
+:HTMLFile rdf:type owl:Class ;
+          rdfs:subClassOf :FormattedFile .
+
+:LikelihoodFile rdf:type owl:Class ;
+                rdfs:subClassOf dc:DataObject .
+
+:TextFile rdf:type owl:Class ;
+          rdfs:subClassOf dc:DataObject .
+
+:WordCountFile rdf:type owl:Class ;
+               rdfs:subClassOf dc:DataObject .
+
+:WordListFile rdf:type owl:Class ;
+              rdfs:subClassOf dc:DataObject .
+
+
+# -- Used by component: run_pdf2text_webservice
+:PDFFile a owl:Class ;
+               rdfs:subClassOf :FormattedFile .
+# ------------------------------- 
+
+# -- Used by component: removeMarkup
+:FormattedFile a owl:Class ;
+               rdfs:subClassOf dc:DataObject .
+# ------------------------------- 
+
+
+:hasLanguage rdf:type owl:DatatypeProperty ;
+	     rdfs:subPropertyOf dc:hasDataMetrics ;
+             rdfs:domain dc:DataObject ;
+	     rdfs:range xsd:string .
+
+:hasTopic rdf:type owl:DatatypeProperty ;
+	  rdfs:subPropertyOf dc:hasDataMetrics ;
+          rdfs:domain :FormattedFile ;
+	  rdfs:range xsd:string .
+
+:hasAuthor rdf:type owl:DatatypeProperty ;
+	  rdfs:subPropertyOf dc:hasDataMetrics ;
+          rdfs:domain :PDFFile ;
+	  rdfs:range xsd:string .
+
+:PatternFile a owl:Class ;
+             rdfs:subClassOf dc:DataObject .
+:CommonTermsFile rdf:type owl:Class ;
+          rdfs:subClassOf :PatternFile .
+:SpecialCharsFile rdf:type owl:Class ;
+          rdfs:subClassOf :PatternFile .
+
+:hasSize rdf:type owl:DatatypeProperty ;
+	     rdfs:subPropertyOf dc:hasDataMetrics ;
+             rdfs:domain dc:DataObject ;
+	     rdfs:range xsd:int .
+
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<component author="Eibe Frank" vendor="WEKA" version="3.6.2">
+    <description>
+        <environment>
+            <name>JAVA_HOME</name>
+            <name>CLASSPATH</name>
+            <name>WEKAHOME</name>
+        </environment>
+        <files>
+            <file type="input" id="trainingData"/>
+            <file type="output" id="model"/>
+        </files>
+        <parameters>
+            <param type="int" id="javaHeapSize"/>
+            <param type="int" id="classIndex"/>
+        </parameters>
+        <arguments>
+            <arg option="-t" type="file">
+                <file idref="trainingData"/>
+            </arg>
+            <arg option="-d" type="file">
+                <file idref="model"/>
+            </arg>
+            <arg option="-Xmx" type="parameter">
+                <param idref="javaHeapSize"/>
+            </arg>
+            <arg option="-c" type="parameter">
+                <param idref="classIndex"/>
+            </arg>
+        </arguments>
+        <exitcodes>
+            <exit code="0">Success</exit>
+            <exit code="1">Failure</exit>
+        </exitcodes>
+    </description>
+    <unit_test>
+        <file idref="trainingData">weather.nominal.arff</file>
+        <file idref="model">id3-weather.nominal.model</file>
+        <param idref="javaHeapSize">100M</param>
+        <param idref="classIndex">5</param>
+        <invocation_string>ID3Modeler -t weather.nominal.arff -d id3-weather.nominal.model -Xmx 100M -c 5</invocation_string>
+        <exit code="0">Success</exit>
+    </unit_test>
+    <unit_test>
+        <file idref="trainingData">soybean.arff</file>
+        <file idref="model">id3-soybean.model</file>
+        <param idref="javaHeapSize">100M</param>
+        <param idref="classIndex">5</param>
+        <invocation_string>ID3Modeler -t soybean.arff -d id3-soybean.model -Xmx 100M -c 5</invocation_string>
+        <exit code="1">Failure</exit>
+    </unit_test>
+</component>

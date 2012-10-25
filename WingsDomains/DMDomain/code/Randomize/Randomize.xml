@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<component author="Len Trigg" vendor="WEKA" version="3.6.2">
+    <description>
+        <environment>
+            <name>JAVA_HOME</name>
+            <name>CLASSPATH</name>
+            <name>WEKAHOME</name>
+        </environment>
+        <files>
+            <file type="input" id="inputData"/>
+            <file type="output" id="outputData"/>
+        </files>
+        <parameters/>
+        <arguments>
+            <arg option="-i" type="file">
+                <file idref="inputData"/>
+            </arg>
+            <arg option="-o" type="file">
+                <file idref="outputData"/>
+            </arg>
+        </arguments>
+        <exitcodes>
+            <exit code="0">Success</exit>
+            <exit code="1">Failure</exit>
+        </exitcodes>
+    </description>
+</component>
