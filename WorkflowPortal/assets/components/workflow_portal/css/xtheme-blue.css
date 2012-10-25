@@ -1,0 +1,7 @@
+#header {background-image:url(../images/blue-banners/banner-center.png)}
+#header-left {background-image:url(../images/blue-banners/banner-left.png)}
+#header-right {background-image:url(../images/blue-banners/banner-right.png)}
+
+a {background:inherit; color:#166090; text-decoration:none; font-weight:700;}
+a:hover {background:inherit; color:#166090; text-decoration:underline;}
+

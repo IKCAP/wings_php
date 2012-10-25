@@ -1,0 +1,279 @@
+/*
+Original design: andreas00 (v2.2 - Apr 24, 2008) - A free xhtml/css website template by Andreas Viklund and stylishtemplate.com.
+For more information, see http://andreasviklund.com/templates/andreas00/
+*/
+
+/* Main layout and header */
+body {background:#fff; min-width:800px; color:#3a3a3a; font:11px Verdana,Tahoma,Arial,sans-serif; line-height:1.4em; margin:0 auto; padding:0;}
+html, body {height:100%; margin:0; padding:0; }
+body {margin-left:50px; margin-right:50px; }
+
+div#wrap {color:#303030; padding:0px;}
+div#wrap {position:relative; margin:0 auto; min-height:98%;}
+
+#header {background:url(../images/banner-center.png) bottom repeat-x; height:80px; width:100%; margin:0; padding:0;}
+#header-left {background:url(../images/banner-left.png) bottom left no-repeat; height:80px; float:left; margin:0; padding:0;}
+#header-right {background:url(../images/banner-right.png) bottom left no-repeat; height:80px; float:right; margin:0; padding:0;}
+
+#footer {text-align:center}
+#footer a {font-weight:normal;font-size:10px}
+/*#footer {position:fixed;background:white;border-top:1px solid #9cf;text-align:center;bottom:0px;height:20px;width:100%;padding:2px}*/
+
+/*body {background:url(../images/bg.gif) repeat-y top center #eaeaea; color:#3a3a3a; font:11px Verdana,Tahoma,Arial,sans-serif; line-height:1.4em; margin:0 auto; padding:0;}
+#wrap {background:#fff; color:#303030; margin:0 auto; padding:0px; width:886px;}
+#header {background:url(../images/banner.jpg) no-repeat bottom left #fff; color:#505050; height:100px; margin:0 0 0px; padding:0;}*/
+
+#header h1 {font-size:2em; font-weight:400; letter-spacing:-2px; line-height:1.2em; letter-spacing: 0.1em; margin:0px}
+#header h1 a,#header h1 a:hover {font-weight:400; padding:0;}
+#header p {font-size:1.1em; letter-spacing:-1px; margin-left:15px; padding:0 0 0 3px;}
+
+/* Main content */
+/*#maincontent {line-height:1.5em; margin:0; padding:0; height:100%; text-align:left;}*/
+#maincontent h2 {font-size:1.8em; font-weight:400; letter-spacing:-1px; margin:8px 0 10px; padding:0;}
+#maincontent h3 {font-size:1.5em; font-weight:400; margin:6px 0; padding:0;}
+
+/* Footer */
+/*#footer {background:#fff; border-top:2px solid #dadada; clear:both; color:#666; font-size:0.9em; margin:0 auto; padding:8px 0; text-align:center; width:886px;}
+#footer p {margin:0; padding:0;}
+#footer a {background:inherit; color:#666; font-weight:400; text-decoration:none;}
+#footer a:hover {text-decoration:underline;}
+#footer span {font-size:1.2em;}*/
+
+/* Links and paragraphs */
+a {background:inherit; color:#505050; text-decoration:none; font-weight:700;}
+a:hover {color:#6e6e6e; text-decoration:underline;}
+/*a:hover {background:inherit; color:#6e6e6e; text-decoration:underline;}*/
+/*a img {border:0;}*/
+p {margin:0 0 16px;}
+blockquote {background:url(../images/menubg.gif) repeat-x bottom left #f4f4f4; border-bottom:1px solid #d8d8d8; border-left:4px solid #ccc; border-right:1px solid #d8d8d8; border-top:1px solid #d8d8d8; color:#505050; margin:16px; padding:7px 7px 7px 11px;}
+blockquote p {font-size:1.1em; line-height:1.3em; margin:0;}
+
+/* Tab Height ExtJS4 Workaround */
+.x-tab button { height: 16px !important; }
+
+.no-border-tabs { border:0px !important; padding-top: 2px !important; }
+
+/* Tables and forms */
+/*table {border:1px solid #d8d8d8; border-collapse:collapse; line-height:1.3em; width:95%; margin:0 0 16px; padding:0;}
+caption {font-size:1.5em; font-weight:400; margin:0; padding:6px 0 8px; text-align:left;}
+th {background:url(img/menubg2.gif) repeat-x bottom left #eaeaea; color:#505050; padding:7px; text-align:left;}
+td {background:url(img/menubg.gif) repeat-x bottom left #f4f4f4; color:#303030; font-size:0.9em; padding:7px; text-align:left;}*/
+
+/*input,textarea {border:1px solid #ccc; font-family:Verdana,Tahoma,Arial,Sans-Serif; font-size:1em; margin:0; padding:2px;}*/
+/*label {margin:2px 0 2px 0; font-size:1.2em;}
+input {width:200px;}*/
+/*textarea {width:400px;}*/
+
+/* Search box */
+#searchbox label,.hide {display:none;}
+#searchbox {margin:6px 0 16px; padding:0;}
+#searchform {background:#fff; border:1px solid #ccc; color:#505050; font-size:0.9em; padding:4px; width:116px;}
+
+/* Additional classes */
+.announce h2 {margin:0 0 10px; padding:0;}
+.textright {margin:-10px 0 4px; text-align:right;}
+.center {text-align:center;}
+.small {font-size:0.8em;}
+.large {font-size:1.3em;}
+.red {color:red;}
+.green {color:green;}
+.blue {color:blue;}
+.highlighted {background:#f0f0f0; border:1px solid #b0b0b0; color:#303030; padding:3px;}
+/*.button {background:url(img/menubg.gif) repeat-x bottom left #f4f4f4; border-bottom:1px solid #d8d8d8; border-left:4px solid #ccc; border-right:1px solid #d8d8d8; border-top:1px solid #d8d8d8; color:#505050; font-weight:400; font-size:1.2em; margin:0 0 15px; padding:7px 7px 7px 11px; width:120px;}*/
+
+.button {background:url(../images/menubg.gif) repeat-x bottom left #f4f4f4; border-bottom:1px solid #d8d8d8; border-left:4px solid #ccc; border-right:1px solid #d8d8d8; border-top:1px solid #d8d8d8; color:#505050; font-weight:400; font-size:1.2em; margin-top:2px; margin-bottom:2px; padding:0px 4px 0px 4px;}
+.left {float:left; margin:10px 10px 5px 0;}
+.right {float:right; margin:10px 0 5px 10px;}
+
+
+/* Login form */
+div#login {
+    font-weight:bold;
+    font-size:10px;
+}
+
+div.loginForm {
+   text-align:right;
+}
+div.loginForm legend {
+   display:none;
+}
+div.loginForm fieldset {
+   border:0px;
+}
+/*
+div.loginForm label {
+   padding-bottom:2px;
+}
+div.loginForm label input {
+   margin-left:5px;
+}*/
+
+/* Error box */
+div.error {
+	padding-top:20px;
+	padding-bottom:20px;
+	text-align:center;
+	/*border:4px solid #94533F;
+	background: #FFEEE7;*/
+	border:2px solid #FF2222;
+	background: #FF9999;
+	font-size:12px;
+	width:99%;
+}
+
+div.loginForm { width:100%;text-align:left;}
+div#header div#title { float: left; }
+div#login { float: right; padding-top:5px; width: 350px;}
+label.loginUsernameLabel input, label.loginPasswordLabel input { font-size: 10px; border:1px solid #AAA; opacity: 0.9; width: 80px}
+label.loginUsernameLabel, label.loginPasswordLabel {display: block; padding-bottom:2px}
+div.loginRegister, fieldset.loginLoginFieldset { text-align: right; margin-right:5px}
+span.loginLoginButton { float: right; display: block; width:40px}
+span.loginLoginButton input { border: 1px solid #AAA; padding:2px; margin:0px}
+div#header p.error { margin-right:5px; margin-bottom:2px; font-weight:normal; color:red; text-align: right}
+div#header h1 {padding:10px 0 0 10px; font-size:18px; width:400px;}
+div#header div#title p {padding-top:5px; font-size:14px;}
+
+
+/*div.x-form-item, input.x-form-text, div.x-combo-list-item {font: normal normal normal 11px/normal tahoma, arial, helvetica, sans-serif;}
+div input.x-form-text {height:18px}*/
+
+div.list-ct ul li.x-boundlist-item {border-bottom:1px solid #ddd }
+
+.hrefTree a.x-tree-node-anchor, .nonBoldTree a.x-tree-node-anchor {font-weight:normal;}
+.hrefTree a.x-tree-node-anchor:hover {text-decoration:underline;}
+.hrefTree .x-tree-selected a.x-tree-node-anchor, .nonBoldTree .x-tree-selected a.x-tree-node-anchor {font-weight:bold;}
+
+.ux-lovcombo-icon-checked { background: transparent url('<?=$this->assets_url?>images/lovcombo/checked.gif'); }
+.ux-lovcombo-icon-unchecked { background: transparent url('<?=$this->assets_url?>images/lovcombo/unchecked.gif'); }
+
+div.inactive-grid div.x-grid-view table.x-grid-table tr.x-grid-row td.x-grid-cell div.x-grid-cell-inner { color: #888 }
+.transparent-panel { opacity:0.9;}
+
+.dtypeIcon {background-image:url(../images/datatype.gif) !important}
+.dataIcon {background-image:url(../images/file.png) !important}
+.addIcon {background-image:url(../images/add.png) !important}
+.wflowIcon {background-image:url(../images/workflow.gif) !important}
+.delIcon {background-image:url(../images/delete.png) !important}
+.saveIcon {background-image:url(../images/Save.png) !important}
+.saveAsIcon {background-image:url(../images/SaveAs.png) !important}
+.downloadIcon {background-image:url(../images/download_yellow.gif) !important}
+.uploadIcon {background-image:url(../images/arrow_up.png) !important}
+.compIcon {background-image:url(../images/component_blue.png) !important}
+.absCompIcon {background-image:url(../images/component_yellow.png) !important}
+.noCompIcon {background-image:url(../images/component_red.png) !important}
+.ctypeIcon {background-image:url(../images/datatype.gif) !important}
+.zoomInIcon {background-image:url(../images/zoomin.png) !important}
+.zoomOutIcon {background-image:url(../images/zoomout.png) !important}
+.snapshotIcon {background-image:url(../images/snapshot.gif) !important}
+.inferIcon {background-image:url(../images/infer.gif) !important}
+.suggestIcon {background-image:url(../images/help_icon.gif) !important}
+.runIcon {background-image:url(../images/run.gif) !important}
+.docsIcon {background-image:url(../images/docs.png) !important}
+.clearIcon {background-image:url(../images/clean.gif) !important}
+.selectIcon {background-image:url(../images/select.gif) !important}
+.inputIcon {background-image:url(../images/input.png) !important}
+.outputIcon {background-image:url(../images/output.png) !important}
+.paramIcon {background-image:url(../images/param.png) !important}
+.reloadIcon {background-image:url(../images/reload.png) !important}
+.chatIcon {background-image:url(../images/chat.png) !important}
+.layoutIcon {background-image:url(../images/layout.gif) !important}
+.TOPIcon {background-image:url(../images/TOP.png) !important}
+.importIcon {background-image:url(../images/import.png) !important}
+.setDefaultIcon {background-image:url(../images/star.png) !important}
+.defIcon {background-image:url(../images/radio_selected.png) !important}
+.undefIcon {background-image:url(../images/radio.png) !important}
+/*.rundefIcon {background-image:url(../images/run_default.gif) !important}*/
+
+.domain {background:url(../images/domain.png) center left no-repeat !important}
+.default_domain {background:url(../images/default_domain.png) center left no-repeat !important}
+.user_domain {background:url(../images/star_disabled.png) center left no-repeat !important}
+.user_default_domain {background:url(../images/star.png) center left no-repeat !important}
+
+.uploadIcon,
+.suggestIcon,
+.saveIcon,
+.runIcon {
+	/*background-color:rgba(255,240,0,0.3) !important; */
+	font-weight:bold !important;
+	/*color:#804010 !important*/
+	color:maroon !important;
+}
+
+.smSaveIcon {
+	background:url(../images/smsave.gif) center left no-repeat !important;
+	font-weight:normal;
+	color:#666;
+	padding-left:12px
+}
+
+span.runtime {font-size:10px; padding-left:8px; font-family:sans; color:#888}
+span.running {font-size:10px; font-family:sans; color:#888}
+span.runtitle {font-size:13px; padding:0px; padding-left:2px; font-weight:bold}
+.complibCls span.runtitle {font-size:11px; padding:0px; padding-left:2px; font-weight:normal}
+
+div.runtime {font-size:10px; padding-left:24px; font-family:sans; color:#888}
+div.running {font-size:10px; font-family:sans; color:#888}
+div.runtitle {font-size:13px; padding:0px; padding-left:24px; font-weight:bold}
+
+.status_ONGOING {background:url(../images/loading.gif) center left no-repeat !important}
+.status_SUCCESS {background:url(../images/tick.png) center left no-repeat !important}
+.status_FAILURE {background:url(../images/cross.png) center left no-repeat !important}
+
+div.smallPropertyGrid .x-small-editor input.x-form-field {font-size:11px;}
+tr.errorCls td { color:maroon;font-weight:bold; }
+tr.infoCls td { color:darkgreen;font-style:italic; }
+tr.suggestCls td { color:darkblue;font-weight:bold; }
+
+tr.installedDomainCls td { color:#999; }
+tr.myDomainCls td { color:#369; }
+
+div.editableCanvas {background:url(../images/paperbg.gif) repeat}
+div.disabledCanvas {background-color: rgba(0,0,0,0.1)}
+div.docsDiv ul, div.docsDiv ol{margin:1em 0px 1em 0px; padding-left:40px}
+div.docsDiv ul {list-style:disc}
+div.docsDiv ul ul {list-style:circle}
+div.docsDiv ol {list-style:decimal}
+div.docsDiv ol ol {list-style:lower-roman}
+li.active a{color:orange}
+
+.multi-line-grid .x-grid-cell-inner, .multi-line-grid .x-grid-hd-inner { white-space:  normal !important; }
+.multi-line-grid .x-grid-cell { vertical-align: middle !important; }
+.custom-highlight-grid .x-grid-row-focused .x-grid-cell{ background-color: rgb(255,245,204) !important; }
+/*.x-grid-td-textClass { width:100%; }*/
+
+/*.x-tree-panel .multi-line-grid .x-grid-row .x-grid-cell-inner { height:auto; white-space: normal !important; }*/
+.mytree-grid .x-grid-row .x-grid-cell {
+	border-right-width: 1px !important;
+}
+
+.tellmeteacher {
+	font-size:14px;
+	font-weight:bold;
+	color:navy;
+}
+.tellmestudent {
+	font-size:12px;
+	font-weight:bold;
+}
+.tellmestudent_ok {
+	color:green;
+}
+.tellmestudent_error {
+	color:red;
+}
+div.tellmestudent_error a span{
+	color:red;
+}
+div.tellmestudent_ok a span{
+	color:#333;
+	font-style:italic;
+}
+pre.tellmelog {
+	font-family:tahoma, arial, helvetica;
+	color:#666;
+	border:1px dotted #ddd;
+	background:#eee;
+	padding:5px;
+	margin-top:5px;
+}

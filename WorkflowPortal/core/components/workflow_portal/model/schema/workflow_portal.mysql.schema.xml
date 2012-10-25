@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="workflow_portal" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="workflow_portal" phpdoc-subpackage="model" version="1.1">
+
+<object class="workflow_runs" table="workflow_portal_runs" extends="xPDOSimpleObject">
+   <field key="uid" dbtype="int" attributes="unsigned" phptype="integer" null="true" default="0" />
+   <field key="requestid" dbtype="varchar" precision="255" phptype="string" null="true" />
+   <field key="seedid" dbtype="varchar" precision="255" phptype="string" null="true" />
+   <field key="templateid" dbtype="varchar" precision="255" phptype="string" null="true" />
+   <field key="domain" dbtype="varchar" precision="255" phptype="string" null="true" />
+   <field key="start_time" dbtype="datetime" phptype="datetime" null="true" />
+   <field key="end_time" dbtype="datetime" phptype="datetime" null="true" />
+   <field key="status" dbtype="enum" precision=" 'SUCCESS', 'FAILURE', 'ONGOING' " phptype="string" null="true" />
+   <field key="running_job" dbtype="text" phptype="string" null="true" />
+   <field key="numjobs_total" dbtype="int" attributes="unsigned" phptype="integer" null="true" />
+   <field key="numjobs_executed" dbtype="int" attributes="unsigned" phptype="integer" null="true" />
+   <field key="inputs" dbtype="text" phptype="string" null="true" />
+   <field key="intermediates" dbtype="text" phptype="string" null="true" />
+   <field key="outputs" dbtype="text" phptype="string" null="true" />
+   <field key="log" dbtype="text"  phptype="string" null="true" />
+</object>
+
+</model>

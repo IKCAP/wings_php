@@ -1,0 +1,35 @@
+table.gallerytable td {
+    padding:5px;
+    vertical-align:top;
+}
+td.category {
+    font-size:18px;
+    background-color:#567;
+    color:white;
+    padding:5px;
+}
+
+div.wrapper {
+    padding:5px;
+    margin:5px;
+    border:1px solid rgb(153,153,153);
+    text-align:center;
+}
+
+div.wrapper div.img {
+    height:200px;
+    padding:5px;
+    background-color:rgb(204,204,204);
+    border:1px solid rgb(180,180,180);
+}
+
+div.wrapper div.img img {
+    vertical-align:middle;
+}
+
+div.wrapper div.txt {
+    padding-bottom:4px;
+    color:#333;
+    vertical-align:middle;
+}
+

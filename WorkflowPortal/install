@@ -1,0 +1,14 @@
+# Install modx (www.modx.com) 
+# Change the modx location here and in _build/build.config.php
+modx_location=/Library/WebServer/Documents/modx
+#modx_location=/var/www/html/modx
+
+php=/usr/bin/php
+
+base=`dirname $0`;
+
+rm -r $dir/core/components/workflow_portal/model/workflow_portal
+cd $dir/_build
+$php ./build.schema.php
+sudo $php ./build.transport.php
+sudo chown -R nobody $modx_location/core/packages/workflow_portal* 
