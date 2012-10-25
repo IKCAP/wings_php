@@ -1,0 +1,592 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY dc "http://wings-workflows.org/ontology/dc/ontology.owl#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ontology "http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#"
+     xml:base="http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl"
+     xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ontology="http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#hasIndividualsFromOneFamily -->
+
+    <owl:DatatypeProperty rdf:about="#hasIndividualsFromOneFamily">
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#hasGenotypingRate -->
+
+    <owl:DatatypeProperty rdf:about="#hasGenotypingRate">
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#hasNumberOfFamilies -->
+
+    <owl:DatatypeProperty rdf:about="#hasNumberOfFamilies">
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#hasNumberOfIndividuals -->
+
+    <owl:DatatypeProperty rdf:about="#hasNumberOfIndividuals">
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#hasOutliers -->
+
+    <owl:DatatypeProperty rdf:about="#hasOutliers">
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#hasParentalPhenotypeInformation -->
+
+    <owl:DatatypeProperty rdf:about="#hasParentalPhenotypeInformation">
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#isLargeDataset -->
+
+    <owl:DatatypeProperty rdf:about="#isLargeDataset">
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/ontology.owl#hasDataMetrics -->
+
+    <owl:DatatypeProperty rdf:about="&dc;hasDataMetrics"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#AnnotatedCNV -->
+
+    <owl:Class rdf:about="#AnnotatedCNV">
+        <rdfs:subClassOf rdf:resource="#CNVFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#AssocFile -->
+
+    <owl:Class rdf:about="#AssocFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#BAMFile -->
+
+    <owl:Class rdf:about="#BAMFile">
+        <rdfs:subClassOf rdf:resource="#SamtoolsFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#BIMFile -->
+
+    <owl:Class rdf:about="#BIMFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#BadChips -->
+
+    <owl:Class rdf:about="#BadChips">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#BinaryPEDFile -->
+
+    <owl:Class rdf:about="#BinaryPEDFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#CMHFile -->
+
+    <owl:Class rdf:about="#CMHFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#CNVFile -->
+
+    <owl:Class rdf:about="#CNVFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#Cluster0 -->
+
+    <owl:Class rdf:about="#Cluster0">
+        <rdfs:subClassOf rdf:resource="#ClusterFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#Cluster1 -->
+
+    <owl:Class rdf:about="#Cluster1">
+        <rdfs:subClassOf rdf:resource="#ClusterFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#Cluster2 -->
+
+    <owl:Class rdf:about="#Cluster2">
+        <rdfs:subClassOf rdf:resource="#ClusterFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#Cluster3 -->
+
+    <owl:Class rdf:about="#Cluster3">
+        <rdfs:subClassOf rdf:resource="#ClusterFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#ClusterFile -->
+
+    <owl:Class rdf:about="#ClusterFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#CommonLoci -->
+
+    <owl:Class rdf:about="#CommonLoci">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#DGV_VariationFile -->
+
+    <owl:Class rdf:about="#DGV_VariationFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#DeNovo2RareMergedCNV -->
+
+    <owl:Class rdf:about="#DeNovo2RareMergedCNV">
+        <rdfs:subClassOf rdf:resource="#CNVFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#DeNovoRareMergedCNV -->
+
+    <owl:Class rdf:about="#DeNovoRareMergedCNV">
+        <rdfs:subClassOf rdf:resource="#CNVFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#FAMFile -->
+
+    <owl:Class rdf:about="#FAMFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#FilteredIndels -->
+
+    <owl:Class rdf:about="#FilteredIndels">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#FinalReport -->
+
+    <owl:Class rdf:about="#FinalReport">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#FormatedFile -->
+
+    <owl:Class rdf:about="#FormatedFile">
+        <rdfs:subClassOf rdf:resource="#CNVFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#GenderFile -->
+
+    <owl:Class rdf:about="#GenderFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#GenesFile -->
+
+    <owl:Class rdf:about="#GenesFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#GnosisCNV -->
+
+    <owl:Class rdf:about="#GnosisCNV">
+        <rdfs:subClassOf rdf:resource="#CNVFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#HGAlignments -->
+
+    <owl:Class rdf:about="#HGAlignments">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#Indels -->
+
+    <owl:Class rdf:about="#Indels">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#IndelsAndConsensus -->
+
+    <owl:Class rdf:about="#IndelsAndConsensus">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#JPGFile -->
+
+    <owl:Class rdf:about="#JPGFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#LogFile -->
+
+    <owl:Class rdf:about="#LogFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#MAPFile -->
+
+    <owl:Class rdf:about="#MAPFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#MDistFile -->
+
+    <owl:Class rdf:about="#MDistFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#MergeCNVFormat -->
+
+    <owl:Class rdf:about="#MergeCNVFormat">
+        <rdfs:subClassOf rdf:resource="#CNVFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#MergeSummary -->
+
+    <owl:Class rdf:about="#MergeSummary">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#MergeUID -->
+
+    <owl:Class rdf:about="#MergeUID">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#MergedCNV -->
+
+    <owl:Class rdf:about="#MergedCNV">
+        <rdfs:subClassOf rdf:resource="#CNVFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#PEDFile -->
+
+    <owl:Class rdf:about="#PEDFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#PNFormat -->
+
+    <owl:Class rdf:about="#PNFormat">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#PennCNV -->
+
+    <owl:Class rdf:about="#PennCNV">
+        <rdfs:subClassOf rdf:resource="#CNVFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#PennCNVX -->
+
+    <owl:Class rdf:about="#PennCNVX">
+        <rdfs:subClassOf rdf:resource="#CNVFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#PennLog -->
+
+    <owl:Class rdf:about="#PennLog">
+        <rdfs:subClassOf rdf:resource="#LogFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#PennLogX -->
+
+    <owl:Class rdf:about="#PennLogX">
+        <rdfs:subClassOf rdf:resource="#LogFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#QTFormat -->
+
+    <owl:Class rdf:about="#QTFormat">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#QuantiCNV -->
+
+    <owl:Class rdf:about="#QuantiCNV">
+        <rdfs:subClassOf rdf:resource="#CNVFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#QuantiPCFile -->
+
+    <owl:Class rdf:about="#QuantiPCFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#RareMergedCNV -->
+
+    <owl:Class rdf:about="#RareMergedCNV">
+        <rdfs:subClassOf rdf:resource="#CNVFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#ReformatLog -->
+
+    <owl:Class rdf:about="#ReformatLog">
+        <rdfs:subClassOf rdf:resource="#LogFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#SAMFile -->
+
+    <owl:Class rdf:about="#SAMFile">
+        <rdfs:subClassOf rdf:resource="#SamtoolsFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#SNPFile -->
+
+    <owl:Class rdf:about="#SNPFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#SamtoolsFile -->
+
+    <owl:Class rdf:about="#SamtoolsFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#SequenceFile -->
+
+    <owl:Class rdf:about="#SequenceFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#SortedBAMFile -->
+
+    <owl:Class rdf:about="#SortedBAMFile">
+        <rdfs:subClassOf rdf:resource="#SamtoolsFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#StructureFormatFile -->
+
+    <owl:Class rdf:about="#StructureFormatFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#StructureOutputFile -->
+
+    <owl:Class rdf:about="#StructureOutputFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#StructureParamsFile -->
+
+    <owl:Class rdf:about="#StructureParamsFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#TDTFile -->
+
+    <owl:Class rdf:about="#TDTFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#TDTPermFile -->
+
+    <owl:Class rdf:about="#TDTPermFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#Thresholds -->
+
+    <owl:Class rdf:about="#Thresholds">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/ontology.owl#DataObject -->
+
+    <owl:Class rdf:about="&dc;DataObject"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,438 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY dc "http://wings-workflows.org/ontology/dc/ontology.owl#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ontology "http://wings-workflows.org/ontology/dc/birn/ontology.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://wings-workflows.org/ontology/dc/birn/ontology.owl#"
+     xml:base="http://wings-workflows.org/ontology/dc/birn/ontology.owl"
+     xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ontology="http://wings-workflows.org/ontology/dc/birn/ontology.owl#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#hasChunkID_x -->
+
+    <owl:DatatypeProperty rdf:about="#hasChunkID_x">
+        <rdfs:domain rdf:resource="#ChunkFileAbstract"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#hasChunkID_y -->
+
+    <owl:DatatypeProperty rdf:about="#hasChunkID_y">
+        <rdfs:domain rdf:resource="#ChunkFileAbstract"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#hasChunkID_z -->
+
+    <owl:DatatypeProperty rdf:about="#hasChunkID_z">
+        <rdfs:domain rdf:resource="#ChunkFileAbstract"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#hasChunksizeX -->
+
+    <owl:DatatypeProperty rdf:about="#hasChunksizeX">
+        <rdfs:domain rdf:resource="#ChunkFileAbstract"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#hasChunksizeY -->
+
+    <owl:DatatypeProperty rdf:about="#hasChunksizeY">
+        <rdfs:domain rdf:resource="#ChunkFileAbstract"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#hasChunksizeZ -->
+
+    <owl:DatatypeProperty rdf:about="#hasChunksizeZ">
+        <rdfs:domain rdf:resource="#ChunkFileAbstract"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#hasStartZ -->
+
+    <owl:DatatypeProperty rdf:about="#hasStartZ">
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:domain rdf:resource="#ChunkFileAbstract"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#hasEndZ -->
+
+    <owl:DatatypeProperty rdf:about="#hasEndZ">
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:domain rdf:resource="#ChunkFileAbstract"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#hasMaxOverlap -->
+
+    <owl:DatatypeProperty rdf:about="#hasMaxOverlap">
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#hasNOfZs -->
+
+    <owl:DatatypeProperty rdf:about="#hasNOfZs">
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#hasNXTiles -->
+
+    <owl:DatatypeProperty rdf:about="#hasNXTiles">
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#hasNYTiles -->
+
+    <owl:DatatypeProperty rdf:about="#hasNYTiles">
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#hasNamePrefix -->
+
+    <owl:DatatypeProperty rdf:about="#hasNamePrefix">
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#hasTileHeight -->
+
+    <owl:DatatypeProperty rdf:about="#hasTileHeight">
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#hasTileWidth -->
+
+    <owl:DatatypeProperty rdf:about="#hasTileWidth">
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/ontology.owl#hasDataMetrics -->
+
+    <owl:DatatypeProperty rdf:about="&dc;hasDataMetrics"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#AverageTileFile -->
+
+    <owl:Class rdf:about="#AverageTileFile">
+        <rdfs:subClassOf rdf:resource="#TileFile"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >One of the two intermediate tiles generated during the pre-normalization stage</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NameFormat=[[hasNamePrefix]].red.avg</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#ChunkFile -->
+
+    <owl:Class rdf:about="#ChunkFile">
+        <rdfs:subClassOf rdf:resource="#ChunkFileAbstract"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NameFormat=[[hasNamePrefix]].x[[hasChunkID_x]]_y[[hasChunkID_y]]_z[[hasChunkID_z]].chunk</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#ChunkFileAbstract -->
+
+    <owl:Class rdf:about="#ChunkFileAbstract">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Contains data corresponding to a collection of spatially neighboring tiles</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#ChunkisizeMetaFile -->
+
+    <owl:Class rdf:about="#ChunkisizeMetaFile">
+        <rdfs:subClassOf rdf:resource="#MetaFileAbstract"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NameFormat=[[hasNamePrefix]].dim.c.meta</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#ControlPointsFile -->
+
+    <owl:Class rdf:about="#ControlPointsFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Contains control point correspondences chosen by the user for warping</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NameFormat=[[hasNamePrefix]].xml</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#DimFile -->
+
+    <owl:Class rdf:about="#DimFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Metadata file containing information about how the image is partitioned</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NameFormat=[[hasNamePrefix]].dim</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#DisplacementsFile -->
+
+    <owl:Class rdf:about="#DisplacementsFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Tells us how each tile must be displaced during stitching</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NameFormat=[[hasNamePrefix]]-displacements</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#IMGImage -->
+
+    <owl:Class rdf:about="#IMGImage">
+        <rdfs:subClassOf rdf:resource="#ImageFile"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NameFormat=[[hasNamePrefix]].img</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#ImageFile -->
+
+    <owl:Class rdf:about="#ImageFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >High resolution scan of mouse brain tissue sample for neurological study</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NameFormat=[[hasNamePrefix]].img</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#MetaFileAbstract -->
+
+    <owl:Class rdf:about="#MetaFileAbstract">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Contains metadata corresponding to locations of different image parts</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#NormalizedChunkFile -->
+
+    <owl:Class rdf:about="#NormalizedChunkFile">
+        <rdfs:subClassOf rdf:resource="#ChunkFileAbstract"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Contains data corresponding to a collection of spatially neighboring normalized tiles</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NameFormat=[[hasNamePrefix]].x[[hasChunkID_x]]_y[[hasChunkID_y]]_z[[hasChunkID_z]].normalizedchunk</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#NormalizedProjectedChunkFile -->
+
+    <owl:Class rdf:about="#NormalizedProjectedChunkFile">
+        <rdfs:subClassOf rdf:resource="#ChunkFileAbstract"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Contains data corresponding to a collection of spatially neighboring normalized z-projected tiles</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NameFormat=[[hasNamePrefix]].x[[hasChunkID_x]]_y[[hasChunkID_y]].normalizedprojectedchunk</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#OffsetTileFile -->
+
+    <owl:Class rdf:about="#OffsetTileFile">
+        <rdfs:subClassOf rdf:resource="#TileFile"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >One of the two intermediate tiles generated during the pre-normalization stage</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NameFormat=[[hasNamePrefix]].red.off</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#OffsetsFile -->
+
+    <owl:Class rdf:about="#OffsetsFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Contains the alignment scores for each tile-pair</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NameFormat=[[hasNamePrefix]]-offsets</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#PPMImage -->
+
+    <owl:Class rdf:about="#PPMImage">
+        <rdfs:subClassOf rdf:resource="#ImageFile"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NameFormat=[[hasNamePrefix]].ppm</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#PreprocessMetaFile -->
+
+    <owl:Class rdf:about="#PreprocessMetaFile">
+        <rdfs:subClassOf rdf:resource="#MetaFileAbstract"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NameFormat=[[hasNamePrefix]].dim.p.meta</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#ProjectedChunkFile -->
+
+    <owl:Class rdf:about="#ProjectedChunkFile">
+        <rdfs:subClassOf rdf:resource="#ChunkFileAbstract"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Contains data corresponding to a collection of spatially neighboring z-projected tiles</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NameFormat=[[hasNamePrefix]].x[[hasChunkID_x]]_y[[hasChunkID_y]].projectedchunk</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#StitchedChunkFile -->
+
+    <owl:Class rdf:about="#StitchedChunkFile">
+        <rdfs:subClassOf rdf:resource="#ChunkFileAbstract"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Contains data corresponding to a collection of spatially neighboring stitched tiles</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NameFormat=[[hasNamePrefix]].x[[hasChunkID_x]]_y[[hasChunkID_y]].stitchedchunk</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#TileFile -->
+
+    <owl:Class rdf:about="#TileFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >File containing data stored in an image tile</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/birn/ontology.owl#WarpMetaFile -->
+
+    <owl:Class rdf:about="#WarpMetaFile">
+        <rdfs:subClassOf rdf:resource="#MetaFileAbstract"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NameFormat=[[hasNamePrefix]].dim.w.meta</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/ontology.owl#DataObject -->
+
+    <owl:Class rdf:about="&dc;DataObject"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

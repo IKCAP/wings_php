@@ -1,0 +1,25 @@
+<rdf:RDF
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:acdom="http://wings-workflows.org/ontology/ac/gpcla/library.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dcdom="http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#"
+    xmlns:dclib="http://wings-workflows.org/ontology/dc/gpcla/library.owl#"
+    xmlns="http://wings-workflows.org/ontology/GPDomain/HierarchicalClustering.owl#"
+    xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+      xml:base="http://wings-workflows.org/ontology/GPDomain/seeds/HierarchicalClusteringSeed.owl">
+      <wflow:Metadata rdf:about="">
+            <wflow:hasContributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >pgroth</wflow:hasContributor>
+            <wflow:lastUpdateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2008-08-28T21:24:33.167Z</wflow:lastUpdateTime>
+      </wflow:Metadata>
+      <owl:Ontology rdf:about="">
+            <owl:imports rdf:resource="../HierarchicalClustering.owl"/>
+      </owl:Ontology>
+      <wflow:RuleSet rdf:ID="Rules"/>
+</rdf:RDF>
+

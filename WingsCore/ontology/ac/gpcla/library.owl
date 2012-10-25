@@ -1,0 +1,1664 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY dc "http://wings-workflows.org/ontology/dc/ontology.owl#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY ac "http://wings-workflows.org/ontology/ac/ontology.owl#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY library "http://wings-workflows.org/ontology/ac/gpcla/library.owl#" >
+    <!ENTITY dcdom "http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://wings-workflows.org/ontology/ac/gpcla/library.owl#"
+     xml:base="http://wings-workflows.org/ontology/ac/gpcla/library.owl"
+     xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:dcdom="http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#"
+     xmlns:library="http://wings-workflows.org/ontology/ac/gpcla/library.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl"/>
+        <owl:imports rdf:resource="http://wings-workflows.org/ontology/dc/gpcla/ontology.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasArgument -->
+
+    <owl:ObjectProperty rdf:about="&ac;hasArgument"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasInput -->
+
+    <owl:ObjectProperty rdf:about="&ac;hasInput"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="&ac;hasOutput"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasArgumentID -->
+
+    <owl:DatatypeProperty rdf:about="&ac;hasArgumentID"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasArgumentIndex -->
+
+    <owl:DatatypeProperty rdf:about="&ac;hasArgumentIndex"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasArgumentName -->
+
+    <owl:DatatypeProperty rdf:about="&ac;hasArgumentName"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="&ac;hasValue"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#isConcrete -->
+
+    <owl:DatatypeProperty rdf:about="&ac;isConcrete"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#containsTreeFor -->
+
+    <owl:DatatypeProperty rdf:about="&dcdom;containsTreeFor"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#ClusterClass -->
+
+    <owl:Class rdf:about="#ClusterClass">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#ConsensusClass -->
+
+    <owl:Class rdf:about="#ConsensusClass">
+        <rdfs:subClassOf rdf:resource="#ClusterClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#ConsensusClusteringClass -->
+
+    <owl:Class rdf:about="#ConsensusClusteringClass">
+        <rdfs:subClassOf rdf:resource="#ConsensusClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#ConsensusClusteringDataArguments -->
+
+    <owl:Class rdf:about="#ConsensusClusteringDataArguments">
+        <rdfs:subClassOf rdf:resource="&ac;DataArgument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#ConsensusClusteringParameterArguments -->
+
+    <owl:Class rdf:about="#ConsensusClusteringParameterArguments">
+        <rdfs:subClassOf rdf:resource="&ac;ParameterArgument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#HeatMapViewerClass -->
+
+    <owl:Class rdf:about="#HeatMapViewerClass">
+        <rdfs:subClassOf rdf:resource="#ViewerClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#HierachalClusteringDataArgument -->
+
+    <owl:Class rdf:about="#HierachalClusteringDataArgument">
+        <rdfs:subClassOf rdf:resource="&ac;DataArgument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#HierarchalClusteringParameterArgument -->
+
+    <owl:Class rdf:about="#HierarchalClusteringParameterArgument">
+        <rdfs:subClassOf rdf:resource="&ac;ParameterArgument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#HierarchicalClusteringArrayViewerClass -->
+
+    <owl:Class rdf:about="#HierarchicalClusteringArrayViewerClass">
+        <rdfs:subClassOf rdf:resource="#HierarchicalClusteringViewClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#HierarchicalClusteringClass -->
+
+    <owl:Class rdf:about="#HierarchicalClusteringClass">
+        <rdfs:subClassOf rdf:resource="#ClusterClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#HierarchicalClusteringGeneViewerClass -->
+
+    <owl:Class rdf:about="#HierarchicalClusteringGeneViewerClass">
+        <rdfs:subClassOf rdf:resource="#HierarchicalClusteringViewClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#HierarchicalClusteringViewClass -->
+
+    <owl:Class rdf:about="#HierarchicalClusteringViewClass">
+        <rdfs:subClassOf rdf:resource="#ViewerClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#HierarchicalClusteringViewerDataArgs -->
+
+    <owl:Class rdf:about="#HierarchicalClusteringViewerDataArgs">
+        <rdfs:subClassOf rdf:resource="&ac;DataArgument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#KMeansClusteringClass -->
+
+    <owl:Class rdf:about="#KMeansClusteringClass">
+        <rdfs:subClassOf rdf:resource="#Stocastic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#KMeansClusteringDataArgument -->
+
+    <owl:Class rdf:about="#KMeansClusteringDataArgument">
+        <rdfs:subClassOf rdf:resource="&ac;DataArgument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#KMeansClusteringParameterArgument -->
+
+    <owl:Class rdf:about="#KMeansClusteringParameterArgument">
+        <rdfs:subClassOf rdf:resource="&ac;ParameterArgument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#NMFConsensusClass -->
+
+    <owl:Class rdf:about="#NMFConsensusClass">
+        <rdfs:subClassOf rdf:resource="#ConsensusClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#NMFConsensusDataArgument -->
+
+    <owl:Class rdf:about="#NMFConsensusDataArgument">
+        <rdfs:subClassOf rdf:resource="&ac;DataArgument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#NMFConsensusParameterArguments -->
+
+    <owl:Class rdf:about="#NMFConsensusParameterArguments">
+        <rdfs:subClassOf rdf:resource="&ac;ParameterArgument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#PreprocessClass -->
+
+    <owl:Class rdf:about="#PreprocessClass">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#PreprocessDataArgument -->
+
+    <owl:Class rdf:about="#PreprocessDataArgument">
+        <rdfs:subClassOf rdf:resource="&ac;DataArgument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#PreprocessParamaterArgument -->
+
+    <owl:Class rdf:about="#PreprocessParamaterArgument">
+        <rdfs:subClassOf rdf:resource="&ac;ParameterArgument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#SOMClusterViewerClass -->
+
+    <owl:Class rdf:about="#SOMClusterViewerClass">
+        <rdfs:subClassOf rdf:resource="#ViewerClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#SOMClusteringClass -->
+
+    <owl:Class rdf:about="#SOMClusteringClass">
+        <rdfs:subClassOf rdf:resource="#Stocastic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#SOMDataArgument -->
+
+    <owl:Class rdf:about="#SOMDataArgument">
+        <rdfs:subClassOf rdf:resource="&ac;DataArgument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#SOMParameterArgument -->
+
+    <owl:Class rdf:about="#SOMParameterArgument">
+        <rdfs:subClassOf rdf:resource="&ac;ParameterArgument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#Stocastic -->
+
+    <owl:Class rdf:about="#Stocastic">
+        <rdfs:subClassOf rdf:resource="#ClusterClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#ViewerClass -->
+
+    <owl:Class rdf:about="#ViewerClass">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#Component -->
+
+    <owl:Class rdf:about="&ac;Component"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument -->
+
+    <owl:Class rdf:about="&ac;DataArgument"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#ParameterArgument -->
+
+    <owl:Class rdf:about="&ac;ParameterArgument"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#ClusteredDataTable -->
+
+    <owl:Class rdf:about="&dcdom;ClusteredDataTable"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#ConsensusStatistics -->
+
+    <owl:Class rdf:about="&dcdom;ConsensusStatistics"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#Dendrogram -->
+
+    <owl:Class rdf:about="&dcdom;Dendrogram"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#GCT -->
+
+    <owl:Class rdf:about="&dcdom;GCT"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#GeneExpressionData -->
+
+    <owl:Class rdf:about="&dcdom;GeneExpressionData"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#GeneExpressionInFileFormat -->
+
+    <owl:Class rdf:about="&dcdom;GeneExpressionInFileFormat"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#NMFConsensus -->
+
+    <owl:Class rdf:about="&dcdom;NMFConsensus"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#NMFCophenetic -->
+
+    <owl:Class rdf:about="&dcdom;NMFCophenetic"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#NMFGraph -->
+
+    <owl:Class rdf:about="&dcdom;NMFGraph"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#RES -->
+
+    <owl:Class rdf:about="&dcdom;RES"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#SOMClusterResult -->
+
+    <owl:Class rdf:about="&dcdom;SOMClusterResult"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#ViewableData -->
+
+    <owl:Class rdf:about="&dcdom;ViewableData"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#Cluster -->
+
+    <owl:Thing rdf:about="#Cluster">
+        <rdf:type rdf:resource="#ClusterClass"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">false</ac:isConcrete>
+        <ac:hasInput rdf:resource="#clusterBy"/>
+        <ac:hasArgument rdf:resource="#clusterBy"/>
+        <ac:hasInput rdf:resource="#clusterInput"/>
+        <ac:hasOutput rdf:resource="#clusterOutput"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#Consensus -->
+
+    <ConsensusClass rdf:about="#Consensus">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">false</ac:isConcrete>
+        <ac:hasInput rdf:resource="#clusterBy"/>
+        <ac:hasArgument rdf:resource="#clusterBy"/>
+        <ac:hasInput rdf:resource="#clusterInput"/>
+        <ac:hasArgument rdf:resource="#clusterInput"/>
+        <ac:hasOutput rdf:resource="#clusterOutput"/>
+    </ConsensusClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#ConsensusClustering -->
+
+    <ConsensusClusteringClass rdf:about="#ConsensusClustering">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Component Description:http://genepattern.broad.mit.edu/gp/addTask.jsp?name=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00030:5&amp;view=1</rdfs:comment>
+        <owl:versionInfo rdf:datatype="&xsd;string"
+            >TODO: Still need to add optional parameters</owl:versionInfo>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#cc.cluster.by"/>
+        <ac:hasInput rdf:resource="#cc.cluster.by"/>
+        <ac:hasOutput rdf:resource="#ccClusterListingOutput"/>
+        <ac:hasOutput rdf:resource="#ccConsensusMatrixOutput"/>
+        <ac:hasOutput rdf:resource="#ccConsensusMatrixSortedOutput"/>
+        <ac:hasOutput rdf:resource="#ccHeatmapOutput"/>
+        <ac:hasArgument rdf:resource="#ccInput"/>
+        <ac:hasInput rdf:resource="#ccInput"/>
+        <ac:hasOutput rdf:resource="#ccStatisticsPlotOutput"/>
+    </ConsensusClusteringClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#HLCClusteredDataOutput -->
+
+    <HierachalClusteringDataArgument rdf:about="#HLCClusteredDataOutput">
+        <rdf:type rdf:resource="&dcdom;ClusteredDataTable"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">clusterOutput</ac:hasArgumentID>
+    </HierachalClusteringDataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#HLCClusteringOrderOutput -->
+
+    <HierachalClusteringDataArgument rdf:about="#HLCClusteringOrderOutput">
+        <rdf:type rdf:resource="&dcdom;Dendrogram"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >HLCClusteringOrderOutput</ac:hasArgumentID>
+    </HierachalClusteringDataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#HLCInput -->
+
+    <dcdom:GeneExpressionInFileFormat rdf:about="#HLCInput">
+        <rdf:type rdf:resource="#HierachalClusteringDataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-f</ac:hasArgumentName>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">clusterInput</ac:hasArgumentID>
+    </dcdom:GeneExpressionInFileFormat>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#HeatMapViewer -->
+
+    <HeatMapViewerClass rdf:about="#HeatMapViewer">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >http://genepattern.broad.mit.edu/gp/addTask.jsp?name=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.visualizer:00010:8&amp;view=1</rdfs:comment>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#heatmapInput"/>
+        <ac:hasInput rdf:resource="#heatmapInput"/>
+        <ac:hasOutput rdf:resource="#viewerOutput"/>
+    </HeatMapViewerClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#HierarchicalClustering -->
+
+    <HierarchicalClusteringClass rdf:about="#HierarchicalClustering">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Component definition can be found here:
+http://genepattern.broad.mit.edu/gp/addTask.jsp?name=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00009:3&amp;view=1</rdfs:comment>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasOutput rdf:resource="#HLCClusteredDataOutput"/>
+        <ac:hasOutput rdf:resource="#HLCClusteringOrderOutput"/>
+        <ac:hasArgument rdf:resource="#HLCInput"/>
+        <ac:hasInput rdf:resource="#HLCInput"/>
+        <ac:hasInput rdf:resource="#clusterBy"/>
+        <ac:hasArgument rdf:resource="#clusterBy"/>
+    </HierarchicalClusteringClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#HierarchicalClusteringArrayViewer -->
+
+    <owl:Thing rdf:about="#HierarchicalClusteringArrayViewer">
+        <rdf:type rdf:resource="#HierarchicalClusteringArrayViewerClass"/>
+        <dcdom:containsTreeFor rdf:datatype="&xsd;string">samples</dcdom:containsTreeFor>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#hcvArrayTreeInput"/>
+        <ac:hasInput rdf:resource="#hcvArrayTreeInput"/>
+        <ac:hasInput rdf:resource="#hcvDataTableInput"/>
+        <ac:hasArgument rdf:resource="#hcvDataTableInput"/>
+        <ac:hasOutput rdf:resource="#viewerOutput"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#HierarchicalClusteringGeneViewer -->
+
+    <owl:Thing rdf:about="#HierarchicalClusteringGeneViewer">
+        <rdf:type rdf:resource="#HierarchicalClusteringGeneViewerClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >http://genepattern.broad.mit.edu/gp/addTask.jsp?name=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.visualizer:00031:8&amp;view=1</rdfs:comment>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#hcvDataTableInput"/>
+        <ac:hasArgument rdf:resource="#hcvDataTableInput"/>
+        <ac:hasInput rdf:resource="#hcvGeneTreeInput"/>
+        <ac:hasArgument rdf:resource="#hcvGeneTreeInput"/>
+        <ac:hasOutput rdf:resource="#viewerOutput"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#HierarchicalClusteringViewer -->
+
+    <owl:Thing rdf:about="#HierarchicalClusteringViewer">
+        <rdf:type rdf:resource="#HierarchicalClusteringViewClass"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">false</ac:isConcrete>
+        <ac:hasInput rdf:resource="#hcvDataTableInput"/>
+        <ac:hasArgument rdf:resource="#hcvDataTableInput"/>
+        <ac:hasInput rdf:resource="#hcvDendrogramInput"/>
+        <ac:hasArgument rdf:resource="#hcvDendrogramInput"/>
+        <ac:hasOutput rdf:resource="#viewerOutput"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#KMeansClustering -->
+
+    <owl:Thing rdf:about="#KMeansClustering">
+        <rdf:type rdf:resource="#KMeansClusteringClass"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#km.cluster.by"/>
+        <ac:hasInput rdf:resource="#km.cluster.by"/>
+        <ac:hasArgument rdf:resource="#km.distance.metric"/>
+        <ac:hasInput rdf:resource="#km.distance.metric"/>
+        <ac:hasArgument rdf:resource="#km.number.of.clusters"/>
+        <ac:hasInput rdf:resource="#km.number.of.clusters"/>
+        <ac:hasInput rdf:resource="#km.output.base.name"/>
+        <ac:hasArgument rdf:resource="#km.output.base.name"/>
+        <ac:hasInput rdf:resource="#km.seed.value"/>
+        <ac:hasArgument rdf:resource="#km.seed.value"/>
+        <ac:hasOutput rdf:resource="#kmClusterResult"/>
+        <ac:hasInput rdf:resource="#kmInput"/>
+        <ac:hasArgument rdf:resource="#kmInput"/>
+        <ac:hasOutput rdf:resource="#kmStdout"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#NMFConsensus -->
+
+    <NMFConsensusClass rdf:about="#NMFConsensus">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >defined by: http://genepattern.broad.mit.edu/gp/addTask.jsp?name=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00057:4&amp;view=1</rdfs:comment>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#nmf.error.function"/>
+        <ac:hasArgument rdf:resource="#nmf.error.function"/>
+        <ac:hasArgument rdf:resource="#nmf.k.final"/>
+        <ac:hasInput rdf:resource="#nmf.k.final"/>
+        <ac:hasArgument rdf:resource="#nmf.k.initial"/>
+        <ac:hasInput rdf:resource="#nmf.k.initial"/>
+        <ac:hasInput rdf:resource="#nmf.max.num.iterations"/>
+        <ac:hasArgument rdf:resource="#nmf.max.num.iterations"/>
+        <ac:hasArgument rdf:resource="#nmf.num.clusterings"/>
+        <ac:hasInput rdf:resource="#nmf.num.clusterings"/>
+        <ac:hasInput rdf:resource="#nmf.random.seed"/>
+        <ac:hasArgument rdf:resource="#nmf.random.seed"/>
+        <ac:hasInput rdf:resource="#nmf.stop.convergence"/>
+        <ac:hasArgument rdf:resource="#nmf.stop.convergence"/>
+        <ac:hasArgument rdf:resource="#nmf.stop.frequency"/>
+        <ac:hasInput rdf:resource="#nmf.stop.frequency"/>
+        <ac:hasArgument rdf:resource="#nmfConsensusInput"/>
+        <ac:hasInput rdf:resource="#nmfConsensusInput"/>
+        <ac:hasOutput rdf:resource="#nmfConsensusOutput"/>
+        <ac:hasOutput rdf:resource="#nmfConsensusPlotOutput"/>
+        <ac:hasOutput rdf:resource="#nmfCopheneticOutput"/>
+        <ac:hasOutput rdf:resource="#nmfCopheneticPlotOutput"/>
+        <ac:hasOutput rdf:resource="#nmfGraphsOutput"/>
+        <ac:hasOutput rdf:resource="#nmfMembershipOutput"/>
+    </NMFConsensusClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#PreprocessDataset -->
+
+    <owl:Thing rdf:about="#PreprocessDataset">
+        <rdf:type rdf:resource="#PreprocessClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Concrete component described by h
+http://genepattern.broad.mit.edu/gp/addTask.jsp?name=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00020:2&amp;view=1</rdfs:comment>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#log.base.two"/>
+        <ac:hasInput rdf:resource="#log.base.two"/>
+        <ac:hasArgument rdf:resource="#preprocessInput"/>
+        <ac:hasInput rdf:resource="#preprocessInput"/>
+        <ac:hasOutput rdf:resource="#preprocessOutput"/>
+        <ac:hasArgument rdf:resource="#preprocessOutput"/>
+        <ac:hasInput rdf:resource="#preprocessing.flag"/>
+        <ac:hasArgument rdf:resource="#preprocessing.flag"/>
+        <ac:hasInput rdf:resource="#prob.thres"/>
+        <ac:hasArgument rdf:resource="#prob.thres"/>
+        <ac:hasInput rdf:resource="#threshold"/>
+        <ac:hasArgument rdf:resource="#threshold"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#SOMClusterViewer -->
+
+    <SOMClusterViewerClass rdf:about="#SOMClusterViewer">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Component Description: http://genepattern.broad.mit.edu/gp/addTask.jsp?name=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.visualizer:00023:5&amp;view=1</rdfs:comment>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#somViewerInput"/>
+        <ac:hasArgument rdf:resource="#somViewerInput"/>
+        <ac:hasOutput rdf:resource="#viewerOutput"/>
+    </SOMClusterViewerClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#SOMClustering -->
+
+    <SOMClusteringClass rdf:about="#SOMClustering">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Component documented at: http://genepattern.broad.mit.edu/gp/addTask.jsp?name=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00029:2&amp;view=1</rdfs:comment>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#som.alpha.final"/>
+        <ac:hasArgument rdf:resource="#som.alpha.final"/>
+        <ac:hasInput rdf:resource="#som.alpha.initial"/>
+        <ac:hasArgument rdf:resource="#som.alpha.initial"/>
+        <ac:hasArgument rdf:resource="#som.cluster.by"/>
+        <ac:hasInput rdf:resource="#som.cluster.by"/>
+        <ac:hasInput rdf:resource="#som.cluster.range"/>
+        <ac:hasArgument rdf:resource="#som.cluster.range"/>
+        <ac:hasArgument rdf:resource="#som.cols"/>
+        <ac:hasInput rdf:resource="#som.cols"/>
+        <ac:hasInput rdf:resource="#som.initialization"/>
+        <ac:hasArgument rdf:resource="#som.initialization"/>
+        <ac:hasInput rdf:resource="#som.iterations"/>
+        <ac:hasArgument rdf:resource="#som.iterations"/>
+        <ac:hasInput rdf:resource="#som.neighborhood"/>
+        <ac:hasArgument rdf:resource="#som.neighborhood"/>
+        <ac:hasInput rdf:resource="#som.rows"/>
+        <ac:hasArgument rdf:resource="#som.rows"/>
+        <ac:hasArgument rdf:resource="#som.seed.range"/>
+        <ac:hasInput rdf:resource="#som.seed.range"/>
+        <ac:hasArgument rdf:resource="#som.sigma.final"/>
+        <ac:hasInput rdf:resource="#som.sigma.final"/>
+        <ac:hasArgument rdf:resource="#som.sigma.initial"/>
+        <ac:hasInput rdf:resource="#som.sigma.initial"/>
+        <ac:hasInput rdf:resource="#somInput"/>
+        <ac:hasArgument rdf:resource="#somInput"/>
+        <ac:hasArgument rdf:resource="#somResults"/>
+        <ac:hasOutput rdf:resource="#somResults"/>
+    </SOMClusteringClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#StocasticClustering -->
+
+    <owl:Thing rdf:about="#StocasticClustering">
+        <rdf:type rdf:resource="#Stocastic"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">false</ac:isConcrete>
+        <ac:hasInput rdf:resource="#clusterBy"/>
+        <ac:hasArgument rdf:resource="#clusterBy"/>
+        <ac:hasInput rdf:resource="#clusterInput"/>
+        <ac:hasArgument rdf:resource="#clusterInput"/>
+        <ac:hasOutput rdf:resource="#clusterOutput"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#Viewer -->
+
+    <ViewerClass rdf:about="#Viewer">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">false</ac:isConcrete>
+        <ac:hasInput rdf:resource="#viewerInput"/>
+        <ac:hasOutput rdf:resource="#viewerOutput"/>
+    </ViewerClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#cc.cluster.by -->
+
+    <owl:Thing rdf:about="#cc.cluster.by">
+        <rdf:type rdf:resource="#ConsensusClusteringParameterArguments"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-t</ac:hasArgumentName>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">clusterBy</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#cc.kmax -->
+
+    <owl:Thing rdf:about="#cc.kmax">
+        <rdf:type rdf:resource="#ConsensusClusteringParameterArguments"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasValue rdf:datatype="&xsd;integer">5</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">cc.kmax</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#cc.normalize.type -->
+
+    <owl:Thing rdf:about="#cc.normalize.type">
+        <rdf:type rdf:resource="#ConsensusClusteringParameterArguments"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">3</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >cc.normalize.type</ac:hasArgumentID>
+        <ac:hasValue rdf:datatype="&xsd;string">row-wise</ac:hasValue>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#cc.output.stub -->
+
+    <ConsensusClusteringParameterArguments rdf:about="#cc.output.stub">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-o</ac:hasArgumentName>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">cc.output.stub</ac:hasArgumentID>
+    </ConsensusClusteringParameterArguments>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#cc.resampling.iterations -->
+
+    <owl:Thing rdf:about="#cc.resampling.iterations">
+        <rdf:type rdf:resource="#ConsensusClusteringParameterArguments"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasValue rdf:datatype="&xsd;integer">20</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >cc.resampling.iterations</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#ccClusterListingOutput -->
+
+    <ConsensusClusteringDataArguments rdf:about="#ccClusterListingOutput">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >ccClusterListingOutput</ac:hasArgumentID>
+    </ConsensusClusteringDataArguments>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#ccConsensusMatrixOutput -->
+
+    <owl:Thing rdf:about="#ccConsensusMatrixOutput">
+        <rdf:type rdf:resource="#ConsensusClusteringDataArguments"/>
+        <rdf:type rdf:resource="&dcdom;GCT"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">clusterOutput</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#ccConsensusMatrixSortedOutput -->
+
+    <ConsensusClusteringDataArguments rdf:about="#ccConsensusMatrixSortedOutput">
+        <rdf:type rdf:resource="&dcdom;GCT"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >ccConsensusMatrixSortedOutput</ac:hasArgumentID>
+    </ConsensusClusteringDataArguments>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#ccHeatmapOutput -->
+
+    <ConsensusClusteringDataArguments rdf:about="#ccHeatmapOutput">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">ccHeatmapOutput</ac:hasArgumentID>
+    </ConsensusClusteringDataArguments>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#ccInput -->
+
+    <ConsensusClusteringDataArguments rdf:about="#ccInput">
+        <rdf:type rdf:resource="&dcdom;GeneExpressionInFileFormat"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">clusterInput</ac:hasArgumentID>
+    </ConsensusClusteringDataArguments>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#ccStatisticsPlotOutput -->
+
+    <ConsensusClusteringDataArguments rdf:about="#ccStatisticsPlotOutput">
+        <rdf:type rdf:resource="&dcdom;ConsensusStatistics"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >ccStatisticsPlotOutput</ac:hasArgumentID>
+    </ConsensusClusteringDataArguments>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#ceiling -->
+
+    <PreprocessParamaterArgument rdf:about="#ceiling">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-c</ac:hasArgumentName>
+        <ac:hasValue rdf:datatype="&xsd;string">16000</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">ceiling</ac:hasArgumentID>
+    </PreprocessParamaterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#clusterBy -->
+
+    <owl:Thing rdf:about="#clusterBy">
+        <rdf:type rdf:resource="&ac;ParameterArgument"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">clusterBy</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#clusterInput -->
+
+    <owl:Thing rdf:about="#clusterInput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;GeneExpressionData"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">clusterInput</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#clusterOutput -->
+
+    <ac:DataArgument rdf:about="#clusterOutput">
+        <rdf:type rdf:resource="&dcdom;ViewableData"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">clusterOutput</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#clustering.method -->
+
+    <owl:Thing rdf:about="#clustering.method">
+        <rdf:type rdf:resource="#HierarchalClusteringParameterArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-m</ac:hasArgumentName>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >clustering.method</ac:hasArgumentID>
+        <ac:hasValue rdf:datatype="&xsd;string">m</ac:hasValue>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#column.distance.measure -->
+
+    <HierarchalClusteringParameterArgument rdf:about="#column.distance.measure">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-e</ac:hasArgumentName>
+        <ac:hasValue rdf:datatype="&xsd;string">2</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >column.distance.measure</ac:hasArgumentID>
+    </HierarchalClusteringParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#column.threshold -->
+
+    <owl:Thing rdf:about="#column.threshold">
+        <rdf:type rdf:resource="#PreprocessParamaterArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-b</ac:hasArgumentName>
+        <ac:hasValue rdf:datatype="&xsd;float">4.0</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >column.threshold</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#filter.flag -->
+
+    <owl:Thing rdf:about="#filter.flag">
+        <rdf:type rdf:resource="#PreprocessParamaterArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-V</ac:hasArgumentName>
+        <ac:hasValue rdf:datatype="&xsd;string">1</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">filter.flag</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#hcvArrayTreeInput -->
+
+    <HierarchicalClusteringViewerDataArgs rdf:about="#hcvArrayTreeInput">
+        <rdf:type rdf:resource="&dcdom;Dendrogram"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-a</ac:hasArgumentName>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >hcvDendrogramInput</ac:hasArgumentID>
+        <dcdom:containsTreeFor rdf:datatype="&xsd;string">samples</dcdom:containsTreeFor>
+    </HierarchicalClusteringViewerDataArgs>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#hcvDataTableInput -->
+
+    <HierarchicalClusteringViewerDataArgs rdf:about="#hcvDataTableInput">
+        <rdf:type rdf:resource="&dcdom;ClusteredDataTable"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">viewerInput</ac:hasArgumentID>
+    </HierarchicalClusteringViewerDataArgs>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#hcvDendrogramInput -->
+
+    <dcdom:Dendrogram rdf:about="#hcvDendrogramInput">
+        <rdf:type rdf:resource="#HierarchicalClusteringViewerDataArgs"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >hcvDendrogramInput</ac:hasArgumentID>
+    </dcdom:Dendrogram>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#hcvGeneTreeInput -->
+
+    <owl:Thing rdf:about="#hcvGeneTreeInput">
+        <rdf:type rdf:resource="#HierarchicalClusteringViewerDataArgs"/>
+        <rdf:type rdf:resource="&dcdom;Dendrogram"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-g</ac:hasArgumentName>
+        <dcdom:containsTreeFor rdf:datatype="&xsd;string">genes</dcdom:containsTreeFor>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >hcvDendrogramInput</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#heatmapInput -->
+
+    <owl:Thing rdf:about="#heatmapInput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;GeneExpressionInFileFormat"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">viewerInput</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#km.cluster.by -->
+
+    <KMeansClusteringParameterArgument rdf:about="#km.cluster.by">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">4</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">cluster.by</ac:hasArgumentID>
+    </KMeansClusteringParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#km.distance.metric -->
+
+    <owl:Thing rdf:about="#km.distance.metric">
+        <rdf:type rdf:resource="#KMeansClusteringParameterArgument"/>
+        <ac:hasValue rdf:datatype="&xsd;int">0</ac:hasValue>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">5</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >km.distance.metric</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#km.number.of.clusters -->
+
+    <KMeansClusteringParameterArgument rdf:about="#km.number.of.clusters">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >km.number.of.clusters</ac:hasArgumentID>
+    </KMeansClusteringParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#km.output.base.name -->
+
+    <KMeansClusteringParameterArgument rdf:about="#km.output.base.name">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >km.output.base.name</ac:hasArgumentID>
+        <ac:hasValue rdf:datatype="&xsd;string">kmout</ac:hasValue>
+    </KMeansClusteringParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#km.seed.value -->
+
+    <owl:Thing rdf:about="#km.seed.value">
+        <rdf:type rdf:resource="#KMeansClusteringParameterArgument"/>
+        <ac:hasValue rdf:datatype="&xsd;positiveInteger">12345</ac:hasValue>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">3</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">km.seed.value</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#kmClusterResult -->
+
+    <KMeansClusteringDataArgument rdf:about="#kmClusterResult">
+        <rdf:type rdf:resource="&dcdom;GCT"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">clusterOutput</ac:hasArgumentID>
+    </KMeansClusteringDataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#kmInput -->
+
+    <KMeansClusteringDataArgument rdf:about="#kmInput">
+        <rdf:type rdf:resource="&dcdom;GeneExpressionInFileFormat"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">clusterInput</ac:hasArgumentID>
+    </KMeansClusteringDataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#kmStdout -->
+
+    <KMeansClusteringDataArgument rdf:about="#kmStdout">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">kmStdout</ac:hasArgumentID>
+    </KMeansClusteringDataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#log.base.two -->
+
+    <owl:Thing rdf:about="#log.base.two">
+        <rdf:type rdf:resource="#PreprocessParamaterArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-l</ac:hasArgumentName>
+        <ac:hasValue rdf:datatype="&xsd;string">false</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">log.base.two</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#max.sigma.binning -->
+
+    <owl:Thing rdf:about="#max.sigma.binning">
+        <rdf:type rdf:resource="#PreprocessParamaterArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-s</ac:hasArgumentName>
+        <ac:hasValue rdf:datatype="&xsd;string">1</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >max.sigma.binning</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#minchange -->
+
+    <PreprocessParamaterArgument rdf:about="#minchange">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-f</ac:hasArgumentName>
+        <ac:hasValue rdf:datatype="&xsd;string">3</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">minchange</ac:hasArgumentID>
+    </PreprocessParamaterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#mindelta -->
+
+    <owl:Thing rdf:about="#mindelta">
+        <rdf:type rdf:resource="#PreprocessParamaterArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-d</ac:hasArgumentName>
+        <ac:hasValue rdf:datatype="&xsd;string">100</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">mindelta</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#nmf.error.function -->
+
+    <owl:Thing rdf:about="#nmf.error.function">
+        <rdf:type rdf:resource="#NMFConsensusParameterArguments"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">5</ac:hasArgumentIndex>
+        <ac:hasValue rdf:datatype="&xsd;string">divergence</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >nmf.error.function</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#nmf.k.final -->
+
+    <owl:Thing rdf:about="#nmf.k.final">
+        <rdf:type rdf:resource="#NMFConsensusParameterArguments"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasValue rdf:datatype="&xsd;integer">5</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">nmf.k.final</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#nmf.k.initial -->
+
+    <NMFConsensusParameterArguments rdf:about="#nmf.k.initial">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasValue rdf:datatype="&xsd;integer">2</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">nmf.k.initial</ac:hasArgumentID>
+    </NMFConsensusParameterArguments>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#nmf.max.num.iterations -->
+
+    <NMFConsensusParameterArguments rdf:about="#nmf.max.num.iterations">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasValue rdf:datatype="&xsd;integer">2000</ac:hasValue>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">4</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >nmf.max.num.iterations</ac:hasArgumentID>
+    </NMFConsensusParameterArguments>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#nmf.num.clusterings -->
+
+    <NMFConsensusParameterArguments rdf:about="#nmf.num.clusterings">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasValue rdf:datatype="&xsd;integer">20</ac:hasValue>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">3</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >nmf.num.clusterings</ac:hasArgumentID>
+    </NMFConsensusParameterArguments>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#nmf.random.seed -->
+
+    <owl:Thing rdf:about="#nmf.random.seed">
+        <rdf:type rdf:resource="#NMFConsensusParameterArguments"/>
+        <ac:hasValue rdf:datatype="&xsd;integer">123456789</ac:hasValue>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">6</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">nmf.random.seed</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#nmf.stop.convergence -->
+
+    <NMFConsensusParameterArguments rdf:about="#nmf.stop.convergence">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasValue rdf:datatype="&xsd;integer">40</ac:hasValue>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">7</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >nmf.stop.convergence</ac:hasArgumentID>
+    </NMFConsensusParameterArguments>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#nmf.stop.frequency -->
+
+    <owl:Thing rdf:about="#nmf.stop.frequency">
+        <rdf:type rdf:resource="#NMFConsensusParameterArguments"/>
+        <ac:hasValue rdf:datatype="&xsd;integer">10</ac:hasValue>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">8</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >nmf.stop.frequency</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#nmfConsensusInput -->
+
+    <dcdom:GCT rdf:about="#nmfConsensusInput">
+        <rdf:type rdf:resource="#NMFConsensusDataArgument"/>
+        <rdf:type rdf:resource="&dcdom;RES"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">clusterInput</ac:hasArgumentID>
+    </dcdom:GCT>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#nmfConsensusOutput -->
+
+    <owl:Thing rdf:about="#nmfConsensusOutput">
+        <rdf:type rdf:resource="#NMFConsensusDataArgument"/>
+        <rdf:type rdf:resource="&dcdom;GCT"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >nmfConsensusOutput</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#nmfConsensusPlotOutput -->
+
+    <owl:Thing rdf:about="#nmfConsensusPlotOutput">
+        <rdf:type rdf:resource="#NMFConsensusDataArgument"/>
+        <rdf:type rdf:resource="&dcdom;NMFConsensus"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >nmfConsensusPlotOutput</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#nmfCopheneticOutput -->
+
+    <NMFConsensusDataArgument rdf:about="#nmfCopheneticOutput">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >nmfCopheneticOutput</ac:hasArgumentID>
+    </NMFConsensusDataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#nmfCopheneticPlotOutput -->
+
+    <NMFConsensusDataArgument rdf:about="#nmfCopheneticPlotOutput">
+        <rdf:type rdf:resource="&dcdom;NMFCophenetic"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >nmfCopheneticPlotOutput</ac:hasArgumentID>
+    </NMFConsensusDataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#nmfGraphsOutput -->
+
+    <dcdom:NMFGraph rdf:about="#nmfGraphsOutput">
+        <rdf:type rdf:resource="#NMFConsensusDataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">nmfGraphsOutput</ac:hasArgumentID>
+    </dcdom:NMFGraph>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#nmfMembershipOutput -->
+
+    <owl:Thing rdf:about="#nmfMembershipOutput">
+        <rdf:type rdf:resource="#NMFConsensusDataArgument"/>
+        <rdf:type rdf:resource="&dcdom;GCT"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">clusterOutput</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#num.excul -->
+
+    <owl:Thing rdf:about="#num.excul">
+        <rdf:type rdf:resource="#PreprocessParamaterArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-e</ac:hasArgumentName>
+        <ac:hasValue rdf:datatype="&xsd;string">0</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">num.exul</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#number.of.columns.above.threshold -->
+
+    <owl:Thing rdf:about="#number.of.columns.above.threshold">
+        <rdf:type rdf:resource="#PreprocessParamaterArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-a</ac:hasArgumentName>
+        <ac:hasValue rdf:datatype="&xsd;int">0</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >number.of.columns.above.threshold</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#output -->
+
+    <ac:DataArgument rdf:about="#output">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-O</ac:hasArgumentName>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">output</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#output.base.name -->
+
+    <owl:Thing rdf:about="#output.base.name">
+        <rdf:type rdf:resource="#HierarchalClusteringParameterArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-u</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >output.base.name</ac:hasArgumentID>
+        <ac:hasValue rdf:datatype="&xsd;string">test</ac:hasValue>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#output.file.format -->
+
+    <owl:Thing rdf:about="#output.file.format">
+        <rdf:type rdf:resource="#PreprocessParamaterArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-r</ac:hasArgumentName>
+        <ac:hasValue rdf:datatype="&xsd;string">3</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >output.file.format</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#preprocessInput -->
+
+    <owl:Thing rdf:about="#preprocessInput">
+        <rdf:type rdf:resource="#PreprocessDataArgument"/>
+        <rdf:type rdf:resource="&dcdom;GeneExpressionInFileFormat"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-F</ac:hasArgumentName>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">preprocessInput</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#preprocessOutput -->
+
+    <dcdom:GeneExpressionInFileFormat rdf:about="#preprocessOutput">
+        <rdf:type rdf:resource="#PreprocessDataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-O</ac:hasArgumentName>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >preprocessOutput</ac:hasArgumentID>
+    </dcdom:GeneExpressionInFileFormat>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#preprocessing.flag -->
+
+    <PreprocessParamaterArgument rdf:about="#preprocessing.flag">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-D</ac:hasArgumentName>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >preprocessing.flag</ac:hasArgumentID>
+    </PreprocessParamaterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#prob.thres -->
+
+    <PreprocessParamaterArgument rdf:about="#prob.thres">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-p</ac:hasArgumentName>
+        <ac:hasValue rdf:datatype="&xsd;string">1</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >probablility.threshold</ac:hasArgumentID>
+    </PreprocessParamaterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#row.distance.measure -->
+
+    <HierarchalClusteringParameterArgument rdf:about="#row.distance.measure">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-g</ac:hasArgumentName>
+        <ac:hasValue rdf:datatype="&xsd;string">2</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >row.distance.measure</ac:hasArgumentID>
+    </HierarchalClusteringParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#som.alpha.final -->
+
+    <SOMParameterArgument rdf:about="#som.alpha.final">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasValue rdf:datatype="&xsd;float">0.0050</ac:hasValue>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">9</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">som.alpha.final</ac:hasArgumentID>
+    </SOMParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#som.alpha.initial -->
+
+    <SOMParameterArgument rdf:about="#som.alpha.initial">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasValue rdf:datatype="&xsd;float">0.1</ac:hasValue>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">8</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >som.alpha.initial</ac:hasArgumentID>
+    </SOMParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#som.cluster.by -->
+
+    <owl:Thing rdf:about="#som.cluster.by">
+        <rdf:type rdf:resource="#SOMParameterArgument"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">13</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">cluster.by</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#som.cluster.range -->
+
+    <owl:Thing rdf:about="#som.cluster.range">
+        <rdf:type rdf:resource="#SOMParameterArgument"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasValue rdf:datatype="&xsd;string">2-2</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >som.cluster.range</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#som.cols -->
+
+    <owl:Thing rdf:about="#som.cols">
+        <rdf:type rdf:resource="#SOMParameterArgument"/>
+        <ac:hasValue rdf:datatype="&xsd;string">0</ac:hasValue>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">5</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">som.cols</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#som.initialization -->
+
+    <owl:Thing rdf:about="#som.initialization">
+        <rdf:type rdf:resource="#SOMParameterArgument"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">6</ac:hasArgumentIndex>
+        <ac:hasValue rdf:datatype="&xsd;string">Random_Vectors</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >som.initialization</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#som.iterations -->
+
+    <SOMParameterArgument rdf:about="#som.iterations">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasValue rdf:datatype="&xsd;string">50000</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">som.iterations</ac:hasArgumentID>
+    </SOMParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#som.neighborhood -->
+
+    <owl:Thing rdf:about="#som.neighborhood">
+        <rdf:type rdf:resource="#SOMParameterArgument"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">7</ac:hasArgumentIndex>
+        <ac:hasValue rdf:datatype="&xsd;string">Bubble</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >som.neighborhood</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#som.output.stub -->
+
+    <owl:Thing rdf:about="#som.output.stub">
+        <rdf:type rdf:resource="#SOMParameterArgument"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#som.rows -->
+
+    <owl:Thing rdf:about="#som.rows">
+        <rdf:type rdf:resource="#SOMParameterArgument"/>
+        <ac:hasValue rdf:datatype="&xsd;string">0</ac:hasValue>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">4</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">som.rows</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#som.seed.range -->
+
+    <owl:Thing rdf:about="#som.seed.range">
+        <rdf:type rdf:resource="#SOMParameterArgument"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">3</ac:hasArgumentIndex>
+        <ac:hasValue rdf:datatype="&xsd;string">42</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">som.seed.range</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#som.sigma.final -->
+
+    <SOMParameterArgument rdf:about="#som.sigma.final">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasValue rdf:datatype="&xsd;float">0.0</ac:hasValue>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">11</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">som.sigma.final</ac:hasArgumentID>
+    </SOMParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#som.sigma.initial -->
+
+    <SOMParameterArgument rdf:about="#som.sigma.initial">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">10</ac:hasArgumentIndex>
+        <ac:hasValue rdf:datatype="&xsd;float">5.0</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >som.sigma.initial</ac:hasArgumentID>
+    </SOMParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#somInput -->
+
+    <dcdom:GeneExpressionInFileFormat rdf:about="#somInput">
+        <rdf:type rdf:resource="#SOMDataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">clusterInput</ac:hasArgumentID>
+    </dcdom:GeneExpressionInFileFormat>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#somResults -->
+
+    <owl:Thing rdf:about="#somResults">
+        <rdf:type rdf:resource="#SOMDataArgument"/>
+        <rdf:type rdf:resource="&dcdom;SOMClusterResult"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">12</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">clusterOutput</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#somStdout -->
+
+    <owl:Thing rdf:about="#somStdout">
+        <rdf:type rdf:resource="#SOMDataArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">12</ac:hasArgumentName>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">stdout</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#somViewerInput -->
+
+    <dcdom:SOMClusterResult rdf:about="#somViewerInput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">viewerInput</ac:hasArgumentID>
+    </dcdom:SOMClusterResult>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#threshold -->
+
+    <owl:Thing rdf:about="#threshold">
+        <rdf:type rdf:resource="#PreprocessParamaterArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-t</ac:hasArgumentName>
+        <ac:hasValue rdf:datatype="&xsd;string">20</ac:hasValue>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">threshold</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#viewerInput -->
+
+    <dcdom:ViewableData rdf:about="#viewerInput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">viewerInput</ac:hasArgumentID>
+    </dcdom:ViewableData>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/gpcla/library.owl#viewerOutput -->
+
+    <owl:Thing rdf:about="#viewerOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">viewerOutput</ac:hasArgumentID>
+    </owl:Thing>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns="http://wings-workflows.org/ontology/ac/pedwork/library.owl#"
+    xmlns:dcdom="http://wings-workflows.org/ontology/dc/pedwork/ontology.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+  xml:base="http://wings-workflows.org/ontology/ac/pedwork/library.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://wings-workflows.org/ontology/dc/pedwork/ontology.owl"/>
+    <owl:imports rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl"/>
+  </owl:Ontology>
+  <rdfs:Class rdf:about="http://wings-workflows.org/ontology/ac/ontology.owl#Component"/>
+  <owl:Class rdf:ID="LinkGradeActivity_Class">
+    <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#Component"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Hist_Analysis_Class">
+    <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#Component"/>
+  </owl:Class>
+  <owl:Class rdf:ID="PlotTable_Class">
+    <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#Component"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Average_Analysis_Class">
+    <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#Component"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Correlation_Class">
+    <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#Component"/>
+  </owl:Class>
+  <owl:Class rdf:ID="JavaComponent_Class">
+    <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#Component"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Create_UserThreads_Class">
+    <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#Component"/>
+  </owl:Class>
+  <Average_Analysis_Class rdf:ID="Average_Analysis">
+    <ac:isConcrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</ac:isConcrete>
+    <ac:hasInput>
+      <dcdom:UserThreadsFile_Class rdf:ID="UserThreadsFile1">
+        <ac:hasArgumentIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</ac:hasArgumentIndex>
+        <rdf:type rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument"/>
+        <ac:hasArgumentID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >UserThreadsFile</ac:hasArgumentID>
+      </dcdom:UserThreadsFile_Class>
+    </ac:hasInput>
+    <ac:hasArgument>
+      <dcdom:RDataFile_Class rdf:ID="RDataUserWait">
+        <ac:hasArgumentIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >RDataUserWait</ac:hasArgumentID>
+        <rdf:type rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument"/>
+      </dcdom:RDataFile_Class>
+    </ac:hasArgument>
+    <ac:hasArgument rdf:resource="#UserThreadsFile1"/>
+    <ac:hasOutput rdf:resource="#RDataUserWait"/>
+  </Average_Analysis_Class>
+  <Hist_Analysis_Class rdf:ID="Hist_Analysis">
+    <ac:hasInput>
+      <dcdom:XMLFile_Class rdf:ID="PostIDAndPosterID">
+        <ac:hasArgumentIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</ac:hasArgumentIndex>
+        <rdf:type rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument"/>
+        <ac:hasArgumentID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >PostIDAndPosterID</ac:hasArgumentID>
+      </dcdom:XMLFile_Class>
+    </ac:hasInput>
+    <ac:hasInput>
+      <ac:ParameterArgument rdf:ID="Argument_poster_id_3">
+        <ac:hasArgumentIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Argument_poster_id_3</ac:hasArgumentID>
+        <ac:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >poster_id</ac:hasValue>
+      </ac:ParameterArgument>
+    </ac:hasInput>
+    <ac:hasArgument>
+      <dcdom:XMLFile_Class rdf:ID="HistPostonPosterID0">
+        <rdf:type rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument"/>
+        <ac:hasArgumentIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >HistPostonPosterID0</ac:hasArgumentID>
+      </dcdom:XMLFile_Class>
+    </ac:hasArgument>
+    <ac:hasArgument rdf:resource="#PostIDAndPosterID"/>
+    <ac:hasArgument rdf:resource="#Argument_poster_id_3"/>
+    <ac:hasOutput rdf:resource="#HistPostonPosterID0"/>
+    <ac:isConcrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</ac:isConcrete>
+  </Hist_Analysis_Class>
+  <dcdom:UserWaitFile_Class rdf:ID="UserWaitFile">
+    <rdf:type rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument"/>
+    <ac:hasArgumentIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2</ac:hasArgumentIndex>
+    <ac:hasArgumentID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >UserWaitFile</ac:hasArgumentID>
+  </dcdom:UserWaitFile_Class>
+  <LinkProjBetweenTerms rdf:ID="LinkProjBetweenTerms_3"/>
+  <LinkGradeActivity_Class rdf:ID="LinkGradeActivity">
+    <ac:isConcrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</ac:isConcrete>
+    <ac:hasArgument>
+      <dcdom:RDataFile_Class rdf:ID="GradeActivityRData">
+        <ac:hasArgumentIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >GradeActivityRData</ac:hasArgumentID>
+        <rdf:type rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument"/>
+      </dcdom:RDataFile_Class>
+    </ac:hasArgument>
+    <ac:hasArgument>
+      <dcdom:XMLFile_Class rdf:ID="HistPostonPosterID1">
+        <rdf:type rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument"/>
+        <ac:hasArgumentID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >HistPostonPosterID1</ac:hasArgumentID>
+        <ac:hasArgumentIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2</ac:hasArgumentIndex>
+      </dcdom:XMLFile_Class>
+    </ac:hasArgument>
+    <ac:hasArgument>
+      <dcdom:XMLFile_Class rdf:ID="Grades">
+        <rdf:type rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument"/>
+        <ac:hasArgumentID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Grades</ac:hasArgumentID>
+        <ac:hasArgumentIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</ac:hasArgumentIndex>
+      </dcdom:XMLFile_Class>
+    </ac:hasArgument>
+    <ac:hasOutput rdf:resource="#GradeActivityRData"/>
+    <ac:hasInput rdf:resource="#HistPostonPosterID1"/>
+    <ac:hasInput rdf:resource="#Grades"/>
+  </LinkGradeActivity_Class>
+  <Create_UserThreads_Class rdf:ID="Create_UserThreads">
+    <ac:hasOutput>
+      <dcdom:NoAnswerUserFile_Class rdf:ID="NoAnswerUserFile">
+        <ac:hasArgumentIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >4</ac:hasArgumentIndex>
+        <rdf:type rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument"/>
+        <ac:hasArgumentID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >NoAnswerUserFile</ac:hasArgumentID>
+      </dcdom:NoAnswerUserFile_Class>
+    </ac:hasOutput>
+    <ac:hasInput>
+      <dcdom:InputThreadsFile_Class rdf:ID="InputThreadsFile">
+        <ac:hasArgumentID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >InputThreadsFile</ac:hasArgumentID>
+        <rdf:type rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument"/>
+        <ac:hasArgumentIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</ac:hasArgumentIndex>
+      </dcdom:InputThreadsFile_Class>
+    </ac:hasInput>
+    <ac:isConcrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</ac:isConcrete>
+    <ac:hasArgument rdf:resource="#InputThreadsFile"/>
+    <ac:hasOutput>
+      <dcdom:UserThreadsFile_Class rdf:ID="UserThreadsFile0">
+        <rdf:type rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument"/>
+        <ac:hasArgumentID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >UserThreadsFile</ac:hasArgumentID>
+        <ac:hasArgumentIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3</ac:hasArgumentIndex>
+      </dcdom:UserThreadsFile_Class>
+    </ac:hasOutput>
+    <ac:hasInput>
+      <dcdom:InputUserFile_Class rdf:ID="InputUserFile">
+        <ac:hasArgumentID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >InputUserFile</ac:hasArgumentID>
+        <rdf:type rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument"/>
+        <ac:hasArgumentIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2</ac:hasArgumentIndex>
+      </dcdom:InputUserFile_Class>
+    </ac:hasInput>
+    <ac:hasArgument rdf:resource="#UserThreadsFile0"/>
+    <ac:hasArgument rdf:resource="#NoAnswerUserFile"/>
+    <ac:hasArgument rdf:resource="#InputUserFile"/>
+  </Create_UserThreads_Class>
+  <PlotTable_Class rdf:ID="PlotTable">
+    <ac:hasArgument>
+      <dcdom:RGraphFile_Class rdf:ID="RGraphPlotOut">
+        <rdf:type rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument"/>
+        <ac:hasArgumentID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >RGraphPlotOut</ac:hasArgumentID>
+        <ac:hasArgumentIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2</ac:hasArgumentIndex>
+      </dcdom:RGraphFile_Class>
+    </ac:hasArgument>
+    <ac:hasArgument>
+      <dcdom:RDataFile_Class rdf:ID="RDataPlotIn">
+        <ac:hasArgumentID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >RDataPlotIn</ac:hasArgumentID>
+        <rdf:type rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument"/>
+        <ac:hasArgumentIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</ac:hasArgumentIndex>
+      </dcdom:RDataFile_Class>
+    </ac:hasArgument>
+    <ac:hasOutput rdf:resource="#RGraphPlotOut"/>
+    <ac:hasInput rdf:resource="#RDataPlotIn"/>
+    <ac:isConcrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</ac:isConcrete>
+  </PlotTable_Class>
+  <Correlation_Class rdf:ID="Correlation">
+    <ac:hasInput>
+      <dcdom:RDataFile_Class rdf:ID="RDataCorIn">
+        <ac:hasArgumentID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >RDataCorIn</ac:hasArgumentID>
+        <rdf:type rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument"/>
+        <ac:hasArgumentIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</ac:hasArgumentIndex>
+      </dcdom:RDataFile_Class>
+    </ac:hasInput>
+    <ac:hasOutput>
+      <dcdom:RDataFile_Class rdf:ID="RDataCorOut">
+        <ac:hasArgumentIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >RDataCorOut</ac:hasArgumentID>
+        <rdf:type rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument"/>
+      </dcdom:RDataFile_Class>
+    </ac:hasOutput>
+    <ac:isConcrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</ac:isConcrete>
+    <ac:hasArgument rdf:resource="#RDataCorOut"/>
+    <ac:hasArgument rdf:resource="#RDataCorIn"/>
+  </Correlation_Class>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.1, Build 536)  http://protege.stanford.edu -->

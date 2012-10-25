@@ -1,0 +1,650 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+     xml:base="http://wings-workflows.org/ontology/2007/08/workflow.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#createSetsOn -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#createSetsOn">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#SetCreationRule"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#ComponentVariable"/>
+                    <rdf:Description rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#SetCreationExpression"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasComponent -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasComponent">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#ComponentVariable"/>
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Node"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasComponentBinding -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasComponentBinding">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#ComponentVariable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasComponentSetCreationRule -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasComponentSetCreationRule">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Node"/>
+        <rdfs:range rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#SetCreationRule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasControlExpression -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasControlExpression">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#ControlLink"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasDataBinding -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasDataBinding">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#DataVariable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasDestinationNode -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasDestinationNode">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Link"/>
+        <rdfs:range rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Node"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasDestinationPort -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasDestinationPort">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Link"/>
+        <rdfs:range rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Port"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasDifferentDataFrom -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasDifferentDataFrom">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#DataVariable"/>
+        <rdfs:range rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#DataVariable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasExpressionArgument -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasExpressionArgument">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#SetCreationExpression"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#Port"/>
+                    <rdf:Description rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#SetCreationExpression"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasInputPort -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasInputPort">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Node"/>
+        <rdfs:range rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Port"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasInputRole -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasInputRole">
+        <rdfs:range rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Role"/>
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Workflow"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasLink -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasLink">
+        <rdfs:range rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Link"/>
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Workflow"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasNode -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasNode">
+        <rdfs:range rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Node"/>
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Workflow"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasOriginNode -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasOriginNode">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Link"/>
+        <rdfs:range rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Node"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasOriginPort -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasOriginPort">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Link"/>
+        <rdfs:range rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Port"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasOutputPort -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasOutputPort">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Node"/>
+        <rdfs:range rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Port"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasOutputRole -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasOutputRole">
+        <rdfs:range rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Role"/>
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Workflow"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasPortSetCreationRule -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasPortSetCreationRule">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Node"/>
+        <rdfs:range rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#SetCreationRule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasSameDataAs -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasSameDataAs">
+        <rdfs:range rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#DataVariable"/>
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#DataVariable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasVariable -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasVariable">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Link"/>
+        <rdfs:range rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Variable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasWorkflow -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasWorkflow">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Node"/>
+        <rdfs:range rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Workflow"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#mapsToVariable -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#mapsToVariable">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Role"/>
+        <rdfs:range rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Variable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#satisfiesRole -->
+
+    <owl:ObjectProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#satisfiesRole">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Port"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="&owl;topObjectProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#createComponentSets -->
+
+    <owl:DatatypeProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#createComponentSets">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#SetCreationRule"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#createWorkflowSets -->
+
+    <owl:DatatypeProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#createWorkflowSets">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#SetCreationRule"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#createdFrom -->
+
+    <owl:DatatypeProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#createdFrom">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Metadata"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasContributor -->
+
+    <owl:DatatypeProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasContributor">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Metadata"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasDimensionality -->
+
+    <owl:DatatypeProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasDimensionality">
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasDocumentation -->
+
+    <owl:DatatypeProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasDocumentation">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Metadata"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasParameterValue -->
+
+    <owl:DatatypeProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasParameterValue">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#ParameterVariable"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasRules -->
+
+    <owl:DatatypeProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasRules">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#RuleSet"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#hasVersion -->
+
+    <owl:DatatypeProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasVersion">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Workflow"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#isConcrete -->
+
+    <owl:DatatypeProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#isConcrete">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#ComponentVariable"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#lastUpdateTime -->
+
+    <owl:DatatypeProperty rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#lastUpdateTime">
+        <rdfs:domain rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Metadata"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#ComponentSetRule -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#ComponentSetRule">
+        <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#SetCreationRule"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#createSetsOn"/>
+                <owl:onClass rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#ComponentVariable"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#ComponentVariable -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#ComponentVariable">
+        <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Variable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#ControlLink -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#ControlLink">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasVariable"/>
+                <owl:onClass rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Variable"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Link"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#DataVariable -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#DataVariable">
+        <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Variable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#InOutLink -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#InOutLink">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasDestinationNode"/>
+                        <owl:onClass rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Node"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasOriginNode"/>
+                        <owl:onClass rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Node"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Link"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#IncreaseDimensionality -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#IncreaseDimensionality">
+        <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#SetCreationExpression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#InputLink -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#InputLink">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasDestinationNode"/>
+                        <owl:onClass rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Node"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasOriginNode"/>
+                        <owl:onClass rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Node"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Link"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#Link -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#Link"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#Metadata -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#Metadata"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#NWise -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#NWise">
+        <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#SetCreationExpression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#Node -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#Node"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#OutputLink -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#OutputLink">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasDestinationNode"/>
+                        <owl:onClass rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Node"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#hasOriginNode"/>
+                        <owl:onClass rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Node"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Link"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#ParameterVariable -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#ParameterVariable">
+        <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Variable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#Port -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#Port">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#PortSetRule -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#PortSetRule">
+        <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#SetCreationRule"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#createSetsOn"/>
+                <owl:onClass rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#SetCreationExpression"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#Role -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#Role">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#RuleSet -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#RuleSet"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#SetCreationExpression -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#SetCreationExpression">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#SetCreationRule -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#SetCreationRule">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#Variable -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#Variable"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#Workflow -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#Workflow"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#WorkflowInstance -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#WorkflowInstance">
+        <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Workflow"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#WorkflowTemplate -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#WorkflowTemplate">
+        <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#Workflow"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/2007/08/workflow.owl#XProduct -->
+
+    <owl:Class rdf:about="http://wings-workflows.org/ontology/2007/08/workflow.owl#XProduct">
+        <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl#SetCreationExpression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.0.0.1469) http://owlapi.sourceforge.net -->
+

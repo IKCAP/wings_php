@@ -1,0 +1,347 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:acdom="http://wings-workflows.org/ontology/ac/cgsmd/library.owl#"
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:dclib="http://wings-workflows.org/ontology/dc/cgsmd/library.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns="http://wings-workflows.org/ontology/CGSMD/TDT_Workflow.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:dcdom="http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#"
+    xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+      xml:base="http://wings-workflows.org/ontology/CGSMD/TDT_Workflow.owl">
+      <wflow:Metadata rdf:about="">
+            <wflow:hasContributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >varun</wflow:hasContributor>
+            <wflow:hasDocumentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >
+&lt;p&gt;This is basic family-based association testing for disease traits, using the TDT function in PLINK.&lt;/p&gt;
+
+&lt;i&gt;Input: [PEDFile], [MAPFile]&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;Output: [OutputTDT], [OutputTDTPerm]&lt;/i&gt;&lt;br /&gt;
+&lt;br /&gt;
+
+&lt;ul&gt;
+
+&lt;li&gt;&lt;b&gt;CreateBinaryPEDFile:&lt;/b&gt;  This component converts hapmap format into efficient binary format used by Plink.
+&lt;ul&gt;
+&lt;li&gt;plink --file [InputPEDFile] --make-bed --out [OutputBPEDFile]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;TDT:&lt;/b&gt; Run a basic TDT analysis for family data.
+&lt;ul&gt;
+&lt;li&gt;plink --bed [BPEDFile] --bim [BIMFile] --fam [FAMFile] --tdt --out [OutputTDT]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;/li&gt;
+
+&lt;/ul&gt;
+            </wflow:hasDocumentation>
+            <wflow:lastUpdateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2010-01-21T17:27:02.729Z</wflow:lastUpdateTime>
+      </wflow:Metadata>
+      <owl:Ontology rdf:ID="TDT_Workflow.owl">
+            <owl:imports rdf:resource="/2007/08/workflow.owl"/>
+      </owl:Ontology>
+      <wflow:WorkflowTemplate rdf:ID="TDT_Workflow">
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="TDTNode_OutputTDT_To_Output">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="OutputTDT">
+                                    <rdfs:comment>x=25.0,y=223.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasOriginPort>
+                              <wflow:Port rdf:ID="TDTNode_OutputTDT">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/cgsmd/library.owl#OutputTDT">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasOriginPort>
+                        <wflow:hasOriginNode>
+                              <wflow:Node rdf:ID="TDTNode">
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="TDTNode_FAMFile">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#FAMFile">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasComponent>
+                                          <wflow:ComponentVariable rdf:ID="component1">
+                                                <wflow:isConcrete
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:isConcrete>
+                                                <rdf:type rdf:resource="/ac/cgsmd/library.owl#TDT"/>
+                                          </wflow:ComponentVariable>
+                                    </wflow:hasComponent>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="TDTNode_OutputTDTPerm">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#OutputTDTPerm">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn rdf:resource="#component1"/>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="TDTNode_BIMFile">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#BIMFile">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="TDTNode_BPEDFile">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#BPEDFile">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-dfd3fd27-c8b7-4e96-90df-d25767d7e3c7">
+                                                            <wflow:hasExpressionArgument rdf:resource="#TDTNode_BPEDFile"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#TDTNode_FAMFile"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#TDTNode_BIMFile"/>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <rdfs:comment>x=94.0,y=177.0</rdfs:comment>
+                                    <wflow:hasOutputPort rdf:resource="#TDTNode_OutputTDT"/>
+                              </wflow:Node>
+                        </wflow:hasOriginNode>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Create_Binary_PEDFileNode_FAMFile_To_TDTNode_FAMFile">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="FAMFile">
+                                    <rdfs:comment>x=137.0,y=120.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#TDTNode_FAMFile"/>
+                        <wflow:hasDestinationNode rdf:resource="#TDTNode"/>
+                        <wflow:hasOriginPort>
+                              <wflow:Port rdf:ID="Create_Binary_PEDFileNode_FAMFile">
+                                    <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#FAMFile"/>
+                              </wflow:Port>
+                        </wflow:hasOriginPort>
+                        <wflow:hasOriginNode>
+                              <wflow:Node rdf:ID="Create_Binary_PEDFileNode">
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="Create_Binary_PEDFileNode_MAPFile">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#MAPFile">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component0">
+                                                            <wflow:isConcrete
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#boolean"
+                                                            >true</wflow:isConcrete>
+                                                            <rdf:type rdf:resource="/ac/cgsmd/library.owl#Create_Binary_PEDFile"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-a19ccf6f-5715-4f0a-a73e-8d76c9e115de">
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="Create_Binary_PEDFileNode_PEDFile">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/cgsmd/library.owl#PEDFile">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument rdf:resource="#Create_Binary_PEDFileNode_MAPFile"/>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Create_Binary_PEDFileNode_BIMFile">
+                                                <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#BIMFile"/>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Create_Binary_PEDFileNode_BPEDFile">
+                                                <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#BPEDFile"/>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasOutputPort rdf:resource="#Create_Binary_PEDFileNode_FAMFile"/>
+                                    <rdfs:comment>x=19.0,y=68.0</rdfs:comment>
+                                    <wflow:hasComponent rdf:resource="#component0"/>
+                                    <wflow:hasInputPort rdf:resource="#Create_Binary_PEDFileNode_PEDFile"/>
+                              </wflow:Node>
+                        </wflow:hasOriginNode>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Create_Binary_PEDFileNode_BIMFile_To_TDTNode_BIMFile">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="BIMFile">
+                                    <rdfs:comment>x=78.0,y=123.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#TDTNode_BIMFile"/>
+                        <wflow:hasDestinationNode rdf:resource="#TDTNode"/>
+                        <wflow:hasOriginPort rdf:resource="#Create_Binary_PEDFileNode_BIMFile"/>
+                        <wflow:hasOriginNode rdf:resource="#Create_Binary_PEDFileNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#TDTNode"/>
+            <wflow:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >2</wflow:hasVersion>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="PEDFile_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:DataVariable rdf:ID="PEDFile">
+                                    <dcdom:hasIndividualsFromOneFamily
+                                     rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                                    >false</dcdom:hasIndividualsFromOneFamily>
+                                    <rdfs:comment>x=12.0,y=36.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="MAPFile_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:DataVariable rdf:ID="MAPFile">
+                                    <rdfs:comment>x=72.0,y=36.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Create_Binary_PEDFileNode_BPEDFile_To_TDTNode_BPEDFile">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="BPEDFile">
+                                    <rdfs:comment>x=12.0,y=118.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#TDTNode_BPEDFile"/>
+                        <wflow:hasDestinationNode rdf:resource="#TDTNode"/>
+                        <wflow:hasOriginPort rdf:resource="#Create_Binary_PEDFileNode_BPEDFile"/>
+                        <wflow:hasOriginNode rdf:resource="#Create_Binary_PEDFileNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasOutputRole>
+                  <wflow:Role rdf:ID="OutputTDTPerm_orole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:DataVariable rdf:ID="OutputTDTPerm">
+                                    <rdfs:comment>x=128.0,y=221.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasOutputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_Create_Binary_PEDFileNode_PEDFile">
+                        <wflow:hasVariable rdf:resource="#PEDFile"/>
+                        <wflow:hasDestinationPort rdf:resource="#Create_Binary_PEDFileNode_PEDFile"/>
+                        <wflow:hasDestinationNode rdf:resource="#Create_Binary_PEDFileNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasOutputRole>
+                  <wflow:Role rdf:ID="OutputTDT_orole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#OutputTDT"/>
+                  </wflow:Role>
+            </wflow:hasOutputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_Create_Binary_PEDFileNode_MAPFile">
+                        <wflow:hasVariable rdf:resource="#MAPFile"/>
+                        <wflow:hasDestinationPort rdf:resource="#Create_Binary_PEDFileNode_MAPFile"/>
+                        <wflow:hasDestinationNode rdf:resource="#Create_Binary_PEDFileNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#Create_Binary_PEDFileNode"/>
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="TDTNode_OutputTDTPerm_To_Output">
+                        <wflow:hasVariable rdf:resource="#OutputTDTPerm"/>
+                        <wflow:hasOriginPort rdf:resource="#TDTNode_OutputTDTPerm"/>
+                        <wflow:hasOriginNode rdf:resource="#TDTNode"/>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+      </wflow:WorkflowTemplate>
+      <wflow:RuleSet rdf:ID="Rules"/>
+</rdf:RDF>
+

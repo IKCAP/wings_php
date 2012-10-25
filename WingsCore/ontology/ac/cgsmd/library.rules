@@ -1,0 +1,42 @@
+# Collection Size for outputs of Convert_to_PN_and_QT_Formats
+[CollSizePNQTConvert:
+       (?c rdf:type pcdom:Convert_to_PN_and_QT_Formats_Class)
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "FinalReport")
+       (?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "PNFormatOutputs")
+       (?c pc:hasOutput ?odv2) (?odv2 pc:hasArgumentID "QTFormatOutput")
+       (?idv pc:hasDimensionSizes ?s)
+       -> (?odv1 pc:hasDimensionSizes ?s), (?odv2 pc:hasDimensionSizes ?s)]
+# Collection Size for one of the output of Find_Gender_of_FinalReports
+[CollSizeFindGenderConvert:
+       (?c rdf:type pcdom:Find_Gender_of_FinalReports_Class)
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "FinalReport")
+       (?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "GenderOutputs")
+       (?idv pc:hasDimensionSizes ?s)
+       -> (?odv1 pc:hasDimensionSizes ?s)]
+# Set PPC/MC Param
+[PopStratAnalParams:
+       (?c rdf:type pcdom:Population_Stratification_Analysis_Class)
+       (?c pc:hasInput ?idv1) (?idv1 pc:hasArgumentID "ppc")
+       (?c pc:hasInput ?idv2) (?idv2 pc:hasArgumentID "mc")
+       -> print("Explanation:Setting PPC and MC Parameters to default values of 0.02 and 2 respectively"),
+          (?idv1 pc:hasValue "0.02"^^xsd:float),
+          (?idv2 pc:hasValue "2"^^xsd:int)]
+          
+# MissingnessPerIndividual
+[MissingnessPerIndividual1:
+       (?c rdf:type pcdom:Create_Binary_PEDFile_Class)
+       (?c pc:hasInput ?idv1) (?idv1 pc:hasArgumentID "PEDFile")
+       (?c pc:hasInput ?idv2) (?idv2 pc:hasArgumentID "MissingnessPerIndividual")
+       (?idv1 dcdom:hasGenotypingRate ?v1)
+       equal(?v1, "0.95"^^xsd:float)
+       -> print("Explanation:Setting Value of Missingness to 0.06 as Genotyping Rate of PEDFile is 0.95"),
+          (?idv2 pc:hasValue "0.06"^^xsd:float)]
+[MissingnessPerIndividual2:
+       (?c rdf:type pcdom:Create_Binary_PEDFile_Class)
+       (?c pc:hasInput ?idv1) (?idv1 pc:hasArgumentID "PEDFile")
+       (?c pc:hasInput ?idv2) (?idv2 pc:hasArgumentID "MissingnessPerIndividual")
+       (?idv1 dcdom:hasGenotypingRate ?v1)
+       notEqual(?v1, "0.95"^^xsd:float)
+       -> print("Explanation:Setting Value of Missingness to default value of 0.1"),
+          (?idv2 pc:hasValue "0.1"^^xsd:float)]
+       

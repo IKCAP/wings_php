@@ -1,0 +1,32 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://wings-workflows.org/ontology/DMDomain/TestWorkflow.owl#"
+    xmlns:dclib="http://wings-workflows.org/ontology/dc/dm/library-dc-test-v1.8.owl#"
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:acdom="http://wings-workflows.org/ontology/ac/dm/library.owl#"
+    xmlns:dcdom="http://wings-workflows.org/ontology/dc/dm/ontology.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+      xml:base="http://wings-workflows.org/ontology/DMDomain/seeds/TestSeed.owl">
+      <wflow:Metadata rdf:about="">
+            <wflow:hasContributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >varun</wflow:hasContributor>
+            <wflow:lastUpdateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2010-02-12T20:02:38.199Z</wflow:lastUpdateTime>
+      </wflow:Metadata>
+      <owl:Ontology rdf:about="">
+            <owl:imports rdf:resource="../TestWorkflow.owl"/>
+      </owl:Ontology>
+      <rdf:Description rdf:about="../TestWorkflow.owl#TrainingData">
+            <dcdom:hasDomain rdf:resource="/dc/dm/ontology.owl#iris"/>
+      </rdf:Description>
+      <wflow:RuleSet rdf:ID="Rules"/>
+      <rdf:Description rdf:about="../TestWorkflow.owl#TestData">
+            <dcdom:hasDomain rdf:resource="/dc/dm/ontology.owl#iris"/>
+      </rdf:Description>
+</rdf:RDF>
+

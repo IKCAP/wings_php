@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dcgpcla="http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns="http://wings-workflows.org/ontology/dc/gpcla/library.owl#"
+  xml:base="http://wings-workflows.org/ontology/dc/gpcla/library.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://wings-workflows.org/ontology/dc/gpcla/ontology.owl"/>
+  </owl:Ontology>
+  <dcgpcla:GCT rdf:ID="GDS2384_mouse.gct">
+    <dc:hasLocation>
+      <dc:Location rdf:ID="http_isi">
+        <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#isi"/>
+        <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#http"/>
+      </dc:Location>
+    </dc:hasLocation>
+    <dcgpcla:fromOrganism rdf:resource="http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#MusMusculus"/>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1000</dc:hasSizeInKB>
+    <dcgpcla:isPreprocessed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</dcgpcla:isPreprocessed>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >60079C85-6D1F-4712-9BDF-8E6AD4B43E36</dc:hasMd5sum>
+  </dcgpcla:GCT>
+  <dcgpcla:GCT rdf:ID="GDS1854_human.gct">
+    <dcgpcla:isPreprocessed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</dcgpcla:isPreprocessed>
+    <dcgpcla:fromOrganism rdf:resource="http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#HomoSapiens"/>
+  </dcgpcla:GCT>
+  <dcgpcla:GCT rdf:ID="GPL1981_mouse.gct">
+    <dcgpcla:isPreprocessed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</dcgpcla:isPreprocessed>
+    <dcgpcla:fromOrganism rdf:resource="http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#MusMusculus"/>
+  </dcgpcla:GCT>
+  <dcgpcla:RES rdf:ID="all_aml_train.res">
+    <dcgpcla:isPreprocessed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</dcgpcla:isPreprocessed>
+  </dcgpcla:RES>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->

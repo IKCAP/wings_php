@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY dc "http://wings-workflows.org/ontology/dc/ontology.owl#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ontology "http://wings-workflows.org/ontology/dc/page/ontology.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://wings-workflows.org/ontology/dc/page/ontology.owl#"
+     xml:base="http://wings-workflows.org/ontology/dc/page/ontology.owl"
+     xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ontology="http://wings-workflows.org/ontology/dc/page/ontology.owl#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/ontology.owl#DataObject -->
+
+    <owl:Class rdf:about="&dc;DataObject"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#ConcordanceRData -->
+
+    <owl:Class rdf:about="#ConcordanceRData">
+        <rdfs:subClassOf rdf:resource="#RDataFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#ExcelRData -->
+
+    <owl:Class rdf:about="#ExcelRData">
+        <rdfs:subClassOf rdf:resource="#ExcelRData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#ExcelFile -->
+
+    <owl:Class rdf:about="#ExcelFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#InitialRData -->
+
+    <owl:Class rdf:about="#InitialRData">
+        <rdfs:subClassOf rdf:resource="#RDataFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#PedCheckFile -->
+
+    <owl:Class rdf:about="#PedCheckFile">
+        <rdfs:subClassOf rdf:resource="#TextFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#PopulationName -->
+
+    <owl:Class rdf:about="#PopulationName">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#RDataFile -->
+
+    <owl:Class rdf:about="#RDataFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#RScriptFile -->
+
+    <owl:Class rdf:about="#RScriptFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#StudyRScriptFile -->
+
+    <owl:Class rdf:about="#StudyRScriptFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#ReferenceRScriptFile -->
+
+    <owl:Class rdf:about="#ReferenceRScriptFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#StudyQCExcelFile -->
+
+    <owl:Class rdf:about="#StudyQCExcelFile">
+        <rdfs:subClassOf rdf:resource="#ExcelFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#StudyRData -->
+
+    <owl:Class rdf:about="#StudyRData">
+        <rdfs:subClassOf rdf:resource="#RDataFile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#TextFile -->
+
+    <owl:Class rdf:about="#TextFile">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#ZippedFiles -->
+
+    <owl:Class rdf:about="#ZippedFiles">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#ZippedReferenceFiles -->
+
+    <owl:Class rdf:about="#ZippedReferenceFiles">
+        <rdfs:subClassOf rdf:resource="#ZippedFiles"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#ZippedStudyFiles -->
+
+    <owl:Class rdf:about="#ZippedStudyFiles">
+        <rdfs:subClassOf rdf:resource="#ZippedFiles"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#snpQCRData -->
+
+    <owl:Class rdf:about="#snpQCRData">
+        <rdfs:subClassOf rdf:resource="#RDataFile"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

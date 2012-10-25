@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.isi.ikcap</groupId>
+  <!-- fill this in -->
+  <artifactId>wings</artifactId>
+  <!-- choose one of the following: pom is required if you have a multiple module project -->
+  <!--  <packaging>pom</packaging> -->
+  <packaging>jar</packaging>
+  <!--  <packaging>war</packaging> -->
+  <name>WingsCore 2.0</name>
+  <version>2.0</version>
+  <url></url>
+  <description>WingsCore 2.0 project for the IKCAP group</description>
+
+  <!--
+<licenses>
+  <license>
+    <name>
+    </name>
+    <url>
+    </url>
+    <comments>
+    </comments>
+  </license>
+</licenses>  -->
+
+
+  <organization>
+    <name>"Interactive Knowledge Capture: IKCAP"
+      Dr. Yolanda Gil: USC/ISI
+    </name>
+    <url>http://www.isi.edu/ikcap/</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>cfritz</id>
+      <name>Christian Fritz</name>
+      <email>cfritz@isi.edu</email>
+      <url>http://www.cs.toronto.edu/~fritz/</url>
+      <organization>ISI</organization>
+      <organizationUrl>http://www3.isi.edu/home</organizationUrl>
+      <roles>
+        <role>Post Doc</role>
+        <role>Researcher</role>
+        <role>Developer</role>
+      </roles>
+      <timezone>-8</timezone>
+    </developer>
+    <developer>
+      <id>jihie</id>
+      <name>Jihie Kim</name>
+      <email>jihie@isi.edu</email>
+      <url>http://www.isi.edu/~jihie/</url>
+      <organization>ISI</organization>
+      <organizationUrl>http://www3.isi.edu/home</organizationUrl>
+      <roles>
+        <role>Professor Computer Science</role>
+        <role>Researcher</role>
+        <role>Developer</role>
+      </roles>
+      <timezone>-8</timezone>
+    </developer>
+    <developer>
+      <id>varunr</id>
+      <name>Varun Ratnakar</name>
+      <email>varunr@isi.edu</email>
+      <url>http://www.isi.edu/~varunr/resume.html</url>
+      <organization>ISI</organization>
+      <organizationUrl>http://www3.isi.edu/home</organizationUrl>
+      <roles>
+        <role>Researcher</role>
+        <role>Developer</role>
+      </roles>
+      <timezone>0</timezone>
+    </developer>
+    <developer>
+      <id>moody</id>
+      <name>Joshua Moody</name>
+      <email>moody@isi.edu</email>
+      <organization>ISI</organization>
+      <organizationUrl>http://www3.isi.edu/home</organizationUrl>
+      <roles>
+        <role>Researcher</role>
+        <role>Developer</role>
+      </roles>
+      <timezone>-8</timezone>
+    </developer>
+  </developers>
+
+  <!-- requires pom packaging above -->
+  <!--
+    <modules>
+     <module></module>
+     <module></module>
+    </modules> -->
+
+  <properties>
+    <slf4j.version>1.5.3</slf4j.version>
+    <swt.version>swt-3.5.1-cocoa-macosx-x86_64</swt.version>
+  </properties>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+      <resource>
+        <directory>src/test/resources</directory>
+      </resource>
+    </resources>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <source>1.6</source>
+            <target>1.6</target>
+          </configuration>
+        </plugin>
+
+        <!-- idea plugin: you will create the correct structure, but for an older
+             verison of idea, so you will be prompted to upgrade to newest version
+             - do it. -->
+        <plugin>
+          <artifactId>maven-idea-plugin</artifactId>
+          <configuration>
+            <downloadSources>true</downloadSources>
+            <downloadJavadocs>true</downloadJavadocs>
+            <jdkLevel>1.6</jdkLevel>
+            <jdkName>1.6</jdkName>
+          </configuration>
+        </plugin>
+        <!-- eclipse users!  add useful stuff here! -->
+        <plugin>
+          <artifactId>maven-eclipse-plugin</artifactId>
+        </plugin>
+      </plugins>
+
+    </pluginManagement>
+  </build>
+
+  <dependencies>
+
+
+    <!-- our libraries -->
+
+    <dependency>
+      <groupId>edu.isi.ikcap</groupId>
+      <artifactId>beamerj</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.isi.ikcap</groupId>
+      <artifactId>ontapi</artifactId>
+      <version>1.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.isi.ikcap</groupId>
+      <artifactId>ikcap-utils</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <!-- end our libraries -->
+
+    <!-- junit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.5</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- testng : will stick with junit for now
+   <dependency>
+     <groupId>org.testng</groupId>
+     <artifactId>testng</artifactId>
+     <version>5.8</version>
+     <classifier>jdk15</classifier>
+     <scope>test</scope>
+   </dependency> -->
+
+    <!-- logging -->
+
+    <!-- slf4j -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.5.3</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+
+    <!-- log4j -->
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.14</version>
+    </dependency>
+
+    <!-- end logging -->
+
+    <!-- replaces GetOpt 1.0.12 -->
+    <dependency>
+      <groupId>urbanophile</groupId>
+      <artifactId>java-getopt</artifactId>
+      <version>1.0.9</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ant</groupId>
+      <artifactId>ant-antlr</artifactId>
+      <version>1.7.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.codehaus.woodstox</groupId>
+      <artifactId>wstx-asl</artifactId>
+      <version>4.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>stax</groupId>
+      <artifactId>stax</artifactId>
+      <version>1.2.0_rc2-dev</version>
+    </dependency>
+
+    <dependency>
+      <groupId>stax</groupId>
+      <artifactId>stax-api</artifactId>
+      <version>1.0.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xercesImpl</artifactId>
+      <version>2.9.1</version>
+    </dependency>
+
+    <!-- tried downloading 2.0.2 but got this message: This artifact has been
+         relocated to xml-apis:xml-apis:1.0.b2 -->
+
+    <dependency>
+      <groupId>xml-apis</groupId>
+      <artifactId>xml-apis</artifactId>
+      <version>1.0.b2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.10</version>
+    </dependency>
+
+    <!-- Jena -->
+    <!-- Latest version of Jena 2.6.2 clashes with how Varun uses LiteralImpl, so we are back to 2.5.7 -->
+    <dependency>
+      <groupId>com.hp.hpl.jena</groupId>
+      <artifactId>jena</artifactId>
+      <version>2.6.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.hp.hpl.jena</groupId>
+      <artifactId>arq</artifactId>
+      <version>2.8.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.hp.hpl.jena</groupId>
+      <artifactId>arq-extra</artifactId>
+      <version>2.7.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.hp.hpl.jena</groupId>
+      <artifactId>concurrent-jena</artifactId>
+      <version>1.3.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.hp.hpl.jena</groupId>
+      <artifactId>iri</artifactId>
+      <version>0.7</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.hp.hpl.jena</groupId>
+      <artifactId>json-jena</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <!-- BEGIN pellet -->
+
+    <dependency>
+      <groupId>edu.isi.ikcap</groupId>
+      <artifactId>pellet-relaxngDatatype</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.isi.ikcap</groupId>
+      <artifactId>pellet-xsdlib</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.isi.ikcap</groupId>
+      <artifactId>aterm-java</artifactId>
+      <version>1.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.isi.ikcap</groupId>
+      <artifactId>pellet-el.jar</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.isi.ikcap</groupId>
+      <artifactId>pellet-jena</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.isi.ikcap</groupId>
+      <artifactId>pellet-core</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.isi.ikcap</groupId>
+      <artifactId>pellet-datatypes</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>edu.isi.ikcap</groupId>
+      <artifactId>pellet-rules</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+
+    <!-- END pellet -->
+
+
+    <dependency>
+      <groupId>com.ibm.icu</groupId>
+      <artifactId>icu4j</artifactId>
+      <version>4.0.1</version>
+    </dependency>
+
+
+  </dependencies>
+
+
+</project>

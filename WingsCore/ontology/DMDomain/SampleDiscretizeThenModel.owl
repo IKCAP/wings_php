@@ -1,0 +1,435 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dclib="http://wings-workflows.org/ontology/dc/dm/library-dc-test-v1.8.owl#"
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:acdom="http://wings-workflows.org/ontology/ac/dm/library.owl#"
+    xmlns="http://wings-workflows.org/ontology/DMDomain/SampleDiscretizeThenModel.owl#"
+    xmlns:dcdom="http://wings-workflows.org/ontology/dc/dm/ontology.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+      xml:base="http://wings-workflows.org/ontology/DMDomain/SampleDiscretizeThenModel.owl">
+      <wflow:Metadata rdf:about="">
+            <wflow:hasContributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >varun</wflow:hasContributor>
+            <wflow:lastUpdateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2010-03-10T19:08:35.329Z</wflow:lastUpdateTime>
+      </wflow:Metadata>
+      <owl:Ontology rdf:ID="SampleDiscretizeThenModel.owl">
+            <owl:imports rdf:resource="/2007/08/workflow.owl"/>
+      </owl:Ontology>
+      <wflow:RuleSet rdf:ID="Rules"/>
+      <wflow:WorkflowTemplate rdf:ID="SampleDiscretizeThenModel">
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_RandomSampleNNode_randomSampleNInputData">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="InputData">
+                                    <dcdom:isDiscrete rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#boolean"
+                                    >false</dcdom:isDiscrete>
+                                    <rdfs:comment>x=266.0,y=23.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="RandomSampleNNode_randomSampleNInputData">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/dm/library.owl#randomSampleNInputData">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="RandomSampleNNode">
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-fa171e81-eced-4da2-aec7-45c8fc512115">
+                                                            <wflow:hasExpressionArgument rdf:resource="#RandomSampleNNode_randomSampleNInputData"/>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="RandomSampleNNode_randomSampleNClassIndex">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/dm/library.owl#randomSampleNClassIndex">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="RandomSampleNNode_randomSampleNNumberOfInstancesToSample">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/dm/library.owl#randomSampleNNumberOfInstancesToSample">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component0">
+                                                            <wflow:isConcrete
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#boolean"
+                                                            >true</wflow:isConcrete>
+                                                            <rdf:type rdf:resource="/ac/dm/library.owl#RandomSampleN"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="RandomSampleNNode_randomSampleNOutputData">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/dm/library.owl#randomSampleNOutputData">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasInputPort rdf:resource="#RandomSampleNNode_randomSampleNNumberOfInstancesToSample"/>
+                                    <wflow:hasInputPort rdf:resource="#RandomSampleNNode_randomSampleNClassIndex"/>
+                                    <wflow:hasInputPort rdf:resource="#RandomSampleNNode_randomSampleNInputData"/>
+                                    <rdfs:comment>x=270.0,y=72.0</rdfs:comment>
+                                    <wflow:hasComponent rdf:resource="#component0"/>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_DiscretizeNode_classIndex">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="ClassIndex1">
+                                    <rdfs:comment>x=138.0,y=33.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="DiscretizeNode_classIndex">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/dm/library.owl#classIndex">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="DiscretizeNode">
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-7c7179c6-5f2b-4527-9876-d81f859ba56b">
+                                                            <wflow:hasExpressionArgument rdf:resource="#DiscretizeNode_classIndex"/>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="DiscretizeNode_discretizeInputData">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/dm/library.owl#discretizeInputData">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="DiscretizeNode_numberOfBins">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/dm/library.owl#numberOfBins">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component1">
+                                                            <wflow:isConcrete
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#boolean"
+                                                            >true</wflow:isConcrete>
+                                                            <rdf:type rdf:resource="/ac/dm/library.owl#Discretize"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="DiscretizeNode_discretizeOutputData">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/dm/library.owl#discretizeOutputData">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasInputPort rdf:resource="#DiscretizeNode_classIndex"/>
+                                    <wflow:hasInputPort rdf:resource="#DiscretizeNode_discretizeInputData"/>
+                                    <wflow:hasInputPort rdf:resource="#DiscretizeNode_numberOfBins"/>
+                                    <rdfs:comment>x=306.0,y=207.0</rdfs:comment>
+                                    <wflow:hasComponent rdf:resource="#component1"/>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_RandomSampleNNode_randomSampleNNumberOfInstancesToSample">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="NumberOfInstancesToSample">
+                                    <rdfs:comment>x=360.0,y=26.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#RandomSampleNNode_randomSampleNNumberOfInstancesToSample"/>
+                        <wflow:hasDestinationNode rdf:resource="#RandomSampleNNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="ClassIndex1_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#ClassIndex1"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="DiscretizeNode_discretizeOutputData_To_ModelerNode_trainingData">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="DiscretizeOutputData">
+                                    <rdfs:comment>x=284.0,y=270.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="ModelerNode_trainingData">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/dm/library.owl#trainingData">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="ModelerNode">
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-12d192b2-adac-4ca6-bd97-bab1aee8e4cb">
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="ModelerNode_javaMaxHeapSize">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/dm/library.owl#javaMaxHeapSize">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="ModelerNode_modelerClassIndex">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/dm/library.owl#modelerClassIndex">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument rdf:resource="#ModelerNode_trainingData"/>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component2">
+                                                            <rdf:type rdf:resource="/ac/dm/library.owl#Modeler"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="ModelerNode_outputModel">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/dm/library.owl#outputModel">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasInputPort rdf:resource="#ModelerNode_javaMaxHeapSize"/>
+                                    <wflow:hasInputPort rdf:resource="#ModelerNode_trainingData"/>
+                                    <wflow:hasInputPort rdf:resource="#ModelerNode_modelerClassIndex"/>
+                                    <rdfs:comment>x=266.0,y=336.0</rdfs:comment>
+                                    <wflow:hasComponent rdf:resource="#component2"/>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                        <wflow:hasOriginPort rdf:resource="#DiscretizeNode_discretizeOutputData"/>
+                        <wflow:hasOriginNode rdf:resource="#DiscretizeNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="NumberOfBins_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:ParameterVariable rdf:ID="NumberOfBins">
+                                    <rdfs:comment>x=432.0,y=149.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="ModelerNode_outputModel_To_Output">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="OutputModel">
+                                    <rdfs:comment>x=259.0,y=391.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasOriginPort rdf:resource="#ModelerNode_outputModel"/>
+                        <wflow:hasOriginNode rdf:resource="#ModelerNode"/>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_ModelerNode_javaMaxHeapSize">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="JavaMaxHeapSize">
+                                    <rdfs:comment>x=457.0,y=276.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#ModelerNode_javaMaxHeapSize"/>
+                        <wflow:hasDestinationNode rdf:resource="#ModelerNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="RandomSampleNNode_randomSampleNOutputData_To_DiscretizeNode_discretizeInputData">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="RandomSampleNOutputData">
+                                    <rdfs:comment>x=247.0,y=148.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#DiscretizeNode_discretizeInputData"/>
+                        <wflow:hasDestinationNode rdf:resource="#DiscretizeNode"/>
+                        <wflow:hasOriginPort rdf:resource="#RandomSampleNNode_randomSampleNOutputData"/>
+                        <wflow:hasOriginNode rdf:resource="#RandomSampleNNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >2</wflow:hasVersion>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_RandomSampleNNode_randomSampleNClassIndex">
+                        <wflow:hasVariable rdf:resource="#ClassIndex1"/>
+                        <wflow:hasDestinationPort rdf:resource="#RandomSampleNNode_randomSampleNClassIndex"/>
+                        <wflow:hasDestinationNode rdf:resource="#RandomSampleNNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_DiscretizeNode_numberOfBins">
+                        <wflow:hasVariable rdf:resource="#NumberOfBins"/>
+                        <wflow:hasDestinationPort rdf:resource="#DiscretizeNode_numberOfBins"/>
+                        <wflow:hasDestinationNode rdf:resource="#DiscretizeNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasOutputRole>
+                  <wflow:Role rdf:ID="OutputModel_orole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#OutputModel"/>
+                  </wflow:Role>
+            </wflow:hasOutputRole>
+            <wflow:hasNode rdf:resource="#ModelerNode"/>
+            <wflow:hasNode rdf:resource="#RandomSampleNNode"/>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="NumberOfInstancesToSample_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#NumberOfInstancesToSample"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="InputData_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#InputData"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="JavaMaxHeapSize_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#JavaMaxHeapSize"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_ModelerNode_modelerClassIndex">
+                        <wflow:hasVariable rdf:resource="#ClassIndex1"/>
+                        <wflow:hasDestinationPort rdf:resource="#ModelerNode_modelerClassIndex"/>
+                        <wflow:hasDestinationNode rdf:resource="#ModelerNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#DiscretizeNode"/>
+      </wflow:WorkflowTemplate>
+</rdf:RDF>
+

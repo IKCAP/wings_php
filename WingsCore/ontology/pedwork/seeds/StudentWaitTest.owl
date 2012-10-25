@@ -1,0 +1,30 @@
+<rdf:RDF
+    xmlns:dclib="http://wings-workflows.org/ontology/dc/pedwork/library.owl#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns:acdom="http://wings-workflows.org/ontology/ac/pedwork/library.owl#"
+    xmlns="http://wings-workflows.org/ontology/pedwork/StudentWaitTest.owl#"
+    xmlns:dcdom="http://wings-workflows.org/ontology/dc/pedwork/ontology.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+      xml:base="http://wings-workflows.org/ontology/pedwork/seeds/StudentWaitTest.owl">
+      <wflow:Metadata rdf:about="">
+            <wflow:hasContributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >jun</wflow:hasContributor>
+            <wflow:lastUpdateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2009-12-18T02:29:34.741Z</wflow:lastUpdateTime>
+      </wflow:Metadata>
+      <owl:Ontology rdf:about="">
+            <owl:imports rdf:resource="../StudentWaitTest.owl"/>
+      </owl:Ontology>
+      <wflow:RuleSet rdf:ID="Rules"/>
+</rdf:RDF>
+

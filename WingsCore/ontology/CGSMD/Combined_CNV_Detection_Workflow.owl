@@ -1,0 +1,2035 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://wings-workflows.org/ontology/CGSMD/Combined_CNV_Detection_Workflow.owl#"
+    xmlns:acdom="http://wings-workflows.org/ontology/ac/cgsmd/library.owl#"
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:dclib="http://wings-workflows.org/ontology/dc/cgsmd/library.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:dcdom="http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#"
+    xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+      xml:base="http://wings-workflows.org/ontology/CGSMD/Combined_CNV_Detection_Workflow.owl">
+      <wflow:Metadata rdf:about="">
+            <wflow:hasContributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >varun</wflow:hasContributor>
+            <wflow:createdFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >CNV_Detection_Workflow</wflow:createdFrom>
+            <wflow:hasDocumentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >
+&lt;p&gt;This workflow combines results from the GNOSIS CNV detection algorithm and PennCNV detection algorithm (including X-Chromosome detection) to produce a file containing Merged CNVs. It then processes these further to compare the results with a list of Common CNVs, and assesses the overlap of parent and children CNVs&lt;/p&gt;
+
+&lt;i&gt;Input: [FinalReport[]]&lt;/i&gt;&lt;br /&gt;
+&lt;i&gt;Output: [DeNovoRareMergedCNVOutput], [DeNovo2RareMergedCNVOutput]&lt;/i&gt;&lt;br /&gt;
+&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Find_Gender_of_FinalReports:&lt;/b&gt; This component determines gender and sampleID from FinalReport files.
+&lt;ul&gt;
+&lt;li&gt;CombinedCNV.pl --sexsift&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;Convert_to_PN_and_QT_Formats:&lt;/b&gt; This component converts FinalReports into PennCNV and QuantiSNP format.
+&lt;ul&gt;
+&lt;li&gt;CombinedCNV.pl --convert&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;Gnosis_Detect_CNV:&lt;/b&gt; Runs the GNOSIS CNV Detection Algorithm.
+&lt;ul&gt;
+&lt;li&gt;CombinedCNV.pl --cnv&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;/li&gt;
+
+
+&lt;li&gt;&lt;b&gt;Penn_Detect_CNV:&lt;/b&gt; Runs the PennCNV Detection Algorithm.
+&lt;ul&gt;
+&lt;li&gt;detect_cnv.pl -test -hmm &lt;penndir&gt;/lib/hhall.hmm -pfb &lt;penndir&gt;/lib/hhall.hg18.pfb [PNFormatOutputs] -log [LogOutput] -output [CNVOutput1]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;/li&gt;
+
+
+&lt;li&gt;&lt;b&gt;Penn_Detect_CNVX:&lt;/b&gt; Runs the PennCNV Detection Algorithm for X-Chromosome.
+&lt;ul&gt;
+&lt;li&gt;detect_cnv.pl -test -chrx -hmm &lt;penndir&gt;/lib/hhall.hmm -pfb &lt;penndir&gt;/lib/hhall.hg18.pfb [PNFormatOutputs] -log [LogOutputX] -output [CNVOutputX]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;/li&gt;
+
+
+&lt;li&gt;&lt;b&gt;Reformat_GnosisCNV:&lt;/b&gt; Reformat the GNOSIS results to merge input format.
+&lt;ul&gt;
+&lt;li&gt;CombinedCNV.pl --gnformat [CNVOutput]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;/li&gt;
+
+
+&lt;li&gt;&lt;b&gt;Combine_Reformat_PennCNV_CNVX:&lt;/b&gt; Combine PennCNVs with X-Chromosome PennCNVs and reformat results to merge input format.
+&lt;ul&gt;
+&lt;li&gt;CombinedCNV.pl --tag &lt;tag&gt; --rdir './' --pdir './' --pnformat&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;/li&gt;
+
+
+&lt;li&gt;&lt;b&gt;Merge_2_CNVs:&lt;/b&gt; Merge CNVs from 2 different algorithms.
+&lt;ul&gt;
+&lt;li&gt;CombinedCNV.pl --merge [ReformatCNVOutput] [ReformatCNVOutput1]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;/li&gt; 
+
+
+&lt;li&gt;&lt;b&gt;Compare_against_Common_Loci:&lt;/b&gt; Compare the merged results against a list of Common CNVs.
+&lt;ul&gt;
+&lt;li&gt;CombinedCNV.pl --rare [MergedCNVOutput] [CommonLociInput]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;/li&gt;
+
+
+&lt;li&gt;&lt;b&gt;Merge_2_Bad_Chips:&lt;/b&gt; Combine the quality control measures of 2 algorithms.
+&lt;ul&gt;
+&lt;li&gt;CombinedCNV.pl --badchip&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;/li&gt;
+
+
+&lt;li&gt;&lt;b&gt;Remove_Bad_Quality_from_PEDFile:&lt;/b&gt; Remove parental information from the pedfile if the parents failed on any quality control measure.
+&lt;ul&gt;
+&lt;li&gt;CombinedCNV.pl --pedmod&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;/li&gt;
+
+
+&lt;li&gt;&lt;b&gt;DeNovo_Assess_CNV_Overlap:&lt;/b&gt; Assess the overlap of parent and children CNVs.
+&lt;ul&gt;
+&lt;li&gt;CombinedCNV.pl --denovo [RareMergedCNVOutput]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;/li&gt;
+
+
+&lt;li&gt;&lt;b&gt;DeNovo2_Assess_CNV_Overlap:&lt;/b&gt; Assess the overlap of parent and children CNVs using FinalReports.
+&lt;ul&gt;
+&lt;li&gt;CombinedCNV.pl --denovo2 [RareMergedCNVOutput]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;Annotate_CNV:&lt;/b&gt; Annotate which genes are present in and around the CNVs
+&lt;ul&gt;
+&lt;li&gt;CombinedCNV.pl --annotate --make_template [GenesFileInput] [DGVFileInput] [AnnotationFilesInput]&lt;/li&gt;
+&lt;li&gt;CombinedCNV.pl --annotate [Denovo2RareMergedCNVOutput]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;b&gt;Annotate_CNV2:&lt;/b&gt; Annotate which genes are present in and around the CNVs
+&lt;ul&gt;
+&lt;li&gt;CombinedCNV.pl --annotate --make_template [GenesFileInput] [DGVFileInput] [AnnotationFilesInput]&lt;/li&gt;
+&lt;li&gt;CombinedCNV.pl --annotate [DenovoRareMergedCNVOutput]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+&lt;/li&gt;
+
+&lt;/ul&gt;
+</wflow:hasDocumentation>
+            <wflow:lastUpdateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2010-01-15T12:05:07.817Z</wflow:lastUpdateTime>
+      </wflow:Metadata>
+      <owl:Ontology rdf:ID="Combined_CNV_Detection_Workflow.owl">
+            <owl:imports rdf:resource="/2007/08/workflow.owl"/>
+      </owl:Ontology>
+      <wflow:WorkflowTemplate rdf:ID="Combined_CNV_Detection_Workflow">
+            <wflow:hasNode>
+                  <wflow:Node rdf:ID="Remove_Bad_Quality_from_PEDFileNode">
+                        <wflow:hasPortSetCreationRule>
+                              <wflow:PortSetRule>
+                                    <wflow:createSetsOn>
+                                          <wflow:XProduct rdf:about="_xprod-12fdd8e4-64ba-463b-964e-6ed4f0fc65d3">
+                                                <wflow:hasExpressionArgument>
+                                                      <wflow:Port rdf:ID="Remove_Bad_Quality_from_PEDFileNode_BadchipsInput">
+                                                            <wflow:satisfiesRole>
+                                                            
+      <rdf:Description rdf:about="/ac/cgsmd/library.owl#BadchipsInput">
+            <wflow:hasDimensionality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >0</wflow:hasDimensionality>
+      </rdf:Description>                                    </wflow:satisfiesRole>
+                                                      </wflow:Port>
+                                                </wflow:hasExpressionArgument>
+                                                <wflow:hasExpressionArgument>
+                                                      <wflow:Port rdf:ID="Remove_Bad_Quality_from_PEDFileNode_InputPEDFile">
+                                                            <wflow:satisfiesRole>
+                                                            
+      <rdf:Description rdf:about="/ac/cgsmd/library.owl#InputPEDFile">
+            <wflow:hasDimensionality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >0</wflow:hasDimensionality>
+      </rdf:Description>                                    </wflow:satisfiesRole>
+                                                      </wflow:Port>
+                                                </wflow:hasExpressionArgument>
+                                          </wflow:XProduct>
+                                    </wflow:createSetsOn>
+                                    <wflow:createWorkflowSets
+                                     rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                                    >true</wflow:createWorkflowSets>
+                              </wflow:PortSetRule>
+                        </wflow:hasPortSetCreationRule>
+                        <wflow:hasComponentSetCreationRule>
+                              <wflow:ComponentSetRule>
+                                    <wflow:createSetsOn>
+                                          <wflow:ComponentVariable rdf:ID="component10">
+                                                <wflow:isConcrete
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:isConcrete>
+                                                <rdf:type rdf:resource="/ac/cgsmd/library.owl#Remove_Bad_Quality_from_PEDFile"/>
+                                          </wflow:ComponentVariable>
+                                    </wflow:createSetsOn>
+                                    <wflow:createWorkflowSets
+                                     rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                                    >true</wflow:createWorkflowSets>
+                              </wflow:ComponentSetRule>
+                        </wflow:hasComponentSetCreationRule>
+                        <wflow:hasOutputPort>
+                              <wflow:Port rdf:ID="Remove_Bad_Quality_from_PEDFileNode_OutputPEDFile">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/cgsmd/library.owl#OutputPEDFile">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasOutputPort>
+                        <wflow:hasInputPort rdf:resource="#Remove_Bad_Quality_from_PEDFileNode_InputPEDFile"/>
+                        <wflow:hasInputPort rdf:resource="#Remove_Bad_Quality_from_PEDFileNode_BadchipsInput"/>
+                        <rdfs:comment>x=48.0,y=521.0</rdfs:comment>
+                        <wflow:hasComponent rdf:resource="#component10"/>
+                  </wflow:Node>
+            </wflow:hasNode>
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="Gnosis_Detect_CNVNode_Thresholds_To_Output">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="Thresholds">
+                                    <rdfs:comment>x=151.0,y=232.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasOriginPort>
+                              <wflow:Port rdf:ID="Gnosis_Detect_CNVNode_Thresholds">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/cgsmd/library.owl#Thresholds">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasOriginPort>
+                        <wflow:hasOriginNode>
+                              <wflow:Node rdf:ID="Gnosis_Detect_CNVNode">
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="Gnosis_Detect_CNVNode_FinalReport">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#FinalReport">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >1</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Gnosis_Detect_CNVNode_BadchipsOutput">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#BadchipsOutput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasComponent>
+                                          <wflow:ComponentVariable rdf:ID="component2">
+                                                <wflow:isConcrete
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:isConcrete>
+                                                <rdf:type rdf:resource="/ac/cgsmd/library.owl#Gnosis_Detect_CNV"/>
+                                          </wflow:ComponentVariable>
+                                    </wflow:hasComponent>
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-602a1ea0-6c06-4d64-818f-1f70a11245bd">
+                                                            <wflow:hasExpressionArgument rdf:resource="#Gnosis_Detect_CNVNode_FinalReport"/>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="Gnosis_Detect_CNVNode_SexSiftInput">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/cgsmd/library.owl#SexSiftInput">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn rdf:resource="#component2"/>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <rdfs:comment>x=212.0,y=175.0</rdfs:comment>
+                                    <wflow:hasInputPort rdf:resource="#Gnosis_Detect_CNVNode_SexSiftInput"/>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Gnosis_Detect_CNVNode_CNVOutput">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#CNVOutput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasOutputPort rdf:resource="#Gnosis_Detect_CNVNode_Thresholds"/>
+                              </wflow:Node>
+                        </wflow:hasOriginNode>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Gnosis_Detect_CNVNode_BadchipsOutput_To_Merge_2_Bad_ChipsNode_BadchipsInput1">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="BadchipsOutput">
+                                    <rdfs:comment>x=354.0,y=270.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="Merge_2_Bad_ChipsNode_BadchipsInput1">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/cgsmd/library.owl#BadchipsInput1">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="Merge_2_Bad_ChipsNode">
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-55a9645a-564c-498e-abcb-3b348dd05c92">
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="Merge_2_Bad_ChipsNode_BadchipsInput2">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/cgsmd/library.owl#BadchipsInput2">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument rdf:resource="#Merge_2_Bad_ChipsNode_BadchipsInput1"/>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component8">
+                                                            <wflow:isConcrete
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#boolean"
+                                                            >true</wflow:isConcrete>
+                                                            <rdf:type rdf:resource="/ac/cgsmd/library.owl#Merge_2_Bad_Chips"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Merge_2_Bad_ChipsNode_MergedBadchipsOutput">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#MergedBadchipsOutput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasInputPort rdf:resource="#Merge_2_Bad_ChipsNode_BadchipsInput2"/>
+                                    <wflow:hasInputPort rdf:resource="#Merge_2_Bad_ChipsNode_BadchipsInput1"/>
+                                    <rdfs:comment>x=339.0,y=343.0</rdfs:comment>
+                                    <wflow:hasComponent rdf:resource="#component8"/>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                        <wflow:hasOriginPort rdf:resource="#Gnosis_Detect_CNVNode_BadchipsOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#Gnosis_Detect_CNVNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_Convert_to_PN_and_QT_FormatsNode_FinalReport">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="FinalReport">
+                                    <rdfs:comment>x=372.0,y=4.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="Convert_to_PN_and_QT_FormatsNode_FinalReport">
+                                    <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#FinalReport"/>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="Convert_to_PN_and_QT_FormatsNode">
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-78093028-1677-4368-8f12-137e2bcb8eb5">
+                                                            <wflow:hasExpressionArgument rdf:resource="#Convert_to_PN_and_QT_FormatsNode_FinalReport"/>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component1">
+                                                            <wflow:isConcrete
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#boolean"
+                                                            >true</wflow:isConcrete>
+                                                            <rdf:type rdf:resource="/ac/cgsmd/library.owl#Convert_to_PN_and_QT_Formats"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Convert_to_PN_and_QT_FormatsNode_QTFormatOutput">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#QTFormatOutput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >1</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Convert_to_PN_and_QT_FormatsNode_PNFormatOutputs">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#PNFormatOutputs">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >1</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasInputPort rdf:resource="#Convert_to_PN_and_QT_FormatsNode_FinalReport"/>
+                                    <rdfs:comment>x=556.0,y=30.0</rdfs:comment>
+                                    <wflow:hasComponent rdf:resource="#component1"/>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="Merge_3_CNVsNode_UIDOutput_To_Output">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="UIDOutput1">
+                                    <rdfs:comment>x=580.0,y=506.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasOriginPort>
+                              <wflow:Port rdf:ID="Merge_3_CNVsNode_UIDOutput">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/cgsmd/library.owl#UIDOutput">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasOriginPort>
+                        <wflow:hasOriginNode>
+                              <wflow:Node rdf:ID="Merge_3_CNVsNode">
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="Merge_3_CNVsNode_MergeCNVInput1">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#MergeCNVInput1">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="Merge_3_CNVsNode_MergeCNVInput2">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#MergeCNVInput2">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <rdfs:comment>x=441.0,y=441.0</rdfs:comment>
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-7921d5dc-2ec6-4f30-a1e8-8ea70f01b064">
+                                                            <wflow:hasExpressionArgument rdf:resource="#Merge_3_CNVsNode_MergeCNVInput2"/>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="Merge_3_CNVsNode_MergeCNVInput3">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/cgsmd/library.owl#MergeCNVInput3">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >1</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument rdf:resource="#Merge_3_CNVsNode_MergeCNVInput1"/>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasInputPort rdf:resource="#Merge_3_CNVsNode_MergeCNVInput3"/>
+                                    <wflow:hasOutputPort rdf:resource="#Merge_3_CNVsNode_UIDOutput"/>
+                                    <wflow:hasComponent>
+                                          <wflow:ComponentVariable rdf:ID="component17">
+                                                <wflow:isConcrete
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:isConcrete>
+                                                <rdf:type rdf:resource="/ac/cgsmd/library.owl#Merge_3_CNVs"/>
+                                          </wflow:ComponentVariable>
+                                    </wflow:hasComponent>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn rdf:resource="#component17"/>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Merge_3_CNVsNode_SummaryOutput">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#SummaryOutput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Merge_3_CNVsNode_MergedCNVOutput">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#MergedCNVOutput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                              </wflow:Node>
+                        </wflow:hasOriginNode>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_Compare_against_Common_LociNode_CommonLociInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="CommonLociInput">
+                                    <rdfs:comment>x=307.0,y=496.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="Compare_against_Common_LociNode_CommonLociInput">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/cgsmd/library.owl#CommonLociInput">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="Compare_against_Common_LociNode">
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-047ff08c-3f8b-4964-b0b2-92381b37894a">
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="Compare_against_Common_LociNode_MergedCNVInput">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/cgsmd/library.owl#MergedCNVInput">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument rdf:resource="#Compare_against_Common_LociNode_CommonLociInput"/>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component9">
+                                                            <wflow:isConcrete
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#boolean"
+                                                            >true</wflow:isConcrete>
+                                                            <rdf:type rdf:resource="/ac/cgsmd/library.owl#Compare_against_Common_Loci"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Compare_against_Common_LociNode_RareMergedCNVOutput">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#RareMergedCNVOutput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasInputPort rdf:resource="#Compare_against_Common_LociNode_MergedCNVInput"/>
+                                    <wflow:hasInputPort rdf:resource="#Compare_against_Common_LociNode_CommonLociInput"/>
+                                    <rdfs:comment>x=381.0,y=579.0</rdfs:comment>
+                                    <wflow:hasComponent rdf:resource="#component9"/>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#Convert_to_PN_and_QT_FormatsNode"/>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Remove_Bad_Quality_from_PEDFileNode_OutputPEDFile_To_DeNovo_Assess_CNV_OverlapNode_InputPEDFile">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="OutputPEDFile">
+                                    <rdfs:comment>x=146.0,y=622.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="DeNovo_Assess_CNV_OverlapNode_InputPEDFile">
+                                    <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#InputPEDFile"/>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="DeNovo_Assess_CNV_OverlapNode">
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-a6fdde39-9c8b-447c-8c50-61815f95acac">
+                                                            <wflow:hasExpressionArgument rdf:resource="#DeNovo_Assess_CNV_OverlapNode_InputPEDFile"/>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="DeNovo_Assess_CNV_OverlapNode_RareMergedCNVInput">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/cgsmd/library.owl#RareMergedCNVInput">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component12">
+                                                            <wflow:isConcrete
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#boolean"
+                                                            >true</wflow:isConcrete>
+                                                            <rdf:type rdf:resource="/ac/cgsmd/library.owl#DeNovo_Assess_CNV_Overlap"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="DeNovo_Assess_CNV_OverlapNode_DeNovoRareMergedCNVOutput">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#DeNovoRareMergedCNVOutput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasInputPort rdf:resource="#DeNovo_Assess_CNV_OverlapNode_RareMergedCNVInput"/>
+                                    <wflow:hasInputPort rdf:resource="#DeNovo_Assess_CNV_OverlapNode_InputPEDFile"/>
+                                    <rdfs:comment>x=470.0,y=688.0</rdfs:comment>
+                                    <wflow:hasComponent rdf:resource="#component12"/>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                        <wflow:hasOriginPort rdf:resource="#Remove_Bad_Quality_from_PEDFileNode_OutputPEDFile"/>
+                        <wflow:hasOriginNode rdf:resource="#Remove_Bad_Quality_from_PEDFileNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="Merge_3_CNVsNode_SummaryOutput_To_Output">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="SummaryOutput1">
+                                    <rdfs:comment>x=610.0,y=464.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasOriginPort rdf:resource="#Merge_3_CNVsNode_SummaryOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#Merge_3_CNVsNode"/>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#Compare_against_Common_LociNode"/>
+            <wflow:hasNode rdf:resource="#Gnosis_Detect_CNVNode"/>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Find_Gender_of_FinalReportsNode_SexSiftOutput_To_Gnosis_Detect_CNVNode_SexSiftInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="SexSiftOutput">
+                                    <rdfs:comment>x=84.0,y=108.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#Gnosis_Detect_CNVNode_SexSiftInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#Gnosis_Detect_CNVNode"/>
+                        <wflow:hasOriginPort>
+                              <wflow:Port rdf:ID="Find_Gender_of_FinalReportsNode_SexSiftOutput">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/cgsmd/library.owl#SexSiftOutput">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasOriginPort>
+                        <wflow:hasOriginNode>
+                              <wflow:Node rdf:ID="Find_Gender_of_FinalReportsNode">
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-0c17cdf1-dd06-4c1b-87bf-cc89196264dd">
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="Find_Gender_of_FinalReportsNode_FinalReport">
+            <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#FinalReport"/>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component0">
+                                                            <wflow:isConcrete
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#boolean"
+                                                            >true</wflow:isConcrete>
+                                                            <rdf:type rdf:resource="/ac/cgsmd/library.owl#Find_Gender_of_FinalReports"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Find_Gender_of_FinalReportsNode_GenderOutputs">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#GenderOutputs">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >1</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasOutputPort rdf:resource="#Find_Gender_of_FinalReportsNode_SexSiftOutput"/>
+                                    <wflow:hasInputPort rdf:resource="#Find_Gender_of_FinalReportsNode_FinalReport"/>
+                                    <rdfs:comment>x=133.0,y=39.0</rdfs:comment>
+                                    <wflow:hasComponent rdf:resource="#component0"/>
+                              </wflow:Node>
+                        </wflow:hasOriginNode>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_Annotate_CNVNode_1_AnnotationFilesInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="AnnotationFilesInput">
+                                    <rdfs:comment>x=327.0,y=740.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="Annotate_CNVNode_1_AnnotationFilesInput">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/cgsmd/library.owl#AnnotationFilesInput">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >1</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="Annotate_CNVNode_1">
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-48f96b15-6195-4c11-be26-78345d8e1141">
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="Annotate_CNVNode_1_GenesFileInput">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/cgsmd/library.owl#GenesFileInput">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="Annotate_CNVNode_1_DGVFileInput">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/cgsmd/library.owl#DGVFileInput">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument rdf:resource="#Annotate_CNVNode_1_AnnotationFilesInput"/>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="Annotate_CNVNode_1_AnnotateInputCNV">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/cgsmd/library.owl#AnnotateInputCNV">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Annotate_CNVNode_1_AnnotatedCNVOutput">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#AnnotatedCNVOutput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <rdfs:comment>x=210.0,y=848.0</rdfs:comment>
+                                    <wflow:hasInputPort rdf:resource="#Annotate_CNVNode_1_AnnotationFilesInput"/>
+                                    <wflow:hasInputPort rdf:resource="#Annotate_CNVNode_1_GenesFileInput"/>
+                                    <wflow:hasComponent>
+                                          <wflow:ComponentVariable rdf:ID="component14">
+                                                <wflow:isConcrete
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:isConcrete>
+                                                <rdf:type rdf:resource="/ac/cgsmd/library.owl#Annotate_CNV"/>
+                                          </wflow:ComponentVariable>
+                                    </wflow:hasComponent>
+                                    <wflow:hasInputPort rdf:resource="#Annotate_CNVNode_1_DGVFileInput"/>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn rdf:resource="#component14"/>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasInputPort rdf:resource="#Annotate_CNVNode_1_AnnotateInputCNV"/>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasOutputRole>
+                  <wflow:Role rdf:ID="PennReformatLogOutput_orole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:DataVariable rdf:ID="PennReformatLogOutput">
+                                    <rdfs:comment>x=754.0,y=340.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasOutputRole>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="CommonLociInput_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#CommonLociInput"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Combine_Reformat_PennCNV_CNVXNode_BadchipsOutput_To_Merge_2_Bad_ChipsNode_BadchipsInput2">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="BadchipsOutput1">
+                                    <rdfs:comment>x=454.0,y=301.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#Merge_2_Bad_ChipsNode_BadchipsInput2"/>
+                        <wflow:hasDestinationNode rdf:resource="#Merge_2_Bad_ChipsNode"/>
+                        <wflow:hasOriginPort>
+                              <wflow:Port rdf:ID="Combine_Reformat_PennCNV_CNVXNode_BadchipsOutput">
+                                    <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#BadchipsOutput"/>
+                              </wflow:Port>
+                        </wflow:hasOriginPort>
+                        <wflow:hasOriginNode>
+                              <wflow:Node rdf:ID="Combine_Reformat_PennCNV_CNVXNode">
+                                    <rdfs:comment>x=635.0,y=239.0</rdfs:comment>
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="Combine_Reformat_PennCNV_CNVXNode_LogInputX">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#LogInputX">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Combine_Reformat_PennCNV_CNVXNode_ReformatCNVOutput">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#ReformatCNVOutput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="Combine_Reformat_PennCNV_CNVXNode_CNVInput">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#CNVInput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="Combine_Reformat_PennCNV_CNVXNode_CNVInputX">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#CNVInputX">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasOutputPort rdf:resource="#Combine_Reformat_PennCNV_CNVXNode_BadchipsOutput"/>
+                                    <wflow:hasComponent>
+                                          <wflow:ComponentVariable rdf:ID="component6">
+                                                <wflow:isConcrete
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:isConcrete>
+                                                <rdf:type rdf:resource="/ac/cgsmd/library.owl#Combine_Reformat_PennCNV_CNVX"/>
+                                          </wflow:ComponentVariable>
+                                    </wflow:hasComponent>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Combine_Reformat_PennCNV_CNVXNode_FormatedOutput">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#FormatedOutput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-4bbd66a9-b74f-4462-bf31-ecba39b2e69e">
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="Combine_Reformat_PennCNV_CNVXNode_LogInput">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/cgsmd/library.owl#LogInput">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument rdf:resource="#Combine_Reformat_PennCNV_CNVXNode_CNVInput"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#Combine_Reformat_PennCNV_CNVXNode_CNVInputX"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#Combine_Reformat_PennCNV_CNVXNode_LogInputX"/>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasInputPort rdf:resource="#Combine_Reformat_PennCNV_CNVXNode_LogInput"/>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Combine_Reformat_PennCNV_CNVXNode_PennReformatLogOutput">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#PennReformatLogOutput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn rdf:resource="#component6"/>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                              </wflow:Node>
+                        </wflow:hasOriginNode>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasOutputRole>
+                  <wflow:Role rdf:ID="FormatedOutput_orole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:DataVariable rdf:ID="FormatedOutput">
+                                    <rdfs:comment>x=819.0,y=307.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasOutputRole>
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="QuantiSNP_Detect_CNVNode_QTPCOutput_To_Output">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="QTPCOutput">
+                                    <rdfs:comment>x=375.0,y=197.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasOriginPort>
+                              <wflow:Port rdf:ID="QuantiSNP_Detect_CNVNode_QTPCOutput">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/cgsmd/library.owl#QTPCOutput">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasOriginPort>
+                        <wflow:hasOriginNode>
+                              <wflow:Node rdf:ID="QuantiSNP_Detect_CNVNode">
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:NWise rdf:about="_xprod-d2fd6fe9-e636-4da6-8eba-aca4bbce6c4e">
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="QuantiSNP_Detect_CNVNode_GenderInput">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/cgsmd/library.owl#GenderInput">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="QuantiSNP_Detect_CNVNode_QTFormatInput">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/cgsmd/library.owl#QTFormatInput">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                      </wflow:NWise>
+                                                </wflow:createSetsOn>
+                                                <wflow:createComponentSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createComponentSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component7">
+                                                            <wflow:isConcrete
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#boolean"
+                                                            >true</wflow:isConcrete>
+                                                            <rdf:type rdf:resource="/ac/cgsmd/library.owl#QuantiSNP_Detect_CNV"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="QuantiSNP_Detect_CNVNode_QuantiCNVOutput">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#QuantiCNVOutput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasOutputPort rdf:resource="#QuantiSNP_Detect_CNVNode_QTPCOutput"/>
+                                    <wflow:hasInputPort rdf:resource="#QuantiSNP_Detect_CNVNode_QTFormatInput"/>
+                                    <wflow:hasInputPort rdf:resource="#QuantiSNP_Detect_CNVNode_GenderInput"/>
+                                    <rdfs:comment>x=400.0,y=138.0</rdfs:comment>
+                                    <wflow:hasComponent rdf:resource="#component7"/>
+                              </wflow:Node>
+                        </wflow:hasOriginNode>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+            <wflow:hasOutputRole>
+                  <wflow:Role rdf:ID="SummaryOutput1_orole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#SummaryOutput1"/>
+                  </wflow:Role>
+            </wflow:hasOutputRole>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Convert_to_PN_and_QT_FormatsNode_PNFormatOutputs_To_Penn_Detect_CNVNode_PNFormatInputs_1">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="PNFormatOutputs">
+                                    <rdfs:comment>x=624.0,y=85.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="Penn_Detect_CNVNode_PNFormatInputs">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/cgsmd/library.owl#PNFormatInputs">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >1</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="Penn_Detect_CNVNode">
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-dc5566f1-287f-4ed3-b469-fb42889f090c">
+                                                            <wflow:hasExpressionArgument rdf:resource="#Penn_Detect_CNVNode_PNFormatInputs"/>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component3">
+                                                            <wflow:isConcrete
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#boolean"
+                                                            >true</wflow:isConcrete>
+                                                            <rdf:type rdf:resource="/ac/cgsmd/library.owl#Penn_Detect_CNV"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Penn_Detect_CNVNode_CNVOutput">
+                                                <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#CNVOutput"/>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Penn_Detect_CNVNode_LogOutput">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#LogOutput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasInputPort rdf:resource="#Penn_Detect_CNVNode_PNFormatInputs"/>
+                                    <rdfs:comment>x=577.0,y=125.0</rdfs:comment>
+                                    <wflow:hasComponent rdf:resource="#component3"/>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                        <wflow:hasOriginPort rdf:resource="#Convert_to_PN_and_QT_FormatsNode_PNFormatOutputs"/>
+                        <wflow:hasOriginNode rdf:resource="#Convert_to_PN_and_QT_FormatsNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#Annotate_CNVNode_1"/>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Merge_3_CNVsNode_MergedCNVOutput_To_Compare_against_Common_LociNode_MergedCNVInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="MergedCNVOutput1">
+                                    <rdfs:comment>x=441.0,y=512.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#Compare_against_Common_LociNode_MergedCNVInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#Compare_against_Common_LociNode"/>
+                        <wflow:hasOriginPort rdf:resource="#Merge_3_CNVsNode_MergedCNVOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#Merge_3_CNVsNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Convert_to_PN_and_QT_FormatsNode_PNFormatOutputs_To_Penn_Detect_CNVXNode_PNFormatInputs">
+                        <wflow:hasVariable rdf:resource="#PNFormatOutputs"/>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="Penn_Detect_CNVXNode_PNFormatInputs">
+                                    <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#PNFormatInputs"/>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="Penn_Detect_CNVXNode">
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-18d34882-91fd-425e-8667-20b743c760f4">
+                                                            <wflow:hasExpressionArgument rdf:resource="#Penn_Detect_CNVXNode_PNFormatInputs"/>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component4">
+                                                            <wflow:isConcrete
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#boolean"
+                                                            >true</wflow:isConcrete>
+                                                            <rdf:type rdf:resource="/ac/cgsmd/library.owl#Penn_Detect_CNVX"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Penn_Detect_CNVXNode_CNVOutputX">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#CNVOutputX">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Penn_Detect_CNVXNode_LogOutputX">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/cgsmd/library.owl#LogOutputX">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasInputPort rdf:resource="#Penn_Detect_CNVXNode_PNFormatInputs"/>
+                                    <rdfs:comment>x=801.0,y=98.0</rdfs:comment>
+                                    <wflow:hasComponent rdf:resource="#component4"/>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                        <wflow:hasOriginPort rdf:resource="#Convert_to_PN_and_QT_FormatsNode_PNFormatOutputs"/>
+                        <wflow:hasOriginNode rdf:resource="#Convert_to_PN_and_QT_FormatsNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#Merge_2_Bad_ChipsNode"/>
+            <wflow:hasNode rdf:resource="#DeNovo_Assess_CNV_OverlapNode"/>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Compare_against_Common_LociNode_RareMergedCNVOutput_To_DeNovo_Assess_CNV_OverlapNode_RareMergedCNVInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="RareMergedCNVOutput">
+                                    <rdfs:comment>x=399.0,y=637.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#DeNovo_Assess_CNV_OverlapNode_RareMergedCNVInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#DeNovo_Assess_CNV_OverlapNode"/>
+                        <wflow:hasOriginPort rdf:resource="#Compare_against_Common_LociNode_RareMergedCNVOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#Compare_against_Common_LociNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#Merge_3_CNVsNode"/>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="FinalReport_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >1</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#FinalReport"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasNode>
+                  <wflow:Node rdf:ID="Reformat_QuantiCNVNode">
+                        <wflow:hasPortSetCreationRule>
+                              <wflow:PortSetRule>
+                                    <wflow:createSetsOn>
+                                          <wflow:XProduct rdf:about="_xprod-3440f3ae-8a61-4cd3-a7fc-2f938d263330">
+                                                <wflow:hasExpressionArgument>
+                                                      <wflow:Port rdf:ID="Reformat_QuantiCNVNode_QuantiCNVInput">
+                                                            <wflow:satisfiesRole>
+                                                            
+      <rdf:Description rdf:about="/ac/cgsmd/library.owl#QuantiCNVInput">
+            <wflow:hasDimensionality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >0</wflow:hasDimensionality>
+      </rdf:Description>                                    </wflow:satisfiesRole>
+                                                      </wflow:Port>
+                                                </wflow:hasExpressionArgument>
+                                          </wflow:XProduct>
+                                    </wflow:createSetsOn>
+                                    <wflow:createComponentSets
+                                     rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                                    >true</wflow:createComponentSets>
+                              </wflow:PortSetRule>
+                        </wflow:hasPortSetCreationRule>
+                        <wflow:hasComponentSetCreationRule>
+                              <wflow:ComponentSetRule>
+                                    <wflow:createSetsOn>
+                                          <wflow:ComponentVariable rdf:ID="component16">
+                                                <wflow:isConcrete
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:isConcrete>
+                                                <rdf:type rdf:resource="/ac/cgsmd/library.owl#Reformat_QuantiCNV"/>
+                                          </wflow:ComponentVariable>
+                                    </wflow:createSetsOn>
+                                    <wflow:createWorkflowSets
+                                     rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                                    >true</wflow:createWorkflowSets>
+                              </wflow:ComponentSetRule>
+                        </wflow:hasComponentSetCreationRule>
+                        <wflow:hasOutputPort>
+                              <wflow:Port rdf:ID="Reformat_QuantiCNVNode_ReformatCNVOutput">
+                                    <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#ReformatCNVOutput"/>
+                              </wflow:Port>
+                        </wflow:hasOutputPort>
+                        <wflow:hasInputPort rdf:resource="#Reformat_QuantiCNVNode_QuantiCNVInput"/>
+                        <rdfs:comment>x=471.0,y=250.0</rdfs:comment>
+                        <wflow:hasComponent rdf:resource="#component16"/>
+                  </wflow:Node>
+            </wflow:hasNode>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Penn_Detect_CNVNode_LogOutput_To_Combine_Reformat_PennCNV_CNVXNode_LogInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="LogOutput">
+                                    <rdfs:comment>x=702.0,y=173.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#Combine_Reformat_PennCNV_CNVXNode_LogInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#Combine_Reformat_PennCNV_CNVXNode"/>
+                        <wflow:hasOriginPort rdf:resource="#Penn_Detect_CNVNode_LogOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#Penn_Detect_CNVNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#Penn_Detect_CNVXNode"/>
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="Combine_Reformat_PennCNV_CNVXNode_FormatedOutput_To_Output">
+                        <wflow:hasVariable rdf:resource="#FormatedOutput"/>
+                        <wflow:hasOriginPort rdf:resource="#Combine_Reformat_PennCNV_CNVXNode_FormatedOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#Combine_Reformat_PennCNV_CNVXNode"/>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+            <wflow:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >2</wflow:hasVersion>
+            <wflow:hasNode rdf:resource="#QuantiSNP_Detect_CNVNode"/>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Convert_to_PN_and_QT_FormatsNode_QTFormatOutput_To_QuantiSNP_Detect_CNVNode_QTFormatInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="QTFormatOutput">
+                                    <rdfs:comment>x=475.0,y=94.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#QuantiSNP_Detect_CNVNode_QTFormatInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#QuantiSNP_Detect_CNVNode"/>
+                        <wflow:hasOriginPort rdf:resource="#Convert_to_PN_and_QT_FormatsNode_QTFormatOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#Convert_to_PN_and_QT_FormatsNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Reformat_QuantiCNVNode_ReformatCNVOutput_To_Merge_3_CNVsNode_MergeCNVInput3">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="ReformatCNVOutput2">
+                                    <rdfs:comment>x=577.0,y=374.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#Merge_3_CNVsNode_MergeCNVInput3"/>
+                        <wflow:hasDestinationNode rdf:resource="#Merge_3_CNVsNode"/>
+                        <wflow:hasOriginPort rdf:resource="#Reformat_QuantiCNVNode_ReformatCNVOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#Reformat_QuantiCNVNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="Annotate_CNVNode_AnnotatedCNVOutput_To_Output">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="AnnotatedDeNovoCNVOutput">
+                                    <rdfs:comment>x=523.0,y=911.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasOriginPort>
+                              <wflow:Port rdf:ID="Annotate_CNVNode_AnnotatedCNVOutput">
+                                    <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#AnnotatedCNVOutput"/>
+                              </wflow:Port>
+                        </wflow:hasOriginPort>
+                        <wflow:hasOriginNode>
+                              <wflow:Node rdf:ID="Annotate_CNVNode">
+                                    <wflow:hasOutputPort rdf:resource="#Annotate_CNVNode_AnnotatedCNVOutput"/>
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="Annotate_CNVNode_GenesFileInput">
+                                                <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#GenesFileInput"/>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="Annotate_CNVNode_AnnotateInputCNV">
+                                                <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#AnnotateInputCNV"/>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <rdfs:comment>x=518.0,y=852.0</rdfs:comment>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component13">
+                                                            <wflow:isConcrete
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#boolean"
+                                                            >true</wflow:isConcrete>
+                                                            <rdf:type rdf:resource="/ac/cgsmd/library.owl#Annotate_CNV"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="Annotate_CNVNode_AnnotationFilesInput">
+                                                <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#AnnotationFilesInput"/>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-7ed0a9fa-883d-4e09-af75-e1491cca687c">
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="Annotate_CNVNode_DGVFileInput">
+            <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#DGVFileInput"/>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument rdf:resource="#Annotate_CNVNode_AnnotateInputCNV"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#Annotate_CNVNode_AnnotationFilesInput"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#Annotate_CNVNode_GenesFileInput"/>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponent rdf:resource="#component13"/>
+                                    <wflow:hasInputPort rdf:resource="#Annotate_CNVNode_DGVFileInput"/>
+                              </wflow:Node>
+                        </wflow:hasOriginNode>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+            <wflow:hasOutputRole>
+                  <wflow:Role rdf:ID="Thresholds_orole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#Thresholds"/>
+                  </wflow:Role>
+            </wflow:hasOutputRole>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Find_Gender_of_FinalReportsNode_SexSiftOutput_To_Remove_Bad_Quality_from_PEDFileNode_InputPEDFile">
+                        <wflow:hasVariable rdf:resource="#SexSiftOutput"/>
+                        <wflow:hasDestinationPort rdf:resource="#Remove_Bad_Quality_from_PEDFileNode_InputPEDFile"/>
+                        <wflow:hasDestinationNode rdf:resource="#Remove_Bad_Quality_from_PEDFileNode"/>
+                        <wflow:hasOriginPort rdf:resource="#Find_Gender_of_FinalReportsNode_SexSiftOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#Find_Gender_of_FinalReportsNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="AnnotationFilesInput_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >1</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#AnnotationFilesInput"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_Annotate_CNVNode_1_GenesFileInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="GenesFileInput">
+                                    <rdfs:comment>x=440.0,y=763.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#Annotate_CNVNode_1_GenesFileInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#Annotate_CNVNode_1"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Gnosis_Detect_CNVNode_CNVOutput_To_Reformat_GnosisCNVNode_CNVInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="CNVOutput">
+                                    <rdfs:comment>x=212.0,y=258.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="Reformat_GnosisCNVNode_CNVInput">
+                                    <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#CNVInput"/>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="Reformat_GnosisCNVNode">
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-d4ded8f9-0fa8-426a-a1be-a4b921e47012">
+                                                            <wflow:hasExpressionArgument rdf:resource="#Reformat_GnosisCNVNode_CNVInput"/>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component5">
+                                                            <wflow:isConcrete
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#boolean"
+                                                            >true</wflow:isConcrete>
+                                                            <rdf:type rdf:resource="/ac/cgsmd/library.owl#Reformat_GnosisCNV"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Reformat_GnosisCNVNode_ReformatCNVOutput">
+                                                <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#ReformatCNVOutput"/>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasInputPort rdf:resource="#Reformat_GnosisCNVNode_CNVInput"/>
+                                    <rdfs:comment>x=169.0,y=312.0</rdfs:comment>
+                                    <wflow:hasComponent rdf:resource="#component5"/>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                        <wflow:hasOriginPort rdf:resource="#Gnosis_Detect_CNVNode_CNVOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#Gnosis_Detect_CNVNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="GenesFileInput_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#GenesFileInput"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasOutputRole>
+                  <wflow:Role rdf:ID="AnnotatedCNVOutput_orole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#AnnotatedDeNovoCNVOutput"/>
+                  </wflow:Role>
+            </wflow:hasOutputRole>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Find_Gender_of_FinalReportsNode_GenderOutputs_To_QuantiSNP_Detect_CNVNode_GenderInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="GenderOutputs">
+                                    <rdfs:comment>x=222.0,y=104.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#QuantiSNP_Detect_CNVNode_GenderInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#QuantiSNP_Detect_CNVNode"/>
+                        <wflow:hasOriginPort rdf:resource="#Find_Gender_of_FinalReportsNode_GenderOutputs"/>
+                        <wflow:hasOriginNode rdf:resource="#Find_Gender_of_FinalReportsNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="DeNovo2_Assess_CNV_OverlapNode_DeNovo2RareMergedCNVOutput_To_Annotate_CNVNode_1_AnnotateInputCNV">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="DeNovo2RareMergedCNVOutput">
+                                    <rdfs:comment>x=127.0,y=761.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#Annotate_CNVNode_1_AnnotateInputCNV"/>
+                        <wflow:hasDestinationNode rdf:resource="#Annotate_CNVNode_1"/>
+                        <wflow:hasOriginPort>
+                              <wflow:Port rdf:ID="DeNovo2_Assess_CNV_OverlapNode_DeNovo2RareMergedCNVOutput">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/cgsmd/library.owl#DeNovo2RareMergedCNVOutput">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasOriginPort>
+                        <wflow:hasOriginNode>
+                              <wflow:Node rdf:ID="DeNovo2_Assess_CNV_OverlapNode">
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-7bfbaaae-4927-4f64-bd3a-43dbdcd6226b">
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="DeNovo2_Assess_CNV_OverlapNode_InputPEDFile">
+            <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#InputPEDFile"/>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="DeNovo2_Assess_CNV_OverlapNode_FinalReportDN">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/cgsmd/library.owl#FinalReportDN">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >1</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="DeNovo2_Assess_CNV_OverlapNode_RareMergedCNVInput">
+            <wflow:satisfiesRole rdf:resource="/ac/cgsmd/library.owl#RareMergedCNVInput"/>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component11">
+                                                            <wflow:isConcrete
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#boolean"
+                                                            >true</wflow:isConcrete>
+                                                            <rdf:type rdf:resource="/ac/cgsmd/library.owl#DeNovo2_Assess_CNV_Overlap"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasOutputPort rdf:resource="#DeNovo2_Assess_CNV_OverlapNode_DeNovo2RareMergedCNVOutput"/>
+                                    <wflow:hasInputPort rdf:resource="#DeNovo2_Assess_CNV_OverlapNode_InputPEDFile"/>
+                                    <wflow:hasInputPort rdf:resource="#DeNovo2_Assess_CNV_OverlapNode_FinalReportDN"/>
+                                    <wflow:hasInputPort rdf:resource="#DeNovo2_Assess_CNV_OverlapNode_RareMergedCNVInput"/>
+                                    <rdfs:comment>x=149.0,y=696.0</rdfs:comment>
+                                    <wflow:hasComponent rdf:resource="#component11"/>
+                              </wflow:Node>
+                        </wflow:hasOriginNode>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="Annotate_CNVNode_1_AnnotatedCNVOutput_To_Output">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="AnnotatedDeNovo2CNVOutput">
+                                    <rdfs:comment>x=187.0,y=910.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasOriginPort rdf:resource="#Annotate_CNVNode_1_AnnotatedCNVOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#Annotate_CNVNode_1"/>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#DeNovo2_Assess_CNV_OverlapNode"/>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Remove_Bad_Quality_from_PEDFileNode_OutputPEDFile_To_DeNovo2_Assess_CNV_OverlapNode_InputPEDFile">
+                        <wflow:hasVariable rdf:resource="#OutputPEDFile"/>
+                        <wflow:hasDestinationPort rdf:resource="#DeNovo2_Assess_CNV_OverlapNode_InputPEDFile"/>
+                        <wflow:hasDestinationNode rdf:resource="#DeNovo2_Assess_CNV_OverlapNode"/>
+                        <wflow:hasOriginPort rdf:resource="#Remove_Bad_Quality_from_PEDFileNode_OutputPEDFile"/>
+                        <wflow:hasOriginNode rdf:resource="#Remove_Bad_Quality_from_PEDFileNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Merge_2_Bad_ChipsNode_MergedBadchipsOutput_To_Remove_Bad_Quality_from_PEDFileNode_BadchipsInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="MergedBadchipsOutput">
+                                    <rdfs:comment>x=161.0,y=439.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#Remove_Bad_Quality_from_PEDFileNode_BadchipsInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#Remove_Bad_Quality_from_PEDFileNode"/>
+                        <wflow:hasOriginPort rdf:resource="#Merge_2_Bad_ChipsNode_MergedBadchipsOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#Merge_2_Bad_ChipsNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#Find_Gender_of_FinalReportsNode"/>
+            <wflow:hasNode rdf:resource="#Reformat_GnosisCNVNode"/>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Compare_against_Common_LociNode_RareMergedCNVOutput_To_DeNovo2_Assess_CNV_OverlapNode_RareMergedCNVInput">
+                        <wflow:hasVariable rdf:resource="#RareMergedCNVOutput"/>
+                        <wflow:hasDestinationPort rdf:resource="#DeNovo2_Assess_CNV_OverlapNode_RareMergedCNVInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#DeNovo2_Assess_CNV_OverlapNode"/>
+                        <wflow:hasOriginPort rdf:resource="#Compare_against_Common_LociNode_RareMergedCNVOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#Compare_against_Common_LociNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasOutputRole>
+                  <wflow:Role rdf:ID="QTPCOutput_orole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#QTPCOutput"/>
+                  </wflow:Role>
+            </wflow:hasOutputRole>
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="Combine_Reformat_PennCNV_CNVXNode_PennReformatLogOutput_To_Output">
+                        <wflow:hasVariable rdf:resource="#PennReformatLogOutput"/>
+                        <wflow:hasOriginPort rdf:resource="#Combine_Reformat_PennCNV_CNVXNode_PennReformatLogOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#Combine_Reformat_PennCNV_CNVXNode"/>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_DeNovo2_Assess_CNV_OverlapNode_FinalReportDN">
+                        <wflow:hasVariable rdf:resource="#FinalReport"/>
+                        <wflow:hasDestinationPort rdf:resource="#DeNovo2_Assess_CNV_OverlapNode_FinalReportDN"/>
+                        <wflow:hasDestinationNode rdf:resource="#DeNovo2_Assess_CNV_OverlapNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_Annotate_CNVNode_1_DGVFileInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="DGVFileInput">
+                                    <rdfs:comment>x=348.0,y=768.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#Annotate_CNVNode_1_DGVFileInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#Annotate_CNVNode_1"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="DGVFileInput_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#DGVFileInput"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasNode rdf:resource="#Combine_Reformat_PennCNV_CNVXNode"/>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_Annotate_CNVNode_DGVFileInput">
+                        <wflow:hasVariable rdf:resource="#DGVFileInput"/>
+                        <wflow:hasDestinationPort rdf:resource="#Annotate_CNVNode_DGVFileInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#Annotate_CNVNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="QuantiSNP_Detect_CNVNode_QuantiCNVOutput_To_Reformat_QuantiCNVNode_QuantiCNVInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="QuantiCNVOutput">
+                                    <rdfs:comment>x=468.0,y=197.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#Reformat_QuantiCNVNode_QuantiCNVInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#Reformat_QuantiCNVNode"/>
+                        <wflow:hasOriginPort rdf:resource="#QuantiSNP_Detect_CNVNode_QuantiCNVOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#QuantiSNP_Detect_CNVNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasOutputRole>
+                  <wflow:Role rdf:ID="AnnotatedCNVOutput1_orole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#AnnotatedDeNovo2CNVOutput"/>
+                  </wflow:Role>
+            </wflow:hasOutputRole>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Combine_Reformat_PennCNV_CNVXNode_ReformatCNVOutput_To_Merge_3_CNVsNode_MergeCNVInput2">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="ReformatCNVOutput1">
+                                    <rdfs:comment>x=414.0,y=392.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#Merge_3_CNVsNode_MergeCNVInput2"/>
+                        <wflow:hasDestinationNode rdf:resource="#Merge_3_CNVsNode"/>
+                        <wflow:hasOriginPort rdf:resource="#Combine_Reformat_PennCNV_CNVXNode_ReformatCNVOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#Combine_Reformat_PennCNV_CNVXNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_Gnosis_Detect_CNVNode_FinalReport">
+                        <wflow:hasVariable rdf:resource="#FinalReport"/>
+                        <wflow:hasDestinationPort rdf:resource="#Gnosis_Detect_CNVNode_FinalReport"/>
+                        <wflow:hasDestinationNode rdf:resource="#Gnosis_Detect_CNVNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_Annotate_CNVNode_AnnotationFilesInput">
+                        <wflow:hasVariable rdf:resource="#AnnotationFilesInput"/>
+                        <wflow:hasDestinationPort rdf:resource="#Annotate_CNVNode_AnnotationFilesInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#Annotate_CNVNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Penn_Detect_CNVNode_CNVOutput_To_Combine_Reformat_PennCNV_CNVXNode_CNVInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="CNVOutput1">
+                                    <rdfs:comment>x=611.0,y=187.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#Combine_Reformat_PennCNV_CNVXNode_CNVInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#Combine_Reformat_PennCNV_CNVXNode"/>
+                        <wflow:hasOriginPort rdf:resource="#Penn_Detect_CNVNode_CNVOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#Penn_Detect_CNVNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Penn_Detect_CNVXNode_CNVOutputX_To_Combine_Reformat_PennCNV_CNVXNode_CNVInputX">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="CNVOutputX">
+                                    <rdfs:comment>x=785.0,y=172.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#Combine_Reformat_PennCNV_CNVXNode_CNVInputX"/>
+                        <wflow:hasDestinationNode rdf:resource="#Combine_Reformat_PennCNV_CNVXNode"/>
+                        <wflow:hasOriginPort rdf:resource="#Penn_Detect_CNVXNode_CNVOutputX"/>
+                        <wflow:hasOriginNode rdf:resource="#Penn_Detect_CNVXNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_Annotate_CNVNode_GenesFileInput">
+                        <wflow:hasVariable rdf:resource="#GenesFileInput"/>
+                        <wflow:hasDestinationPort rdf:resource="#Annotate_CNVNode_GenesFileInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#Annotate_CNVNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#Annotate_CNVNode"/>
+            <wflow:hasNode rdf:resource="#Penn_Detect_CNVNode"/>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Reformat_GnosisCNVNode_ReformatCNVOutput_To_Merge_3_CNVsNode_MergeCNVInput1">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="ReformatCNVOutput">
+                                    <rdfs:comment>x=178.0,y=382.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#Merge_3_CNVsNode_MergeCNVInput1"/>
+                        <wflow:hasDestinationNode rdf:resource="#Merge_3_CNVsNode"/>
+                        <wflow:hasOriginPort rdf:resource="#Reformat_GnosisCNVNode_ReformatCNVOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#Reformat_GnosisCNVNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="DeNovo_Assess_CNV_OverlapNode_DeNovoRareMergedCNVOutput_To_Annotate_CNVNode_AnnotateInputCNV">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="DeNovoRareMergedCNVOutput">
+                                    <rdfs:comment>x=539.0,y=747.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#Annotate_CNVNode_AnnotateInputCNV"/>
+                        <wflow:hasDestinationNode rdf:resource="#Annotate_CNVNode"/>
+                        <wflow:hasOriginPort rdf:resource="#DeNovo_Assess_CNV_OverlapNode_DeNovoRareMergedCNVOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#DeNovo_Assess_CNV_OverlapNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="Penn_Detect_CNVXNode_LogOutputX_To_Combine_Reformat_PennCNV_CNVXNode_LogInputX">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="LogOutputX">
+                                    <rdfs:comment>x=886.0,y=179.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#Combine_Reformat_PennCNV_CNVXNode_LogInputX"/>
+                        <wflow:hasDestinationNode rdf:resource="#Combine_Reformat_PennCNV_CNVXNode"/>
+                        <wflow:hasOriginPort rdf:resource="#Penn_Detect_CNVXNode_LogOutputX"/>
+                        <wflow:hasOriginNode rdf:resource="#Penn_Detect_CNVXNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasOutputRole>
+                  <wflow:Role rdf:ID="UIDOutput1_orole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#UIDOutput1"/>
+                  </wflow:Role>
+            </wflow:hasOutputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_Find_Gender_of_FinalReportsNode_FinalReport">
+                        <wflow:hasVariable rdf:resource="#FinalReport"/>
+                        <wflow:hasDestinationPort rdf:resource="#Find_Gender_of_FinalReportsNode_FinalReport"/>
+                        <wflow:hasDestinationNode rdf:resource="#Find_Gender_of_FinalReportsNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+      </wflow:WorkflowTemplate>
+      <wflow:RuleSet rdf:ID="Rules"/>
+</rdf:RDF>
+

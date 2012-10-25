@@ -1,0 +1,154 @@
+<rdf:RDF
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns="http://wings-workflows.org/ontology/GPDomain/MouseHierarchicalClusterOnSamples.owl#"
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:acdom="http://wings-workflows.org/ontology/ac/gpcla/library.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dcdom="http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#"
+    xmlns:dclib="http://wings-workflows.org/ontology/dc/gpcla/library.owl#"
+    xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+      xml:base="http://wings-workflows.org/ontology/GPDomain/MouseHierarchicalClusterOnSamples.owl">
+      <wflow:Metadata rdf:about="">
+            <wflow:hasContributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >pgroth</wflow:hasContributor>
+            <wflow:createdFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >HierarchialClustering</wflow:createdFrom>
+            <wflow:lastUpdateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2008-08-29T16:07:11.478Z</wflow:lastUpdateTime>
+      </wflow:Metadata>
+      <owl:Ontology rdf:ID="MouseHierarchicalClusterOnSamples.owl">
+            <owl:imports rdf:resource="/2007/08/workflow.owl"/>
+      </owl:Ontology>
+      <wflow:WorkflowTemplate rdf:ID="MouseHierarchicalClusterOnSamples">
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_PreprocessDatasetNode_preprocessInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="PreprocessInput">
+                                    <wflow:hasDataBinding rdf:resource="/dc/gpcla/library.owl#GPL1981_mouse.gct"/>
+                                    <rdfs:comment>x=177.0,y=8.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationParameter rdf:resource="/ac/gpcla/library.owl#preprocessInput"/>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="PreprocessDatasetNode">
+                                    <rdfs:comment>x=164.0,y=57.0</rdfs:comment>
+                                    <wflow:hasComponent>
+                                          <acdom:PreprocessDataset rdf:ID="component0">
+                                                <wflow:isConcrete
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:isConcrete>
+                                          </acdom:PreprocessDataset>
+                                    </wflow:hasComponent>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#PreprocessDatasetNode"/>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_PreprocessDatasetNode_preprocessing.flag">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="Preprocessing.flag">
+                                    <rdfs:comment>x=5.0,y=10.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationParameter rdf:resource="/ac/gpcla/library.owl#preprocessing.flag"/>
+                        <wflow:hasDestinationNode rdf:resource="#PreprocessDatasetNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasNode>
+                  <wflow:Node rdf:ID="HierarchicalClusteringArrayViewerNode">
+                        <rdfs:comment>x=107.0,y=280.0</rdfs:comment>
+                        <wflow:hasComponent>
+                              <acdom:HierarchicalClusteringArrayViewer rdf:ID="component2">
+                                    <wflow:isConcrete rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#boolean"
+                                    >true</wflow:isConcrete>
+                              </acdom:HierarchicalClusteringArrayViewer>
+                        </wflow:hasComponent>
+                  </wflow:Node>
+            </wflow:hasNode>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_HierarchicalClusteringNode_clusterBy">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="ClusterBy">
+                                    <wflow:hasParameterValue rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >column</wflow:hasParameterValue>
+                                    <rdfs:comment>x=28.0,y=143.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationParameter rdf:resource="/ac/gpcla/library.owl#clusterBy"/>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="HierarchicalClusteringNode">
+                                    <rdfs:comment>x=150.0,y=169.0</rdfs:comment>
+                                    <wflow:hasComponent>
+                                          <acdom:HierarchicalClustering rdf:ID="component1">
+                                                <wflow:isConcrete
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:isConcrete>
+                                          </acdom:HierarchicalClustering>
+                                    </wflow:hasComponent>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="PreprocessDatasetNode_preprocessOutput_to_HierarchicalClusteringNode_HLCInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="PreprocessOutput">
+                                    <rdfs:comment>x=173.0,y=107.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationParameter rdf:resource="/ac/gpcla/library.owl#HLCInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#HierarchicalClusteringNode"/>
+                        <wflow:hasOriginParameter rdf:resource="/ac/gpcla/library.owl#preprocessOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#PreprocessDatasetNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#HierarchicalClusteringNode"/>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="HierarchicalClusteringNode_HLCClusteredDataOutput_to_HierarchicalClusteringArrayViewerNode_hcvDataTableInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="HLCClusteredDataOutput1">
+                                    <rdfs:comment>x=240.0,y=218.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationParameter rdf:resource="/ac/gpcla/library.owl#hcvDataTableInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#HierarchicalClusteringArrayViewerNode"/>
+                        <wflow:hasOriginParameter rdf:resource="/ac/gpcla/library.owl#HLCClusteredDataOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#HierarchicalClusteringNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="HierarchicalClusteringNode_HLCClusteringOrderOutput_to_HierarchicalClusteringArrayViewerNode_hcvArrayTreeInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="HLCClusteringOrderOutput1">
+                                    <rdfs:comment>x=16.0,y=219.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationParameter rdf:resource="/ac/gpcla/library.owl#hcvArrayTreeInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#HierarchicalClusteringArrayViewerNode"/>
+                        <wflow:hasOriginParameter rdf:resource="/ac/gpcla/library.owl#HLCClusteringOrderOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#HierarchicalClusteringNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="HierarchicalClusteringArrayViewerNode_viewerOutput_to_">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="ViewerOutput">
+                                    <rdfs:comment>x=189.0,y=334.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasOriginParameter rdf:resource="/ac/gpcla/library.owl#viewerOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#HierarchicalClusteringArrayViewerNode"/>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+      </wflow:WorkflowTemplate>
+      <wflow:RuleSet rdf:ID="Rules"/>
+</rdf:RDF>
+

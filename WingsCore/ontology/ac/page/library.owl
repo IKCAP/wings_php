@@ -1,0 +1,576 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY dc "http://wings-workflows.org/ontology/dc/ontology.owl#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY ac "http://wings-workflows.org/ontology/ac/ontology.owl#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY library "http://wings-workflows.org/ontology/ac/page/library.owl#" >
+    <!ENTITY dcdom "http://wings-workflows.org/ontology/dc/page/ontology.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://wings-workflows.org/ontology/ac/page/library.owl#"
+     xml:base="http://wings-workflows.org/ontology/ac/page/library.owl"
+     xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dcdom="http://wings-workflows.org/ontology/dc/page/ontology.owl#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:library="http://wings-workflows.org/ontology/ac/page/library.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl"/>
+        <owl:imports rdf:resource="http://wings-workflows.org/ontology/dc/page/ontology.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasArgument -->
+
+    <owl:ObjectProperty rdf:about="&ac;hasArgument"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasInput -->
+
+    <owl:ObjectProperty rdf:about="&ac;hasInput"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="&ac;hasOutput"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasArgumentID -->
+
+    <owl:DatatypeProperty rdf:about="&ac;hasArgumentID"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasArgumentName -->
+
+    <owl:DatatypeProperty rdf:about="&ac;hasArgumentName"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasDimensionality -->
+
+    <owl:DatatypeProperty rdf:about="&ac;hasDimensionality"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#isConcrete -->
+
+    <owl:DatatypeProperty rdf:about="&ac;isConcrete"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#Component -->
+
+    <owl:Class rdf:about="&ac;Component"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#ConcordanceClass -->
+
+    <owl:Class rdf:about="#ConcordanceClass">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#InitialReadClass -->
+
+    <owl:Class rdf:about="#InitialReadClass">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#StudyReadClass -->
+
+    <owl:Class rdf:about="#StudyReadClass">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#WriteExcelClass -->
+
+    <owl:Class rdf:about="#WriteExcelClass">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#snpQCClass -->
+
+    <owl:Class rdf:about="#snpQCClass">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#ConcordanceRData -->
+
+    <owl:Class rdf:about="&dcdom;ConcordanceRData"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#InitialRData -->
+
+    <owl:Class rdf:about="&dcdom;InitialRData"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#PedCheckFile -->
+
+    <owl:Class rdf:about="&dcdom;PedCheckFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#PopulationName -->
+
+    <owl:Class rdf:about="&dcdom;PopulationName"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#StudyRData -->
+
+    <owl:Class rdf:about="&dcdom;StudyRData"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#ZippedReferenceFiles -->
+
+    <owl:Class rdf:about="&dcdom;ZippedReferenceFiles"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#ZippedStudyFiles -->
+
+    <owl:Class rdf:about="&dcdom;ZippedStudyFiles"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#snpQCRData -->
+
+    <owl:Class rdf:about="&dcdom;snpQCRData"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/page/ontology.owl#studyQCExcelFile -->
+
+    <owl:Class rdf:about="&dcdom;studyQCExcelFile"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#Concordance -->
+
+    <owl:Thing rdf:about="#Concordance">
+        <rdf:type rdf:resource="#ConcordanceClass"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#ConcordanceRDataOutput"/>
+        <ac:hasOutput rdf:resource="#ConcordanceRDataOutput"/>
+        <ac:hasArgument rdf:resource="#InitialRDataInput"/>
+        <ac:hasInput rdf:resource="#InitialRDataInput"/>
+        <ac:hasArgument rdf:resource="#StudyRDataInput"/>
+        <ac:hasInput rdf:resource="#StudyRDataInput"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#ConcordanceRDataInput -->
+
+    <dcdom:ConcordanceRData rdf:about="#ConcordanceRDataInput">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-i4</ac:hasArgumentName>
+        <ac:hasArgumentID
+            >ConcordanceRDataInput</ac:hasArgumentID>
+    </dcdom:ConcordanceRData>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#ConcordanceRDataOutput -->
+
+    <dcdom:ConcordanceRData rdf:about="#ConcordanceRDataOutput">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+        <ac:hasArgumentID
+            >ConcordanceRDataOutput</ac:hasArgumentID>
+    </dcdom:ConcordanceRData>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#InitialRDataInput -->
+
+    <owl:Thing rdf:about="#InitialRDataInput">
+        <rdf:type rdf:resource="&dcdom;InitialRData"/>
+        <ac:hasArgumentID
+            >InitialRDataInput</ac:hasArgumentID>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#InitialRDataOutput -->
+
+    <dcdom:InitialRData rdf:about="#InitialRDataOutput">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID
+            >InitialRDataOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </dcdom:InitialRData>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#InitialRead -->
+
+    <InitialReadClass rdf:about="#InitialRead">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasOutput rdf:resource="#InitialRDataOutput"/>
+        <ac:hasArgument rdf:resource="#InitialRDataOutput"/>
+        <ac:hasInput rdf:resource="#ReferenceFilesZipInput"/>
+        <ac:hasArgument rdf:resource="#ReferenceFilesZipInput"/>
+    </InitialReadClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#PedCheckFileOutput -->
+
+    <owl:Thing rdf:about="#PedCheckFileOutput">
+        <rdf:type rdf:resource="&dcdom;PedCheckFile"/>
+        <ac:hasArgumentID
+            >PedCheckFileOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o2</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#PopulationNameInput -->
+
+    <dcdom:PopulationName rdf:about="#PopulationNameInput">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-i3</ac:hasArgumentName>
+        <ac:hasArgumentID
+            >PopulationNameInput</ac:hasArgumentID>
+    </dcdom:PopulationName>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#ReferenceFilesZipInput -->
+
+    <dcdom:ZippedReferenceFiles rdf:about="#ReferenceFilesZipInput">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+        <ac:hasArgumentID
+            >ReferenceFilesZipInput</ac:hasArgumentID>
+    </dcdom:ZippedReferenceFiles>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#StudyFilesZipInput -->
+
+    <dcdom:ZippedStudyFiles rdf:about="#StudyFilesZipInput">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID
+            >StudyFilesZipInput</ac:hasArgumentID>
+        <ac:hasArgumentName>-i2</ac:hasArgumentName>
+    </dcdom:ZippedStudyFiles>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#StudyQCExcelFileOutput -->
+
+    <dcdom:studyQCExcelFile rdf:about="#StudyQCExcelFileOutput">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID
+            >StudyQCExcelFileOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </dcdom:studyQCExcelFile>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#ExcelRDataOutput -->
+
+    <dcdom:ExcelRData rdf:about="#ExcelRDataOutput">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID
+            >ExcelRDataOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o2</ac:hasArgumentName>
+    </dcdom:ExcelRData>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#StudyRDataInput -->
+
+    <dcdom:StudyRData rdf:about="#StudyRDataInput">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-i2</ac:hasArgumentName>
+        <ac:hasArgumentID>StudyRDataInput</ac:hasArgumentID>
+    </dcdom:StudyRData>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#StudyRDataOutput -->
+
+    <dcdom:StudyRData rdf:about="#StudyRDataOutput">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID
+            >StudyRDataOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </dcdom:StudyRData>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#StudyRead -->
+
+    <owl:Thing rdf:about="#StudyRead">
+        <rdf:type rdf:resource="#StudyReadClass"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#InitialRDataInput"/>
+        <ac:hasInput rdf:resource="#InitialRDataInput"/>
+        <ac:hasArgument rdf:resource="#StudyFilesZipInput"/>
+        <ac:hasInput rdf:resource="#StudyFilesZipInput"/>
+        <ac:hasOutput rdf:resource="#StudyRDataOutput"/>
+        <ac:hasArgument rdf:resource="#StudyRDataOutput"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#WriteExcel -->
+
+    <WriteExcelClass rdf:about="#WriteExcel">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#InitialRDataInput"/>
+        <ac:hasInput rdf:resource="#InitialRDataInput"/>
+        <ac:hasArgument rdf:resource="#StudyRDataInput"/>
+        <ac:hasInput rdf:resource="#StudyRDataInput"/>
+        <ac:hasInput rdf:resource="#snpQCRDataInputs"/>
+        <ac:hasArgument rdf:resource="#snpQCRDataInputs"/>
+        <ac:hasInput rdf:resource="#ConcordanceRDataInput"/>
+        <ac:hasArgument rdf:resource="#ConcordanceRDataInput"/>
+        <ac:hasInput rdf:resource="#Percent_Heterozygosity"/>
+        <ac:hasArgument rdf:resource="#Percent_Heterozygosity"/>
+        <ac:hasInput rdf:resource="#XLS_Subject_Percent_Missing"/>
+        <ac:hasArgument rdf:resource="#XLS_Subject_Percent_Missing"/>
+        <ac:hasInput rdf:resource="#Percent_Discordant"/>
+        <ac:hasArgument rdf:resource="#Percent_Discordant"/>
+
+        <ac:hasOutput rdf:resource="#StudyQCExcelFileOutput"/>
+        <ac:hasArgument rdf:resource="#StudyQCExcelFileOutput"/>
+        <ac:hasOutput rdf:resource="#ExcelRDataOutput"/>
+        <ac:hasArgument rdf:resource="#ExcelRDataOutput"/>
+    </WriteExcelClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#snpQC -->
+
+    <owl:Thing rdf:about="#snpQC">
+        <rdf:type rdf:resource="#snpQCClass"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#InitialRDataInput"/>
+        <ac:hasArgument rdf:resource="#InitialRDataInput"/>
+        <ac:hasInput rdf:resource="#StudyRDataInput"/>
+        <ac:hasArgument rdf:resource="#StudyRDataInput"/>
+        <ac:hasInput rdf:resource="#PopulationNameInput"/>
+        <ac:hasArgument rdf:resource="#PopulationNameInput"/>
+        <ac:hasInput rdf:resource="#Ci_B"/>
+        <ac:hasArgument rdf:resource="#Ci_B"/>
+        <ac:hasInput rdf:resource="#SNP_Percent_Missing"/>
+        <ac:hasArgument rdf:resource="#SNP_Percent_Missing"/>
+        <ac:hasInput rdf:resource="#Subject_Percent_Missing"/>
+        <ac:hasArgument rdf:resource="#Subject_Percent_Missing"/>
+        <ac:hasInput rdf:resource="#Minor_Allel_Frequency"/>
+        <ac:hasArgument rdf:resource="#Minor_Allel_Frequency"/>
+        <ac:hasInput rdf:resource="#HWE_PValue"/>
+        <ac:hasArgument rdf:resource="#HWE_PValue"/>
+        <ac:hasInput rdf:resource="#Stratified_HWE_PValue"/>
+        <ac:hasArgument rdf:resource="#Stratified_HWE_PValue"/>
+
+        <ac:hasOutput rdf:resource="#snpQCRDataOutput"/>
+        <ac:hasArgument rdf:resource="#snpQCRDataOutput"/>
+        <ac:hasOutput rdf:resource="#PedCheckFileOutput"/>
+        <ac:hasArgument rdf:resource="#PedCheckFileOutput"/>
+    </owl:Thing>
+
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#Ci_B -->
+
+    <dc:ParameterArgument rdf:about="#Ci_B">
+        <ac:hasValue rdf:datatype="&xsd;int">10000</ac:hasValue>
+        <ac:hasArgumentName>-i4</ac:hasArgumentName>
+        <ac:hasArgumentID>Ci_B</ac:hasArgumentID>
+    </dc:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#SNP_Percent_Missing -->
+
+    <dc:ParameterArgument rdf:about="#SNP_Percent_Missing">
+        <ac:hasValue rdf:datatype="&xsd;int">5</ac:hasValue>
+        <ac:hasArgumentName>-i5</ac:hasArgumentName>
+        <ac:hasArgumentID>SNP_Percent_Missing</ac:hasArgumentID>
+    </dc:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#Subject_Percent_Missing -->
+
+    <dc:ParameterArgument rdf:about="#Subject_Percent_Missing">
+        <ac:hasValue rdf:datatype="&xsd;int">5</ac:hasValue>
+        <ac:hasArgumentName>-i6</ac:hasArgumentName>
+        <ac:hasArgumentID>Subject_Percent_Missing</ac:hasArgumentID>
+    </dc:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#Minor_Allel_Frequency -->
+
+    <dc:ParameterArgument rdf:about="#Minor_Allel_Frequency">
+        <ac:hasValue rdf:datatype="&xsd;float">0.01</ac:hasValue>
+        <ac:hasArgumentName>-i7</ac:hasArgumentName>
+        <ac:hasArgumentID>Minor_Allel_Frequency</ac:hasArgumentID>
+    </dc:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#HWE_PValue -->
+
+    <dc:ParameterArgument rdf:about="#HWE_PValue">
+        <ac:hasValue rdf:datatype="&xsd;float">0.01</ac:hasValue>
+        <ac:hasArgumentName>-i8</ac:hasArgumentName>
+        <ac:hasArgumentID>HWE_PValue</ac:hasArgumentID>
+    </dc:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#Stratified_HWE_PValue -->
+
+    <dc:ParameterArgument rdf:about="#Stratified_HWE_PValue">
+        <ac:hasValue rdf:datatype="&xsd;float">0.01</ac:hasValue>
+        <ac:hasArgumentName>-i9</ac:hasArgumentName>
+        <ac:hasArgumentID>Stratified_HWE_PValue</ac:hasArgumentID>
+    </dc:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#XLS_Subject_Percent_Missing -->
+
+    <dc:ParameterArgument rdf:about="#XLS_Subject_Percent_Missing">
+        <ac:hasValue rdf:datatype="&xsd;int">5</ac:hasValue>
+        <ac:hasArgumentName>-i6</ac:hasArgumentName>
+        <ac:hasArgumentID>XLS_Subject_Percent_Missing</ac:hasArgumentID>
+    </dc:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#Percent_Heterozygosity -->
+
+    <dc:ParameterArgument rdf:about="#Percent_Heterozygosity">
+        <ac:hasValue rdf:datatype="&xsd;int">3</ac:hasValue>
+        <ac:hasArgumentName>-i5</ac:hasArgumentName>
+        <ac:hasArgumentID>Percent_Heterozygosity</ac:hasArgumentID>
+    </dc:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#Percent_Discordant -->
+
+    <dc:ParameterArgument rdf:about="#Percent_Discordant">
+        <ac:hasValue rdf:datatype="&xsd;int">5</ac:hasValue>
+        <ac:hasArgumentName>-i7</ac:hasArgumentName>
+        <ac:hasArgumentID>Percent_Discordant</ac:hasArgumentID>
+    </dc:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#snpQCRDataInputs -->
+
+    <owl:Thing rdf:about="#snpQCRDataInputs">
+        <rdf:type rdf:resource="&dcdom;snpQCRData"/>
+        <ac:hasDimensionality rdf:datatype="&xsd;int">1</ac:hasDimensionality>
+        <ac:hasArgumentName>-i3</ac:hasArgumentName>
+        <ac:hasArgumentID
+            >snpQCRDataInputs</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/page/library.owl#snpQCRDataOutput -->
+
+    <owl:Thing rdf:about="#snpQCRDataOutput">
+        <rdf:type rdf:resource="&dcdom;snpQCRData"/>
+        <ac:hasArgumentID
+            >snpQCRDataOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </owl:Thing>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

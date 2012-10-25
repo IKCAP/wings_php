@@ -1,0 +1,289 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dclib="http://wings-workflows.org/ontology/dc/dm/library-dc-test-v1.8.owl#"
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:acdom="http://wings-workflows.org/ontology/ac/dm/library.owl#"
+    xmlns:dcdom="http://wings-workflows.org/ontology/dc/dm/ontology.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://wings-workflows.org/ontology/DMDomain/ModelerThenClassifier.owl#"
+    xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+      xml:base="http://wings-workflows.org/ontology/DMDomain/ModelerThenClassifier.owl">
+      <wflow:Metadata rdf:about="">
+            <wflow:hasContributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >varun</wflow:hasContributor>
+            <wflow:lastUpdateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2010-03-10T19:02:49.495Z</wflow:lastUpdateTime>
+      </wflow:Metadata>
+      <owl:Ontology rdf:ID="ModelerThenClassifier.owl">
+            <owl:imports rdf:resource="/2007/08/workflow.owl"/>
+      </owl:Ontology>
+      <wflow:WorkflowTemplate rdf:ID="ModelerThenClassifier">
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="TrainingData_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <dcdom:Instance rdf:ID="TrainingData">
+                                    <rdfs:comment>x=45.0,y=36.0</rdfs:comment>
+                                    <rdf:type rdf:resource="/2007/08/workflow.owl#DataVariable"/>
+                              </dcdom:Instance>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="JavaMaxHeapSize_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:ParameterVariable rdf:ID="JavaMaxHeapSize">
+                                    <rdfs:comment>x=257.0,y=36.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="ModelerClassIndex_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:ParameterVariable rdf:ID="ModelerClassIndex">
+                                    <rdfs:comment>x=135.0,y=36.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasOutputRole>
+                  <wflow:Role rdf:ID="ClassifierOutput_orole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <dcdom:Classification rdf:ID="ClassifierOutput">
+                                    <rdfs:comment>x=162.0,y=271.0</rdfs:comment>
+                                    <rdf:type rdf:resource="/2007/08/workflow.owl#DataVariable"/>
+                              </dcdom:Classification>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasOutputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_ModelerNode_trainingData">
+                        <wflow:hasVariable rdf:resource="#TrainingData"/>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="ModelerNode_trainingData">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/dm/library.owl#trainingData">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="ModelerNode">
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-33816abf-7fd4-4570-a7e7-0f71e651c9a5">
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="ModelerNode_javaMaxHeapSize">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/dm/library.owl#javaMaxHeapSize">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="ModelerNode_modelerClassIndex">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/dm/library.owl#modelerClassIndex">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument rdf:resource="#ModelerNode_trainingData"/>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component0">
+                                                            <rdf:type rdf:resource="/ac/dm/library.owl#Modeler"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="ModelerNode_outputModel">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/dm/library.owl#outputModel">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasInputPort rdf:resource="#ModelerNode_trainingData"/>
+                                    <wflow:hasInputPort rdf:resource="#ModelerNode_modelerClassIndex"/>
+                                    <wflow:hasInputPort rdf:resource="#ModelerNode_javaMaxHeapSize"/>
+                                    <rdfs:comment>x=194.0,y=88.0</rdfs:comment>
+                                    <wflow:hasComponent rdf:resource="#component0"/>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="ClassifierInputData_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <dcdom:Instance rdf:ID="ClassifierInputData">
+                                    <rdfs:comment>x=66.0,y=152.0</rdfs:comment>
+                                    <rdf:type rdf:resource="/2007/08/workflow.owl#DataVariable"/>
+                              </dcdom:Instance>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="ModelerNode_outputModel_To_ClassifierNode_classifierInputModel">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="OutputModel">
+                                    <rdfs:comment>x=206.0,y=148.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="ClassifierNode_classifierInputModel">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/dm/library.owl#classifierInputModel">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="ClassifierNode">
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-bc7d4b13-74fe-4dd5-bc18-eaae76d77fc0">
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="ClassifierNode_classifierInputData">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/dm/library.owl#classifierInputData">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument rdf:resource="#ClassifierNode_classifierInputModel"/>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component1">
+                                                            <rdf:type rdf:resource="/ac/dm/library.owl#Classifier"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="ClassifierNode_classifierOutput">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/dm/library.owl#classifierOutput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasInputPort rdf:resource="#ClassifierNode_classifierInputModel"/>
+                                    <wflow:hasInputPort rdf:resource="#ClassifierNode_classifierInputData"/>
+                                    <rdfs:comment>x=175.0,y=217.0</rdfs:comment>
+                                    <wflow:hasComponent rdf:resource="#component1"/>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                        <wflow:hasOriginPort rdf:resource="#ModelerNode_outputModel"/>
+                        <wflow:hasOriginNode rdf:resource="#ModelerNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="ClassifierNode_classifierOutput_To_Output">
+                        <wflow:hasVariable rdf:resource="#ClassifierOutput"/>
+                        <wflow:hasOriginPort rdf:resource="#ClassifierNode_classifierOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#ClassifierNode"/>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+            <wflow:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >2</wflow:hasVersion>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_ModelerNode_javaMaxHeapSize">
+                        <wflow:hasVariable rdf:resource="#JavaMaxHeapSize"/>
+                        <wflow:hasDestinationPort rdf:resource="#ModelerNode_javaMaxHeapSize"/>
+                        <wflow:hasDestinationNode rdf:resource="#ModelerNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_ClassifierNode_classifierInputData">
+                        <wflow:hasVariable rdf:resource="#ClassifierInputData"/>
+                        <wflow:hasDestinationPort rdf:resource="#ClassifierNode_classifierInputData"/>
+                        <wflow:hasDestinationNode rdf:resource="#ClassifierNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#ModelerNode"/>
+            <wflow:hasNode rdf:resource="#ClassifierNode"/>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_ModelerNode_modelerClassIndex">
+                        <wflow:hasVariable rdf:resource="#ModelerClassIndex"/>
+                        <wflow:hasDestinationPort rdf:resource="#ModelerNode_modelerClassIndex"/>
+                        <wflow:hasDestinationNode rdf:resource="#ModelerNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+      </wflow:WorkflowTemplate>
+      <wflow:RuleSet rdf:ID="Rules"/>
+</rdf:RDF>
+

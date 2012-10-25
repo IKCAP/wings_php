@@ -1,0 +1,29 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dmo="http://anchor/data_metrics_ontology#"
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns:dso="http://anchor/data_set_ontology#"
+    xmlns:process="http://anchor/process#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns="http://wings-workflows.org/ontology/se18/SE18Template.owl#"
+    xmlns:teo="http://anchor/teo#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xml:base="http://wings-workflows.org/ontology/se18/seeds/SE18-SuspChainedComm-Tangram.owl">
+      <owl:Ontology rdf:about="">
+            <owl:imports rdf:resource="../SE18Template.owl"/>
+      </owl:Ontology>
+      <rdf:Description rdf:about="../SE18Template.owl#dataVariable0">
+            <dso:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Tangram</dso:creator>
+      </rdf:Description>
+      <rdf:Description rdf:about="../SE18Template.owl#dataVariable7">
+            <dmo:saturatedWithNodeType rdf:resource="http://anchor/teo#SuspiciousChainedCommunicationEvent"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="../SE18Template.owl#dataVariable3">
+            <dso:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Tangram</dso:creator>
+      </rdf:Description>
+</rdf:RDF>
+

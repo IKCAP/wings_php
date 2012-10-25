@@ -1,0 +1,48 @@
+<rdf:RDF
+    xmlns="http://wings-workflows.org/ontology/birn/PIQ_Workflow.owl#"
+    xmlns:dcdom="http://wings-workflows.org/ontology/dc/birn/ontology.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:dclib="http://wings-workflows.org/ontology/dc/birn/library.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+    xmlns:acdom="http://wings-workflows.org/ontology/ac/birn/library.owl#"
+      xml:base="http://wings-workflows.org/ontology/birn/seeds/PIQ_Workflow_Seed.owl">
+      <wflow:Metadata rdf:about="">
+            <wflow:hasContributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >varun</wflow:hasContributor>
+            <wflow:createdFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >test</wflow:createdFrom>
+            <wflow:hasDocumentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >A Seed is what you run by clicking on the orange icon in the toolbar.
+This seed imports the "PIQ_Workflow" and specifies some (but not all) parameter values.
+Other parameter values are automatically set during workflow generation</wflow:hasDocumentation>
+            <wflow:lastUpdateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2009-12-16T10:05:47.188Z</wflow:lastUpdateTime>
+      </wflow:Metadata>
+      <owl:Ontology rdf:about="">
+            <owl:imports rdf:resource="../PIQ_Workflow.owl"/>
+      </owl:Ontology>
+      <wflow:RuleSet rdf:ID="Rules"/>
+      <rdf:Description rdf:about="../PIQ_Workflow.owl#Input_ChunkSizeY">
+            <wflow:hasParameterValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >1920</wflow:hasParameterValue>
+      </rdf:Description>
+      <rdf:Description rdf:about="../PIQ_Workflow.owl#Input_ChunkSizeX">
+            <wflow:hasParameterValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >1024</wflow:hasParameterValue>
+      </rdf:Description>
+      <rdf:Description rdf:about="../PIQ_Workflow.owl#Input_NXTiles">
+            <wflow:hasParameterValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >8</wflow:hasParameterValue>
+      </rdf:Description>
+      <rdf:Description rdf:about="../PIQ_Workflow.owl#Input_NYTiles">
+            <wflow:hasParameterValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >10</wflow:hasParameterValue>
+      </rdf:Description>
+</rdf:RDF>
+

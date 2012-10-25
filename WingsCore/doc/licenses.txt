@@ -1,0 +1,62 @@
+DRAFT DRAFT DRAFT DRAFT
+
+This file shows the license for all the 3rd party libraries that Wings
+uses.  This is a work in progress.
+
+Open questions:
+
+1. Soap license?
+2. java-getopt license?
+
+Alphabetical by License
+
+AGPL: http://www.fsf.org/licensing/licenses/agpl-3.0.html
+* Pellet (which is also available under a dual license if AGPL is not to our liking)
+
+Apache 2:  http://www.apache.org/licenses/LICENSE-2.0.html
+* Lucene Core
+* larvalabs collections
+* Commons Logging
+* FileUpload
+* StAX API
+* Woodstox
+* XML Commons External Components XML
+* Log4j APIs
+* Xerces2 Java Parser
+* ant-antlr
+* soap (? could not fild website)
+
+ARQ (BSD-style): http://jena.sourceforge.net/ARQ/license.html
+* ARQ
+
+BSD: http://www.opensource.org/licenses/bsd-license.php
+* ARQ Extra
+* Jena
+* StAX2 API
+* ANTLR
+
+CPL v1.0:  http://www.opensource.org/licenses/cpl1.0.php
+* JUnit
+
+GNU GPL v2:  http://www.gnu.org/licenses/gpl-2.0.html
+* MySQL java connector
+* java-getopt (? could not find website)
+
+ICU:  http://icu-project.org/repos/icu/icu/trunk/license.html
+* ICU4J
+
+Jena (BSD-style): http://jena.sourceforge.net/license.html
+* Jena IRI
+
+MIT: http://www.opensource.org/licenses/mit-license.php
+* SLF4J
+
+
+
+
+
+
+
+
+
+

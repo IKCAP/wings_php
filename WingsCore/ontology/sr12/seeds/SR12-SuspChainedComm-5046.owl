@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE Ontology [
+    <!ENTITY teo "http://anchor/teo#">
+    <!ENTITY process "http://anchor/process#">
+    <!ENTITY data "http://anchor/data#">
+    <!ENTITY xsd  "http://www.w3.org/2001/XMLSchema#" >
+]>
+
+<rdf:RDF
+    xmlns:teo="http://anchor/teo#"
+    xmlns:process="http://anchor/process#"
+    xmlns:data="http://anchor/data#"
+    xmlns:dm="http://anchor/data_metrics_ontology#"
+    xmlns="http://wings-workflows.org/ontology/sr12/SR12Template.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+  xml:base="http://wings-workflows.org/ontology/sr12/SR12Template.owl">
+  
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://wings-workflows.org/ontology/sr12/SR12Template.owl"/>
+  </owl:Ontology>
+  
+  <rdf:Description rdf:about="#?dataVariable5">
+    <process:saturatedWith rdf:resource="&teo;SuspiciousChainedCommunicationEvent" />
+  </rdf:Description>
+  
+  <rdf:Description rdf:about="#?dataVariable0">
+    <data:creator rdf:datatype="&xsd;string">5046</data:creator>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="#?dataVariable1">
+    <data:creator rdf:datatype="&xsd;string">5046</data:creator>
+  </rdf:Description>
+  
+       
+</rdf:RDF>

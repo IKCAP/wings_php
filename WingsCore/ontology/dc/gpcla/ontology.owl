@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#"
+  xml:base="http://wings-workflows.org/ontology/dc/gpcla/ontology.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="NMFGraph">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Plot"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="NMFCophenetic">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Plot"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ConsensusStatistics">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Plot"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ODF">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="GeneExpressionInFileFormat"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SOMClusterResult">
+    <rdfs:subClassOf rdf:resource="#ODF"/>
+  </owl:Class>
+  <owl:Class rdf:ID="NMFConsensus">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Plot"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ViewableData">
+    <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#DataObject"/>
+  </owl:Class>
+  <owl:Class rdf:ID="RES">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GeneExpressionInFileFormat"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="GCT">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GeneExpressionInFileFormat"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Domain">
+    <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#Metrics"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ClusteredDataTable">
+    <rdfs:subClassOf rdf:resource="#ViewableData"/>
+  </owl:Class>
+  <owl:Class rdf:about="#GeneExpressionInFileFormat">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="GeneExpressionData"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Dendrogram">
+    <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#DataObject"/>
+  </owl:Class>
+  <owl:Class rdf:ID="HomoSapiensClass">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="OrganismClass"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#GeneExpressionData">
+    <rdfs:subClassOf rdf:resource="#ViewableData"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MusMusculusClass">
+    <rdfs:subClassOf rdf:resource="#OrganismClass"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Plot">
+    <rdfs:subClassOf rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#DataObject"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="fromOrganism">
+    <rdfs:subPropertyOf rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#hasMetrics"/>
+    <rdfs:range rdf:resource="#OrganismClass"/>
+    <rdfs:domain rdf:resource="#GeneExpressionData"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="containsTreeFor">
+    <rdfs:subPropertyOf rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#hasDataMetrics"/>
+    <rdfs:domain rdf:resource="#Dendrogram"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isPreprocessed">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#GeneExpressionData"/>
+    <rdfs:subPropertyOf rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#hasDataMetrics"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isNormalized">
+    <rdfs:subPropertyOf rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#hasDataMetrics"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#ViewableData"/>
+  </owl:DatatypeProperty>
+  <HomoSapiensClass rdf:ID="HomoSapiens"/>
+  <MusMusculusClass rdf:ID="MusMusculus"/>
+  <OrganismClass rdf:ID="Organism"/>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->

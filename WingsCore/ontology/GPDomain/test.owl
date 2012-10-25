@@ -1,0 +1,24 @@
+<rdf:RDF
+    xmlns:acdom="http://wings-workflows.org/ontology/ac/gpcla/library.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dclib="http://wings-workflows.org/ontology/dc/gpcla/library.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:dcdom="http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#"
+    xmlns="http://wings-workflows.org/ontology/GPDomain/test.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+      xml:base="http://wings-workflows.org/ontology/GPDomain/test.owl">
+      <wflow:Metadata rdf:about="">
+            <wflow:hasContributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >varun</wflow:hasContributor>
+            <wflow:lastUpdateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2010-02-09T21:58:38.856Z</wflow:lastUpdateTime>
+            <owl:imports rdf:resource="/2007/08/workflow.owl"/>
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+      </wflow:Metadata>
+      <wflow:WorkflowTemplate rdf:ID="test"/>
+</rdf:RDF>
+

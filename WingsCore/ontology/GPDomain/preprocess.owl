@@ -1,0 +1,753 @@
+<rdf:RDF
+    xmlns="http://wings-workflows.org/ontology/GPDomain/preprocess.owl#"
+    xmlns:acdom="http://wings-workflows.org/ontology/ac/gpcla/library.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+    xmlns:dclib="http://wings-workflows.org/ontology/dc/gpcla/library.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:dcdom="http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+      xml:base="http://wings-workflows.org/ontology/GPDomain/preprocess.owl">
+      <wflow:Metadata rdf:about="">
+            <wflow:hasContributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >varun</wflow:hasContributor>
+            <wflow:hasContributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >pgroth</wflow:hasContributor>
+            <wflow:lastUpdateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2010-01-27T14:58:25.101Z</wflow:lastUpdateTime>
+      </wflow:Metadata>
+      <owl:Ontology rdf:ID="preprocess.owl">
+            <owl:imports rdf:resource="/2007/08/workflow.owl"/>
+      </owl:Ontology>
+      <wflow:RuleSet rdf:ID="Rules"/>
+      <wflow:WorkflowTemplate rdf:ID="preprocess">
+            <wflow:hasOutputRole>
+                  <wflow:Role rdf:ID="ViewerOutput_orole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:DataVariable rdf:ID="ViewerOutput">
+                                    <rdfs:comment>x=235.0,y=554.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasOutputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_PreprocessDatasetNode_preprocessInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="PreprocessInput">
+                                    <rdfs:comment>x=387.0,y=12.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="ip1">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/gpcla/library.owl#som.iterations">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/gpcla/library.owl#preprocessInput">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="PreprocessDatasetNode">
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="ip2">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/gpcla/library.owl#som.rows">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/gpcla/library.owl#preprocessing.flag">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasComponent>
+                                          <wflow:ComponentVariable rdf:ID="component0">
+                                                <wflow:isConcrete
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:isConcrete>
+                                                <rdf:type rdf:resource="/ac/gpcla/library.owl#PreprocessDataset"/>
+                                          </wflow:ComponentVariable>
+                                    </wflow:hasComponent>
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-e81da33e-7754-42c3-a43c-e1128a4961de">
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="ip4">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/gpcla/library.owl#som.cluster.range">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/gpcla/library.owl#threshold">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="ip3">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/gpcla/library.owl#som.neighborhood">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/gpcla/library.owl#prob.thres">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument rdf:resource="#ip2"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#ip1"/>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="ip0">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/gpcla/library.owl#som.cluster.by">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/gpcla/library.owl#viewerInput">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/gpcla/library.owl#log.base.two">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn rdf:resource="#component0"/>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasInputPort rdf:resource="#ip3"/>
+                                    <wflow:hasInputPort rdf:resource="#ip0"/>
+                                    <rdfs:comment>x=381.0,y=153.0</rdfs:comment>
+                                    <wflow:hasInputPort rdf:resource="#ip4"/>
+                                    <wflow:hasInputPort rdf:resource="#ip1"/>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="op0">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/gpcla/library.owl#somResults">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/gpcla/library.owl#viewerOutput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/gpcla/library.owl#preprocessOutput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Som.alpha.final_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:ParameterVariable rdf:ID="Som.alpha.final">
+                                    <rdfs:comment>x=37.0,y=132.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Som.alpha.initial_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:ParameterVariable rdf:ID="Som.alpha.initial">
+                                    <rdfs:comment>x=266.0,y=232.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_PreprocessDatasetNode_log.base.two">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="Log.base.two">
+                                    <rdfs:comment>x=456.0,y=44.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#ip0"/>
+                        <wflow:hasDestinationNode rdf:resource="#PreprocessDatasetNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >2</wflow:hasVersion>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Prob.thres_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:ParameterVariable rdf:ID="Prob.thres">
+                                    <rdfs:comment>x=500.0,y=78.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_SOMClusteringNode_som.cols">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="Som.cols">
+                                    <rdfs:comment>x=246.0,y=180.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="ip11">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/gpcla/library.owl#som.cols">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="SOMClusteringNode">
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="ip12">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/gpcla/library.owl#somInput">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasInputPort rdf:resource="#ip3"/>
+                                    <wflow:hasInputPort rdf:resource="#ip4"/>
+                                    <wflow:hasOutputPort rdf:resource="#op0"/>
+                                    <wflow:hasInputPort rdf:resource="#ip11"/>
+                                    <wflow:hasInputPort rdf:resource="#ip2"/>
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="ip7">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/gpcla/library.owl#som.initialization">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <rdfs:comment>x=217.0,y=332.0</rdfs:comment>
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="ip10">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/gpcla/library.owl#som.sigma.initial">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasInputPort rdf:resource="#ip1"/>
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="ip6">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/gpcla/library.owl#som.alpha.initial">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasInputPort rdf:resource="#ip0"/>
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="ip9">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/gpcla/library.owl#som.sigma.final">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component1">
+                                                            <wflow:isConcrete
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#boolean"
+                                                            >true</wflow:isConcrete>
+                                                            <rdf:type rdf:resource="/ac/gpcla/library.owl#SOMClustering"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="ip5">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/gpcla/library.owl#som.alpha.final">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="ip8">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/gpcla/library.owl#som.seed.range">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasComponent rdf:resource="#component1"/>
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-45e56191-541e-4db7-8d5e-0740a4dc4908">
+                                                            <wflow:hasExpressionArgument rdf:resource="#ip11"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#ip4"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#ip8"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#ip7"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#ip2"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#ip12"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#ip0"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#ip5"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#ip9"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#ip10"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#ip3"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#ip1"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#ip6"/>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Som.cols_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#Som.cols"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Som.cluster.range_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:ParameterVariable rdf:ID="Som.cluster.range">
+                                    <rdfs:comment>x=141.0,y=196.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_SOMClusteringNode_som.iterations">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="Som.iterations">
+                                    <rdfs:comment>x=29.0,y=283.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#ip1"/>
+                        <wflow:hasDestinationNode rdf:resource="#SOMClusteringNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_SOMClusteringNode_som.cluster.by">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="Som.cluster.by">
+                                    <rdfs:comment>x=190.0,y=157.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#ip0"/>
+                        <wflow:hasDestinationNode rdf:resource="#SOMClusteringNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_SOMClusteringNode_som.sigma.initial">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="Som.sigma.initial">
+                                    <rdfs:comment>x=28.0,y=250.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#ip10"/>
+                        <wflow:hasDestinationNode rdf:resource="#SOMClusteringNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Som.sigma.initial_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#Som.sigma.initial"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Preprocessing.flag_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:ParameterVariable rdf:ID="Preprocessing.flag">
+                                    <rdfs:comment>x=315.0,y=46.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_PreprocessDatasetNode_prob.thres">
+                        <wflow:hasVariable rdf:resource="#Prob.thres"/>
+                        <wflow:hasDestinationPort rdf:resource="#ip3"/>
+                        <wflow:hasDestinationNode rdf:resource="#PreprocessDatasetNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Som.sigma.final_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:ParameterVariable rdf:ID="Som.sigma.final">
+                                    <rdfs:comment>x=25.0,y=188.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_PreprocessDatasetNode_preprocessing.flag">
+                        <wflow:hasVariable rdf:resource="#Preprocessing.flag"/>
+                        <wflow:hasDestinationPort rdf:resource="#ip2"/>
+                        <wflow:hasDestinationNode rdf:resource="#PreprocessDatasetNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_SOMClusteringNode_som.cluster.range">
+                        <wflow:hasVariable rdf:resource="#Som.cluster.range"/>
+                        <wflow:hasDestinationPort rdf:resource="#ip4"/>
+                        <wflow:hasDestinationNode rdf:resource="#SOMClusteringNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Som.seed.range_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:ParameterVariable rdf:ID="Som.seed.range">
+                                    <rdfs:comment>x=252.0,y=207.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_SOMClusteringNode_som.neighborhood">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="Som.neighborhood">
+                                    <rdfs:comment>x=82.0,y=221.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#ip3"/>
+                        <wflow:hasDestinationNode rdf:resource="#SOMClusteringNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="ViewerNode_viewerOutput_to_">
+                        <wflow:hasVariable rdf:resource="#ViewerOutput"/>
+                        <wflow:hasOriginPort rdf:resource="#op0"/>
+                        <wflow:hasOriginNode>
+                              <wflow:Node rdf:ID="ViewerNode">
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-ed3dd9cf-383a-4019-8c2a-58ea901d2659">
+                                                            <wflow:hasExpressionArgument rdf:resource="#ip0"/>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component2">
+                                                            <rdf:type rdf:resource="/ac/gpcla/library.owl#Viewer"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createWorkflowSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createWorkflowSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasOutputPort rdf:resource="#op0"/>
+                                    <wflow:hasInputPort rdf:resource="#ip0"/>
+                                    <rdfs:comment>x=244.0,y=473.0</rdfs:comment>
+                                    <wflow:hasComponent rdf:resource="#component2"/>
+                              </wflow:Node>
+                        </wflow:hasOriginNode>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Log.base.two_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#Log.base.two"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Som.rows_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:ParameterVariable rdf:ID="Som.rows">
+                                    <rdfs:comment>x=120.0,y=159.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_PreprocessDatasetNode_threshold">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="Threshold">
+                                    <rdfs:comment>x=300.0,y=85.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#ip4"/>
+                        <wflow:hasDestinationNode rdf:resource="#PreprocessDatasetNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Threshold_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#Threshold"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Som.initialization_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:ParameterVariable rdf:ID="Som.initialization">
+                                    <rdfs:comment>x=144.0,y=129.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_SOMClusteringNode_som.rows">
+                        <wflow:hasVariable rdf:resource="#Som.rows"/>
+                        <wflow:hasDestinationPort rdf:resource="#ip2"/>
+                        <wflow:hasDestinationNode rdf:resource="#SOMClusteringNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="PreprocessDatasetNode_preprocessOutput_to_SOMClusteringNode_somInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="PreprocessOutput">
+                                    <rdfs:comment>x=354.0,y=258.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#ip12"/>
+                        <wflow:hasDestinationNode rdf:resource="#SOMClusteringNode"/>
+                        <wflow:hasOriginPort rdf:resource="#op0"/>
+                        <wflow:hasOriginNode rdf:resource="#PreprocessDatasetNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_SOMClusteringNode_som.seed.range">
+                        <wflow:hasVariable rdf:resource="#Som.seed.range"/>
+                        <wflow:hasDestinationPort rdf:resource="#ip8"/>
+                        <wflow:hasDestinationNode rdf:resource="#SOMClusteringNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_SOMClusteringNode_som.sigma.final">
+                        <wflow:hasVariable rdf:resource="#Som.sigma.final"/>
+                        <wflow:hasDestinationPort rdf:resource="#ip9"/>
+                        <wflow:hasDestinationNode rdf:resource="#SOMClusteringNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_SOMClusteringNode_som.initialization">
+                        <wflow:hasVariable rdf:resource="#Som.initialization"/>
+                        <wflow:hasDestinationPort rdf:resource="#ip7"/>
+                        <wflow:hasDestinationNode rdf:resource="#SOMClusteringNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Som.iterations_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#Som.iterations"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasNode rdf:resource="#ViewerNode"/>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Som.cluster.by_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#Som.cluster.by"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_SOMClusteringNode_som.alpha.initial">
+                        <wflow:hasVariable rdf:resource="#Som.alpha.initial"/>
+                        <wflow:hasDestinationPort rdf:resource="#ip6"/>
+                        <wflow:hasDestinationNode rdf:resource="#SOMClusteringNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="SOMClusteringNode_somResults_to_ViewerNode_viewerInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="SomResults">
+                                    <rdfs:comment>x=235.0,y=416.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#ip0"/>
+                        <wflow:hasDestinationNode rdf:resource="#ViewerNode"/>
+                        <wflow:hasOriginPort rdf:resource="#op0"/>
+                        <wflow:hasOriginNode rdf:resource="#SOMClusteringNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Som.neighborhood_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#Som.neighborhood"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasNode rdf:resource="#PreprocessDatasetNode"/>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="PreprocessInput_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#PreprocessInput"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_SOMClusteringNode_som.alpha.final">
+                        <wflow:hasVariable rdf:resource="#Som.alpha.final"/>
+                        <wflow:hasDestinationPort rdf:resource="#ip5"/>
+                        <wflow:hasDestinationNode rdf:resource="#SOMClusteringNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#SOMClusteringNode"/>
+      </wflow:WorkflowTemplate>
+</rdf:RDF>
+

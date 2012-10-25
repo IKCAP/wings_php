@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Generate Workflow Instances
+#
+# $Id: awg,v 1.5 2008/08/29 06:39:28 varunr Exp $
+
+SCRIPTS_HOME=`dirname "$0"`; 
+WINGS_HOME=`dirname "$0"`/..; 
+
+. "${SCRIPTS_HOME}/setenv.sh"
+
+# Run Automatic Workflow Generator
+${java} "-Dwings.home=${WINGS_HOME}" "-Dlog4j.configuration=${AWG_CONF}" "-Dpellet.configuration=${PELLET_CONF}" -Xmx1024M edu.isi.ikcap.wings.AWG "$@"

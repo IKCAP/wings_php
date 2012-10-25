@@ -1,0 +1,26 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:acdom="http://wings-workflows.org/ontology/ac/cgsmd/library.owl#"
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:dclib="http://wings-workflows.org/ontology/dc/cgsmd/library.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://wings-workflows.org/ontology/CGSMD/Association_Test_Conditional_On_Matching.owl#"
+    xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:dcdom="http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#"
+    xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+      xml:base="http://wings-workflows.org/ontology/CGSMD/seeds/t3.owl">
+      <wflow:Metadata rdf:about="">
+            <wflow:hasContributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >varun</wflow:hasContributor>
+            <wflow:lastUpdateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2010-01-26T19:57:58.132Z</wflow:lastUpdateTime>
+      </wflow:Metadata>
+      <owl:Ontology rdf:about="">
+            <owl:imports rdf:resource="../Association_Test_Conditional_On_Matching.owl"/>
+      </owl:Ontology>
+      <wflow:RuleSet rdf:ID="Rules"/>
+</rdf:RDF>
+

@@ -1,0 +1,593 @@
+<rdf:RDF
+    xmlns="http://wings-workflows.org/ontology/birn/PIQ_Workflow.owl#"
+    xmlns:dcdom="http://wings-workflows.org/ontology/dc/birn/ontology.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:dclib="http://wings-workflows.org/ontology/dc/birn/library.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+    xmlns:acdom="http://wings-workflows.org/ontology/ac/birn/library.owl#"
+      xml:base="http://wings-workflows.org/ontology/birn/PIQ_Workflow.owl">
+      <wflow:Metadata rdf:about="">
+            <wflow:hasContributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >varun</wflow:hasContributor>
+            <wflow:createdFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >test</wflow:createdFrom>
+            <wflow:hasDocumentation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >This Workflow Template includes the top 3 components of the PIQ Workflow.</wflow:hasDocumentation>
+            <wflow:lastUpdateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2009-12-16T08:20:58.753Z</wflow:lastUpdateTime>
+      </wflow:Metadata>
+      <owl:Ontology rdf:ID="PIQ_Workflow.owl">
+            <owl:imports rdf:resource="/2007/08/workflow.owl"/>
+      </owl:Ontology>
+      <wflow:RuleSet rdf:ID="Rules"/>
+      <wflow:WorkflowTemplate rdf:ID="PIQ_Workflow">
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_chunkisizeNode_Input_NumOfZs">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="Input_NumOfZs">
+                                    <rdfs:comment>x=371.0,y=186.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="chunkisizeNode_Input_NumOfZs">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/birn/library.owl#Input_NumOfZs">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="chunkisizeNode">
+                                    <wflow:hasInputPort rdf:resource="#chunkisizeNode_Input_NumOfZs"/>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component1">
+                                                            <wflow:isConcrete
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#boolean"
+                                                            >true</wflow:isConcrete>
+                                                            <rdf:type rdf:resource="/ac/birn/library.owl#chunkisize"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createComponentSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createComponentSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <rdfs:comment>x=181.0,y=233.0</rdfs:comment>
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-5095eead-5120-490a-867b-4bebbf873308">
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="chunkisizeNode_Input_ChunkSizeX">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/birn/library.owl#Input_ChunkSizeX">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="chunkisizeNode_Input_ChunkSizeY">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/birn/library.owl#Input_ChunkSizeY">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="chunkisizeNode_Input_NYTiles">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/birn/library.owl#Input_NYTiles">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="chunkisizeNode_Input_DimFile">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/birn/library.owl#Input_DimFile">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument rdf:resource="#chunkisizeNode_Input_NumOfZs"/>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="chunkisizeNode_Input_TileHeight">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/birn/library.owl#Input_TileHeight">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="chunkisizeNode_Input_NXTiles">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/birn/library.owl#Input_NXTiles">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                            <wflow:hasExpressionArgument>
+                                                            
+      <wflow:Port rdf:ID="chunkisizeNode_Input_TileWidth">
+            <wflow:satisfiesRole>
+                  <rdf:Description rdf:about="/ac/birn/library.owl#Input_TileWidth">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                  </rdf:Description>
+            </wflow:satisfiesRole>
+      </wflow:Port>                                         </wflow:hasExpressionArgument>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createComponentSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createComponentSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasInputPort rdf:resource="#chunkisizeNode_Input_DimFile"/>
+                                    <wflow:hasInputPort rdf:resource="#chunkisizeNode_Input_ChunkSizeY"/>
+                                    <wflow:hasInputPort rdf:resource="#chunkisizeNode_Input_TileWidth"/>
+                                    <wflow:hasInputPort rdf:resource="#chunkisizeNode_Input_TileHeight"/>
+                                    <wflow:hasInputPort rdf:resource="#chunkisizeNode_Input_NYTiles"/>
+                                    <wflow:hasInputPort rdf:resource="#chunkisizeNode_Input_NXTiles"/>
+                                    <wflow:hasComponent rdf:resource="#component1"/>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="chunkisizeNode_Output_ChunkisizeMetaFile">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/birn/library.owl#Output_ChunkisizeMetaFile">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasInputPort rdf:resource="#chunkisizeNode_Input_ChunkSizeX"/>
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="chunkisizeNode_Output_StacksFile">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/birn/library.owl#Output_StacksFile">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasNode>
+                  <wflow:Node rdf:ID="partitionNode">
+                        <wflow:hasPortSetCreationRule>
+                              <wflow:PortSetRule>
+                                    <wflow:createSetsOn>
+                                          <wflow:XProduct rdf:about="_xprod-b823d7f3-cc8b-4443-a3f6-596a5cc0ac2a">
+                                                <wflow:hasExpressionArgument>
+                                                      <wflow:Port rdf:ID="partitionNode_Input_ImageFile">
+                                                            <wflow:satisfiesRole>
+                                                            
+      <rdf:Description rdf:about="/ac/birn/library.owl#Input_ImageFile">
+            <wflow:hasDimensionality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >0</wflow:hasDimensionality>
+      </rdf:Description>                                    </wflow:satisfiesRole>
+                                                      </wflow:Port>
+                                                </wflow:hasExpressionArgument>
+                                          </wflow:XProduct>
+                                    </wflow:createSetsOn>
+                                    <wflow:createWorkflowSets
+                                     rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                                    >true</wflow:createWorkflowSets>
+                              </wflow:PortSetRule>
+                        </wflow:hasPortSetCreationRule>
+                        <wflow:hasComponentSetCreationRule>
+                              <wflow:ComponentSetRule>
+                                    <wflow:createSetsOn>
+                                          <wflow:ComponentVariable rdf:ID="component0">
+                                                <wflow:isConcrete
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:isConcrete>
+                                                <rdf:type rdf:resource="/ac/birn/library.owl#partition"/>
+                                          </wflow:ComponentVariable>
+                                    </wflow:createSetsOn>
+                                    <wflow:createComponentSets
+                                     rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                                    >true</wflow:createComponentSets>
+                              </wflow:ComponentSetRule>
+                        </wflow:hasComponentSetCreationRule>
+                        <wflow:hasOutputPort>
+                              <wflow:Port rdf:ID="partitionNode_Output_DimFile">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/birn/library.owl#Output_DimFile">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasOutputPort>
+                        <wflow:hasInputPort rdf:resource="#partitionNode_Input_ImageFile"/>
+                        <rdfs:comment>x=159.0,y=69.0</rdfs:comment>
+                        <wflow:hasComponent rdf:resource="#component0"/>
+                  </wflow:Node>
+            </wflow:hasNode>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="chunkisizeNode_Output_StacksFile_To_zprojectNode_Input_StackFile">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="Output_StacksFile">
+                                    <rdfs:comment>x=162.0,y=306.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="zprojectNode_Input_StackFile">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/birn/library.owl#Input_StackFile">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >1</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="zprojectNode">
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="zprojectNode_Output_ProjectedChunkFile">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/birn/library.owl#Output_ProjectedChunkFile">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="zprojectNode_Input_EndZ">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/birn/library.owl#Input_EndZ">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasComponentSetCreationRule>
+                                          <wflow:ComponentSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:ComponentVariable rdf:ID="component2">
+                                                            <wflow:isConcrete
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#boolean"
+                                                            >true</wflow:isConcrete>
+                                                            <rdf:type rdf:resource="/ac/birn/library.owl#zproject"/>
+                                                      </wflow:ComponentVariable>
+                                                </wflow:createSetsOn>
+                                                <wflow:createComponentSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createComponentSets>
+                                          </wflow:ComponentSetRule>
+                                    </wflow:hasComponentSetCreationRule>
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="zprojectNode_Input_ChunkisizeMetaFile">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/birn/library.owl#Input_ChunkisizeMetaFile">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <rdfs:comment>x=171.0,y=370.0</rdfs:comment>
+                                    <wflow:hasInputPort rdf:resource="#zprojectNode_Input_StackFile"/>
+                                    <wflow:hasInputPort>
+                                          <wflow:Port rdf:ID="zprojectNode_Input_StartZ">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/birn/library.owl#Input_StartZ">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasInputPort>
+                                    <wflow:hasPortSetCreationRule>
+                                          <wflow:PortSetRule>
+                                                <wflow:createSetsOn>
+                                                      <wflow:XProduct rdf:about="_xprod-0fcec0b6-a3ce-4fce-87b8-150ecef152dd">
+                                                            <wflow:hasExpressionArgument rdf:resource="#zprojectNode_Input_StartZ"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#zprojectNode_Input_StackFile"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#zprojectNode_Input_ChunkisizeMetaFile"/>
+                                                            <wflow:hasExpressionArgument rdf:resource="#zprojectNode_Input_EndZ"/>
+                                                      </wflow:XProduct>
+                                                </wflow:createSetsOn>
+                                                <wflow:createComponentSets
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:createComponentSets>
+                                          </wflow:PortSetRule>
+                                    </wflow:hasPortSetCreationRule>
+                                    <wflow:hasComponent rdf:resource="#component2"/>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                        <wflow:hasOriginPort rdf:resource="#chunkisizeNode_Output_StacksFile"/>
+                        <wflow:hasOriginNode rdf:resource="#chunkisizeNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Input_EndZ_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:ParameterVariable rdf:ID="Input_EndZ">
+                                    <rdfs:comment>x=37.0,y=320.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Input_TileHeight_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:ParameterVariable rdf:ID="Input_TileHeight">
+                                    <rdfs:comment>x=298.0,y=98.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_partitionNode_Input_ImageFile">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="Input_ImageFile">
+                                    <rdfs:comment>x=150.0,y=16.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#partitionNode_Input_ImageFile"/>
+                        <wflow:hasDestinationNode rdf:resource="#partitionNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_zprojectNode_Input_StartZ">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="Input_StartZ">
+                                    <rdfs:comment>x=69.0,y=293.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#zprojectNode_Input_StartZ"/>
+                        <wflow:hasDestinationNode rdf:resource="#zprojectNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Input_ChunkSizeY_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:ParameterVariable rdf:ID="Input_ChunkSizeY">
+                                    <rdfs:comment>x=15.0,y=159.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasNode rdf:resource="#chunkisizeNode"/>
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="zprojectNode_Output_ProjectedChunkFile_To_Output">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="Output_ProjectedChunkFile">
+                                    <rdfs:comment>x=132.0,y=436.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasOriginPort rdf:resource="#zprojectNode_Output_ProjectedChunkFile"/>
+                        <wflow:hasOriginNode rdf:resource="#zprojectNode"/>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_chunkisizeNode_Input_TileHeight">
+                        <wflow:hasVariable rdf:resource="#Input_TileHeight"/>
+                        <wflow:hasDestinationPort rdf:resource="#chunkisizeNode_Input_TileHeight"/>
+                        <wflow:hasDestinationNode rdf:resource="#chunkisizeNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Input_NXTiles_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:ParameterVariable rdf:ID="Input_NXTiles">
+                                    <rdfs:comment>x=323.0,y=132.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Input_NumOfZs_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#Input_NumOfZs"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_chunkisizeNode_Input_ChunkSizeX">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="Input_ChunkSizeX">
+                                    <rdfs:comment>x=43.0,y=112.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#chunkisizeNode_Input_ChunkSizeX"/>
+                        <wflow:hasDestinationNode rdf:resource="#chunkisizeNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_chunkisizeNode_Input_TileWidth">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="Input_TileWidth">
+                                    <rdfs:comment>x=261.0,y=70.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#chunkisizeNode_Input_TileWidth"/>
+                        <wflow:hasDestinationNode rdf:resource="#chunkisizeNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Input_ChunkSizeX_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#Input_ChunkSizeX"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="partitionNode_Output_DimFile_To_chunkisizeNode_Input_DimFile">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="Output_DimFile">
+                                    <rdfs:comment>x=154.0,y=145.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#chunkisizeNode_Input_DimFile"/>
+                        <wflow:hasDestinationNode rdf:resource="#chunkisizeNode"/>
+                        <wflow:hasOriginPort rdf:resource="#partitionNode_Output_DimFile"/>
+                        <wflow:hasOriginNode rdf:resource="#partitionNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >2</wflow:hasVersion>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_chunkisizeNode_Input_ChunkSizeY">
+                        <wflow:hasVariable rdf:resource="#Input_ChunkSizeY"/>
+                        <wflow:hasDestinationPort rdf:resource="#chunkisizeNode_Input_ChunkSizeY"/>
+                        <wflow:hasDestinationNode rdf:resource="#chunkisizeNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="chunkisizeNode_Output_ChunkisizeMetaFile_To_zprojectNode_Input_ChunkisizeMetaFile">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="Output_ChunkisizeMetaFile">
+                                    <rdfs:comment>x=309.0,y=310.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort rdf:resource="#zprojectNode_Input_ChunkisizeMetaFile"/>
+                        <wflow:hasDestinationNode rdf:resource="#zprojectNode"/>
+                        <wflow:hasOriginPort rdf:resource="#chunkisizeNode_Output_ChunkisizeMetaFile"/>
+                        <wflow:hasOriginNode rdf:resource="#chunkisizeNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Input_StartZ_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#Input_StartZ"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Input_NYTiles_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:ParameterVariable rdf:ID="Input_NYTiles">
+                                    <rdfs:comment>x=349.0,y=162.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_zprojectNode_Input_EndZ">
+                        <wflow:hasVariable rdf:resource="#Input_EndZ"/>
+                        <wflow:hasDestinationPort rdf:resource="#zprojectNode_Input_EndZ"/>
+                        <wflow:hasDestinationNode rdf:resource="#zprojectNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_chunkisizeNode_Input_NXTiles">
+                        <wflow:hasVariable rdf:resource="#Input_NXTiles"/>
+                        <wflow:hasDestinationPort rdf:resource="#chunkisizeNode_Input_NXTiles"/>
+                        <wflow:hasDestinationNode rdf:resource="#chunkisizeNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Input_ImageFile_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#Input_ImageFile"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="Input_TileWidth_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#Input_TileWidth"/>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasOutputRole>
+                  <wflow:Role rdf:ID="Output_ProjectedChunkFile_orole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable rdf:resource="#Output_ProjectedChunkFile"/>
+                  </wflow:Role>
+            </wflow:hasOutputRole>
+            <wflow:hasNode rdf:resource="#zprojectNode"/>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Input_To_chunkisizeNode_Input_NYTiles">
+                        <wflow:hasVariable rdf:resource="#Input_NYTiles"/>
+                        <wflow:hasDestinationPort rdf:resource="#chunkisizeNode_Input_NYTiles"/>
+                        <wflow:hasDestinationNode rdf:resource="#chunkisizeNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+      </wflow:WorkflowTemplate>
+</rdf:RDF>
+

@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns="http://wings-workflows.org/ontology/dc/dm/library.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:dcdm="http://wings-workflows.org/ontology/dc/dm/ontology.owl#"
+  xml:base="http://wings-workflows.org/ontology/dc/dm/library.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl"/>
+  </owl:Ontology>
+  <rdf:Property rdf:about="http://wings-workflows.org/ontology/dc/dm/ontology.owl#hasLocation"/>
+  <dc:Location rdf:ID="gsiftp_hamsphire">
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#gsiftp"/>
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#hampshire"/>
+  </dc:Location>
+  <dc:Location rdf:ID="https_umass">
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#umass"/>
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#https"/>
+  </dc:Location>
+  <dc:Location rdf:ID="ftp_isi">
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#ftp"/>
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#isi"/>
+  </dc:Location>
+  <dc:Location rdf:ID="gsiftp_isi">
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#isi"/>
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#gsiftp"/>
+  </dc:Location>
+  <dc:Location rdf:ID="ftp_umass">
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#ftp"/>
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#umass"/>
+  </dc:Location>
+  <dc:Location rdf:ID="http_hampshire">
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#hampshire"/>
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#http"/>
+  </dc:Location>
+  <dcdm:ContinuousInstance rdf:ID="weather-2007-07-31-101503">
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >5</dcdm:hasNumberOfClasses>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >22378</dc:hasSizeInKB>
+    <dcdm:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dc:hasLocation>
+      <dc:Location rdf:ID="gsiftp_umass">
+        <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#gsiftp"/>
+        <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#umass"/>
+      </dc:Location>
+    </dc:hasLocation>
+    <dcdm:hasLocation rdf:resource="#gsiftp_umass"/>
+    <dc:hasLocation rdf:resource="#https_umass"/>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1000</dcdm:hasNumberOfInstances>
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#weather"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</dcdm:hasMissingValues>
+    <dcdm:hasLocation rdf:resource="#https_umass"/>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >0</dcdm:hasNumberOfBins>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"8b606dc562c7bc903c1ec11460e685ee"</dc:hasMd5sum>
+  </dcdm:ContinuousInstance>
+  <dcdm:Area rdf:ID="west"/>
+  <dcdm:Area rdf:ID="east"/>
+  <dc:Location rdf:ID="https_hampshire">
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#https"/>
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#hampshire"/>
+  </dc:Location>
+  <dc:Location rdf:ID="http_umass">
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#umass"/>
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#http"/>
+  </dc:Location>
+  <dcdm:Domain rdf:ID="weather-nominal"/>
+  <dc:Location rdf:ID="http_isi">
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#isi"/>
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#http"/>
+  </dc:Location>
+  <dcdm:Instance rdf:ID="weather-nominal-2007-07-31-155626">
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >5</dcdm:hasNumberOfClasses>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</dcdm:isDiscrete>
+    <dcdm:hasDomain rdf:resource="#weather-nominal"/>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</dcdm:hasMissingValues>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >100000</dcdm:hasNumberOfInstances>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</dcdm:isSampled>
+    <dcdm:hasArea rdf:resource="#west"/>
+  </dcdm:Instance>
+  <dcdm:Instance rdf:ID="weather-nominal-2007-07-30-221907">
+    <dcdm:hasDomain rdf:resource="#weather-nominal"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</dcdm:isDiscrete>
+    <dcdm:hasArea rdf:resource="#east"/>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >100</dcdm:hasNumberOfInstances>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</dcdm:hasMissingValues>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</dcdm:isSampled>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >5</dcdm:hasNumberOfClasses>
+  </dcdm:Instance>
+  <dcdm:ContinuousInstance rdf:ID="weather-2007-07-31-101501">
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</dcdm:isDiscrete>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >100</dcdm:hasNumberOfInstances>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >"8b606dc562c7bc903c1ec11460e685ee"</dc:hasMd5sum>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</dcdm:isSampled>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#east-la"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >5</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >0</dcdm:hasNumberOfBins>
+    <dcdm:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dc:hasLocation rdf:resource="#gsiftp_umass"/>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >22378</dc:hasSizeInKB>
+    <dcdm:hasLocation rdf:resource="#gsiftp_umass"/>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#weather"/>
+    <dc:hasLocation rdf:resource="#https_umass"/>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</dcdm:hasMissingValues>
+    <dcdm:hasLocation rdf:resource="#https_umass"/>
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+  </dcdm:ContinuousInstance>
+
+  <dcdm:Settings rdf:ID="param_settings1"/>
+  <dcdm:Settings rdf:ID="param_settings2"/>
+  <dcdm:Settings rdf:ID="param_settings3"/>
+  <dcdm:Settings rdf:ID="param_settings4"/>
+
+  <dc:Location rdf:ID="ftp_hampshire">
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#ftp"/>
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#hampshire"/>
+  </dc:Location>
+  <dc:Location rdf:ID="https_isi">
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#isi"/>
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#https"/>
+  </dc:Location>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3, Build 414)  http://protege.stanford.edu -->

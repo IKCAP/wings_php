@@ -1,0 +1,414 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY dc "http://wings-workflows.org/ontology/dc/ontology.owl#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ontology "http://wings-workflows.org/ontology/dc/dm/ontology.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://wings-workflows.org/ontology/dc/dm/ontology.owl#"
+     xml:base="http://wings-workflows.org/ontology/dc/dm/ontology.owl"
+     xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ontology="http://wings-workflows.org/ontology/dc/dm/ontology.owl#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#hasArea -->
+
+    <owl:ObjectProperty rdf:about="#hasArea">
+        <rdfs:range rdf:resource="#Area"/>
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasMetrics"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#hasDomain -->
+
+    <owl:ObjectProperty rdf:about="#hasDomain">
+        <rdfs:range rdf:resource="#Domain"/>
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasMetrics"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#hasType -->
+
+    <owl:ObjectProperty rdf:about="#hasType">
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasMetrics"/>
+        <rdfs:range rdf:resource="&owl;Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/ontology.owl#hasMetrics -->
+
+    <owl:ObjectProperty rdf:about="&dc;hasMetrics"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#hasMissingValues -->
+
+    <owl:DatatypeProperty rdf:about="#hasMissingValues">
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#hasNumberOfBins -->
+
+    <owl:DatatypeProperty rdf:about="#hasNumberOfBins">
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#hasNumberOfClasses -->
+
+    <owl:DatatypeProperty rdf:about="#hasNumberOfClasses">
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#hasNumberOfInstances -->
+
+    <owl:DatatypeProperty rdf:about="#hasNumberOfInstances">
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#isDiscrete -->
+
+    <owl:DatatypeProperty rdf:about="#isDiscrete">
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#isNormalized -->
+
+    <owl:DatatypeProperty rdf:about="#isNormalized">
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#isRandomized -->
+
+    <owl:DatatypeProperty rdf:about="#isRandomized">
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#isSampled -->
+
+    <owl:DatatypeProperty rdf:about="#isSampled">
+        <rdfs:domain rdf:resource="&dc;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dc;hasDataMetrics"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/ontology.owl#hasDataMetrics -->
+
+    <owl:DatatypeProperty rdf:about="&dc;hasDataMetrics"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#Area -->
+
+    <owl:Class rdf:about="#Area">
+        <rdfs:subClassOf rdf:resource="&dc;Metrics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#BayesClassification -->
+
+    <owl:Class rdf:about="#BayesClassification">
+        <rdfs:subClassOf rdf:resource="#Classification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#BayesModel -->
+
+    <owl:Class rdf:about="#BayesModel">
+        <rdfs:subClassOf rdf:resource="#Model"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#Classification -->
+
+    <owl:Class rdf:about="#Classification">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#ContinuousInstance -->
+
+    <owl:Class rdf:about="#ContinuousInstance">
+        <rdfs:subClassOf rdf:resource="#Instance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#DecisionTreeModel -->
+
+    <owl:Class rdf:about="#DecisionTreeModel">
+        <rdfs:subClassOf rdf:resource="#HumanReadableModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#DiscreteInstance -->
+
+    <owl:Class rdf:about="#DiscreteInstance">
+        <rdfs:subClassOf rdf:resource="#Instance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#Domain -->
+
+    <owl:Class rdf:about="#Domain">
+        <rdfs:subClassOf rdf:resource="&dc;Metrics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#DtmClassification -->
+
+    <owl:Class rdf:about="#DtmClassification">
+        <rdfs:subClassOf rdf:resource="#Classification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#HumanReadableModel -->
+
+    <owl:Class rdf:about="#HumanReadableModel">
+        <rdfs:subClassOf rdf:resource="#Model"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#Instance -->
+
+    <owl:Class rdf:about="#Instance">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#Model -->
+
+    <owl:Class rdf:about="#Model">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#Settings -->
+
+    <owl:Class rdf:about="#Settings">
+        <rdfs:subClassOf rdf:resource="&dc;DataObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/ontology.owl#DataObject -->
+
+    <owl:Class rdf:about="&dc;DataObject"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/ontology.owl#Metrics -->
+
+    <owl:Class rdf:about="&dc;Metrics"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/ontology.owl#Site -->
+
+    <owl:Class rdf:about="&dc;Site"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#contact-lenses -->
+
+    <owl:Thing rdf:about="#contact-lenses">
+        <rdf:type rdf:resource="#Domain"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#cpu -->
+
+    <Domain rdf:about="#cpu">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Domain>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#east-la -->
+
+    <Area rdf:about="#east-la">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Area>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#iris -->
+
+    <Domain rdf:about="#iris">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Domain>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#labor -->
+
+    <owl:Thing rdf:about="#labor">
+        <rdf:type rdf:resource="#Domain"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#soybean -->
+
+    <owl:Thing rdf:about="#soybean">
+        <rdf:type rdf:resource="#Domain"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#weather -->
+
+    <Domain rdf:about="#weather">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Domain>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#weather-nominal -->
+
+    <owl:Thing rdf:about="#weather-nominal">
+        <rdf:type rdf:resource="#Domain"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la -->
+
+    <owl:Thing rdf:about="#west-la">
+        <rdf:type rdf:resource="#Area"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/ontology.owl#hampshire -->
+
+    <dc:Site rdf:about="&dc;hampshire">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </dc:Site>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

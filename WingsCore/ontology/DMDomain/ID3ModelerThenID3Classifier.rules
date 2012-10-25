@@ -1,0 +1,271 @@
+# General Rules
+# -------------
+
+# Assert relationships between DiscreteInstance and isDiscrete 
+[discreteInstance1: (?x rdf:type dcdom:DiscreteInstance) -> (?x dcdom:isDiscrete "true"^^xsd:boolean)]
+[discreteInstance2: (?x dcdom:isDiscrete "true"^^xsd:boolean) -> (?x rdf:type dcdom:DiscreteInstance)] 
+
+# Assert relationships between ContinuousInstance and isDiscrete 
+[contInstance1: (?x rdf:type dcdom:ContinuousInstance) -> (?x dcdom:isDiscrete "false"^^xsd:boolean)]
+[contInstance2: (?x dcdom:isDiscrete "false"^^xsd:boolean) -> (?x rdf:type dcdom:ContinuousInstance)] 
+
+
+# Backward Sweep Rules
+# --------------------
+
+# Modeler transfer
+[modelerTransfer: 
+       (?c rdf:type pcdom:Modeler)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "outputModel")
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "trainingData")
+       (?odv ?p ?val) (?p rdfs:subPropertyOf dc:hasMetrics) -> (?idv ?p ?val)]
+[modelerTransferData: 
+       (?c rdf:type pcdom:Modeler)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "outputModel")
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "trainingData")
+       (?odv ?p ?val) (?p rdfs:subPropertyOf dc:hasDataMetrics) -> (?idv ?p ?val)]
+
+# Classifier transfer
+[classifierTransfer: 
+       (?c rdf:type pcdom:Classifier)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "classifierOutput")
+       (?c pc:hasInput ?idvmodel) (?idvmodel pc:hasArgumentID "classifierInputModel")
+       (?c pc:hasInput ?idvdata) (?idvdata pc:hasArgumentID "classifierInputData")       
+       (?odv ?p ?val) (?p rdfs:subPropertyOf dc:hasMetrics) -> (?idvmodel ?p ?val), (?idvdata ?p ?val)]
+[classifierTransferData1: 
+       (?c rdf:type pcdom:Classifier)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "classifierOutput")
+       (?c pc:hasInput ?idvmodel) (?idvmodel pc:hasArgumentID "classifierInputModel")
+       (?c pc:hasInput ?idvdata) (?idvdata pc:hasArgumentID "classifierInputData")       
+       (?odv dcdom:isDiscrete ?val) -> (?idvmodel dcdom:isDiscrete ?val), (?idvdata dcdom:isDiscrete ?val)]
+[classifierTransferData2: 
+       (?c rdf:type pcdom:Classifier)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "classifierOutput")
+       (?c pc:hasInput ?idvmodel) (?idvmodel pc:hasArgumentID "classifierInputModel")
+       (?c pc:hasInput ?idvdata) (?idvdata pc:hasArgumentID "classifierInputData")       
+       (?odv dcdom:hasNumberOfClasses ?val) -> (?idvmodel dcdom:hasNumberOfClasses ?val), (?idvdata dcdom:hasNumberOfClasses ?val)]
+[classifierTransferData3: 
+       (?c rdf:type pcdom:Classifier)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "classifierOutput")
+       (?c pc:hasInput ?idvmodel) (?idvmodel pc:hasArgumentID "classifierInputModel")
+       (?c pc:hasInput ?idvdata) (?idvdata pc:hasArgumentID "classifierInputData")       
+       (?odv dcdom:hasNumberOfBins ?val) -> (?idvmodel dcdom:hasNumberOfBins ?val), (?idvdata dcdom:hasNumberOfBins ?val)]
+[classifierTransferData4: 
+       (?c rdf:type pcdom:Classifier)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "classifierOutput")
+       (?c pc:hasInput ?idvmodel) (?idvmodel pc:hasArgumentID "classifierInputModel")
+       (?c pc:hasInput ?idvdata) (?idvdata pc:hasArgumentID "classifierInputData")       
+       (?odv dcdom:isSampled ?val) -> (?idvmodel dcdom:isSampled ?val)]
+[classifierTransferData5: 
+       (?c rdf:type pcdom:Classifier)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "classifierOutput")
+       (?c pc:hasInput ?idvmodel) (?idvmodel pc:hasArgumentID "classifierInputModel")
+       (?c pc:hasInput ?idvdata) (?idvdata pc:hasArgumentID "classifierInputData")       
+       (?odv dcdom:hasNumberOfInstances ?val) -> (?idvmodel dcdom:hasNumberOfInstances ?val)]
+[classifierTransferData6: 
+       (?c rdf:type pcdom:Classifier)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "classifierOutput")
+       (?c pc:hasInput ?idvmodel) (?idvmodel pc:hasArgumentID "classifierInputModel")
+       (?c pc:hasInput ?idvdata) (?idvdata pc:hasArgumentID "classifierInputData")       
+       (?odv dcdom:hasMissingValues ?val) -> (?idvmodel dcdom:hasMissingValues ?val)]
+
+
+# Metadata Propagation for RandomSampleN
+[samplerTransfer:
+       (pcdom:RandomSampleN pc:hasOutput ?odv) (?odv pc:hasArgumentID "randomSampleNOutputData")
+       (pcdom:RandomSampleN pc:hasInput ?idv) (?idv pc:hasArgumentID "randomSampleNInputData")
+       (?odv ?p ?val) (?p rdfs:subPropertyOf dc:hasMetrics) -> (?idv ?p ?val)]
+[samplerTransferData:
+       (pcdom:RandomSampleN pc:hasOutput ?odv) (?odv pc:hasArgumentID "randomSampleNOutputData")
+       (pcdom:RandomSampleN pc:hasInput ?idv) (?idv pc:hasArgumentID "randomSampleNInputData")
+       (?odv ?p ?val) (?p rdfs:subPropertyOf dc:hasDataMetrics) 
+       notEqual(?p dcdom:isSampled) -> (?idv ?p ?val)]
+
+# Metadata Propagation for Discretize
+[discreteTransfer:
+       (pcdom:Discretize pc:hasOutput ?odv) (?odv pc:hasArgumentID "discretizeOutputData")
+       (pcdom:Discretize pc:hasInput ?idv) (?idv pc:hasArgumentID "discretizeInputData")
+       (?odv ?p ?val) (?p rdfs:subPropertyOf dc:hasMetrics) -> (?idv ?p ?val)]
+[discreteTransferData:
+       (pcdom:Discretize pc:hasOutput ?odv) (?odv pc:hasArgumentID "discretizeOutputData")
+       (pcdom:Discretize pc:hasInput ?idv) (?idv pc:hasArgumentID "discretizeInputData")
+       (?odv ?p ?val) (?p rdfs:subPropertyOf dc:hasDataMetrics) 
+       notEqual(?p dcdom:isDiscrete) -> (?idv ?p ?val)]
+
+
+# Forward Sweep Rules
+# --------------------
+
+# Metadata Propagation for Modelers (forwarding all properties for now)
+[modelerTransferFwd: 
+       (?c rdf:type pcdom:Modeler)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "outputModel")
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "trainingData")
+       (?idv ?p ?val) (?p rdfs:subPropertyOf dc:hasMetrics) -> (?odv ?p ?val)]
+[modelerTransferFwdData: 
+       (?c rdf:type pcdom:Modeler)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "outputModel")
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "trainingData")
+       (?idv ?p ?val) (?p rdfs:subPropertyOf dc:hasDataMetrics) -> (?odv ?p ?val)]
+
+# Forward Metadata Propagation for Classifiers
+[classifierTransferFwd: 
+       (?c rdf:type pcdom:Classifier)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "classifierOutput")
+       (?c pc:hasInput ?idvmodel) (?idvmodel pc:hasArgumentID "classifierInputModel")
+       (?c pc:hasInput ?idvdata) (?idvdata pc:hasArgumentID "classifierInputData")       
+       (?idvmodel ?p ?val) (?idvdata ?p ?val) (?p rdfs:subPropertyOf dc:hasMetrics) -> (?odv ?p ?val)]
+[classifierTransferDataFwd1: 
+       (?c rdf:type pcdom:Classifier)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "classifierOutput")
+       (?c pc:hasInput ?idvmodel) (?idvmodel pc:hasArgumentID "classifierInputModel")
+       (?c pc:hasInput ?idvdata) (?idvdata pc:hasArgumentID "classifierInputData")       
+       (?idvmodel dcdom:isDiscrete ?val) (?idvdata dcdom:isDiscrete ?val) -> (?odv dcdom:isDiscrete ?val)]
+[classifierTransferDataFwd2: 
+       (?c rdf:type pcdom:Classifier)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "classifierOutput")
+       (?c pc:hasInput ?idvmodel) (?idvmodel pc:hasArgumentID "classifierInputModel")
+       (?c pc:hasInput ?idvdata) (?idvdata pc:hasArgumentID "classifierInputData")       
+       (?idvmodel dcdom:hasNumberOfClasses ?val) (?idvdata dcdom:hasNumberOfClasses ?val) -> (?odv dcdom:hasNumberOfClasses ?val)]
+[classifierTransferDataFwd3: 
+       (?c rdf:type pcdom:Classifier)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "classifierOutput")
+       (?c pc:hasInput ?idvmodel) (?idvmodel pc:hasArgumentID "classifierInputModel")
+       (?c pc:hasInput ?idvdata) (?idvdata pc:hasArgumentID "classifierInputData")       
+       (?idvmodel dcdom:hasNumberOfBins ?val) (?idvdata dcdom:hasNumberOfBins ?val) -> (?odv dcdom:hasNumberOfBins ?val)]
+[classifierTransferDataFwd4: 
+       (?c rdf:type pcdom:Classifier)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "classifierOutput")
+       (?c pc:hasInput ?idvmodel) (?idvmodel pc:hasArgumentID "classifierInputModel")
+       (?c pc:hasInput ?idvdata) (?idvdata pc:hasArgumentID "classifierInputData")       
+       (?idvmodel dcdom:isSampled ?val) -> (?odv dcdom:isSampled ?val)]
+[classifierTransferDataFwd5: 
+       (?c rdf:type pcdom:Classifier)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "classifierOutput")
+       (?c pc:hasInput ?idvmodel) (?idvmodel pc:hasArgumentID "classifierInputModel")
+       (?c pc:hasInput ?idvdata) (?idvdata pc:hasArgumentID "classifierInputData")       
+       (?idvmodel dcdom:hasNumberOfInstances ?val) -> (?odv dcdom:hasNumberOfInstances ?val)]
+[classifierTransferDataFwd6: 
+       (?c rdf:type pcdom:Classifier)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "classifierOutput")
+       (?c pc:hasInput ?idvmodel) (?idvmodel pc:hasArgumentID "classifierInputModel")
+       (?c pc:hasInput ?idvdata) (?idvdata pc:hasArgumentID "classifierInputData")       
+       (?idvmodel dcdom:hasMissingValues ?val) -> (?odv dcdom:hasMissingValues ?val)]
+       
+       
+# Forward Metadata Propagation for RandomSampleN
+[samplerTransferFwd:
+       (pcdom:RandomSampleN pc:hasOutput ?odv) (?odv pc:hasArgumentID "randomSampleNOutputData")
+       (pcdom:RandomSampleN pc:hasInput ?idv) (?idv pc:hasArgumentID "randomSampleNInputData")
+       (?idv ?p ?val) (?p rdfs:subPropertyOf dc:hasMetrics) -> (?odv ?p ?val)]
+[samplerTransferFwdData:
+       (pcdom:RandomSampleN pc:hasOutput ?odv) (?odv pc:hasArgumentID "randomSampleNOutputData")
+       (pcdom:RandomSampleN pc:hasInput ?idv) (?idv pc:hasArgumentID "randomSampleNInputData")
+       (?idv ?p ?val) (?p rdfs:subPropertyOf dc:hasDataMetrics) 
+       notEqual(?p dcdom:isSampled) -> (?odv ?p ?val)]
+
+[samplerTransferFwdDataIsSampled:
+       (pcdom:RandomSampleN pc:hasOutput ?odv) (?odv pc:hasArgumentID "randomSampleNOutputData")
+       (pcdom:RandomSampleN pc:hasInput ?idv) (?idv pc:hasArgumentID "randomSampleNInputData")
+       (?idv dcdom:isSampled ?x) bound(?x)
+       -> (?odv dcdom:isSampled "true"^^xsd:boolean)]
+
+# Forward Metadata Propagation for Discretize
+[discretizeTransferFwd:
+       (pcdom:Discretize pc:hasOutput ?odv) (?odv pc:hasArgumentID "discretizeOutputData")
+       (pcdom:Discretize pc:hasInput ?idv) (?idv pc:hasArgumentID "discretizeInputData")
+       (?idv ?p ?val) (?p rdfs:subPropertyOf dc:hasMetrics) -> (?odv ?p ?val)]
+
+[discretizeTransferFwdData:
+       (pcdom:Discretize pc:hasOutput ?odv) (?odv pc:hasArgumentID "discretizeOutputData")
+       (pcdom:Discretize pc:hasInput ?idv) (?idv pc:hasArgumentID "discretizeInputData")
+       (?idv ?p ?val) (?p rdfs:subPropertyOf dc:hasDataMetrics) 
+       notEqual(?p dcdom:isDiscrete) -> (?odv ?p ?val)]
+
+[discretizeTransferFwdDataIsDiscrete:
+      (pcdom:Discretize pc:hasOutput ?odv) (?odv pc:hasArgumentID "discretizeOutputData")
+       (pcdom:Discretize pc:hasInput ?idv) (?idv pc:hasArgumentID "discretizeInputData")
+      (?idv dcdom:isDiscrete ?x) bound(?x)
+      -> (?odv dcdom:isDiscrete "true"^^xsd:boolean)]
+
+
+
+# Parameter Setting Rules
+# -----------------------
+
+# RandomSampleN hasNumberOfInstances = Parameter -N
+[RandomSampleNumberOfInstances:
+       (pcdom:RandomSampleN pc:hasInput ?idv) (pcdom:RandomSampleN pc:hasInput ?ipv) 
+       (?idv pc:hasArgumentID "randomSampleNInputData")
+       (?ipv pc:hasArgumentID "randomSampleNNumberOfInstancesToSample")
+       (?idv dcdom:hasNumberOfInstances ?x) 
+       -> (?ipv ac:hasValue ?x)]
+
+# Discretize hasNumberOfBins = Parameter -B
+[DiscretizeNumberOfBins:
+       (pcdom:Discretize pc:hasInput ?idv) (pcdom:Discretize pc:hasInput ?ipv) 
+       (?idv pc:hasArgumentID "discretizeInputData")
+       (?ipv pc:hasArgumentID "numberOfBins")
+       (?idv dcdom:hasNumberOfBins ?x)
+       -> (?ipv ac:hasValue ?x)]
+
+
+# Some heuristics for javaMaxHeapSize
+[exampleParamSet1:
+       (?c rdf:type pcdom:Modeler)
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "trainingData")
+       (?c pc:hasInput ?ipv) (?ipv pc:hasArgumentID "javaMaxHeapSize")
+       (?idv dcdom:hasNumberOfInstances ?x) ge(?x 10000) 
+       -> (?ipv ac:hasValue "1024M")]
+[exampleParamSet2:
+       (?c rdf:type pcdom:Modeler)
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "trainingData")
+       (?c pc:hasInput ?ipv) (?ipv pc:hasArgumentID "javaMaxHeapSize")
+       (?idv dcdom:hasNumberOfInstances ?x) lessThan(?x 10000) 
+       -> (?ipv ac:hasValue "512M")]
+[exampleParamSet3:
+       (?c rdf:type pcdom:Modeler)
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "trainingData")
+       (?c pc:hasInput ?ipv) (?ipv pc:hasArgumentID "javaMaxHeapSize")
+       (?idv dcdom:hasNumberOfInstances ?x) lessThan(?x 1000) 
+       -> (?ipv ac:hasValue "256M")]
+
+
+# Component Invalidity Rules
+# --------------------------
+
+[samplerTransferFwdDataIsSampled:
+       (pcdom:RandomSampleN pc:hasOutput ?odv) (?odv pc:hasArgumentID "randomSampleNOutputData")
+       (pcdom:RandomSampleN pc:hasInput ?idv) (?idv pc:hasArgumentID "randomSampleNInputData")
+       (?odv dcdom:isSampled "false"^^xsd:boolean) 
+       -> (pcdom:RandomSampleN ac:isInvalid "true"^^xsd:boolean)]
+
+
+[classifierInvalidityCheck1: 
+       (?c rdf:type pcdom:Classifier)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "classifierOutput")
+       (?c pc:hasInput ?idvmodel) (?idvmodel pc:hasArgumentID "classifierInputModel")
+       (?c pc:hasInput ?idvdata) (?idvdata pc:hasArgumentID "classifierInputData")       
+       (?idvmodel ?p ?val1) (?idvdata ?p ?val2) (?p rdfs:subPropertyOf dc:hasMetrics)
+       notEqual(?val1, ?val2) -> (?c ac:isInvalid "true"^^xsd:boolean)]
+[classifierInvalidityCheck2: 
+       (?c rdf:type pcdom:Classifier)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "classifierOutput")
+       (?c pc:hasInput ?idvmodel) (?idvmodel pc:hasArgumentID "classifierInputModel")
+       (?c pc:hasInput ?idvdata) (?idvdata pc:hasArgumentID "classifierInputData")       
+       (?idvmodel dcdom:isDiscrete ?val1) (?idvdata dcdom:isDiscrete ?val2)
+       notEqual(?val1, ?val2) -> (?c ac:isInvalid "true"^^xsd:boolean)]
+[classifierInvalidityCheck3: 
+       (?c rdf:type pcdom:Classifier)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "classifierOutput")
+       (?c pc:hasInput ?idvmodel) (?idvmodel pc:hasArgumentID "classifierInputModel")
+       (?c pc:hasInput ?idvdata) (?idvdata pc:hasArgumentID "classifierInputData")       
+       (?idvmodel dcdom:hasNumberOfClasses ?val1) (?idvdata dcdom:hasNumberOfClasses ?val2)
+       notEqual(?val1, ?val2) -> (?c ac:isInvalid "true"^^xsd:boolean)]
+[classifierInvalidityCheck4: 
+       (?c rdf:type pcdom:Classifier)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "classifierOutput")
+       (?c pc:hasInput ?idvmodel) (?idvmodel pc:hasArgumentID "classifierInputModel")
+       (?c pc:hasInput ?idvdata) (?idvdata pc:hasArgumentID "classifierInputData")       
+       (?idvmodel dcdom:hasNumberOfBins ?val1) (?idvdata dcdom:hasNumberOfBins ?val2)
+       notEqual(?val1, ?val2) -> (?c ac:isInvalid "true"^^xsd:boolean)]       

@@ -1,0 +1,111 @@
+<rdf:RDF
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:acdom="http://wings-workflows.org/ontology/ac/gpcla/library.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dcdom="http://wings-workflows.org/ontology/dc/gpcla/ontology.owl#"
+    xmlns="http://wings-workflows.org/ontology/GPDomain/LongRunningConsensusClustering.owl#"
+    xmlns:dclib="http://wings-workflows.org/ontology/dc/gpcla/library.owl#"
+    xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+      xml:base="http://wings-workflows.org/ontology/GPDomain/LongRunningConsensusClustering.owl">
+      <wflow:Metadata rdf:about="">
+            <wflow:hasContributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >pgroth</wflow:hasContributor>
+            <wflow:lastUpdateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2008-08-29T03:16:34.664Z</wflow:lastUpdateTime>
+      </wflow:Metadata>
+      <owl:Ontology rdf:ID="LongRunningConsensusClustering.owl">
+            <owl:imports rdf:resource="/2007/08/workflow.owl"/>
+      </owl:Ontology>
+      <wflow:WorkflowTemplate rdf:ID="LongRunningConsensusClustering">
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="PreprocessDatasetNode_preprocessOutput_to_ConsensusNode_clusterInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="PreprocessOutput">
+                                    <rdfs:comment>x=29.0,y=111.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationParameter rdf:resource="/ac/gpcla/library.owl#clusterInput"/>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="ConsensusNode">
+                                    <rdfs:comment>x=50.0,y=151.0</rdfs:comment>
+                                    <wflow:hasComponent>
+                                          <acdom:Consensus rdf:ID="component1"/>
+                                    </wflow:hasComponent>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                        <wflow:hasOriginParameter rdf:resource="/ac/gpcla/library.owl#preprocessOutput"/>
+                        <wflow:hasOriginNode>
+                              <wflow:Node rdf:ID="PreprocessDatasetNode">
+                                    <rdfs:comment>x=21.0,y=61.0</rdfs:comment>
+                                    <wflow:hasComponent>
+                                          <acdom:PreprocessDataset rdf:ID="component0">
+                                                <wflow:isConcrete
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:isConcrete>
+                                          </acdom:PreprocessDataset>
+                                    </wflow:hasComponent>
+                              </wflow:Node>
+                        </wflow:hasOriginNode>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="ConsensusNode_clusterOutput_to_">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="ClusterOutput">
+                                    <rdfs:comment>x=48.0,y=213.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasOriginParameter rdf:resource="/ac/gpcla/library.owl#clusterOutput"/>
+                        <wflow:hasOriginNode rdf:resource="#ConsensusNode"/>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_ConsensusNode_clusterBy">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="ClusterBy">
+                                    <wflow:hasParameterValue rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >row</wflow:hasParameterValue>
+                                    <rdfs:comment>x=203.0,y=107.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationParameter rdf:resource="/ac/gpcla/library.owl#clusterBy"/>
+                        <wflow:hasDestinationNode rdf:resource="#ConsensusNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_PreprocessDatasetNode_preprocessing.flag">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="Preprocessing.flag">
+                                    <rdfs:comment>x=176.0,y=12.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationParameter rdf:resource="/ac/gpcla/library.owl#preprocessing.flag"/>
+                        <wflow:hasDestinationNode rdf:resource="#PreprocessDatasetNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_PreprocessDatasetNode_preprocessInput">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="PreprocessInput">
+                                    <dcdom:isPreprocessed rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#boolean"
+                                    >false</dcdom:isPreprocessed>
+                                    <rdfs:comment>x=30.0,y=13.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationParameter rdf:resource="/ac/gpcla/library.owl#preprocessInput"/>
+                        <wflow:hasDestinationNode rdf:resource="#PreprocessDatasetNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#ConsensusNode"/>
+            <wflow:hasNode rdf:resource="#PreprocessDatasetNode"/>
+      </wflow:WorkflowTemplate>
+      <wflow:RuleSet rdf:ID="Rules"/>
+</rdf:RDF>
+

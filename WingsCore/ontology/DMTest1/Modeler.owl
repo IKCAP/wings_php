@@ -1,0 +1,79 @@
+<rdf:RDF
+    xmlns="http://wings-workflows.org/ontology/DMTest/Modeler.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns:dclib="http://wings-workflows.org/ontology/dc/dm/library-dc-test-v1.8.owl#"
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:acdom="http://wings-workflows.org/ontology/ac/dm/library.owl#"
+    xmlns:dcdom="http://wings-workflows.org/ontology/dc/dm/ontology.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+      xml:base="http://wings-workflows.org/ontology/DMTest/Modeler.owl">
+      <wflow:Metadata rdf:about="">
+            <wflow:hasContributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Varun</wflow:hasContributor>
+            <wflow:lastUpdateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2009-01-30T03:40:15.571Z</wflow:lastUpdateTime>
+      </wflow:Metadata>
+      <owl:Ontology rdf:ID="Modeler.owl">
+            <owl:imports rdf:resource="/2007/08/workflow.owl"/>
+      </owl:Ontology>
+      <wflow:WorkflowTemplate rdf:ID="Modeler">
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="ModelerNode_outputModel_to_">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="OutputModel">
+                                    <rdfs:comment>x=293.0,y=111.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasOriginParameter rdf:resource="/ac/dm/library.owl#outputModel"/>
+                        <wflow:hasOriginNode>
+                              <wflow:Node rdf:ID="ModelerNode">
+                                    <rdfs:comment>x=293.0,y=74.0</rdfs:comment>
+                                    <wflow:hasComponent>
+                                          <acdom:Modeler rdf:ID="component0"/>
+                                    </wflow:hasComponent>
+                              </wflow:Node>
+                        </wflow:hasOriginNode>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_ModelerNode_modelerTrainingData">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="ModelerTrainingData">
+                                    <rdfs:comment>x=378.0,y=37.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationParameter rdf:resource="/ac/dm/library.owl#modelerTrainingData"/>
+                        <wflow:hasDestinationNode rdf:resource="#ModelerNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_ModelerNode_javaMaxHeapSize">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="JavaMaxHeapSize">
+                                    <rdfs:comment>x=264.0,y=37.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationParameter rdf:resource="/ac/dm/library.owl#javaMaxHeapSize"/>
+                        <wflow:hasDestinationNode rdf:resource="#ModelerNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_ModelerNode_modelerClassIndex">
+                        <wflow:hasVariable>
+                              <wflow:ParameterVariable rdf:ID="ModelerClassIndex">
+                                    <rdfs:comment>x=143.0,y=37.0</rdfs:comment>
+                              </wflow:ParameterVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationParameter rdf:resource="/ac/dm/library.owl#modelerClassIndex"/>
+                        <wflow:hasDestinationNode rdf:resource="#ModelerNode"/>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#ModelerNode"/>
+      </wflow:WorkflowTemplate>
+      <wflow:RuleSet rdf:ID="Rules"/>
+</rdf:RDF>
+

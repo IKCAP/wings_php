@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="WingsCore">
+	<property environment="env" />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="target" value="1.5" />
+	<property name="source" value="1.5" />
+	<property name="build.home" value="${basedir}/build" />
+	<path id="WingsCore.classpath">
+		<pathelement location="${build.home}/classes" />
+		<pathelement location="lib/Pellet/jena/arq-2.8.1.jar" />
+		<pathelement location="lib/Pellet/jena/icu4j-3.4.4.jar" />
+		<pathelement location="lib/Pellet/jena/iri-0.7.jar" />
+		<pathelement location="lib/Pellet/jena/jena-2.6.2.jar" />
+		<pathelement location="lib/Pellet/jena/log4j-1.2.13.jar" />
+		<pathelement location="lib/Pellet/jena/slf4j-api-1.5.6.jar" />
+		<pathelement location="lib/Pellet/jena/slf4j-log4j12-1.5.6.jar" />
+		<pathelement location="lib/Pellet/jena/xercesImpl-2.7.1.jar" />
+
+		<pathelement location="lib/Pellet/xsdlib/relaxngDatatype.jar" />
+		<pathelement location="lib/Pellet/xsdlib/xsdlib.jar" />
+
+		<pathelement location="lib/Pellet/aterm-java-1.6.jar" />
+
+		<pathelement location="lib/Pellet/pellet-core.jar" />
+		<pathelement location="lib/Pellet/pellet-datatypes.jar" />
+		<pathelement location="lib/Pellet/pellet-el.jar" />
+		<pathelement location="lib/Pellet/pellet-jena.jar" />
+		<pathelement location="lib/Pellet/pellet-rules.jar" />
+
+		<pathelement location="lib/JSON/gson-1.4.jar" />
+		<pathelement location="lib/Getopt/java-getopt-1.0.12.jar" />
+		<pathelement location="lib/MySQL/mysql-connector-java-5.1.6-bin.jar" />
+		<pathelement location="lib/KBAPI/kbapi.jar" />
+	</path>
+	<target name="init">
+		<mkdir dir="${build.home}/classes" />
+		<copy includeemptydirs="false" todir="${build.home}/classes">
+			<fileset dir="src/main/java" excludes="**/*.launch, **/*.java" />
+		</copy>
+	</target>
+	<target name="clean">
+		<delete dir="${build.home}" />
+	</target>
+	<target depends="clean" name="cleanall" />
+	<target depends="init" name="build">
+		<echo message="${ant.project.name}: ${ant.file}" />
+		<javac debug="true" debuglevel="${debuglevel}" destdir="${build.home}/classes" source="${source}" target="${target}">
+			<src path="src/main/java" />
+			<classpath refid="WingsCore.classpath" />
+		</javac>
+	</target>
+	<target name="AWG" depends="build" description="Run the Automated Workflow generation algorithm">
+		<java classname="edu.isi.ikcap.wings.AWG" failonerror="true" fork="yes">
+			<jvmarg line="-Xmx1024m" />
+			<classpath refid="WingsCore.classpath" />
+			<arg value="${args}" />
+		</java>
+	</target>
+	<target name="jar" depends="build" description="Create the WingsCore JAR file">
+		<mkdir dir="${build.home}/lib" />
+		<jar destfile="${build.home}/lib/wings.jar" basedir="${build.home}/classes" />
+		<chmod perm="a+x" file="${build.home}/lib/wings.jar" />
+		<copy todir="${basedir}/lib">
+			<fileset dir="${build.home}/lib" includes="wings.jar" />
+		</copy>
+	</target>
+	<target name="srloggingjar" depends="build" description="Create SR logging jar">
+		<mkdir dir="${build.home}/lib" />
+		<jar destfile="${build.home}/lib/srlogging.jar" includes="edu/isi/ikcap/wings/util/logging/*.class" basedir="${build.home}/classes/" />
+		<copy todir="${basedir}/lib">
+			<fileset dir="${build.home}/lib" includes="srlogging.jar" />
+		</copy>
+	</target>
+</project>

@@ -1,0 +1,8 @@
+# Collection Size for outputs of Convert_to_PN_and_QT_Formats
+[CollSizePNQTConvert:
+       (?c rdf:type pcdom:Convert_to_PN_and_QT_Formats_Class)
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "FinalReport")
+       (?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "PNFormatOutputs")
+       (?c pc:hasOutput ?odv2) (?odv2 pc:hasArgumentID "QTFormatOutput")
+       (?idv pc:hasDimensionSizes ?s)
+       -> (?odv1 pc:hasDimensionSizes ?s), (?odv2 pc:hasDimensionSizes ?s)]

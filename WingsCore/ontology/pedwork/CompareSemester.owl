@@ -1,0 +1,161 @@
+<rdf:RDF
+    xmlns:dclib="http://wings-workflows.org/ontology/dc/pedwork/library.owl#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns:acdom="http://wings-workflows.org/ontology/ac/pedwork/library.owl#"
+    xmlns:dcdom="http://wings-workflows.org/ontology/dc/pedwork/ontology.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns="http://wings-workflows.org/ontology/pedwork/CompareSemester.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+      xml:base="http://wings-workflows.org/ontology/pedwork/CompareSemester.owl">
+      <wflow:Metadata rdf:about="">
+            <wflow:hasContributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >jun</wflow:hasContributor>
+            <wflow:lastUpdateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2009-12-28T08:03:53.028Z</wflow:lastUpdateTime>
+      </wflow:Metadata>
+      <owl:Ontology rdf:ID="CompareSemester.owl">
+            <owl:imports rdf:resource="/2007/08/workflow.owl"/>
+      </owl:Ontology>
+      <wflow:RuleSet rdf:ID="Rules"/>
+      <wflow:WorkflowTemplate rdf:ID="CompareSemester">
+            <wflow:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >2</wflow:hasVersion>
+            <wflow:hasOutputRole>
+                  <wflow:Role rdf:ID="RGraphPlot4ColOut_orole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >0</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:DataVariable rdf:ID="RGraphPlot4ColOut">
+                                    <rdfs:comment>x=373.0,y=205.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasOutputRole>
+            <wflow:hasInputRole>
+                  <wflow:Role rdf:ID="XMLHistOutput_irole">
+                        <wflow:hasDimensionality rdf:datatype=
+                        "http://www.w3.org/2001/XMLSchema#int"
+                        >1</wflow:hasDimensionality>
+                        <wflow:mapsToVariable>
+                              <wflow:DataVariable rdf:ID="XMLHistOutput">
+                                    <rdfs:comment>x=431.0,y=26.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:mapsToVariable>
+                  </wflow:Role>
+            </wflow:hasInputRole>
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="Hist_AnalysisNode_XMLHistOutput_To_LinkProjBetweenTermsNode_XMLTermProj">
+                        <wflow:hasVariable rdf:resource="#XMLHistOutput"/>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="LinkProjBetweenTermsNode_XMLTermProj">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/pedwork/library.owl#XMLTermProj">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >1</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="LinkProjBetweenTermsNode">
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="LinkProjBetweenTermsNode_RDataProjBtTerms">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/pedwork/library.owl#RDataProjBtTerms">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasInputPort rdf:resource="#LinkProjBetweenTermsNode_XMLTermProj"/>
+                                    <rdfs:comment>x=373.0,y=82.0</rdfs:comment>
+                                    <wflow:hasComponent>
+                                          <wflow:ComponentVariable rdf:ID="component0">
+                                                <wflow:isConcrete
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:isConcrete>
+                                                <rdf:type rdf:resource="/ac/pedwork/library.owl#LinkProjBetweenTerms"/>
+                                          </wflow:ComponentVariable>
+                                    </wflow:hasComponent>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="LinkProjBetweenTermsNode_RDataProjBtTerms_To_Plot4ColTableNode_RDataPlot4ColIn">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="RDataProjBtTerms">
+                                    <rdfs:comment>x=373.0,y=123.0</rdfs:comment>
+                              </wflow:DataVariable>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationPort>
+                              <wflow:Port rdf:ID="Plot4ColTableNode_RDataPlot4ColIn">
+                                    <wflow:satisfiesRole>
+                                          <rdf:Description rdf:about="/ac/pedwork/library.owl#RDataPlot4ColIn">
+                                                <wflow:hasDimensionality
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >0</wflow:hasDimensionality>
+                                          </rdf:Description>
+                                    </wflow:satisfiesRole>
+                              </wflow:Port>
+                        </wflow:hasDestinationPort>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="Plot4ColTableNode">
+                                    <wflow:hasOutputPort>
+                                          <wflow:Port rdf:ID="Plot4ColTableNode_RGraphPlot4ColOut">
+                                                <wflow:satisfiesRole>
+                                                      <rdf:Description rdf:about="/ac/pedwork/library.owl#RGraphPlot4ColOut">
+                                                            <wflow:hasDimensionality
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >0</wflow:hasDimensionality>
+                                                      </rdf:Description>
+                                                </wflow:satisfiesRole>
+                                          </wflow:Port>
+                                    </wflow:hasOutputPort>
+                                    <wflow:hasInputPort rdf:resource="#Plot4ColTableNode_RDataPlot4ColIn"/>
+                                    <rdfs:comment>x=373.0,y=164.0</rdfs:comment>
+                                    <wflow:hasComponent>
+                                          <wflow:ComponentVariable rdf:ID="component1">
+                                                <wflow:isConcrete
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#boolean"
+                                                >true</wflow:isConcrete>
+                                                <rdf:type rdf:resource="/ac/pedwork/library.owl#Plot4ColTable"/>
+                                          </wflow:ComponentVariable>
+                                    </wflow:hasComponent>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                        <wflow:hasOriginPort rdf:resource="#LinkProjBetweenTermsNode_RDataProjBtTerms"/>
+                        <wflow:hasOriginNode rdf:resource="#LinkProjBetweenTermsNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="Plot4ColTableNode_RGraphPlot4ColOut_To_Output">
+                        <wflow:hasVariable rdf:resource="#RGraphPlot4ColOut"/>
+                        <wflow:hasOriginPort rdf:resource="#Plot4ColTableNode_RGraphPlot4ColOut"/>
+                        <wflow:hasOriginNode rdf:resource="#Plot4ColTableNode"/>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#Plot4ColTableNode"/>
+            <wflow:hasNode rdf:resource="#LinkProjBetweenTermsNode"/>
+      </wflow:WorkflowTemplate>
+</rdf:RDF>
+

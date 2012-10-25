@@ -1,0 +1,40 @@
+<rdf:RDF
+    xmlns:teo="http://anchor/teo#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:sr="http://anchor/sr#"
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns="http://wings-workflows.org/ontology/se18/SE18-Workflows-1C.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:process="http://anchor/process#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:dso="http://anchor/data_set_ontology#"
+    xmlns:dmo="http://anchor/data_metrics_ontology#"
+    xmlns:pcat="http://anchor/pcat#"
+      xml:base="http://wings-workflows.org/ontology/se18/seeds/SE18-1C-Tangram.owl">
+      <wflow:Metadata rdf:about="">
+            <wflow:hasContributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >varunr</wflow:hasContributor>
+            <wflow:createdFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >SE18-Workflows-1c-tangram</wflow:createdFrom>
+            <wflow:lastUpdateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+            >2008-09-23T23:13:19.5Z</wflow:lastUpdateTime>
+      </wflow:Metadata>
+      <owl:Ontology rdf:about="">
+            <owl:imports rdf:resource="../SE18-Workflows-1C.owl"/>
+      </owl:Ontology>
+      <rdf:Description rdf:about="../SE18-Workflows-1C.owl#dataVariable1">
+            <dso:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Tangram</dso:creator>
+      </rdf:Description>
+      <rdf:Description rdf:about="../SE18-Workflows-1C.owl#dataVariable7">
+            <dmo:saturatedWithNodeType rdf:resource="http://anchor/teo#SuspiciousChainedCommunicationEvent"/>
+      </rdf:Description>
+      <rdf:Description rdf:about="../SE18-Workflows-1C.owl#dataVariable0">
+            <dso:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Tangram</dso:creator>
+      </rdf:Description>
+      <wflow:RuleSet rdf:ID="Rules"/>
+</rdf:RDF>
+

@@ -1,0 +1,45 @@
+[defaultPreprocessParameter:
+      (?c rdf:type pcdom:PreprocessClass)
+      (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "preprocessing.flag")
+      noValue(?idv ac:hasValue)
+       -> (?idv ac:hasValue "0")]
+
+[consensusClusterTransfer:
+       (?c rdf:type pcdom:ConsensusClusteringClass)
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "clusterInput")
+       -> (?idv dcdom:isNormalized "true"^^xsd:boolean)]
+
+[setPreprocessNormalized:
+       (?c rdf:type pcdom:PreprocessClass)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "preprocessOutput")
+       (?odv dcdom:isNormalized "true"^^xsd:boolean)
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "preprocessing.flag")
+       -> (?idv ac:hasValue "2")]
+
+[setHierarchicalOutputTypeGeneTree:
+       (?c rdf:type pcdom:HierarchicalClusteringClass)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "HLCClusteringOrderOutput")
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "clusterBy")
+       (?idv wflow:hasParameterValue "row")
+       -> (?odv dcdom:containsTreeFor "genes") ]
+  
+[invalidateHierarchicalArrayViewer:
+      (?c rdf:type pcdom:HierarchicalClusteringArrayViewerClass)
+      (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "hcvDendrogramInput")
+      (?idv dcdom:containsTreeFor "genes")
+      -> (?c pc:isInvalid "true"^^xsd:boolean)]
+      
+      
+ [setHierarchicalOutputTypeArrayTree:
+       (?c rdf:type pcdom:HierarchicalClusteringClass)
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "HLCClusteringOrderOutput")
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "clusterBy")
+       (?idv wflow:hasParameterValue "column")
+       -> (?odv dcdom:containsTreeFor "samples") ]
+  
+[invalidateHierarchicalGeneViewer:
+      (?c rdf:type pcdom:HierarchicalClusteringGeneViewerClass)
+      (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "hcvDendrogramInput")
+      (?idv dcdom:containsTreeFor "samples")
+      -> (?c pc:isInvalid "true"^^xsd:boolean)]
+  

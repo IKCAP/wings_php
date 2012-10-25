@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY dc "http://wings-workflows.org/ontology/dc/ontology.owl#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY ac "http://wings-workflows.org/ontology/ac/ontology.owl#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY library "http://wings-workflows.org/ontology/ac/pedwork/library.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY dcdom "http://wings-workflows.org/ontology/dc/pedwork/ontology.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://wings-workflows.org/ontology/ac/pedwork/library.owl#"
+     xml:base="http://wings-workflows.org/ontology/ac/pedwork/library.owl"
+     xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dcdom="http://wings-workflows.org/ontology/dc/pedwork/ontology.owl#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:library="http://wings-workflows.org/ontology/ac/pedwork/library.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl"/>
+        <owl:imports rdf:resource="http://wings-workflows.org/ontology/dc/pedwork/ontology.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasArgument -->
+
+    <owl:ObjectProperty rdf:about="&ac;hasArgument"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasInput -->
+
+    <owl:ObjectProperty rdf:about="&ac;hasInput"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="&ac;hasOutput"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasArgumentID -->
+
+    <owl:DatatypeProperty rdf:about="&ac;hasArgumentID"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasArgumentIndex -->
+
+    <owl:DatatypeProperty rdf:about="&ac;hasArgumentIndex"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#isConcrete -->
+
+    <owl:DatatypeProperty rdf:about="&ac;isConcrete"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#Component -->
+
+    <owl:Class rdf:about="&ac;Component"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/pedwork/library.owl#Average_Analysis_Class -->
+
+    <owl:Class rdf:about="#Average_Analysis_Class">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/pedwork/library.owl#Create_UserThreads_Class -->
+
+    <owl:Class rdf:about="#Create_UserThreads_Class">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/pedwork/ontology.owl#InputThreadsFile_Class -->
+
+    <owl:Class rdf:about="&dcdom;InputThreadsFile_Class"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/pedwork/ontology.owl#InputUserFile_class -->
+
+    <owl:Class rdf:about="&dcdom;InputUserFile_class"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/pedwork/ontology.owl#NoAnswerUserFile_Class -->
+
+    <owl:Class rdf:about="&dcdom;NoAnswerUserFile_Class"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/pedwork/ontology.owl#UserThreadsFile_Class -->
+
+    <owl:Class rdf:about="&dcdom;UserThreadsFile_Class"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/pedwork/ontology.owl#UserWaitFile_Class -->
+
+    <owl:Class rdf:about="&dcdom;UserWaitFile_Class"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/pedwork/library.owl#Average_Analysis -->
+
+    <owl:Thing rdf:about="#Average_Analysis">
+        <rdf:type rdf:resource="#Average_Analysis_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#UserThreadsFile2"/>
+        <ac:hasInput rdf:resource="#UserThreadsFile2"/>
+        <ac:hasArgument rdf:resource="#UserWaitFile"/>
+        <ac:hasOutput rdf:resource="#UserWaitFile"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/pedwork/library.owl#Create_UserThreads -->
+
+    <owl:Thing rdf:about="#Create_UserThreads">
+        <rdf:type rdf:resource="#Create_UserThreads_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#InputThreadsFile"/>
+        <ac:hasInput rdf:resource="#InputThreadsFile"/>
+        <ac:hasArgument rdf:resource="#InputUserFile"/>
+        <ac:hasInput rdf:resource="#InputUserFile"/>
+        <ac:hasOutput rdf:resource="#NoAnswerUserFile"/>
+        <ac:hasArgument rdf:resource="#NoAnswerUserFile"/>
+        <ac:hasOutput rdf:resource="#UserThreadsFile"/>
+        <ac:hasArgument rdf:resource="#UserThreadsFile"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/pedwork/library.owl#InputThreadsFile -->
+
+    <dcdom:InputThreadsFile_Class rdf:about="#InputThreadsFile">
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID
+            >InputThreadsFile</ac:hasArgumentID>
+    </dcdom:InputThreadsFile_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/pedwork/library.owl#InputUserFile -->
+
+    <dcdom:InputUserFile_class rdf:about="#InputUserFile">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID>InputUserFile</ac:hasArgumentID>
+    </dcdom:InputUserFile_class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/pedwork/library.owl#NoAnswerUserFile -->
+
+    <dcdom:NoAnswerUserFile_Class rdf:about="#NoAnswerUserFile">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">4</ac:hasArgumentIndex>
+        <ac:hasArgumentID
+            >NoAnswerUserFile</ac:hasArgumentID>
+    </dcdom:NoAnswerUserFile_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/pedwork/library.owl#UserThreadsFile -->
+
+    <dcdom:UserThreadsFile_Class rdf:about="#UserThreadsFile">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">3</ac:hasArgumentIndex>
+        <ac:hasArgumentID>UserThreadsFile</ac:hasArgumentID>
+    </dcdom:UserThreadsFile_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/pedwork/library.owl#UserThreadsFile2 -->
+
+    <dcdom:UserThreadsFile_Class rdf:about="#UserThreadsFile2">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID>UserThreadsFile</ac:hasArgumentID>
+    </dcdom:UserThreadsFile_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/pedwork/library.owl#UserWaitFile -->
+
+    <owl:Thing rdf:about="#UserWaitFile">
+        <rdf:type rdf:resource="&dcdom;UserWaitFile_Class"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID>UserWaitFile</ac:hasArgumentID>
+    </owl:Thing>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,66 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dmo="http://anchor/data_metrics_ontology#"
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+    xmlns:dso="http://anchor/data_set_ontology#"
+    xmlns:process="http://anchor/process#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:pcat="http://anchor/pcat#"
+    xmlns:teo="http://anchor/teo#"
+    xmlns="http://wings-workflows.org/ontology/se18/SE18-DSandGD-Template.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:sr="http://anchor/sr#"
+      xml:base="http://wings-workflows.org/ontology/se18/SE18-DSandGD-Template.owl">
+      <owl:Ontology rdf:ID="SE18-DSandGD-Template.owl">
+            <owl:imports rdf:resource="/2007/08/workflow.owl"/>
+      </owl:Ontology>
+      <wflow:WorkflowTemplate rdf:ID="SE18-DSandGD-Template">
+            <wflow:hasLink>
+                  <wflow:InputLink rdf:ID="_to_ExactGraphMatchingProcessNode_PatternMatcherInputEvidenceAndGroupsParameter">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="evidenceVariable"/>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationParameter rdf:resource="http://anchor/process#PatternMatcherInputEvidenceAndGroupsParameter"/>
+                        <wflow:hasDestinationNode>
+                              <wflow:Node rdf:ID="ExactGraphMatchingProcessNode">
+                                    <wflow:hasComponent>
+                                          <process:ExactGraphMatchingProcess rdf:ID="component1"/>
+                                    </wflow:hasComponent>
+                              </wflow:Node>
+                        </wflow:hasDestinationNode>
+                  </wflow:InputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:OutputLink rdf:ID="GroupDetectionProcessNode_OutputGroupsParameter_to_">
+                        <wflow:hasVariable>
+                              <wflow:DataVariable rdf:ID="dataVariable1"/>
+                        </wflow:hasVariable>
+                        <wflow:hasOriginParameter rdf:resource="http://anchor/process#OutputGroupsParameter"/>
+                        <wflow:hasOriginNode>
+                              <wflow:Node rdf:ID="GroupDetectionProcessNode">
+                                    <wflow:hasComponent>
+                                          <process:GroupDetectionProcess rdf:ID="component0"/>
+                                    </wflow:hasComponent>
+                              </wflow:Node>
+                        </wflow:hasOriginNode>
+                  </wflow:OutputLink>
+            </wflow:hasLink>
+            <wflow:hasLink>
+                  <wflow:InOutLink rdf:ID="_to_GroupDetectionProcessNode_InputEvidenceParameter">
+                        <wflow:hasVariable>
+                              <dso:CTEvidence rdf:ID="dataVariable0">
+                                    <rdf:type rdf:resource="/2007/08/workflow.owl#DataVariable"/>
+                              </dso:CTEvidence>
+                        </wflow:hasVariable>
+                        <wflow:hasDestinationParameter rdf:resource="http://anchor/process#InputEvidenceParameter"/>
+                        <wflow:hasDestinationNode rdf:resource="#GroupDetectionProcessNode"/>
+                        <wflow:hasOriginParameter rdf:resource="http://anchor/process#PatternMatcherHypothesisOutputParameter"/>
+                        <wflow:hasOriginNode rdf:resource="#ExactGraphMatchingProcessNode"/>
+                  </wflow:InOutLink>
+            </wflow:hasLink>
+            <wflow:hasNode rdf:resource="#ExactGraphMatchingProcessNode"/>
+            <wflow:hasNode rdf:resource="#GroupDetectionProcessNode"/>
+      </wflow:WorkflowTemplate>
+</rdf:RDF>
+

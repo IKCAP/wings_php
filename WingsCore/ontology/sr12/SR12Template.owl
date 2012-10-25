@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE Ontology [
+    <!ENTITY teo "http://anchor/teo#">
+    <!ENTITY process "http://anchor/process#">
+    <!ENTITY data "http://anchor/data#">
+    <!ENTITY xsd  "http://www.w3.org/2001/XMLSchema#" >
+]>
+
+<rdf:RDF
+    xmlns:teo="http://anchor/teo#"
+    xmlns:process="http://anchor/process#"
+    xmlns:data="http://anchor/data#"
+    xmlns:dm="http://anchor/data_metrics_ontology#"
+    xmlns="http://wings-workflows.org/ontology/sr12/SR12Template.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:wflow="http://wings-workflows.org/ontology/2007/08/workflow.owl#"
+  xml:base="http://wings-workflows.org/ontology/sr12/SR12Template.owl">
+  
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://wings-workflows.org/ontology/2007/08/workflow.owl"/>
+  </owl:Ontology>
+  
+  
+  <!-- Data Variables -->
+
+  <wflow:DataVariable rdf:ID="?dataVariable0"/>  
+  
+  <wflow:DataVariable rdf:ID="?dataVariable1"/>
+  
+  <wflow:DataVariable rdf:ID="?dataVariable2"/>      
+  
+  <wflow:DataVariable rdf:ID="?dataVariable3">
+    <rdf:type rdf:resource="&data;CTEvidence"/>
+  </wflow:DataVariable>
+  
+  <wflow:DataVariable rdf:ID="?dataVariable4"/>
+  
+  <wflow:DataVariable rdf:ID="?dataVariable5">
+    <rdf:type rdf:resource="&data;Hypothesis"/>
+  </wflow:DataVariable>
+  
+
+  <!-- Nodes -->
+  
+  <wflow:Node rdf:ID="PatternMatcherNode">
+  	<wflow:hasComponent>
+  		<process:PatternMatchingProcess rdf:ID="?component2"/>
+  	</wflow:hasComponent>
+  </wflow:Node>
+  
+  <wflow:Node rdf:ID="GroupDetectorNode">
+	<wflow:hasComponent>
+	  <process:GroupDetectionProcess rdf:ID="?component1"/>
+	</wflow:hasComponent>
+  </wflow:Node>
+  
+  <wflow:Node rdf:ID="UnionNode">
+    <wflow:hasComponent>
+      <process:DataUnionProcess rdf:ID="?component3"/>
+    </wflow:hasComponent>
+  </wflow:Node>
+  
+  
+  <!-- Links -->
+          
+  <wflow:InputLink rdf:ID="EvidenceInputLink_to_UGD">
+    <wflow:hasDestinationNode rdf:resource="#GroupDetectorNode"/>  
+    <wflow:hasDestinationParameter rdf:resource="&process;InputEvidenceParameter"/>
+    <wflow:hasVariable rdf:resource="#?dataVariable0"/>    
+  </wflow:InputLink>
+
+  <wflow:InputLink rdf:ID="PatternInputLink_to_PatternMatcher">
+    <wflow:hasDestinationNode rdf:resource="#PatternMatcherNode"/>  
+    <wflow:hasDestinationParameter rdf:resource="&process;PatternMatcherInputPatternParameter"/>
+    <wflow:hasVariable rdf:resource="#?dataVariable4"/>
+  </wflow:InputLink>
+
+  <wflow:InputLink rdf:ID="WatchListInputLink_to_Union">
+    <wflow:hasDestinationNode rdf:resource="#UnionNode"/>  
+    <wflow:hasDestinationParameter rdf:resource="&process;DataUnionInputWatchlistParameter"/>
+	<wflow:hasVariable rdf:resource="#?dataVariable1"/>    
+  </wflow:InputLink>
+
+  <wflow:InputLink rdf:ID="EvidenceInputLink_to_Union">
+    <wflow:hasDestinationNode rdf:resource="#UnionNode"/>    
+    <wflow:hasDestinationParameter rdf:resource="&process;DataUnionInputEvidenceParameter"/>
+    <wflow:hasVariable rdf:resource="#?dataVariable0"/>    
+  </wflow:InputLink>
+ 
+  <wflow:InOutLink rdf:ID="Groups_from_UGD_to_Union">
+    <wflow:hasOriginNode rdf:resource="#GroupDetectorNode"/>
+    <wflow:hasDestinationNode rdf:resource="#UnionNode"/>    
+    <wflow:hasOriginParameter rdf:resource="&process;OutputGroupsParameter"/>
+    <wflow:hasDestinationParameter rdf:resource="&process;DataUnionInputGroupsParameter"/>
+    <wflow:hasVariable rdf:resource="#?dataVariable2"/>    
+  </wflow:InOutLink>
+      
+  <wflow:InOutLink rdf:ID="EvidenceAndGroups_from_Union_to_PatternMatcher">
+    <wflow:hasOriginNode rdf:resource="#UnionNode"/>
+    <wflow:hasDestinationNode rdf:resource="#PatternMatcherNode"/>    
+    <wflow:hasOriginParameter rdf:resource="&process;DataUnionOutputParameter"/>  
+    <wflow:hasDestinationParameter rdf:resource="&process;PatternMatcherInputEvidenceAndGroupsParameter"/>
+    <wflow:hasVariable rdf:resource="#?dataVariable3"/>
+  </wflow:InOutLink>
+
+  <wflow:OutputLink rdf:ID="OutputLink_Hypothesis">
+    <wflow:hasOriginNode rdf:resource="#PatternMatcherNode"/>
+    <wflow:hasOriginParameter rdf:resource="&process;PatternMatcherHypothesisOutputParameter"/>
+    <wflow:hasVariable rdf:resource="#?dataVariable5"/>
+  </wflow:OutputLink>
+
+
+  <!-- Definition of the Template itself -->
+  
+  <wflow:WorkflowTemplate rdf:ID="SR12Template">
+    <wflow:hasLink rdf:resource="#EvidenceInputLink_to_UGD"/>  
+    <wflow:hasLink rdf:resource="#PatternInputLink_to_PatternMatcher"/>
+    <wflow:hasLink rdf:resource="#EvidenceInputLink_to_Union"/>
+    <wflow:hasLink rdf:resource="#WatchListInputLink_to_Union"/>
+    <wflow:hasLink rdf:resource="#Groups_from_UGD_to_Union"/>
+    <wflow:hasLink rdf:resource="#EvidenceAndGroups_from_Union_to_PatternMatcher"/>
+    <wflow:hasLink rdf:resource="#OutputLink_Hypothesis"/>
+        
+    <wflow:hasNode rdf:resource="#UnionNode"/>
+    <wflow:hasNode rdf:resource="#GroupDetectorNode"/>
+    <wflow:hasNode rdf:resource="#PatternMatcherNode"/>
+  </wflow:WorkflowTemplate>
+
+       
+</rdf:RDF>

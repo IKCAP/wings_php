@@ -1,0 +1,101 @@
+# Jena Rules to propagate metadata and set parameter values
+# To see the list of built-in functions available for jena rules look here:
+# http://jena.sourceforge.net/inference/#RULEbuiltins
+
+
+#
+# partition: Forward Propagation of Metadata Properties
+# Propagate all subProperties of dc:hasDataMetrics to the output
+# 
+[partitionFwd:
+       (?c rdf:type pcdom:partition_Class)
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input_ImageFile")
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "Output_DimFile")
+       (?idv ?p ?val) (?p rdfs:subPropertyOf dc:hasDataMetrics) 
+       -> (?odv ?p ?val)]
+
+
+# 
+# chunkisize: Forward Propagation of Metadata Properties
+# Propagate all subProperties of dc:hasDataMetrics to the outputs
+# 
+[chunkisizeFwd:
+       (?c rdf:type pcdom:chunkisize_Class)
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input_DimFile")
+       (?c pc:hasOutput ?odv1) (?odv1 pc:hasArgumentID "Output_StacksFile")
+       (?c pc:hasOutput ?odv2) (?odv2 pc:hasArgumentID "Output_ChunkisizeMetaFile")
+       (?idv ?p ?val) (?p rdfs:subPropertyOf dc:hasDataMetrics) 
+       -> (?odv1 ?p ?val), (?odv2 ?p ?val)]
+
+
+#
+# chunkisize: Setting Parameter Values for Input_TileWidth and Input_TileHeight 
+# Sets Input_TileWidth to [Input_ChunkSizeX/Input_NXTiles], and Input_TileHeight to [Input_ChunkSizeY/Input_NYTiles]
+#
+[chunkisizeTileParams:
+       (?c rdf:type pcdom:chunkisize_Class)
+       (?c pc:hasInput ?ipX) (?ipX pc:hasArgumentID "Input_NXTiles") (?ipX wflow:hasParameterValue ?ipXv)
+       (?c pc:hasInput ?ipY) (?ipY pc:hasArgumentID "Input_NYTiles") (?ipY wflow:hasParameterValue ?ipYv)
+       (?c pc:hasInput ?ipCX) (?ipCX pc:hasArgumentID "Input_ChunkSizeX") (?ipCX wflow:hasParameterValue ?ipCXv)
+       (?c pc:hasInput ?ipCY) (?ipCY pc:hasArgumentID "Input_ChunkSizeY") (?ipCY wflow:hasParameterValue ?ipCYv)
+       (?c pc:hasInput ?ipTW) (?ipTW pc:hasArgumentID "Input_TileWidth")
+       (?c pc:hasInput ?ipTH) (?ipTH pc:hasArgumentID "Input_TileHeight")
+       quotient(?ipCXv,?ipXv,?ipTWv) quotient(?ipCYv,?ipYv,?ipTHv)
+       -> (?ipTW ac:hasValue ?ipTWv), 
+          (?ipTH ac:hasValue ?ipTHv)]
+
+#
+# chunkisize: Setting Parameter Value for Input_NumOfZs 
+# Sets parameter Input_NumOfZs to the value of the input metadata property hasNOfZs
+#
+[chunkisizeZParam:
+       (?c rdf:type pcdom:chunkisize_Class)
+       (?c pc:hasInput ?ipNZ) (?ipNZ pc:hasArgumentID "Input_NumOfZs")
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input_DimFile") (?idv dcdom:hasNOfZs ?ipNZv)
+       -> (?ipNZ ac:hasValue ?ipNZv)]
+
+#
+# 
+# chunkisize: Set Chunkisize's Output StacksFile Size and Indices for each Dimension 
+# Sets Dimension Sizes to be: [hasNXTiles/Input_NXTiles] x [hasNYTiles/Input_NYTiles] x [hasNOfZs]
+# Todo: Input_NXTiles and Input_NYTiles should probably be renamed to something more appropriate
+# (The StacksFile is a 3-Dimension collection, so Example Dimension Sizes will be created as: "36,25,3")
+# 
+[chunkisizeStacksOutputCollSize:
+       (?c rdf:type pcdom:chunkisize_Class)
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input_DimFile")
+       (?c pc:hasInput ?ipvX) (?ipvX pc:hasArgumentID "Input_NXTiles")
+       (?c pc:hasInput ?ipvY) (?ipvY pc:hasArgumentID "Input_NYTiles")
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "Output_StacksFile")
+       (?ipvX wflow:hasParameterValue ?nxVal) (?ipvY wflow:hasParameterValue ?nyVal)
+       (?idv dcdom:hasNXTiles ?nx) (?idv dcdom:hasNYTiles ?ny) (?idv dcdom:hasNOfZs ?nz)
+       quotient(?nx,?nxVal,?numX) quotient(?ny,?nyVal,?numY)
+       strConcat(?numX,',',?numY,',',?nz,?dimSizes)
+       -> (?odv pc:hasDimensionSizes ?dimSizes), 
+          (?odv pc:hasDimensionIndexProperties "hasChunkID_x,hasChunkID_y,hasChunkID_z")]
+
+
+# 
+# zproject: Forward Propagation of Metadata Properties
+# Propagate all subProperties of dc:hasDataMetrics to the outputs
+# 
+[zProjectFwd:
+       (?c rdf:type pcdom:zproject_Class)
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input_StackFile")
+       (?c pc:hasOutput ?odv) (?odv pc:hasArgumentID "Output_ProjectedChunkFile")
+       (?idv ?p ?val) (?p rdfs:subPropertyOf dc:hasDataMetrics) 
+       -> (?odv ?p ?val)]
+
+#
+# zproject: Setting Parameter Values for StartZ and EndZ
+# Sets StartZ to 0, and EndZ to (hasNOfZs - 1)
+#
+[zProjectParams:
+       (?c rdf:type pcdom:zproject_Class)
+       (?c pc:hasInput ?idv) (?idv pc:hasArgumentID "Input_StackFile")
+       (?c pc:hasInput ?ipStartZ) (?ipStartZ pc:hasArgumentID "Input_StartZ")
+       (?c pc:hasInput ?ipEndZ) (?ipEndZ pc:hasArgumentID "Input_EndZ")
+       (?idv dcdom:hasNOfZs ?nz) difference(?nz, '1'^^xsd:int, ?endZ)
+       -> (?ipStartZ ac:hasValue '0'^^xsd:int),
+          (?ipEndZ ac:hasValue ?endZ)]
+

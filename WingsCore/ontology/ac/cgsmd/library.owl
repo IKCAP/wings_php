@@ -1,0 +1,2634 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY dc "http://wings-workflows.org/ontology/dc/ontology.owl#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY ac "http://wings-workflows.org/ontology/ac/ontology.owl#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY library "http://wings-workflows.org/ontology/ac/cgsmd/library.owl#" >
+    <!ENTITY dcdom "http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://wings-workflows.org/ontology/ac/cgsmd/library.owl#"
+     xml:base="http://wings-workflows.org/ontology/ac/cgsmd/library.owl"
+     xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:dcdom="http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#"
+     xmlns:library="http://wings-workflows.org/ontology/ac/cgsmd/library.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl"/>
+        <owl:imports rdf:resource="http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasArgument -->
+
+    <owl:ObjectProperty rdf:about="&ac;hasArgument"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasInput -->
+
+    <owl:ObjectProperty rdf:about="&ac;hasInput"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="&ac;hasOutput"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasArgumentID -->
+
+    <owl:DatatypeProperty rdf:about="&ac;hasArgumentID"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasArgumentIndex -->
+
+    <owl:DatatypeProperty rdf:about="&ac;hasArgumentIndex"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasArgumentName -->
+
+    <owl:DatatypeProperty rdf:about="&ac;hasArgumentName"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasDimensionality -->
+
+    <owl:DatatypeProperty rdf:about="&ac;hasDimensionality"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="&ac;hasValue"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#isConcrete -->
+
+    <owl:DatatypeProperty rdf:about="&ac;isConcrete"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Annotate_CNV_Class -->
+
+    <owl:Class rdf:about="#Annotate_CNV_Class">
+        <rdfs:subClassOf rdf:resource="#CombinedCNV"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Association_Analysis_Class -->
+
+    <owl:Class rdf:about="#Association_Analysis_Class">
+        <rdfs:subClassOf rdf:resource="#PlinkComponents"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#BWAComponents -->
+
+    <owl:Class rdf:about="#BWAComponents">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#BWA_HumanGenome_Alignments_Class -->
+
+    <owl:Class rdf:about="#BWA_HumanGenome_Alignments_Class">
+        <rdfs:subClassOf rdf:resource="#BWAComponents"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Cleanup_Indels_Class -->
+
+    <owl:Class rdf:about="#Cleanup_Indels_Class">
+        <rdfs:subClassOf rdf:resource="#SamTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Combine_Reformat_PennCNV_CNVX_Class -->
+
+    <owl:Class rdf:about="#Combine_Reformat_PennCNV_CNVX_Class">
+        <rdfs:subClassOf rdf:resource="#Reformat_CNV_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#CombinedCNV -->
+
+    <owl:Class rdf:about="#CombinedCNV">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Compare_against_Common_Loci_Class -->
+
+    <owl:Class rdf:about="#Compare_against_Common_Loci_Class">
+        <rdfs:subClassOf rdf:resource="#CombinedCNV"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Compress_SAM_into_BAM_Format_Class -->
+
+    <owl:Class rdf:about="#Compress_SAM_into_BAM_Format_Class">
+        <rdfs:subClassOf rdf:resource="#SamTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Convert_BWA_to_SAM_Format_Class -->
+
+    <owl:Class rdf:about="#Convert_BWA_to_SAM_Format_Class">
+        <rdfs:subClassOf rdf:resource="#BWAComponents"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Convert_to_PN_and_QT_Formats_Class -->
+
+    <owl:Class rdf:about="#Convert_to_PN_and_QT_Formats_Class">
+        <rdfs:subClassOf rdf:resource="#CombinedCNV"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Convert_to_Structure_Format_Class -->
+
+    <owl:Class rdf:about="#Convert_to_Structure_Format_Class">
+        <rdfs:subClassOf rdf:resource="#PlinkComponents"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Create_Binary_PEDFile_Class -->
+
+    <owl:Class rdf:about="#Create_Binary_PEDFile_Class">
+        <rdfs:subClassOf rdf:resource="#PlinkComponents"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#DeNovo2_Assess_CNV_Overlap_Class -->
+
+    <owl:Class rdf:about="#DeNovo2_Assess_CNV_Overlap_Class">
+        <rdfs:subClassOf rdf:resource="#DeNovo_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#DeNovo_Assess_CNV_Overlap_Class -->
+
+    <owl:Class rdf:about="#DeNovo_Assess_CNV_Overlap_Class">
+        <rdfs:subClassOf rdf:resource="#DeNovo_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#DeNovo_Class -->
+
+    <owl:Class rdf:about="#DeNovo_Class">
+        <rdfs:subClassOf rdf:resource="#CombinedCNV"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Detect_CNVs_Class -->
+
+    <owl:Class rdf:about="#Detect_CNVs_Class">
+        <rdfs:subClassOf rdf:resource="#CombinedCNV"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Find_Gender_of_FinalReports_Class -->
+
+    <owl:Class rdf:about="#Find_Gender_of_FinalReports_Class">
+        <rdfs:subClassOf rdf:resource="#CombinedCNV"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#General_Association_Analysis_Class -->
+
+    <owl:Class rdf:about="#General_Association_Analysis_Class">
+        <rdfs:subClassOf rdf:resource="#PlinkComponents"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#General_Merge_Bad_Chips_Class -->
+
+    <owl:Class rdf:about="#General_Merge_Bad_Chips_Class">
+        <rdfs:subClassOf rdf:resource="#CombinedCNV"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#General_Merge_CNVs_Class -->
+
+    <owl:Class rdf:about="#General_Merge_CNVs_Class">
+        <rdfs:subClassOf rdf:resource="#CombinedCNV"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Generate_Visualization_Class -->
+
+    <owl:Class rdf:about="#Generate_Visualization_Class">
+        <rdfs:subClassOf rdf:resource="#PlinkComponents"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Gnosis_Detect_CNV_Class -->
+
+    <owl:Class rdf:about="#Gnosis_Detect_CNV_Class">
+        <rdfs:subClassOf rdf:resource="#Detect_CNVs_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Merge_2_Bad_Chips_Class -->
+
+    <owl:Class rdf:about="#Merge_2_Bad_Chips_Class">
+        <rdfs:subClassOf rdf:resource="#General_Merge_Bad_Chips_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Merge_2_CNVs_Class -->
+
+    <owl:Class rdf:about="#Merge_2_CNVs_Class">
+        <rdfs:subClassOf rdf:resource="#General_Merge_CNVs_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Merge_3_CNVs_Class -->
+
+    <owl:Class rdf:about="#Merge_3_CNVs_Class">
+        <rdfs:subClassOf rdf:resource="#General_Merge_CNVs_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Merge_Bad_Chips_Class -->
+
+    <owl:Class rdf:about="#Merge_Bad_Chips_Class">
+        <rdfs:subClassOf rdf:resource="#General_Merge_Bad_Chips_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Merge_CNVs_Class -->
+
+    <owl:Class rdf:about="#Merge_CNVs_Class">
+        <rdfs:subClassOf rdf:resource="#General_Merge_CNVs_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#ParenTDT_Class -->
+
+    <owl:Class rdf:about="#ParenTDT_Class">
+        <rdfs:subClassOf rdf:resource="#PlinkComponents"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Penn_Detect_CNVX_Class -->
+
+    <owl:Class rdf:about="#Penn_Detect_CNVX_Class">
+        <rdfs:subClassOf rdf:resource="#Detect_CNVs_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Penn_Detect_CNV_Class -->
+
+    <owl:Class rdf:about="#Penn_Detect_CNV_Class">
+        <rdfs:subClassOf rdf:resource="#Detect_CNVs_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#PlinkComponents -->
+
+    <owl:Class rdf:about="#PlinkComponents">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Population_Stratification_Analysis_Class -->
+
+    <owl:Class rdf:about="#Population_Stratification_Analysis_Class">
+        <rdfs:subClassOf rdf:resource="#PlinkComponents"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Predict_Indels_and_Consensus_Class -->
+
+    <owl:Class rdf:about="#Predict_Indels_and_Consensus_Class">
+        <rdfs:subClassOf rdf:resource="#SamTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Print_Indels_Class -->
+
+    <owl:Class rdf:about="#Print_Indels_Class">
+        <rdfs:subClassOf rdf:resource="#SamTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Print_SNPs_Class -->
+
+    <owl:Class rdf:about="#Print_SNPs_Class">
+        <rdfs:subClassOf rdf:resource="#SamTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#QuantiSNP_Detect_CNV_Class -->
+
+    <owl:Class rdf:about="#QuantiSNP_Detect_CNV_Class">
+        <rdfs:subClassOf rdf:resource="#Detect_CNVs_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#R_Create_Mdist_Plot_Class -->
+
+    <owl:Class rdf:about="#R_Create_Mdist_Plot_Class">
+        <rdfs:subClassOf rdf:resource="#PlinkComponents"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Reformat_CNV_Class -->
+
+    <owl:Class rdf:about="#Reformat_CNV_Class">
+        <rdfs:subClassOf rdf:resource="#CombinedCNV"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Reformat_GnosisCNV_Class -->
+
+    <owl:Class rdf:about="#Reformat_GnosisCNV_Class">
+        <rdfs:subClassOf rdf:resource="#Reformat_CNV_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Reformat_PennCNV_Class -->
+
+    <owl:Class rdf:about="#Reformat_PennCNV_Class">
+        <rdfs:subClassOf rdf:resource="#Reformat_CNV_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Reformat_QuantiCNV_Class -->
+
+    <owl:Class rdf:about="#Reformat_QuantiCNV_Class">
+        <rdfs:subClassOf rdf:resource="#Reformat_CNV_Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Remove_Bad_Quality_from_PEDFile_Class -->
+
+    <owl:Class rdf:about="#Remove_Bad_Quality_from_PEDFile_Class">
+        <rdfs:subClassOf rdf:resource="#CombinedCNV"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#SamTools -->
+
+    <owl:Class rdf:about="#SamTools">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Sort_BAM_Data_Class -->
+
+    <owl:Class rdf:about="#Sort_BAM_Data_Class">
+        <rdfs:subClassOf rdf:resource="#SamTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Structured_Association_Analysis_Class -->
+
+    <owl:Class rdf:about="#Structured_Association_Analysis_Class">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#TDT_Class -->
+
+    <owl:Class rdf:about="#TDT_Class">
+        <rdfs:subClassOf rdf:resource="#PlinkComponents"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#Component -->
+
+    <owl:Class rdf:about="&ac;Component"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument -->
+
+    <owl:Class rdf:about="&ac;DataArgument"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#ParameterArgument -->
+
+    <owl:Class rdf:about="&ac;ParameterArgument"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#Annotated_CNV -->
+
+    <owl:Class rdf:about="&dcdom;Annotated_CNV"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#AnnotationFile -->
+
+    <owl:Class rdf:about="&dcdom;AnnotationFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#AssocFile -->
+
+    <owl:Class rdf:about="&dcdom;AssocFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#BAMFile -->
+
+    <owl:Class rdf:about="&dcdom;BAMFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#BIMFile -->
+
+    <owl:Class rdf:about="&dcdom;BIMFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#BadChips -->
+
+    <owl:Class rdf:about="&dcdom;BadChips"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#BinaryPEDFile -->
+
+    <owl:Class rdf:about="&dcdom;BinaryPEDFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#CMHFile -->
+
+    <owl:Class rdf:about="&dcdom;CMHFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#CNVFile -->
+
+    <owl:Class rdf:about="&dcdom;CNVFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#Cluster0 -->
+
+    <owl:Class rdf:about="&dcdom;Cluster0"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#Cluster1 -->
+
+    <owl:Class rdf:about="&dcdom;Cluster1"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#Cluster2 -->
+
+    <owl:Class rdf:about="&dcdom;Cluster2"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#Cluster3 -->
+
+    <owl:Class rdf:about="&dcdom;Cluster3"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#CommonLoci -->
+
+    <owl:Class rdf:about="&dcdom;CommonLoci"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#DGV_VariationFile -->
+
+    <owl:Class rdf:about="&dcdom;DGV_VariationFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#DeNovo2RareMergedCNV -->
+
+    <owl:Class rdf:about="&dcdom;DeNovo2RareMergedCNV"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#DeNovoRareMergedCNV -->
+
+    <owl:Class rdf:about="&dcdom;DeNovoRareMergedCNV"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#FAMFile -->
+
+    <owl:Class rdf:about="&dcdom;FAMFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#FilteredIndels -->
+
+    <owl:Class rdf:about="&dcdom;FilteredIndels"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#FinalReport -->
+
+    <owl:Class rdf:about="&dcdom;FinalReport"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#FormatedFile -->
+
+    <owl:Class rdf:about="&dcdom;FormatedFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#GenderFile -->
+
+    <owl:Class rdf:about="&dcdom;GenderFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#GenesFile -->
+
+    <owl:Class rdf:about="&dcdom;GenesFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#GnosisCNV -->
+
+    <owl:Class rdf:about="&dcdom;GnosisCNV"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#HGAlignments -->
+
+    <owl:Class rdf:about="&dcdom;HGAlignments"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#Indels -->
+
+    <owl:Class rdf:about="&dcdom;Indels"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#IndelsAndConsensus -->
+
+    <owl:Class rdf:about="&dcdom;IndelsAndConsensus"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#JPGFile -->
+
+    <owl:Class rdf:about="&dcdom;JPGFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#MAPFile -->
+
+    <owl:Class rdf:about="&dcdom;MAPFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#MDistFile -->
+
+    <owl:Class rdf:about="&dcdom;MDistFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#MergeCNVFormat -->
+
+    <owl:Class rdf:about="&dcdom;MergeCNVFormat"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#MergeSummary -->
+
+    <owl:Class rdf:about="&dcdom;MergeSummary"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#MergeUID -->
+
+    <owl:Class rdf:about="&dcdom;MergeUID"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#MergedCNV -->
+
+    <owl:Class rdf:about="&dcdom;MergedCNV"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#PEDFile -->
+
+    <owl:Class rdf:about="&dcdom;PEDFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#PNFormat -->
+
+    <owl:Class rdf:about="&dcdom;PNFormat"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#PennCNV -->
+
+    <owl:Class rdf:about="&dcdom;PennCNV"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#PennCNVX -->
+
+    <owl:Class rdf:about="&dcdom;PennCNVX"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#PennLog -->
+
+    <owl:Class rdf:about="&dcdom;PennLog"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#PennLogX -->
+
+    <owl:Class rdf:about="&dcdom;PennLogX"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#QTFormat -->
+
+    <owl:Class rdf:about="&dcdom;QTFormat"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#QuantiCNV -->
+
+    <owl:Class rdf:about="&dcdom;QuantiCNV"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#QuantiPCFile -->
+
+    <owl:Class rdf:about="&dcdom;QuantiPCFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#RareMergedCNV -->
+
+    <owl:Class rdf:about="&dcdom;RareMergedCNV"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#ReformatLog -->
+
+    <owl:Class rdf:about="&dcdom;ReformatLog"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#SAMFile -->
+
+    <owl:Class rdf:about="&dcdom;SAMFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#SNPFile -->
+
+    <owl:Class rdf:about="&dcdom;SNPFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#SequenceFile -->
+
+    <owl:Class rdf:about="&dcdom;SequenceFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#SortedBAMFile -->
+
+    <owl:Class rdf:about="&dcdom;SortedBAMFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#StructureFormatFile -->
+
+    <owl:Class rdf:about="&dcdom;StructureFormatFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#StructureOutputFile -->
+
+    <owl:Class rdf:about="&dcdom;StructureOutputFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#StructureParamsFile -->
+
+    <owl:Class rdf:about="&dcdom;StructureParamsFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#TDTFile -->
+
+    <owl:Class rdf:about="&dcdom;TDTFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#TDTPermFile -->
+
+    <owl:Class rdf:about="&dcdom;TDTPermFile"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/cgsmd/ontology.owl#Thresholds -->
+
+    <owl:Class rdf:about="&dcdom;Thresholds"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/ontology.owl#ParameterArgument -->
+
+    <owl:Class rdf:about="&dc;ParameterArgument"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#AnnotateInputCNV -->
+
+    <dcdom:CNVFile rdf:about="#AnnotateInputCNV">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID
+            >AnnotateInputCNV</ac:hasArgumentID>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+    </dcdom:CNVFile>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Annotate_CNV -->
+
+    <owl:Thing rdf:about="#Annotate_CNV">
+        <rdf:type rdf:resource="#Annotate_CNV_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#AnnotateInputCNV"/>
+        <ac:hasArgument rdf:resource="#AnnotateInputCNV"/>
+        <ac:hasOutput rdf:resource="#AnnotatedCNVOutput"/>
+        <ac:hasArgument rdf:resource="#AnnotatedCNVOutput"/>
+        <ac:hasArgument rdf:resource="#AnnotationFilesInput"/>
+        <ac:hasInput rdf:resource="#AnnotationFilesInput"/>
+        <ac:hasInput rdf:resource="#DGVFileInput"/>
+        <ac:hasArgument rdf:resource="#DGVFileInput"/>
+        <ac:hasArgument rdf:resource="#GenesFileInput"/>
+        <ac:hasInput rdf:resource="#GenesFileInput"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#AnnotatedCNVOutput -->
+
+    <dcdom:Annotated_CNV rdf:about="#AnnotatedCNVOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+        <ac:hasArgumentID
+            >AnnotatedCNVOutput</ac:hasArgumentID>
+    </dcdom:Annotated_CNV>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#AnnotationFilesInput -->
+
+    <owl:Thing rdf:about="#AnnotationFilesInput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;AnnotationFile"/>
+        <ac:hasDimensionality rdf:datatype="&xsd;int">1</ac:hasDimensionality>
+        <ac:hasArgumentName>-i4</ac:hasArgumentName>
+        <ac:hasArgumentID
+            >AnnotationFilesInput</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Association_Analysis -->
+
+    <Association_Analysis_Class rdf:about="#Association_Analysis">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#InputBIMFile"/>
+        <ac:hasInput rdf:resource="#InputBIMFile"/>
+        <ac:hasArgument rdf:resource="#InputBPEDFile"/>
+        <ac:hasInput rdf:resource="#InputBPEDFile"/>
+        <ac:hasArgument rdf:resource="#InputCluster2"/>
+        <ac:hasInput rdf:resource="#InputCluster2"/>
+        <ac:hasArgument rdf:resource="#InputFAMFile"/>
+        <ac:hasInput rdf:resource="#InputFAMFile"/>
+        <ac:hasArgument rdf:resource="#OutputAAC"/>
+        <ac:hasOutput rdf:resource="#OutputAAC"/>
+    </Association_Analysis_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#BWA_HumanGenome_Alignments -->
+
+    <owl:Thing rdf:about="#BWA_HumanGenome_Alignments">
+        <rdf:type rdf:resource="#BWA_HumanGenome_Alignments_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#InputSequence"/>
+        <ac:hasInput rdf:resource="#InputSequence"/>
+        <ac:hasArgument rdf:resource="#OutputHGAlignments"/>
+        <ac:hasOutput rdf:resource="#OutputHGAlignments"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#BadchipsInput1ToMerge -->
+
+    <ac:DataArgument rdf:about="#BadchipsInput1ToMerge">
+        <rdf:type rdf:resource="&dcdom;BadChips"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+        <ac:hasArgumentID>BadchipsInput1</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#BadchipsInput2ToMerge -->
+
+    <dcdom:BadChips rdf:about="#BadchipsInput2ToMerge">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-i2</ac:hasArgumentName>
+        <ac:hasArgumentID>BadchipsInput2</ac:hasArgumentID>
+    </dcdom:BadChips>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#BadchipsInputForPedmod -->
+
+    <dcdom:BadChips rdf:about="#BadchipsInputForPedmod">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID>BadchipsInput</ac:hasArgumentID>
+        <ac:hasArgumentName>-i2</ac:hasArgumentName>
+    </dcdom:BadChips>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#BadchipsInputsToMerge -->
+
+    <dcdom:BadChips rdf:about="#BadchipsInputsToMerge">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasDimensionality rdf:datatype="&xsd;int">1</ac:hasDimensionality>
+        <ac:hasArgumentID>BadchipsInputs</ac:hasArgumentID>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+    </dcdom:BadChips>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Cleanup_Indels -->
+
+    <owl:Thing rdf:about="#Cleanup_Indels">
+        <rdf:type rdf:resource="#Cleanup_Indels_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#InputSortedBAMFile"/>
+        <ac:hasInput rdf:resource="#InputSortedBAMFile"/>
+        <ac:hasOutput rdf:resource="#OutputIndels"/>
+        <ac:hasArgument rdf:resource="#OutputIndels"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Combine_Reformat_PennCNV_CNVX -->
+
+    <owl:Thing rdf:about="#Combine_Reformat_PennCNV_CNVX">
+        <rdf:type rdf:resource="#Combine_Reformat_PennCNV_CNVX_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasOutput rdf:resource="#PennBadchipsOutput"/>
+        <ac:hasArgument rdf:resource="#PennBadchipsOutput"/>
+        <ac:hasArgument rdf:resource="#PennCNVInput"/>
+        <ac:hasInput rdf:resource="#PennCNVInput"/>
+        <ac:hasArgument rdf:resource="#PennCNVInputX"/>
+        <ac:hasInput rdf:resource="#PennCNVInputX"/>
+        <ac:hasInput rdf:resource="#PennCNVLogInput"/>
+        <ac:hasArgument rdf:resource="#PennCNVLogInput"/>
+        <ac:hasInput rdf:resource="#PennCNVLogInputX"/>
+        <ac:hasArgument rdf:resource="#PennCNVLogInputX"/>
+        <ac:hasOutput rdf:resource="#PennReformatLogOutput"/>
+        <ac:hasArgument rdf:resource="#PennReformatLogOutput"/>
+        <ac:hasArgument rdf:resource="#ReformatCNVOutput"/>
+        <ac:hasOutput rdf:resource="#ReformatCNVOutput"/>
+        <ac:hasArgument rdf:resource="#ReformatFormatedOutput"/>
+        <ac:hasOutput rdf:resource="#ReformatFormatedOutput"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#CommonLociInput -->
+
+    <dcdom:CommonLoci rdf:about="#CommonLociInput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID>CommonLociInput</ac:hasArgumentID>
+        <ac:hasArgumentName>-i2</ac:hasArgumentName>
+    </dcdom:CommonLoci>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Compare_against_Common_Loci -->
+
+    <owl:Thing rdf:about="#Compare_against_Common_Loci">
+        <rdf:type rdf:resource="#Compare_against_Common_Loci_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#CommonLociInput"/>
+        <ac:hasArgument rdf:resource="#CommonLociInput"/>
+        <ac:hasInput rdf:resource="#MergedCNVInput"/>
+        <ac:hasArgument rdf:resource="#MergedCNVInput"/>
+        <ac:hasOutput rdf:resource="#RareMergedCNVOutput"/>
+        <ac:hasArgument rdf:resource="#RareMergedCNVOutput"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Compress_SAM_into_BAM_Format -->
+
+    <owl:Thing rdf:about="#Compress_SAM_into_BAM_Format">
+        <rdf:type rdf:resource="#Compress_SAM_into_BAM_Format_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#InputSAMFile"/>
+        <ac:hasArgument rdf:resource="#InputSAMFile"/>
+        <ac:hasArgument rdf:resource="#OutputBAMFile"/>
+        <ac:hasOutput rdf:resource="#OutputBAMFile"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Convert_BWA_to_SAM_Format -->
+
+    <Convert_BWA_to_SAM_Format_Class rdf:about="#Convert_BWA_to_SAM_Format">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#InputHGAlignments"/>
+        <ac:hasArgument rdf:resource="#InputHGAlignments"/>
+        <ac:hasInput rdf:resource="#InputSequence"/>
+        <ac:hasArgument rdf:resource="#InputSequence"/>
+        <ac:hasArgument rdf:resource="#OutputSAMFile"/>
+        <ac:hasOutput rdf:resource="#OutputSAMFile"/>
+    </Convert_BWA_to_SAM_Format_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Convert_to_PN_and_QT_Formats -->
+
+    <Convert_to_PN_and_QT_Formats_Class rdf:about="#Convert_to_PN_and_QT_Formats">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#FinalReports"/>
+        <ac:hasArgument rdf:resource="#FinalReports"/>
+        <ac:hasOutput rdf:resource="#PNFormatOutputs"/>
+        <ac:hasArgument rdf:resource="#PNFormatOutputs"/>
+        <ac:hasArgument rdf:resource="#QTFormatOutput"/>
+        <ac:hasOutput rdf:resource="#QTFormatOutput"/>
+    </Convert_to_PN_and_QT_Formats_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Convert_to_Structure_Format -->
+
+    <Convert_to_Structure_Format_Class rdf:about="#Convert_to_Structure_Format">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#InputBIMFile"/>
+        <ac:hasInput rdf:resource="#InputBIMFile"/>
+        <ac:hasArgument rdf:resource="#InputBPEDFile"/>
+        <ac:hasInput rdf:resource="#InputBPEDFile"/>
+        <ac:hasInput rdf:resource="#InputFAMFile"/>
+        <ac:hasArgument rdf:resource="#InputFAMFile"/>
+        <ac:hasOutput rdf:resource="#OutputStructureFormat"/>
+        <ac:hasArgument rdf:resource="#OutputStructureFormat"/>
+        <ac:hasOutput rdf:resource="#OutputStructureParams"/>
+        <ac:hasArgument rdf:resource="#OutputStructureParams"/>
+    </Convert_to_Structure_Format_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Create_Binary_PEDFile -->
+
+    <Create_Binary_PEDFile_Class rdf:about="#Create_Binary_PEDFile">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#InputMAPFile"/>
+        <ac:hasInput rdf:resource="#InputMAPFile"/>
+        <ac:hasInput rdf:resource="#InputPEDFile"/>
+        <ac:hasArgument rdf:resource="#InputPEDFile"/>
+        <ac:hasInput rdf:resource="#MissingnessPerIndividual"/>
+        <ac:hasArgument rdf:resource="#MissingnessPerIndividual"/>
+        <ac:hasOutput rdf:resource="#OutputBIMFile"/>
+        <ac:hasArgument rdf:resource="#OutputBIMFile"/>
+        <ac:hasArgument rdf:resource="#OutputBPEDFile"/>
+        <ac:hasOutput rdf:resource="#OutputBPEDFile"/>
+        <ac:hasOutput rdf:resource="#OutputFAMFile"/>
+        <ac:hasArgument rdf:resource="#OutputFAMFile"/>
+    </Create_Binary_PEDFile_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#DGVFileInput -->
+
+    <ac:DataArgument rdf:about="#DGVFileInput">
+        <rdf:type rdf:resource="&dcdom;DGV_VariationFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID>DGVFileInput</ac:hasArgumentID>
+        <ac:hasArgumentName>-i3</ac:hasArgumentName>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#DeNovo2RareMergedCNVOutput -->
+
+    <owl:Thing rdf:about="#DeNovo2RareMergedCNVOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;DeNovo2RareMergedCNV"/>
+        <ac:hasArgumentID
+            >DeNovo2RareMergedCNVOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#DeNovo2_Assess_CNV_Overlap -->
+
+    <owl:Thing rdf:about="#DeNovo2_Assess_CNV_Overlap">
+        <rdf:type rdf:resource="#DeNovo2_Assess_CNV_Overlap_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#DeNovo2RareMergedCNVOutput"/>
+        <ac:hasOutput rdf:resource="#DeNovo2RareMergedCNVOutput"/>
+        <ac:hasArgument rdf:resource="#FinalReportsDN"/>
+        <ac:hasInput rdf:resource="#FinalReportsDN"/>
+        <ac:hasInput rdf:resource="#ModifiedPEDFileInput"/>
+        <ac:hasArgument rdf:resource="#ModifiedPEDFileInput"/>
+        <ac:hasInput rdf:resource="#RareMergedCNVInput"/>
+        <ac:hasArgument rdf:resource="#RareMergedCNVInput"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#DeNovoRareMergedCNVOutput -->
+
+    <dcdom:DeNovoRareMergedCNV rdf:about="#DeNovoRareMergedCNVOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+        <ac:hasArgumentID
+            >DeNovoRareMergedCNVOutput</ac:hasArgumentID>
+    </dcdom:DeNovoRareMergedCNV>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#DeNovo_Assess_CNV_Overlap -->
+
+    <DeNovo_Assess_CNV_Overlap_Class rdf:about="#DeNovo_Assess_CNV_Overlap">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#DeNovoRareMergedCNVOutput"/>
+        <ac:hasOutput rdf:resource="#DeNovoRareMergedCNVOutput"/>
+        <ac:hasInput rdf:resource="#ModifiedPEDFileInput"/>
+        <ac:hasArgument rdf:resource="#ModifiedPEDFileInput"/>
+        <ac:hasInput rdf:resource="#RareMergedCNVInput"/>
+        <ac:hasArgument rdf:resource="#RareMergedCNVInput"/>
+    </DeNovo_Assess_CNV_Overlap_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#FinalReports -->
+
+    <dcdom:FinalReport rdf:about="#FinalReports">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasDimensionality rdf:datatype="&xsd;int">1</ac:hasDimensionality>
+        <ac:hasArgumentID>FinalReport</ac:hasArgumentID>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+    </dcdom:FinalReport>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#FinalReportsDN -->
+
+    <ac:DataArgument rdf:about="#FinalReportsDN">
+        <rdf:type rdf:resource="&dcdom;FinalReport"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasDimensionality rdf:datatype="&xsd;int">1</ac:hasDimensionality>
+        <ac:hasArgumentID>FinalReportDN</ac:hasArgumentID>
+        <ac:hasArgumentName>-i3</ac:hasArgumentName>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Find_Gender_of_FinalReports -->
+
+    <owl:Thing rdf:about="#Find_Gender_of_FinalReports">
+        <rdf:type rdf:resource="#Find_Gender_of_FinalReports_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#FinalReports"/>
+        <ac:hasInput rdf:resource="#FinalReports"/>
+        <ac:hasArgument rdf:resource="#GenderOutputs"/>
+        <ac:hasOutput rdf:resource="#GenderOutputs"/>
+        <ac:hasArgument rdf:resource="#SexSiftOutput"/>
+        <ac:hasOutput rdf:resource="#SexSiftOutput"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#GenderInput -->
+
+    <ac:DataArgument rdf:about="#GenderInput">
+        <rdf:type rdf:resource="&dcdom;GenderFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID>GenderInput</ac:hasArgumentID>
+        <ac:hasArgumentName>-i2</ac:hasArgumentName>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#GenderOutputs -->
+
+    <ac:DataArgument rdf:about="#GenderOutputs">
+        <rdf:type rdf:resource="&dcdom;GenderFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasDimensionality rdf:datatype="&xsd;int">1</ac:hasDimensionality>
+        <ac:hasArgumentName>-o2</ac:hasArgumentName>
+        <ac:hasArgumentID>GenderOutputs</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#General_Association_Analysis -->
+
+    <owl:Thing rdf:about="#General_Association_Analysis">
+        <rdf:type rdf:resource="#General_Association_Analysis_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#InputBIMFile"/>
+        <ac:hasInput rdf:resource="#InputBIMFile"/>
+        <ac:hasArgument rdf:resource="#InputBPEDFile"/>
+        <ac:hasInput rdf:resource="#InputBPEDFile"/>
+        <ac:hasInput rdf:resource="#InputFAMFile"/>
+        <ac:hasArgument rdf:resource="#InputFAMFile"/>
+        <ac:hasOutput rdf:resource="#OutputAssoc"/>
+        <ac:hasArgument rdf:resource="#OutputAssoc"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Generate_Visualization -->
+
+    <Generate_Visualization_Class rdf:about="#Generate_Visualization">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#InputBIMFile"/>
+        <ac:hasArgument rdf:resource="#InputBIMFile"/>
+        <ac:hasInput rdf:resource="#InputBPEDFile"/>
+        <ac:hasArgument rdf:resource="#InputBPEDFile"/>
+        <ac:hasInput rdf:resource="#InputFAMFile"/>
+        <ac:hasArgument rdf:resource="#InputFAMFile"/>
+        <ac:hasArgument rdf:resource="#OutputMDist"/>
+        <ac:hasOutput rdf:resource="#OutputMDist"/>
+    </Generate_Visualization_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#GenesFileInput -->
+
+    <dcdom:GenesFile rdf:about="#GenesFileInput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-i2</ac:hasArgumentName>
+        <ac:hasArgumentID>GenesFileInput</ac:hasArgumentID>
+    </dcdom:GenesFile>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#GnosisBadchipsOutput -->
+
+    <owl:Thing rdf:about="#GnosisBadchipsOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;BadChips"/>
+        <ac:hasArgumentID>BadchipsOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o2</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#GnosisCNVInput -->
+
+    <owl:Thing rdf:about="#GnosisCNVInput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;GnosisCNV"/>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+        <ac:hasArgumentID>CNVInput</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#GnosisCNVOutput -->
+
+    <owl:Thing rdf:about="#GnosisCNVOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;GnosisCNV"/>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+        <ac:hasArgumentID>CNVOutput</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#GnosisThresholdsOutput -->
+
+    <ac:DataArgument rdf:about="#GnosisThresholdsOutput">
+        <rdf:type rdf:resource="&dcdom;Thresholds"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-o3</ac:hasArgumentName>
+        <ac:hasArgumentID>Thresholds</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Gnosis_Detect_CNV -->
+
+    <Gnosis_Detect_CNV_Class rdf:about="#Gnosis_Detect_CNV">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#FinalReports"/>
+        <ac:hasInput rdf:resource="#FinalReports"/>
+        <ac:hasOutput rdf:resource="#GnosisBadchipsOutput"/>
+        <ac:hasArgument rdf:resource="#GnosisBadchipsOutput"/>
+        <ac:hasArgument rdf:resource="#GnosisCNVOutput"/>
+        <ac:hasOutput rdf:resource="#GnosisCNVOutput"/>
+        <ac:hasArgument rdf:resource="#GnosisThresholdsOutput"/>
+        <ac:hasOutput rdf:resource="#GnosisThresholdsOutput"/>
+        <ac:hasInput rdf:resource="#SexSiftInput"/>
+        <ac:hasArgument rdf:resource="#SexSiftInput"/>
+    </Gnosis_Detect_CNV_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputBAMFile -->
+
+    <dcdom:BAMFile rdf:about="#InputBAMFile">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+        <ac:hasArgumentID>inputBAMFile</ac:hasArgumentID>
+    </dcdom:BAMFile>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputBIMFile -->
+
+    <owl:Thing rdf:about="#InputBIMFile">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;BIMFile"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID>BIMFile</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputBPEDFile -->
+
+    <ac:DataArgument rdf:about="#InputBPEDFile">
+        <rdf:type rdf:resource="&dcdom;BinaryPEDFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID>BPEDFile</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputCluster2 -->
+
+    <owl:Thing rdf:about="#InputCluster2">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;Cluster2"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">4</ac:hasArgumentIndex>
+        <ac:hasArgumentID>cluster2</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputFAMFile -->
+
+    <ac:DataArgument rdf:about="#InputFAMFile">
+        <rdf:type rdf:resource="&dcdom;FAMFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">3</ac:hasArgumentIndex>
+        <ac:hasArgumentID>FAMFile</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputFilteredIndels -->
+
+    <dcdom:FilteredIndels rdf:about="#InputFilteredIndels">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+        <ac:hasArgumentID
+            >inputFilteredIndels</ac:hasArgumentID>
+    </dcdom:FilteredIndels>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputHGAlignments -->
+
+    <dcdom:HGAlignments rdf:about="#InputHGAlignments">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID
+            >inputHGAlignments</ac:hasArgumentID>
+        <ac:hasArgumentName>-i2</ac:hasArgumentName>
+    </dcdom:HGAlignments>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputIndels -->
+
+    <owl:Thing rdf:about="#InputIndels">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;Indels"/>
+        <ac:hasArgumentID>inputIndels</ac:hasArgumentID>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputIndelsAndConsensus -->
+
+    <dcdom:IndelsAndConsensus rdf:about="#InputIndelsAndConsensus">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID
+            >inputIndelsAndConsensus</ac:hasArgumentID>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+    </dcdom:IndelsAndConsensus>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputMAPFile -->
+
+    <ac:DataArgument rdf:about="#InputMAPFile">
+        <rdf:type rdf:resource="&dcdom;MAPFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID>MAPFile</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputMDist -->
+
+    <owl:Thing rdf:about="#InputMDist">
+        <rdf:type rdf:resource="&dcdom;MDistFile"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID>mdist</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputMaxPops -->
+
+    <dc:ParameterArgument rdf:about="#InputMaxPops">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">4</ac:hasArgumentIndex>
+        <ac:hasValue rdf:datatype="&xsd;int">5</ac:hasValue>
+        <ac:hasArgumentID>MaxPopulation</ac:hasArgumentID>
+    </dc:ParameterArgument>
+        
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#MissingnessPerIndividual -->
+
+    <dc:ParameterArgument rdf:about="#MissingnessPerIndividual">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">6</ac:hasArgumentIndex>
+        <ac:hasValue rdf:datatype="&xsd;float">0.1</ac:hasValue>
+        <ac:hasArgumentID>MissingnessPerIndividual</ac:hasArgumentID>
+    </dc:ParameterArgument>
+
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputPEDFile -->
+
+    <owl:Thing rdf:about="#InputPEDFile">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;PEDFile"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID>PEDFile</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputSAMFile -->
+
+    <owl:Thing rdf:about="#InputSAMFile">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;SAMFile"/>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+        <ac:hasArgumentID>inputSAMFile</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputSNPFile -->
+
+    <dcdom:SNPFile rdf:about="#InputSNPFile">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+        <ac:hasArgumentID>inputSNPFile</ac:hasArgumentID>
+    </dcdom:SNPFile>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputSequence -->
+
+    <ac:DataArgument rdf:about="#InputSequence">
+        <rdf:type rdf:resource="&dcdom;SequenceFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID>inputSequence</ac:hasArgumentID>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputSortedBAMFile -->
+
+    <owl:Thing rdf:about="#InputSortedBAMFile">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;SortedBAMFile"/>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+        <ac:hasArgumentID
+            >inputSortedBAMFile</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputStructureFormat -->
+
+    <dcdom:StructureFormatFile rdf:about="#InputStructureFormat">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID
+            >InputStructureFormat</ac:hasArgumentID>
+    </dcdom:StructureFormatFile>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#InputStructureParams -->
+
+    <ac:DataArgument rdf:about="#InputStructureParams">
+        <rdf:type rdf:resource="&dcdom;StructureParamsFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID
+            >InputStructureParams</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#MCParam -->
+
+    <owl:Thing rdf:about="#MCParam">
+        <rdf:type rdf:resource="&ac;ParameterArgument"/>
+        <ac:hasValue rdf:datatype="&xsd;int">2</ac:hasValue>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">4</ac:hasArgumentIndex>
+        <ac:hasArgumentID>mc</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Merge2CNVInput1 -->
+
+    <dcdom:MergeCNVFormat rdf:about="#Merge2CNVInput1">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+        <ac:hasArgumentID>MergeCNVInput1</ac:hasArgumentID>
+    </dcdom:MergeCNVFormat>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Merge2CNVInput2 -->
+
+    <ac:DataArgument rdf:about="#Merge2CNVInput2">
+        <rdf:type rdf:resource="&dcdom;MergeCNVFormat"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-i2</ac:hasArgumentName>
+        <ac:hasArgumentID>MergeCNVInput2</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Merge2CNVInput3 -->
+
+    <ac:DataArgument rdf:about="#Merge2CNVInput3">
+        <rdf:type rdf:resource="&dcdom;MergeCNVFormat"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasDimensionality rdf:datatype="&xsd;int">1</ac:hasDimensionality>
+        <ac:hasArgumentName>-i3</ac:hasArgumentName>
+        <ac:hasArgumentID>MergeCNVInput3</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#MergeCNVInputs -->
+
+    <owl:Thing rdf:about="#MergeCNVInputs">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;MergeCNVFormat"/>
+        <ac:hasDimensionality rdf:datatype="&xsd;int">1</ac:hasDimensionality>
+        <ac:hasArgumentID>MergeCNVInputs</ac:hasArgumentID>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Merge_2_Bad_Chips -->
+
+    <owl:Thing rdf:about="#Merge_2_Bad_Chips">
+        <rdf:type rdf:resource="#Merge_2_Bad_Chips_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#BadchipsInput1ToMerge"/>
+        <ac:hasInput rdf:resource="#BadchipsInput1ToMerge"/>
+        <ac:hasArgument rdf:resource="#BadchipsInput2ToMerge"/>
+        <ac:hasInput rdf:resource="#BadchipsInput2ToMerge"/>
+        <ac:hasOutput rdf:resource="#MergedBadchipsOutput"/>
+        <ac:hasArgument rdf:resource="#MergedBadchipsOutput"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Merge_2_CNVs -->
+
+    <Merge_2_CNVs_Class rdf:about="#Merge_2_CNVs">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#Merge2CNVInput1"/>
+        <ac:hasInput rdf:resource="#Merge2CNVInput1"/>
+        <ac:hasArgument rdf:resource="#Merge2CNVInput2"/>
+        <ac:hasInput rdf:resource="#Merge2CNVInput2"/>
+        <ac:hasOutput rdf:resource="#MergedCNVOutput"/>
+        <ac:hasArgument rdf:resource="#MergedCNVOutput"/>
+        <ac:hasArgument rdf:resource="#MergedSummaryOutput"/>
+        <ac:hasOutput rdf:resource="#MergedSummaryOutput"/>
+        <ac:hasOutput rdf:resource="#MergedUIDOutput"/>
+        <ac:hasArgument rdf:resource="#MergedUIDOutput"/>
+    </Merge_2_CNVs_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Merge_3_CNVs -->
+
+    <Merge_3_CNVs_Class rdf:about="#Merge_3_CNVs">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#Merge2CNVInput1"/>
+        <ac:hasInput rdf:resource="#Merge2CNVInput1"/>
+        <ac:hasArgument rdf:resource="#Merge2CNVInput2"/>
+        <ac:hasInput rdf:resource="#Merge2CNVInput2"/>
+        <ac:hasArgument rdf:resource="#Merge2CNVInput3"/>
+        <ac:hasInput rdf:resource="#Merge2CNVInput3"/>
+        <ac:hasOutput rdf:resource="#MergedCNVOutput"/>
+        <ac:hasArgument rdf:resource="#MergedCNVOutput"/>
+        <ac:hasArgument rdf:resource="#MergedSummaryOutput"/>
+        <ac:hasOutput rdf:resource="#MergedSummaryOutput"/>
+        <ac:hasOutput rdf:resource="#MergedUIDOutput"/>
+        <ac:hasArgument rdf:resource="#MergedUIDOutput"/>
+    </Merge_3_CNVs_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Merge_Bad_Chips -->
+
+    <Merge_Bad_Chips_Class rdf:about="#Merge_Bad_Chips">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#BadchipsInputsToMerge"/>
+        <ac:hasInput rdf:resource="#BadchipsInputsToMerge"/>
+        <ac:hasOutput rdf:resource="#MergedBadchipsOutput"/>
+        <ac:hasArgument rdf:resource="#MergedBadchipsOutput"/>
+    </Merge_Bad_Chips_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Merge_CNVs -->
+
+    <owl:Thing rdf:about="#Merge_CNVs">
+        <rdf:type rdf:resource="#Merge_CNVs_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#MergeCNVInputs"/>
+        <ac:hasArgument rdf:resource="#MergeCNVInputs"/>
+        <ac:hasOutput rdf:resource="#MergedCNVOutput"/>
+        <ac:hasArgument rdf:resource="#MergedCNVOutput"/>
+        <ac:hasArgument rdf:resource="#MergedSummaryOutput"/>
+        <ac:hasOutput rdf:resource="#MergedSummaryOutput"/>
+        <ac:hasArgument rdf:resource="#MergedUIDOutput"/>
+        <ac:hasOutput rdf:resource="#MergedUIDOutput"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#MergedBadchipsOutput -->
+
+    <ac:DataArgument rdf:about="#MergedBadchipsOutput">
+        <rdf:type rdf:resource="&dcdom;BadChips"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID
+            >MergedBadchipsOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#MergedCNVInput -->
+
+    <owl:Thing rdf:about="#MergedCNVInput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;MergedCNV"/>
+        <ac:hasArgumentID>MergedCNVInput</ac:hasArgumentID>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#MergedCNVOutput -->
+
+    <ac:DataArgument rdf:about="#MergedCNVOutput">
+        <rdf:type rdf:resource="&dcdom;MergedCNV"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+        <ac:hasArgumentID>MergedCNVOutput</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#MergedSummaryOutput -->
+
+    <dcdom:MergeSummary rdf:about="#MergedSummaryOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID>SummaryOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o2</ac:hasArgumentName>
+    </dcdom:MergeSummary>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#MergedUIDOutput -->
+
+    <dcdom:MergeUID rdf:about="#MergedUIDOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID>UIDOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o3</ac:hasArgumentName>
+    </dcdom:MergeUID>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#ModifiedPEDFileInput -->
+
+    <owl:Thing rdf:about="#ModifiedPEDFileInput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;PEDFile"/>
+        <ac:hasArgumentName>-i2</ac:hasArgumentName>
+        <ac:hasArgumentID>InputPEDFile</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#ModifiedPEDFileOutput -->
+
+    <ac:DataArgument rdf:about="#ModifiedPEDFileOutput">
+        <rdf:type rdf:resource="&dcdom;PEDFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID>OutputPEDFile</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputAAC -->
+
+    <ac:DataArgument rdf:about="#OutputAAC">
+        <rdf:type rdf:resource="&dcdom;CMHFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">5</ac:hasArgumentIndex>
+        <ac:hasArgumentID>aac</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputAssoc -->
+
+    <owl:Thing rdf:about="#OutputAssoc">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;AssocFile"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">4</ac:hasArgumentIndex>
+        <ac:hasArgumentID>assoc</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputBAMFile -->
+
+    <owl:Thing rdf:about="#OutputBAMFile">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;BAMFile"/>
+        <ac:hasArgumentID>outputBAMFile</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputBIMFile -->
+
+    <ac:DataArgument rdf:about="#OutputBIMFile">
+        <rdf:type rdf:resource="&dcdom;BIMFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">4</ac:hasArgumentIndex>
+        <ac:hasArgumentID>BIMFile</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputBPEDFile -->
+
+    <dcdom:BinaryPEDFile rdf:about="#OutputBPEDFile">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">3</ac:hasArgumentIndex>
+        <ac:hasArgumentID>BPEDFile</ac:hasArgumentID>
+    </dcdom:BinaryPEDFile>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputFAMFile -->
+
+    <owl:Thing rdf:about="#OutputFAMFile">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;FAMFile"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">5</ac:hasArgumentIndex>
+        <ac:hasArgumentID>FAMFile</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputFilteredIndels -->
+
+    <dcdom:FilteredIndels rdf:about="#OutputFilteredIndels">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+        <ac:hasArgumentID
+            >outputFilteredIndels</ac:hasArgumentID>
+    </dcdom:FilteredIndels>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputHGAlignments -->
+
+    <owl:Thing rdf:about="#OutputHGAlignments">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;HGAlignments"/>
+        <ac:hasArgumentID
+            >outputHGAlignments</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputIndels -->
+
+    <dcdom:Indels rdf:about="#OutputIndels">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID>outputIndels</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </dcdom:Indels>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputIndelsAndConsensus -->
+
+    <owl:Thing rdf:about="#OutputIndelsAndConsensus">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;IndelsAndConsensus"/>
+        <ac:hasArgumentID
+            >outputIndelsAndConsensus</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputJPGFile -->
+
+    <dcdom:JPGFile rdf:about="#OutputJPGFile">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID>jpg</ac:hasArgumentID>
+    </dcdom:JPGFile>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputMDist -->
+
+    <ac:DataArgument rdf:about="#OutputMDist">
+        <rdf:type rdf:resource="&dcdom;MDistFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">4</ac:hasArgumentIndex>
+        <ac:hasArgumentID>mdist</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputSAMFile -->
+
+    <dcdom:SAMFile rdf:about="#OutputSAMFile">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID>outputSAMFile</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </dcdom:SAMFile>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputSNPFile -->
+
+    <ac:DataArgument rdf:about="#OutputSNPFile">
+        <rdf:type rdf:resource="&dcdom;SNPFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID>outputSNPFile</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputSortedBAMFile -->
+
+    <ac:DataArgument rdf:about="#OutputSortedBAMFile">
+        <rdf:type rdf:resource="&dcdom;SortedBAMFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+        <ac:hasArgumentID
+            >outputSortedBAMFile</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputStructureFormat -->
+
+    <dcdom:StructureFormatFile rdf:about="#OutputStructureFormat">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">4</ac:hasArgumentIndex>
+        <ac:hasArgumentID
+            >OutputStructureFormat</ac:hasArgumentID>
+    </dcdom:StructureFormatFile>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputStructureParams -->
+
+    <owl:Thing rdf:about="#OutputStructureParams">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;StructureParamsFile"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">5</ac:hasArgumentIndex>
+        <ac:hasArgumentID
+            >OutputStructureParams</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputTDT -->
+
+    <ac:DataArgument rdf:about="#OutputTDT">
+        <rdf:type rdf:resource="&dcdom;TDTFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">4</ac:hasArgumentIndex>
+        <ac:hasArgumentID>OutputTDT</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#OutputTDTPerm -->
+
+    <ac:DataArgument rdf:about="#OutputTDTPerm">
+        <rdf:type rdf:resource="&dcdom;TDTPermFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">5</ac:hasArgumentIndex>
+        <ac:hasArgumentID>OutputTDTPerm</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#PEDFileForModInput -->
+
+    <ac:DataArgument rdf:about="#PEDFileForModInput">
+        <rdf:type rdf:resource="&dcdom;PEDFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID>InputPEDFile</ac:hasArgumentID>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#PNFormatInputs -->
+
+    <owl:Thing rdf:about="#PNFormatInputs">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;PNFormat"/>
+        <ac:hasDimensionality rdf:datatype="&xsd;int">1</ac:hasDimensionality>
+        <ac:hasArgumentID>PNFormatInputs</ac:hasArgumentID>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#PNFormatOutputs -->
+
+    <ac:DataArgument rdf:about="#PNFormatOutputs">
+        <rdf:type rdf:resource="&dcdom;PNFormat"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasDimensionality rdf:datatype="&xsd;int">1</ac:hasDimensionality>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+        <ac:hasArgumentID>PNFormatOutputs</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#PPCParam -->
+
+    <ac:ParameterArgument rdf:about="#PPCParam">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasValue rdf:datatype="&xsd;float">0.05</ac:hasValue>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">5</ac:hasArgumentIndex>
+        <ac:hasArgumentID>ppc</ac:hasArgumentID>
+    </ac:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#ParenTDT -->
+
+    <ParenTDT_Class rdf:about="#ParenTDT">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#InputBIMFile"/>
+        <ac:hasArgument rdf:resource="#InputBIMFile"/>
+        <ac:hasInput rdf:resource="#InputBPEDFile"/>
+        <ac:hasArgument rdf:resource="#InputBPEDFile"/>
+        <ac:hasArgument rdf:resource="#InputFAMFile"/>
+        <ac:hasInput rdf:resource="#InputFAMFile"/>
+        <ac:hasOutput rdf:resource="#OutputTDT"/>
+        <ac:hasArgument rdf:resource="#OutputTDT"/>
+        <ac:hasArgument rdf:resource="#OutputTDTPerm"/>
+        <ac:hasOutput rdf:resource="#OutputTDTPerm"/>
+    </ParenTDT_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#PennBadchipsOutput -->
+
+    <owl:Thing rdf:about="#PennBadchipsOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;BadChips"/>
+        <ac:hasArgumentID>BadchipsOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o3</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#PennCNVInput -->
+
+    <owl:Thing rdf:about="#PennCNVInput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;PennCNV"/>
+        <ac:hasArgumentID>CNVInput</ac:hasArgumentID>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#PennCNVInputX -->
+
+    <ac:DataArgument rdf:about="#PennCNVInputX">
+        <rdf:type rdf:resource="&dcdom;PennCNVX"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-i3</ac:hasArgumentName>
+        <ac:hasArgumentID>CNVInputX</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#PennCNVLogInput -->
+
+    <owl:Thing rdf:about="#PennCNVLogInput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;PennLog"/>
+        <ac:hasArgumentID>LogInput</ac:hasArgumentID>
+        <ac:hasArgumentName>-i2</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#PennCNVLogInputX -->
+
+    <owl:Thing rdf:about="#PennCNVLogInputX">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;PennLogX"/>
+        <ac:hasArgumentName>-i4</ac:hasArgumentName>
+        <ac:hasArgumentID>LogInputX</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#PennCNVLogOutput -->
+
+    <dcdom:PennLog rdf:about="#PennCNVLogOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-o2</ac:hasArgumentName>
+        <ac:hasArgumentID>LogOutput</ac:hasArgumentID>
+    </dcdom:PennLog>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#PennCNVLogOutputX -->
+
+    <dcdom:PennLogX rdf:about="#PennCNVLogOutputX">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-o2</ac:hasArgumentName>
+        <ac:hasArgumentID>LogOutputX</ac:hasArgumentID>
+    </dcdom:PennLogX>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#PennCNVOutput -->
+
+    <dcdom:PennCNV rdf:about="#PennCNVOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID>CNVOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </dcdom:PennCNV>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#PennCNVOutputX -->
+
+    <dcdom:PennCNVX rdf:about="#PennCNVOutputX">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID>CNVOutputX</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </dcdom:PennCNVX>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#PennReformatLogOutput -->
+
+    <dcdom:ReformatLog rdf:about="#PennReformatLogOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-o4</ac:hasArgumentName>
+        <ac:hasArgumentID
+            >PennReformatLogOutput</ac:hasArgumentID>
+    </dcdom:ReformatLog>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Penn_Detect_CNV -->
+
+    <owl:Thing rdf:about="#Penn_Detect_CNV">
+        <rdf:type rdf:resource="#Penn_Detect_CNV_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#PNFormatInputs"/>
+        <ac:hasArgument rdf:resource="#PNFormatInputs"/>
+        <ac:hasArgument rdf:resource="#PennCNVLogOutput"/>
+        <ac:hasOutput rdf:resource="#PennCNVLogOutput"/>
+        <ac:hasOutput rdf:resource="#PennCNVOutput"/>
+        <ac:hasArgument rdf:resource="#PennCNVOutput"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Penn_Detect_CNVX -->
+
+    <Penn_Detect_CNVX_Class rdf:about="#Penn_Detect_CNVX">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#PNFormatInputs"/>
+        <ac:hasInput rdf:resource="#PNFormatInputs"/>
+        <ac:hasOutput rdf:resource="#PennCNVLogOutputX"/>
+        <ac:hasArgument rdf:resource="#PennCNVLogOutputX"/>
+        <ac:hasOutput rdf:resource="#PennCNVOutputX"/>
+        <ac:hasArgument rdf:resource="#PennCNVOutputX"/>
+    </Penn_Detect_CNVX_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Population_Stratification_Analysis -->
+
+    <Population_Stratification_Analysis_Class rdf:about="#Population_Stratification_Analysis">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#InputBIMFile"/>
+        <ac:hasArgument rdf:resource="#InputBIMFile"/>
+        <ac:hasInput rdf:resource="#InputBPEDFile"/>
+        <ac:hasArgument rdf:resource="#InputBPEDFile"/>
+        <ac:hasInput rdf:resource="#InputFAMFile"/>
+        <ac:hasArgument rdf:resource="#InputFAMFile"/>
+        <ac:hasArgument rdf:resource="#MCParam"/>
+        <ac:hasInput rdf:resource="#MCParam"/>
+        <ac:hasInput rdf:resource="#PPCParam"/>
+        <ac:hasArgument rdf:resource="#PPCParam"/>
+        <ac:hasArgument rdf:resource="#StratOut0"/>
+        <ac:hasOutput rdf:resource="#StratOut0"/>
+        <ac:hasArgument rdf:resource="#StratOut1"/>
+        <ac:hasOutput rdf:resource="#StratOut1"/>
+        <ac:hasOutput rdf:resource="#StratOut2"/>
+        <ac:hasArgument rdf:resource="#StratOut2"/>
+        <ac:hasOutput rdf:resource="#StratOut3"/>
+        <ac:hasArgument rdf:resource="#StratOut3"/>
+    </Population_Stratification_Analysis_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Predict_Indels_and_Consensus -->
+
+    <Predict_Indels_and_Consensus_Class rdf:about="#Predict_Indels_and_Consensus">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#InputSortedBAMFile"/>
+        <ac:hasInput rdf:resource="#InputSortedBAMFile"/>
+        <ac:hasArgument rdf:resource="#OutputIndelsAndConsensus"/>
+        <ac:hasOutput rdf:resource="#OutputIndelsAndConsensus"/>
+    </Predict_Indels_and_Consensus_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Print_Indels -->
+
+    <Print_Indels_Class rdf:about="#Print_Indels">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#InputIndels"/>
+        <ac:hasArgument rdf:resource="#InputIndels"/>
+        <ac:hasOutput rdf:resource="#OutputFilteredIndels"/>
+        <ac:hasArgument rdf:resource="#OutputFilteredIndels"/>
+    </Print_Indels_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Print_SNPs -->
+
+    <Print_SNPs_Class rdf:about="#Print_SNPs">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#InputIndelsAndConsensus"/>
+        <ac:hasInput rdf:resource="#InputIndelsAndConsensus"/>
+        <ac:hasArgument rdf:resource="#OutputSNPFile"/>
+        <ac:hasOutput rdf:resource="#OutputSNPFile"/>
+    </Print_SNPs_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#QuantiCNVOutput -->
+
+    <owl:Thing rdf:about="#QuantiCNVOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;QuantiCNV"/>
+        <ac:hasArgumentID>QuantiCNVOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#QTFormatInput -->
+
+    <dcdom:QTFormat rdf:about="#QTFormatInput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID>QTFormatInput</ac:hasArgumentID>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+    </dcdom:QTFormat>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#QTFormatOutput -->
+
+    <dcdom:QTFormat rdf:about="#QTFormatOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasDimensionality rdf:datatype="&xsd;int">1</ac:hasDimensionality>
+        <ac:hasArgumentName>-o2</ac:hasArgumentName>
+        <ac:hasArgumentID>QTFormatOutput</ac:hasArgumentID>
+    </dcdom:QTFormat>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#QTPCOutput -->
+
+    <owl:Thing rdf:about="#QTPCOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;QuantiPCFile"/>
+        <ac:hasArgumentID>QTPCOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o2</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#QuantiSNP_Detect_CNV -->
+
+    <owl:Thing rdf:about="#QuantiSNP_Detect_CNV">
+        <rdf:type rdf:resource="#QuantiSNP_Detect_CNV_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#GenderInput"/>
+        <ac:hasInput rdf:resource="#GenderInput"/>
+        <ac:hasArgument rdf:resource="#QuantiCNVOutput"/>
+        <ac:hasOutput rdf:resource="#QuantiCNVOutput"/>
+        <ac:hasInput rdf:resource="#QTFormatInput"/>
+        <ac:hasArgument rdf:resource="#QTFormatInput"/>
+        <ac:hasArgument rdf:resource="#QTPCOutput"/>
+        <ac:hasOutput rdf:resource="#QTPCOutput"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#R_Create_Mdist_Plot -->
+
+    <owl:Thing rdf:about="#R_Create_Mdist_Plot">
+        <rdf:type rdf:resource="#R_Create_Mdist_Plot_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#InputMDist"/>
+        <ac:hasArgument rdf:resource="#InputMDist"/>
+        <ac:hasArgument rdf:resource="#OutputJPGFile"/>
+        <ac:hasOutput rdf:resource="#OutputJPGFile"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#RareMergedCNVInput -->
+
+    <dcdom:RareMergedCNV rdf:about="#RareMergedCNVInput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+        <ac:hasArgumentID
+            >RareMergedCNVInput</ac:hasArgumentID>
+    </dcdom:RareMergedCNV>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#RareMergedCNVOutput -->
+
+    <owl:Thing rdf:about="#RareMergedCNVOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;RareMergedCNV"/>
+        <ac:hasArgumentID
+            >RareMergedCNVOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#ReformatCNVOutput -->
+
+    <owl:Thing rdf:about="#ReformatCNVOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;MergeCNVFormat"/>
+        <ac:hasArgumentID
+            >ReformatCNVOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#ReformatFormatedOutput -->
+
+    <ac:DataArgument rdf:about="#ReformatFormatedOutput">
+        <rdf:type rdf:resource="&dcdom;FormatedFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID>FormatedOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o2</ac:hasArgumentName>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Reformat_GnosisCNV -->
+
+    <Reformat_GnosisCNV_Class rdf:about="#Reformat_GnosisCNV">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#GnosisCNVInput"/>
+        <ac:hasArgument rdf:resource="#GnosisCNVInput"/>
+        <ac:hasOutput rdf:resource="#ReformatCNVOutput"/>
+        <ac:hasArgument rdf:resource="#ReformatCNVOutput"/>
+    </Reformat_GnosisCNV_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Reformat_PennCNV -->
+
+    <owl:Thing rdf:about="#Reformat_PennCNV">
+        <rdf:type rdf:resource="#Reformat_PennCNV_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#PennCNVInput"/>
+        <ac:hasInput rdf:resource="#PennCNVInput"/>
+        <ac:hasOutput rdf:resource="#ReformatCNVOutput"/>
+        <ac:hasArgument rdf:resource="#ReformatCNVOutput"/>
+        <ac:hasOutput rdf:resource="#ReformatFormatedOutput"/>
+        <ac:hasArgument rdf:resource="#ReformatFormatedOutput"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#QuantiCNVInput -->
+
+    <owl:Thing rdf:about="#QuantiCNVInput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;QuantiCNV"/>
+        <ac:hasArgumentID>QuantiCNVInput</ac:hasArgumentID>
+        <ac:hasArgumentName>-i1</ac:hasArgumentName>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Reformat_QuantiCNV -->
+
+    <Reformat_CNV_Class rdf:about="#Reformat_QuantiCNV">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#QuantiCNVInput"/>
+        <ac:hasInput rdf:resource="#QuantiCNVInput"/>
+        <ac:hasOutput rdf:resource="#ReformatCNVOutput"/>
+        <ac:hasArgument rdf:resource="#ReformatCNVOutput"/>
+    </Reformat_CNV_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Remove_Bad_Quality_from_PEDFile -->
+
+    <owl:Thing rdf:about="#Remove_Bad_Quality_from_PEDFile">
+        <rdf:type rdf:resource="#Remove_Bad_Quality_from_PEDFile_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#BadchipsInputForPedmod"/>
+        <ac:hasArgument rdf:resource="#BadchipsInputForPedmod"/>
+        <ac:hasArgument rdf:resource="#ModifiedPEDFileOutput"/>
+        <ac:hasOutput rdf:resource="#ModifiedPEDFileOutput"/>
+        <ac:hasInput rdf:resource="#PEDFileForModInput"/>
+        <ac:hasArgument rdf:resource="#PEDFileForModInput"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#SexSiftInput -->
+
+    <dcdom:PEDFile rdf:about="#SexSiftInput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID>SexSiftInput</ac:hasArgumentID>
+        <ac:hasArgumentName>-i2</ac:hasArgumentName>
+    </dcdom:PEDFile>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#SexSiftOutput -->
+
+    <ac:DataArgument rdf:about="#SexSiftOutput">
+        <rdf:type rdf:resource="&dcdom;PEDFile"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentID>SexSiftOutput</ac:hasArgumentID>
+        <ac:hasArgumentName>-o1</ac:hasArgumentName>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Sort_BAM_Data -->
+
+    <owl:Thing rdf:about="#Sort_BAM_Data">
+        <rdf:type rdf:resource="#Sort_BAM_Data_Class"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#InputBAMFile"/>
+        <ac:hasInput rdf:resource="#InputBAMFile"/>
+        <ac:hasOutput rdf:resource="#OutputSortedBAMFile"/>
+        <ac:hasArgument rdf:resource="#OutputSortedBAMFile"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#StratOut0 -->
+
+    <ac:DataArgument rdf:about="#StratOut0">
+        <rdf:type rdf:resource="&dcdom;Cluster0"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">6</ac:hasArgumentIndex>
+        <ac:hasArgumentID>cluster0</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#StratOut1 -->
+
+    <dcdom:Cluster1 rdf:about="#StratOut1">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">7</ac:hasArgumentIndex>
+        <ac:hasArgumentID>cluster1</ac:hasArgumentID>
+    </dcdom:Cluster1>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#StratOut2 -->
+
+    <dcdom:Cluster2 rdf:about="#StratOut2">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">8</ac:hasArgumentIndex>
+        <ac:hasArgumentID>cluster2</ac:hasArgumentID>
+    </dcdom:Cluster2>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#StratOut3 -->
+
+    <ac:DataArgument rdf:about="#StratOut3">
+        <rdf:type rdf:resource="&dcdom;Cluster3"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">9</ac:hasArgumentIndex>
+        <ac:hasArgumentID>cluster3</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#Structured_Association_Analysis -->
+
+    <Structured_Association_Analysis_Class rdf:about="#Structured_Association_Analysis">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#InputMaxPops"/>
+        <ac:hasArgument rdf:resource="#InputMaxPops"/>
+        <ac:hasArgument rdf:resource="#InputStructureFormat"/>
+        <ac:hasInput rdf:resource="#InputStructureFormat"/>
+        <ac:hasArgument rdf:resource="#InputStructureParams"/>
+        <ac:hasInput rdf:resource="#InputStructureParams"/>
+        <ac:hasOutput rdf:resource="#StructureOutput"/>
+        <ac:hasArgument rdf:resource="#StructureOutput"/>
+    </Structured_Association_Analysis_Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#StructureOutput -->
+
+    <owl:Thing rdf:about="#StructureOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <rdf:type rdf:resource="&dcdom;StructureOutputFile"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">3</ac:hasArgumentIndex>
+        <ac:hasArgumentID>StructureOutput</ac:hasArgumentID>
+    </owl:Thing>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/cgsmd/library.owl#TDT -->
+
+    <TDT_Class rdf:about="#TDT">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#InputBIMFile"/>
+        <ac:hasInput rdf:resource="#InputBIMFile"/>
+        <ac:hasInput rdf:resource="#InputBPEDFile"/>
+        <ac:hasArgument rdf:resource="#InputBPEDFile"/>
+        <ac:hasInput rdf:resource="#InputFAMFile"/>
+        <ac:hasArgument rdf:resource="#InputFAMFile"/>
+        <ac:hasArgument rdf:resource="#OutputTDT"/>
+        <ac:hasOutput rdf:resource="#OutputTDT"/>
+        <ac:hasArgument rdf:resource="#OutputTDTPerm"/>
+        <ac:hasOutput rdf:resource="#OutputTDTPerm"/>
+    </TDT_Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,428 @@
+<?xml version="1.0"?>
+<rdf:RDF
+  xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+  xmlns="http://wings-workflows.org/ontology/dc/dm/library-dc-test-v1.8.owl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+  xmlns:dcdm="http://wings-workflows.org/ontology/dc/dm/ontology.owl#"
+  xml:base="http://wings-workflows.org/ontology/dc/dm/library-dc-test-v1.8.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl"/>
+  </owl:Ontology>
+  <rdf:Property rdf:about="http://wings-workflows.org/ontology/dc/dm/ontology.owl#hasLocation"/>
+    <dc:Location rdf:ID="ftp_hampshire">
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#hampshire"/>
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#ftp"/>
+    </dc:Location>
+    <dc:Location rdf:ID="ftp_isi">
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#isi"/>
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#ftp"/>
+    </dc:Location>
+    <dc:Location rdf:ID="ftp_umass">
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#umass"/>
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#ftp"/>
+    </dc:Location>
+    <dc:Location rdf:ID="gsiftp_hampshire">
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#hampshire"/>
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#gsiftp"/>
+    </dc:Location>
+    <dc:Location rdf:ID="gsiftp_isi">
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#isi"/>
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#gsiftp"/>
+    <dc:hasURI>sukhna.isi.edu/nfs/cgt-scratch/vahi/tangram/</dc:hasURI>
+    </dc:Location>
+    <dc:Location rdf:ID="gsiftp_umass">
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#umass"/>
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#gsiftp"/>
+    </dc:Location>
+    <dc:Location rdf:ID="http_hampshire">
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#hampshire"/>
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#http"/>
+    </dc:Location>
+    <dc:Location rdf:ID="http_isi">
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#isi"/>
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#http"/>
+    </dc:Location>
+    <dc:Location rdf:ID="http_umass">
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#umass"/>
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#http"/>
+    </dc:Location>
+    <dc:Location rdf:ID="https_hampshire">
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#hampshire"/>
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#https"/>
+    </dc:Location>
+    <dc:Location rdf:ID="https_isi">
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#isi"/>
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#https"/>
+    </dc:Location>
+    <dc:Location rdf:ID="https_umass">
+    <dc:hasSite rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#umass"/>
+    <dc:hasProtocol rdf:resource="http://wings-workflows.org/ontology/dc/ontology.owl#https"/>
+    </dc:Location>
+  <dcdm:DiscreteInstance rdf:ID="soybean-2007-07-30-202315">
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">36</dcdm:hasNumberOfClasses>
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#soybean"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">27113</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"7f18cc29716ca240aaead60ef538ca32"</dc:hasMd5sum>
+</dcdm:DiscreteInstance>
+  <dcdm:ContinuousInstance rdf:ID="weather-2007-07-31-101503">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#weather"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">22378</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"8b606dc562c7bc903c1ec11460e685ee"</dc:hasMd5sum>
+</dcdm:ContinuousInstance>
+  <dcdm:ContinuousInstance rdf:ID="cpu-2007-07-30-194524">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#cpu"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2607</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"3c29e2483ba9f9090b93ca63a5f6c9cf"</dc:hasMd5sum>
+</dcdm:ContinuousInstance>
+  <dcdm:ContinuousInstance rdf:ID="iris-2007-07-30-195138">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#iris"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">303710</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"1696ff3dbb4abac8396478854c89f88b"</dc:hasMd5sum>
+</dcdm:ContinuousInstance>
+  <dcdm:DiscreteInstance rdf:ID="soybean-2007-07-30-212146">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">36</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#soybean"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2699462</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"2b3cf8da90009c4fbc6e0bdaf5f3ff82"</dc:hasMd5sum>
+</dcdm:DiscreteInstance>
+  <dcdm:DiscreteInstance rdf:ID="contact-lenses-2007-07-30-194138">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#contact-lenses"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#east-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3924</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"e8c7d4e341a8ba1c9bfc69e2c02d6f3e"</dc:hasMd5sum>
+</dcdm:DiscreteInstance>
+  <dcdm:ContinuousInstance rdf:ID="labor-2007-07-30-195521">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">17</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#labor"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">59797</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"f1265f1d8ec50e951c05875795ad457d"</dc:hasMd5sum>
+</dcdm:ContinuousInstance>
+  <dcdm:ContinuousInstance rdf:ID="cpu-2007-07-31-161618">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#cpu"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2388537</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"86018b291c7b8d0c3981c072216788b1"</dc:hasMd5sum>
+</dcdm:ContinuousInstance>
+  <dcdm:ContinuousInstance rdf:ID="labor-2007-07-30-195539">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">17</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#labor"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">588210</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"0758f573301096e5b74e00bce82729fd"</dc:hasMd5sum>
+</dcdm:ContinuousInstance>
+  <dcdm:DiscreteInstance rdf:ID="weather-nominal-2007-07-30-221909">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</dcdm:hasNumberOfClasses>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#weather-nominal"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">27061</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"718dec4819176ba1e4998e12c72c3f69"</dc:hasMd5sum>
+</dcdm:DiscreteInstance>
+  <dcdm:DiscreteInstance rdf:ID="contact-lenses-2007-07-31-161811">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#contact-lenses"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3648873</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"90fcdd3f23c4d68f77e3ebc06c974439"</dc:hasMd5sum>
+</dcdm:DiscreteInstance>
+  <dcdm:ContinuousInstance rdf:ID="labor-2007-07-30-195519">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">17</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#labor"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6689</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"52a7cfbb557e2263d4e25a7aae2cbf08"</dc:hasMd5sum>
+</dcdm:ContinuousInstance>
+  <dcdm:ContinuousInstance rdf:ID="iris-2007-07-30-195131">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#iris"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3269</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"52885a85d88063563c0ef8a168759219"</dc:hasMd5sum>
+</dcdm:ContinuousInstance>
+  <dcdm:ContinuousInstance rdf:ID="iris-2007-07-31-161500">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#iris"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3036027</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"b41ce9d6353de567aa929c69dea3e46e"</dc:hasMd5sum>
+</dcdm:ContinuousInstance>
+  <dcdm:ContinuousInstance rdf:ID="cpu-2007-07-30-194531">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#cpu"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#east-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">240833</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"3bb72fadb8e4c74ed80fa070abc4fc34"</dc:hasMd5sum>
+</dcdm:ContinuousInstance>
+  <dcdm:DiscreteInstance rdf:ID="soybean-2007-07-31-155919">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">36</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#soybean"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">25115841</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"f8c6164ca0881e4e96e1653888bfa795"</dc:hasMd5sum>
+</dcdm:DiscreteInstance>
+  <dcdm:DiscreteInstance rdf:ID="weather-nominal-2007-07-31-155626">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#weather-nominal"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2683324</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"ce8932de56dba888a282877f45dfe3cf"</dc:hasMd5sum>
+</dcdm:DiscreteInstance>
+  <dcdm:ContinuousInstance rdf:ID="weather-2007-07-31-101501">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#weather"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#east-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2413</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"80763f5f68dc9e297a1cc88d8ce9bcae"</dc:hasMd5sum>
+</dcdm:ContinuousInstance>
+  <dcdm:ContinuousInstance rdf:ID="cpu-2007-07-30-194528">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#cpu"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">24151</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"3a19ac1c5ca2b4469499a1076e78be72"</dc:hasMd5sum>
+</dcdm:ContinuousInstance>
+  <dcdm:DiscreteInstance rdf:ID="contact-lenses-2007-07-30-194140">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#contact-lenses"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#east-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">36475</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"2a1b7ca1f7f8b75057499445bda52de4"</dc:hasMd5sum>
+</dcdm:DiscreteInstance>
+  <dcdm:ContinuousInstance rdf:ID="labor-2007-07-31-161000">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">17</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#labor"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#east-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5913550</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"4b5118d03a378096c59945114261ac2c"</dc:hasMd5sum>
+</dcdm:ContinuousInstance>
+  <dcdm:DiscreteInstance rdf:ID="soybean-2007-07-30-202351">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">36</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#soybean"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#east-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">272223</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"2ccbd7375e6592e1ccf476818ea48506"</dc:hasMd5sum>
+</dcdm:DiscreteInstance>
+  <dcdm:ContinuousInstance rdf:ID="iris-2007-07-30-195133">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#iris"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#east-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">30612</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"a670b56c32fc8a18761b91b1c05afd4c"</dc:hasMd5sum>
+</dcdm:ContinuousInstance>
+  <dcdm:ContinuousInstance rdf:ID="weather-2007-07-31-155754">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#weather"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#east-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2205126</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"9c658eaae75824f34d47c47623c57e1c"</dc:hasMd5sum>
+</dcdm:ContinuousInstance>
+  <dcdm:DiscreteInstance rdf:ID="weather-nominal-2007-07-30-221907">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#weather-nominal"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#east-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2915</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"754325ee17279cb67de13b7bf2a16be0"</dc:hasMd5sum>
+</dcdm:DiscreteInstance>
+  <dcdm:DiscreteInstance rdf:ID="weather-nominal-2007-07-30-222103">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#weather-nominal"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#east-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">264353</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"72a1ee26302551ea2aa7be104518506f"</dc:hasMd5sum>
+</dcdm:DiscreteInstance>
+  <dcdm:DiscreteInstance rdf:ID="contact-lenses-2007-07-30-194144">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#contact-lenses"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#east-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">361818</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"5e4ba352f3018ab3b57df47256bfe50f"</dc:hasMd5sum>
+</dcdm:DiscreteInstance>
+  <dcdm:ContinuousInstance rdf:ID="weather-2007-07-31-101656">
+    <dc:hasLocation rdf:resource="#gsiftp_isi"/>
+    <dcdm:hasNumberOfClasses rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</dcdm:hasNumberOfClasses>
+    <dcdm:hasNumberOfInstances rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10000</dcdm:hasNumberOfInstances>
+    <dcdm:hasDomain rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#weather"/>
+    <dcdm:isDiscrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isDiscrete>
+    <dcdm:hasMissingValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dcdm:hasMissingValues>
+    <dcdm:hasArea rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl#west-la"/>
+    <dcdm:isSampled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</dcdm:isSampled>
+    <dcdm:hasNumberOfBins rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</dcdm:hasNumberOfBins>
+    <dc:hasSizeInKB rdf:datatype="http://www.w3.org/2001/XMLSchema#int">218349</dc:hasSizeInKB>
+    <dc:hasMd5sum rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"9641b0f628838ec8a8b752cd317985d2"</dc:hasMd5sum>
+</dcdm:ContinuousInstance>
+</rdf:RDF>

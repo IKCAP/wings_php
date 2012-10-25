@@ -1,0 +1,1287 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY dc "http://wings-workflows.org/ontology/dc/ontology.owl#" >
+    <!ENTITY ac "http://wings-workflows.org/ontology/ac/ontology.owl#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY library "http://wings-workflows.org/ontology/ac/dm/library.owl#" >
+    <!ENTITY dcdm "http://wings-workflows.org/ontology/dc/dm/ontology.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://wings-workflows.org/ontology/ac/dm/library.owl#"
+     xml:base="http://wings-workflows.org/ontology/ac/dm/library.owl"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:dcdm="http://wings-workflows.org/ontology/dc/dm/ontology.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dc="http://wings-workflows.org/ontology/dc/ontology.owl#"
+     xmlns:library="http://wings-workflows.org/ontology/ac/dm/library.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ac="http://wings-workflows.org/ontology/ac/ontology.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="http://wings-workflows.org/ontology/ac/ontology.owl"/>
+        <owl:imports rdf:resource="http://wings-workflows.org/ontology/dc/dm/ontology.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasArgument -->
+
+    <owl:ObjectProperty rdf:about="&ac;hasArgument"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasInput -->
+
+    <owl:ObjectProperty rdf:about="&ac;hasInput"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="&ac;hasOutput"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasArgumentID -->
+
+    <owl:DatatypeProperty rdf:about="&ac;hasArgumentID"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasArgumentIndex -->
+
+    <owl:DatatypeProperty rdf:about="&ac;hasArgumentIndex"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#hasArgumentName -->
+
+    <owl:DatatypeProperty rdf:about="&ac;hasArgumentName"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#isConcrete -->
+
+    <owl:DatatypeProperty rdf:about="&ac;isConcrete"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#isDiscrete -->
+
+    <owl:DatatypeProperty rdf:about="&dcdm;isDiscrete"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#isNormalized -->
+
+    <owl:DatatypeProperty rdf:about="&dcdm;isNormalized"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#isRandomized -->
+
+    <owl:DatatypeProperty rdf:about="&dcdm;isRandomized"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#isSampled -->
+
+    <owl:DatatypeProperty rdf:about="&dcdm;isSampled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#BayesClassifierClass -->
+
+    <owl:Class rdf:about="#BayesClassifierClass">
+        <rdfs:subClassOf rdf:resource="#ClassifierClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#BayesModelerClass -->
+
+    <owl:Class rdf:about="#BayesModelerClass">
+        <rdfs:subClassOf rdf:resource="#ModelerClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#BayesNetClass -->
+
+    <owl:Class rdf:about="#BayesNetClass">
+        <rdfs:subClassOf rdf:resource="#BayesModelerClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#BayesNetClassifierClass -->
+
+    <owl:Class rdf:about="#BayesNetClassifierClass">
+        <rdfs:subClassOf rdf:resource="#BayesClassifierClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#ClassifierClass -->
+
+    <owl:Class rdf:about="#ClassifierClass">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#DTCClass -->
+
+    <owl:Class rdf:about="#DTCClass">
+        <rdfs:subClassOf rdf:resource="#ClassifierClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#DTCDiscreteInstancesClass -->
+
+    <owl:Class rdf:about="#DTCDiscreteInstancesClass">
+        <rdfs:subClassOf rdf:resource="#DTCClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#DTMClass -->
+
+    <owl:Class rdf:about="#DTMClass">
+        <rdfs:subClassOf rdf:resource="#ModelerClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >DTM = Decision Tree Modeler</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#DTMDiscreteInstancesClass -->
+
+    <owl:Class rdf:about="#DTMDiscreteInstancesClass">
+        <rdfs:subClassOf rdf:resource="#DTMClass"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Decision Tree Modeler for Discrete Instances</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#DiscretizeClass -->
+
+    <owl:Class rdf:about="#DiscretizeClass">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#HNBClassifierClass -->
+
+    <owl:Class rdf:about="#HNBClassifierClass">
+        <rdfs:subClassOf rdf:resource="#BayesClassifierClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#HNBModelClass -->
+
+    <owl:Class rdf:about="#HNBModelClass">
+        <rdfs:subClassOf rdf:resource="&dcdm;BayesModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#HNBModelerClass -->
+
+    <owl:Class rdf:about="#HNBModelerClass">
+        <rdfs:subClassOf rdf:resource="#BayesModelerClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#ID3ModelerClass -->
+
+    <owl:Class rdf:about="#ID3ModelerClass">
+        <rdfs:subClassOf rdf:resource="#DTMDiscreteInstancesClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#Id3ClassifierClass -->
+
+    <owl:Class rdf:about="#Id3ClassifierClass">
+        <rdfs:subClassOf rdf:resource="#DTCDiscreteInstancesClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#Id3ModelClass -->
+
+    <owl:Class rdf:about="#Id3ModelClass">
+        <rdfs:subClassOf rdf:resource="&dcdm;DecisionTreeModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#J48ClassifierClass -->
+
+    <owl:Class rdf:about="#J48ClassifierClass">
+        <rdfs:subClassOf rdf:resource="#DTCClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#J48ModelClass -->
+
+    <owl:Class rdf:about="#J48ModelClass">
+        <rdfs:subClassOf rdf:resource="&dcdm;DecisionTreeModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#J48ModelerClass -->
+
+    <owl:Class rdf:about="#J48ModelerClass">
+        <rdfs:subClassOf rdf:resource="#DTMClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#LmtClassifierClass -->
+
+    <owl:Class rdf:about="#LmtClassifierClass">
+        <rdfs:subClassOf rdf:resource="#DTCClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#LmtModelClass -->
+
+    <owl:Class rdf:about="#LmtModelClass">
+        <rdfs:subClassOf rdf:resource="&dcdm;DecisionTreeModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#LmtModelerClass -->
+
+    <owl:Class rdf:about="#LmtModelerClass">
+        <rdfs:subClassOf rdf:resource="#DTMClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#ModelerClass -->
+
+    <owl:Class rdf:about="#ModelerClass">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#NaiveBayesClass -->
+
+    <owl:Class rdf:about="#NaiveBayesClass">
+        <rdfs:subClassOf rdf:resource="#BayesModelerClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#NaiveBayesClassifierClass -->
+
+    <owl:Class rdf:about="#NaiveBayesClassifierClass">
+        <rdfs:subClassOf rdf:resource="#BayesClassifierClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#NaiveBayesModelClass -->
+
+    <owl:Class rdf:about="#NaiveBayesModelClass">
+        <rdfs:subClassOf rdf:resource="&dcdm;BayesModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#NormalizeClass -->
+
+    <owl:Class rdf:about="#NormalizeClass">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#RandomSampleNClass -->
+
+    <owl:Class rdf:about="#RandomSampleNClass">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#RandomizeClass -->
+
+    <owl:Class rdf:about="#RandomizeClass">
+        <rdfs:subClassOf rdf:resource="&ac;Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#Component -->
+
+    <owl:Class rdf:about="&ac;Component"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#DataArgument -->
+
+    <owl:Class rdf:about="&ac;DataArgument"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/ontology.owl#ParameterArgument -->
+
+    <owl:Class rdf:about="&ac;ParameterArgument"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#BayesModel -->
+
+    <owl:Class rdf:about="&dcdm;BayesModel"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#Classification -->
+
+    <owl:Class rdf:about="&dcdm;Classification"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#DecisionTreeModel -->
+
+    <owl:Class rdf:about="&dcdm;DecisionTreeModel"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#DtmClassification -->
+
+    <owl:Class rdf:about="&dcdm;DtmClassification"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#Instance -->
+
+    <owl:Class rdf:about="&dcdm;Instance"/>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/dc/dm/ontology.owl#Model -->
+
+    <owl:Class rdf:about="&dcdm;Model"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#BayesClassifier -->
+
+    <BayesClassifierClass rdf:about="#BayesClassifier">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">false</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#classifierInputData"/>
+        <ac:hasInput rdf:resource="#classifierInputData"/>
+        <ac:hasArgument rdf:resource="#classifierInputModel"/>
+        <ac:hasInput rdf:resource="#classifierInputModel"/>
+        <ac:hasOutput rdf:resource="#classifierOutput"/>
+        <ac:hasArgument rdf:resource="#classifierOutput"/>
+    </BayesClassifierClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#BayesModeler -->
+
+    <BayesModelerClass rdf:about="#BayesModeler">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">false</ac:isConcrete>
+        <ac:hasInput rdf:resource="#javaMaxHeapSize"/>
+        <ac:hasArgument rdf:resource="#javaMaxHeapSize"/>
+        <ac:hasInput rdf:resource="#modelerClassIndex"/>
+        <ac:hasArgument rdf:resource="#modelerClassIndex"/>
+        <ac:hasInput rdf:resource="#modelerTrainingData"/>
+        <ac:hasArgument rdf:resource="#modelerTrainingData"/>
+        <ac:hasOutput rdf:resource="#outputModel"/>
+        <ac:hasArgument rdf:resource="#outputModel"/>
+    </BayesModelerClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#BayesNetClassifier -->
+
+    <BayesNetClassifierClass rdf:about="#BayesNetClassifier">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#classifierInputData3"/>
+        <ac:hasArgument rdf:resource="#classifierInputData3"/>
+        <ac:hasArgument rdf:resource="#classifierInputModel3"/>
+        <ac:hasInput rdf:resource="#classifierInputModel3"/>
+        <ac:hasOutput rdf:resource="#classifierOutput3"/>
+        <ac:hasArgument rdf:resource="#classifierOutput3"/>
+    </BayesNetClassifierClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#BayesNetModeler -->
+
+    <BayesNetClass rdf:about="#BayesNetModeler">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#javaMaxHeapSize"/>
+        <ac:hasArgument rdf:resource="#javaMaxHeapSize"/>
+        <ac:hasArgument rdf:resource="#modelerClassIndex"/>
+        <ac:hasInput rdf:resource="#modelerClassIndex"/>
+        <ac:hasInput rdf:resource="#modelerTrainingData3"/>
+        <ac:hasArgument rdf:resource="#modelerTrainingData3"/>
+        <ac:hasOutput rdf:resource="#outputModel3"/>
+        <ac:hasArgument rdf:resource="#outputModel3"/>
+    </BayesNetClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#Classifier -->
+
+    <ClassifierClass rdf:about="#Classifier">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">false</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#classifierInputData"/>
+        <ac:hasInput rdf:resource="#classifierInputData"/>
+        <ac:hasArgument rdf:resource="#classifierInputModel"/>
+        <ac:hasInput rdf:resource="#classifierInputModel"/>
+        <ac:hasArgument rdf:resource="#classifierOutput"/>
+        <ac:hasOutput rdf:resource="#classifierOutput"/>
+    </ClassifierClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#DTClassifier -->
+
+    <DTCClass rdf:about="#DTClassifier">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">false</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#classifierInputData"/>
+        <ac:hasInput rdf:resource="#classifierInputData"/>
+        <ac:hasArgument rdf:resource="#classifierInputModel"/>
+        <ac:hasInput rdf:resource="#classifierInputModel"/>
+        <ac:hasOutput rdf:resource="#classifierOutput"/>
+        <ac:hasArgument rdf:resource="#classifierOutput"/>
+    </DTCClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#DTMModeler -->
+
+    <DTMClass rdf:about="#DTMModeler">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">false</ac:isConcrete>
+        <ac:hasInput rdf:resource="#javaMaxHeapSize"/>
+        <ac:hasArgument rdf:resource="#javaMaxHeapSize"/>
+        <ac:hasArgument rdf:resource="#modelerClassIndex"/>
+        <ac:hasInput rdf:resource="#modelerClassIndex"/>
+        <ac:hasArgument rdf:resource="#modelerTrainingData"/>
+        <ac:hasInput rdf:resource="#modelerTrainingData"/>
+        <ac:hasArgument rdf:resource="#outputModel"/>
+        <ac:hasOutput rdf:resource="#outputModel"/>
+    </DTMClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#DataArgument_10 -->
+
+    <dcdm:Classification rdf:about="#DataArgument_10">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-O</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >classifierOutput</ac:hasArgumentID>
+    </dcdm:Classification>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#DataArgument_11 -->
+
+    <dcdm:Model rdf:about="#DataArgument_11">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-l</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >classifierInputModel</ac:hasArgumentID>
+    </dcdm:Model>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#DataArgument_12 -->
+
+    <ac:DataArgument rdf:about="#DataArgument_12">
+        <rdf:type rdf:resource="&dcdm;Instance"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-T</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >classifierInputData</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#DataArgument_14 -->
+
+    <dcdm:Instance rdf:about="#DataArgument_14">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-o</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >discretizeOutputData</ac:hasArgumentID>
+        <dcdm:isDiscrete rdf:datatype="&xsd;boolean">true</dcdm:isDiscrete>
+    </dcdm:Instance>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#DataArgument_5 -->
+
+    <dcdm:Model rdf:about="#DataArgument_5">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-d</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">outputModel</ac:hasArgumentID>
+    </dcdm:Model>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#Discretize -->
+
+    <DiscretizeClass rdf:about="#Discretize">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#discretizeClassIndex"/>
+        <ac:hasArgument rdf:resource="#discretizeClassIndex"/>
+        <ac:hasInput rdf:resource="#discretizeInputData"/>
+        <ac:hasArgument rdf:resource="#discretizeInputData"/>
+        <ac:hasInput rdf:resource="#discretizeNumberOfBins"/>
+        <ac:hasArgument rdf:resource="#discretizeNumberOfBins"/>
+        <ac:hasOutput rdf:resource="#discretizeOutputData"/>
+        <ac:hasArgument rdf:resource="#discretizeOutputData"/>
+    </DiscretizeClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#Discretize2 -->
+
+    <rdf:Description rdf:about="#Discretize2">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#discretizeClassIndex"/>
+        <ac:hasInput rdf:resource="#discretizeClassIndex"/>
+        <ac:hasArgument rdf:resource="#discretizeInputData"/>
+        <ac:hasInput rdf:resource="#discretizeInputData"/>
+        <ac:hasInput rdf:resource="#discretizeNumberOfBins"/>
+        <ac:hasArgument rdf:resource="#discretizeNumberOfBins"/>
+        <ac:hasArgument rdf:resource="#discretizeOutputData"/>
+        <ac:hasOutput rdf:resource="#discretizeOutputData"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#HBNClassifier -->
+
+    <HNBClassifierClass rdf:about="#HBNClassifier">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#classifierInputData3"/>
+        <ac:hasInput rdf:resource="#classifierInputData3"/>
+        <ac:hasArgument rdf:resource="#classifierInputModel3"/>
+        <ac:hasInput rdf:resource="#classifierInputModel3"/>
+        <ac:hasArgument rdf:resource="#classifierOutput3"/>
+        <ac:hasOutput rdf:resource="#classifierOutput3"/>
+    </HNBClassifierClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#HNBModeler -->
+
+    <HNBModelerClass rdf:about="#HNBModeler">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#javaMaxHeapSize"/>
+        <ac:hasInput rdf:resource="#javaMaxHeapSize"/>
+        <ac:hasArgument rdf:resource="#modelerClassIndex"/>
+        <ac:hasInput rdf:resource="#modelerClassIndex"/>
+        <ac:hasInput rdf:resource="#modelerTrainingData3"/>
+        <ac:hasArgument rdf:resource="#modelerTrainingData3"/>
+        <ac:hasArgument rdf:resource="#outputModel3"/>
+        <ac:hasOutput rdf:resource="#outputModel3"/>
+    </HNBModelerClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#ID3Modeler -->
+
+    <ID3ModelerClass rdf:about="#ID3Modeler">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#javaMaxHeapSize"/>
+        <ac:hasArgument rdf:resource="#javaMaxHeapSize"/>
+        <ac:hasArgument rdf:resource="#modelerClassIndex"/>
+        <ac:hasInput rdf:resource="#modelerClassIndex"/>
+        <ac:hasInput rdf:resource="#modelerTrainingData3"/>
+        <ac:hasArgument rdf:resource="#modelerTrainingData3"/>
+        <ac:hasOutput rdf:resource="#outputModel1"/>
+        <ac:hasArgument rdf:resource="#outputModel1"/>
+    </ID3ModelerClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#Id3Classifier -->
+
+    <Id3ClassifierClass rdf:about="#Id3Classifier">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#classifierInputData3"/>
+        <ac:hasInput rdf:resource="#classifierInputData3"/>
+        <ac:hasArgument rdf:resource="#classifierInputModel3"/>
+        <ac:hasInput rdf:resource="#classifierInputModel3"/>
+        <ac:hasOutput rdf:resource="#classifierOutput2"/>
+        <ac:hasArgument rdf:resource="#classifierOutput2"/>
+    </Id3ClassifierClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#Instance_15 -->
+
+    <dcdm:Instance rdf:about="#Instance_15">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-i</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >discretizeInputData</ac:hasArgumentID>
+    </dcdm:Instance>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#Instance_6 -->
+
+    <ac:DataArgument rdf:about="#Instance_6">
+        <rdf:type rdf:resource="&dcdm;Instance"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-t</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">trainingData</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#J48Classifier -->
+
+    <J48ClassifierClass rdf:about="#J48Classifier">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#classifierInputData"/>
+        <ac:hasInput rdf:resource="#classifierInputData"/>
+        <ac:hasInput rdf:resource="#classifierInputModel"/>
+        <ac:hasArgument rdf:resource="#classifierInputModel"/>
+        <ac:hasOutput rdf:resource="#classifierOutput2"/>
+        <ac:hasArgument rdf:resource="#classifierOutput2"/>
+    </J48ClassifierClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#J48Modeler -->
+
+    <J48ModelerClass rdf:about="#J48Modeler">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#javaMaxHeapSize"/>
+        <ac:hasInput rdf:resource="#javaMaxHeapSize"/>
+        <ac:hasArgument rdf:resource="#modelerClassIndex"/>
+        <ac:hasInput rdf:resource="#modelerClassIndex"/>
+        <ac:hasInput rdf:resource="#modelerTrainingData"/>
+        <ac:hasArgument rdf:resource="#modelerTrainingData"/>
+        <ac:hasArgument rdf:resource="#outputModel1"/>
+        <ac:hasOutput rdf:resource="#outputModel1"/>
+    </J48ModelerClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#LmtClassifier -->
+
+    <LmtClassifierClass rdf:about="#LmtClassifier">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#classifierInputData"/>
+        <ac:hasArgument rdf:resource="#classifierInputData"/>
+        <ac:hasInput rdf:resource="#classifierInputModel"/>
+        <ac:hasArgument rdf:resource="#classifierInputModel"/>
+        <ac:hasOutput rdf:resource="#classifierOutput2"/>
+        <ac:hasArgument rdf:resource="#classifierOutput2"/>
+    </LmtClassifierClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#LmtModeler -->
+
+    <LmtModelerClass rdf:about="#LmtModeler">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#javaMaxHeapSize"/>
+        <ac:hasInput rdf:resource="#javaMaxHeapSize"/>
+        <ac:hasInput rdf:resource="#modelerClassIndex"/>
+        <ac:hasArgument rdf:resource="#modelerClassIndex"/>
+        <ac:hasArgument rdf:resource="#modelerTrainingData"/>
+        <ac:hasInput rdf:resource="#modelerTrainingData"/>
+        <ac:hasOutput rdf:resource="#outputModel1"/>
+        <ac:hasArgument rdf:resource="#outputModel1"/>
+    </LmtModelerClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#Modeler -->
+
+    <ModelerClass rdf:about="#Modeler">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">false</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#javaMaxHeapSize"/>
+        <ac:hasInput rdf:resource="#javaMaxHeapSize"/>
+        <ac:hasInput rdf:resource="#modelerClassIndex"/>
+        <ac:hasArgument rdf:resource="#modelerClassIndex"/>
+        <ac:hasArgument rdf:resource="#modelerTrainingData"/>
+        <ac:hasInput rdf:resource="#modelerTrainingData"/>
+        <ac:hasArgument rdf:resource="#outputModel"/>
+        <ac:hasOutput rdf:resource="#outputModel"/>
+    </ModelerClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#NaiveBayesClassifier -->
+
+    <NaiveBayesClassifierClass rdf:about="#NaiveBayesClassifier">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#classifierInputData3"/>
+        <ac:hasInput rdf:resource="#classifierInputData3"/>
+        <ac:hasInput rdf:resource="#classifierInputModel3"/>
+        <ac:hasArgument rdf:resource="#classifierInputModel3"/>
+        <ac:hasArgument rdf:resource="#classifierOutput3"/>
+        <ac:hasOutput rdf:resource="#classifierOutput3"/>
+    </NaiveBayesClassifierClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#NaiveBayesModeler -->
+
+    <NaiveBayesClass rdf:about="#NaiveBayesModeler">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#javaMaxHeapSize"/>
+        <ac:hasInput rdf:resource="#javaMaxHeapSize"/>
+        <ac:hasInput rdf:resource="#modelerClassIndex"/>
+        <ac:hasArgument rdf:resource="#modelerClassIndex"/>
+        <ac:hasArgument rdf:resource="#modelerTrainingData3"/>
+        <ac:hasInput rdf:resource="#modelerTrainingData3"/>
+        <ac:hasOutput rdf:resource="#outputModel3"/>
+        <ac:hasArgument rdf:resource="#outputModel3"/>
+    </NaiveBayesClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#Normalize -->
+
+    <NormalizeClass rdf:about="#Normalize">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasInput rdf:resource="#normalizeInputData"/>
+        <ac:hasArgument rdf:resource="#normalizeInputData"/>
+        <ac:hasArgument rdf:resource="#normalizeOutputData"/>
+        <ac:hasOutput rdf:resource="#normalizeOutputData"/>
+        <ac:hasInput rdf:resource="#normalizeRange"/>
+        <ac:hasArgument rdf:resource="#normalizeRange"/>
+    </NormalizeClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#ParameterArgument_16 -->
+
+    <ac:ParameterArgument rdf:about="#ParameterArgument_16">
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-B</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">numberOfBins</ac:hasArgumentID>
+    </ac:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#ParameterArgument_17 -->
+
+    <ac:ParameterArgument rdf:about="#ParameterArgument_17">
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-c</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">3</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">classIndex</ac:hasArgumentID>
+    </ac:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#ParameterArgument_7 -->
+
+    <ac:ParameterArgument rdf:about="#ParameterArgument_7">
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-c</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">3</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >modelerClassIndex</ac:hasArgumentID>
+    </ac:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#ParameterArgument_8 -->
+
+    <ac:ParameterArgument rdf:about="#ParameterArgument_8">
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-Xmx</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">javaMaxHeapSize</ac:hasArgumentID>
+    </ac:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#RandomSampleN -->
+
+    <RandomSampleNClass rdf:about="#RandomSampleN">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#randomSampleNClassIndex"/>
+        <ac:hasInput rdf:resource="#randomSampleNClassIndex"/>
+        <ac:hasInput rdf:resource="#randomSampleNInputData"/>
+        <ac:hasArgument rdf:resource="#randomSampleNInputData"/>
+        <ac:hasInput rdf:resource="#randomSampleNNumberOfInstancesToSample"/>
+        <ac:hasArgument rdf:resource="#randomSampleNNumberOfInstancesToSample"/>
+        <ac:hasOutput rdf:resource="#randomSampleNOutputData"/>
+        <ac:hasArgument rdf:resource="#randomSampleNOutputData"/>
+    </RandomSampleNClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#Randomize -->
+
+    <RandomizeClass rdf:about="#Randomize">
+        <ac:isConcrete rdf:datatype="&xsd;boolean">true</ac:isConcrete>
+        <ac:hasArgument rdf:resource="#randomizeInputData"/>
+        <ac:hasInput rdf:resource="#randomizeInputData"/>
+        <ac:hasOutput rdf:resource="#randomizeOutputData"/>
+        <ac:hasArgument rdf:resource="#randomizeOutputData"/>
+    </RandomizeClass>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#classifierDtmOutput -->
+
+    <ac:DataArgument rdf:about="#classifierDtmOutput">
+        <rdf:type rdf:resource="&dcdm;DtmClassification"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-O</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >classifierOutput</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#classifierInputData -->
+
+    <ac:DataArgument rdf:about="#classifierInputData">
+        <rdf:type rdf:resource="&dcdm;Instance"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-T</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >classifierInputData</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#classifierInputData3 -->
+
+    <dcdm:Instance rdf:about="#classifierInputData3">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >classifierInputData</ac:hasArgumentID>
+        <dcdm:isDiscrete rdf:datatype="&xsd;boolean">true</dcdm:isDiscrete>
+        <ac:hasArgumentName xml:lang="en">-T</ac:hasArgumentName>
+    </dcdm:Instance>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#classifierInputModel -->
+
+    <ac:DataArgument rdf:about="#classifierInputModel">
+        <rdf:type rdf:resource="&dcdm;Model"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-l</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >classifierInputModel</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#classifierInputModel3 -->
+
+    <ac:DataArgument rdf:about="#classifierInputModel3">
+        <rdf:type rdf:resource="&dcdm;Model"/>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >classifierInputModel</ac:hasArgumentID>
+        <dcdm:isDiscrete rdf:datatype="&xsd;boolean">true</dcdm:isDiscrete>
+        <ac:hasArgumentName xml:lang="en">-l</ac:hasArgumentName>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#classifierOutput -->
+
+    <dcdm:Classification rdf:about="#classifierOutput">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-O</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >classifierOutput</ac:hasArgumentID>
+    </dcdm:Classification>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#classifierOutput2 -->
+
+    <dcdm:Classification rdf:about="#classifierOutput2">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-O</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >classifierOutput</ac:hasArgumentID>
+    </dcdm:Classification>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#classifierOutput3 -->
+
+    <ac:DataArgument rdf:about="#classifierOutput3">
+        <rdf:type rdf:resource="&dcdm;Classification"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-O</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >classifierOutput</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#discretizeClassIndex -->
+
+    <ac:ParameterArgument rdf:about="#discretizeClassIndex">
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-c</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">3</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">classIndex</ac:hasArgumentID>
+    </ac:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#discretizeInputData -->
+
+    <dcdm:Instance rdf:about="#discretizeInputData">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-i</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >discretizeInputData</ac:hasArgumentID>
+    </dcdm:Instance>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#discretizeNumberOfBins -->
+
+    <ac:ParameterArgument rdf:about="#discretizeNumberOfBins">
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-B</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">numberOfBins</ac:hasArgumentID>
+    </ac:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#discretizeOutputData -->
+
+    <ac:DataArgument rdf:about="#discretizeOutputData">
+        <rdf:type rdf:resource="&dcdm;Instance"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-o</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >discretizeOutputData</ac:hasArgumentID>
+        <dcdm:isDiscrete rdf:datatype="&xsd;boolean">true</dcdm:isDiscrete>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#javaMaxHeapSize -->
+
+    <ac:ParameterArgument rdf:about="#javaMaxHeapSize">
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-Xmx</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">javaMaxHeapSize</ac:hasArgumentID>
+    </ac:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#modelerClassIndex -->
+
+    <ac:ParameterArgument rdf:about="#modelerClassIndex">
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-c</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">3</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >modelerClassIndex</ac:hasArgumentID>
+    </ac:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#modelerTrainingData -->
+
+    <ac:DataArgument rdf:about="#modelerTrainingData">
+        <rdf:type rdf:resource="&dcdm;Instance"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-t</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">trainingData</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#modelerTrainingData3 -->
+
+    <dcdm:Instance rdf:about="#modelerTrainingData3">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-t</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">trainingData</ac:hasArgumentID>
+        <dcdm:isDiscrete rdf:datatype="&xsd;boolean">true</dcdm:isDiscrete>
+    </dcdm:Instance>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#normalizeInputData -->
+
+    <ac:DataArgument rdf:about="#normalizeInputData">
+        <rdf:type rdf:resource="&dcdm;Instance"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-i</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >normalizeInputData</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#normalizeOutputData -->
+
+    <ac:DataArgument rdf:about="#normalizeOutputData">
+        <rdf:type rdf:resource="&dcdm;Instance"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-o</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >normalizeOutputData</ac:hasArgumentID>
+        <dcdm:isNormalized rdf:datatype="&xsd;boolean">true</dcdm:isNormalized>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#normalizeRange -->
+
+    <ac:ParameterArgument rdf:about="#normalizeRange">
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-r</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">normalizeRange</ac:hasArgumentID>
+    </ac:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#outputModel -->
+
+    <dcdm:Model rdf:about="#outputModel">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-d</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">outputModel</ac:hasArgumentID>
+    </dcdm:Model>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#outputModel1 -->
+
+    <ac:DataArgument rdf:about="#outputModel1">
+        <rdf:type rdf:resource="&dcdm;DecisionTreeModel"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-d</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">outputModel</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#outputModel3 -->
+
+    <dcdm:BayesModel rdf:about="#outputModel3">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-d</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">outputModel</ac:hasArgumentID>
+    </dcdm:BayesModel>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#randomSampleNClassIndex -->
+
+    <ac:ParameterArgument rdf:about="#randomSampleNClassIndex">
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-c</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >randomSampleNClassIndex</ac:hasArgumentID>
+    </ac:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#randomSampleNInputData -->
+
+    <ac:DataArgument rdf:about="#randomSampleNInputData">
+        <rdf:type rdf:resource="&dcdm;Instance"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-i</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >randomSampleNInputData</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#randomSampleNNumberOfInstancesToSample -->
+
+    <ac:ParameterArgument rdf:about="#randomSampleNNumberOfInstancesToSample">
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-N</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >randomSampleNNumberOfInstancesToSample</ac:hasArgumentID>
+    </ac:ParameterArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#randomSampleNOutputData -->
+
+    <ac:DataArgument rdf:about="#randomSampleNOutputData">
+        <rdf:type rdf:resource="&dcdm;Instance"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-o</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >randomSampleNOutputData</ac:hasArgumentID>
+        <dcdm:isSampled rdf:datatype="&xsd;boolean">true</dcdm:isSampled>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#randomizeInputData -->
+
+    <ac:DataArgument rdf:about="#randomizeInputData">
+        <rdf:type rdf:resource="&dcdm;Instance"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-i</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >randomizeInputData</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#randomizeOutputData -->
+
+    <dcdm:Instance rdf:about="#randomizeOutputData">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-o</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string"
+            >randomizeOutputData</ac:hasArgumentID>
+        <dcdm:isRandomized rdf:datatype="&xsd;boolean">true</dcdm:isRandomized>
+    </dcdm:Instance>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#voteInput1 -->
+
+    <dcdm:Model rdf:about="#voteInput1">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-i</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">0</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">voteInput1</ac:hasArgumentID>
+    </dcdm:Model>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#voteInput2 -->
+
+    <ac:DataArgument rdf:about="#voteInput2">
+        <rdf:type rdf:resource="&dcdm;Model"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-i</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">1</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">voteInput2</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#voteInput3 -->
+
+    <ac:DataArgument rdf:about="#voteInput3">
+        <rdf:type rdf:resource="&dcdm;Model"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-i</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">2</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">voteInput3</ac:hasArgumentID>
+    </ac:DataArgument>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#voteInputData -->
+
+    <dcdm:Instance rdf:about="#voteInputData">
+        <rdf:type rdf:resource="&ac;DataArgument"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-i</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">3</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">voteInputData</ac:hasArgumentID>
+    </dcdm:Instance>
+    
+
+
+    <!-- http://wings-workflows.org/ontology/ac/dm/library.owl#voteOutput -->
+
+    <ac:DataArgument rdf:about="#voteOutput">
+        <rdf:type rdf:resource="&dcdm;Classification"/>
+        <ac:hasArgumentName rdf:datatype="&xsd;string">-o</ac:hasArgumentName>
+        <ac:hasArgumentIndex rdf:datatype="&xsd;int">3</ac:hasArgumentIndex>
+        <ac:hasArgumentID rdf:datatype="&xsd;string">voteOutput</ac:hasArgumentID>
+    </ac:DataArgument>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1101) http://owlapi.sourceforge.net -->
+

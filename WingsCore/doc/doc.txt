@@ -1,0 +1,24 @@
+Beginnings of documentation for Wings 1.0/2.0.
+
+You've got to start somewhere.
+
+=== Wings 1.0 ===
+
+* template constraints
+* component constraints
+* no collections
+* GUI
+* matcher (propagates constraints?)
+* supports TellMe (and TellMe demo)
+* supports Workflow Catalog (gonzalo)
+
+
+=== Wings 2.0 (Portal Version) ===
+
+* collections
+* ''no'' template constraints
+* GUI
+* subgraphs (nested workflows) ;; not well tested
+* expansion: "''for a _split_ the output size will be N???''"
+* _no_ parameter collections
+
