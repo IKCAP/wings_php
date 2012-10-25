@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module relativePaths="true" MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: junit:junit:4.5" level="project" />
+    <orderEntry type="library" exported="" name="Maven: log4j:log4j:1.2.14" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.hp.hpl.jena:jena:2.6.2" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.hp.hpl.jena:iri:0.7" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.ibm.icu:icu4j:3.4.4" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.slf4j:slf4j-api:1.5.6" level="project" />
+    <orderEntry type="library" exported="" name="Maven: xerces:xercesImpl:2.7.1" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.slf4j:slf4j-log4j12:1.5.6" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.openrdf:sesame:1.2.7" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.openrdf:openrdf-model:1.2.7" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.openrdf:openrdf-util:1.2.7" level="project" />
+    <orderEntry type="library" exported="" name="Maven: commons-fileupload:commons-fileupload:1.2" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.openrdf:rio:1.0.10" level="project" />
+    <orderEntry type="library" exported="" name="Maven: soap:soap:2.3.1" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.hp.hpl.jena:arq:2.8.1" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.codehaus.woodstox:wstx-asl:3.2.9" level="project" />
+    <orderEntry type="library" exported="" name="Maven: stax:stax-api:1.0.1" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.apache.lucene:lucene-core:2.3.1" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.hp.hpl.jena:arq-extra:2.7.0" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.hp.hpl.jena:concurrent-jena:1.3.2" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.hp.hpl.jena:json-jena:1.0" level="project" />
+    <orderEntry type="library" exported="" name="Maven: edu.isi.ikcap:pellet-relaxngDatatype:2.0.0" level="project" />
+    <orderEntry type="library" exported="" name="Maven: edu.isi.ikcap:pellet-xsdlib:2.0.0" level="project" />
+    <orderEntry type="library" exported="" name="Maven: edu.isi.ikcap:aterm-java:1.6" level="project" />
+    <orderEntry type="library" exported="" name="Maven: edu.isi.ikcap:pellet-el.jar:2.0.0" level="project" />
+    <orderEntry type="library" exported="" name="Maven: edu.isi.ikcap:pellet-jena:2.0.0" level="project" />
+    <orderEntry type="library" exported="" name="Maven: edu.isi.ikcap:pellet-core:2.0.0" level="project" />
+    <orderEntry type="library" exported="" name="Maven: edu.isi.ikcap:pellet-datatypes:2.0.0" level="project" />
+    <orderEntry type="library" exported="" name="Maven: edu.isi.ikcap:pellet-rules:2.0.0" level="project" />
+  </component>
+</module>
+

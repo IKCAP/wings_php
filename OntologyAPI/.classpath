@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/Pellet/jena/arq-2.8.1.jar"/>
+	<classpathentry kind="lib" path="lib/Pellet/jena/icu4j-3.4.4.jar"/>
+	<classpathentry kind="lib" path="lib/Pellet/jena/iri-0.7.jar"/>
+	<classpathentry kind="lib" path="lib/Pellet/jena/jena-2.6.2.jar"/>
+	<classpathentry kind="lib" path="lib/Pellet/jena/log4j-1.2.13.jar"/>
+	<classpathentry kind="lib" path="lib/Pellet/jena/slf4j-api-1.5.6.jar"/>
+	<classpathentry kind="lib" path="lib/Pellet/jena/slf4j-log4j12-1.5.6.jar"/>
+	<classpathentry kind="lib" path="lib/Pellet/jena/xercesImpl-2.7.1.jar"/>
+	<classpathentry kind="lib" path="lib/Pellet/pellet-jena.jar"/>
+	<classpathentry kind="lib" path="lib/Pellet/xsdlib/relaxngDatatype.jar"/>
+	<classpathentry kind="lib" path="lib/Pellet/xsdlib/xsdlib.jar"/>
+	<classpathentry kind="lib" path="lib/Pellet/aterm-java-1.6.jar"/>
+	<classpathentry kind="lib" path="lib/Pellet/pellet-core.jar"/>
+	<classpathentry kind="lib" path="lib/Pellet/pellet-datatypes.jar"/>
+	<classpathentry kind="lib" path="lib/Pellet/pellet-el.jar"/>
+	<classpathentry kind="lib" path="lib/Pellet/pellet-rules.jar"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>
