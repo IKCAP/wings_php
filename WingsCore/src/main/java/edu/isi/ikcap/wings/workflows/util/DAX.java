@@ -500,6 +500,8 @@ public class DAX {
       outputformat = DAX.XML;
     } else if (type.equals("shell")) {
       outputformat = DAX.SHELL;
+    } else if (type.equals("oodt")) {
+      outputformat = DAX.XML;
     } else {
       System.err.println("Invalid dax output format: " + type + ". Allowed values are 'xml','shell'");
     }
