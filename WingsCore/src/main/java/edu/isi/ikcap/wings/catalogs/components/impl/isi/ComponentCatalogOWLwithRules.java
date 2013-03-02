@@ -663,6 +663,10 @@ public class ComponentCatalogOWLwithRules extends ComponentCatalogOWL {
 				}
 			} else {
 				KBObject arg_value = this.api.getPropertyValue(arg, dmap.get("hasValue"));
+				// If the user has set a parameter value, use it here
+				if(var.getBinding() != null) {
+					arg_value = this.ontologyFactory.getDataObject(var.getBinding().getValue());
+				}
 				if(arg_value != null) {
 					tapi.setPropertyValue(varobj, dmap.get("hasValue"), arg_value);
 					tapi.addTriple(varobj, dmap.get("hasBindingID"), this.ontologyFactory.getDataObject(arg_value));
