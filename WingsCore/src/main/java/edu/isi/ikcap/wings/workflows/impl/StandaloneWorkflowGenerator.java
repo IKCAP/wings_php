@@ -2112,12 +2112,14 @@ public class StandaloneWorkflowGenerator implements AutomaticWorkflowGenerator {
 		// Q4.3a Here
 		logger.info(event.createLogMsg().addWQ(LogEvent.QUERY_NUMBER, "4.3").addWQ(LogEvent.QUERY_ARGUMENTS, key));
 
+		String id = dc.createDataSetIDFromDescription(prefix + db.getName() + param);
+
 		String opid = null;
 		if(db != null && vtype != null && db.getMetrics() != null)
-			opid = dc.createDataSetIDFromType(vtype.getID(), db.getMetrics());
+			opid = dc.createDataSetIDFromType(id, vtype.getID(), db.getMetrics());
 		
 		if(opid == null) 
-			opid = dc.createDataSetIDFromDescription(prefix + db.getName() + param);
+			opid = id;
 
 		logger.info(event.createLogMsg().addWQ(LogEvent.QUERY_NUMBER, "4.3").addWQ(LogEvent.QUERY_RESPONSE, opid));
 

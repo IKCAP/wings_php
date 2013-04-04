@@ -146,7 +146,7 @@ public interface DataCatalog {
 	 * @param key
 	 *            a descriptive key of the dataset which uniquely identifies it
 	 */
-	public String createDataSetIDFromType(String type, String metrics);
+	public String createDataSetIDFromType(String id, String type, String metrics);
 	
 	
 	/**

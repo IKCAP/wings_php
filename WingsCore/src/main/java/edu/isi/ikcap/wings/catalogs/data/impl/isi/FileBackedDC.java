@@ -1242,7 +1242,7 @@ public class FileBackedDC implements DataCatalog {
 		this.request_id = id;
 	}
 
-	public String createDataSetIDFromType(String type, String metrics) {
+	public String createDataSetIDFromType(String id, String type, String metrics) {
 		String nameformat = this.conceptNameFormat.get(type);
 		if(nameformat != null && metrics != null) {
 			HashMap<String, ArrayList> propValMap = MetricsHelper.parseMetricsXML(metrics);
@@ -1250,11 +1250,17 @@ public class FileBackedDC implements DataCatalog {
 			Matcher m = pat.matcher(nameformat);
 			StringBuffer sb = new StringBuffer();
 			while(m.find()) {
-				ArrayList<Object> tmp = propValMap.get(m.group(1));
-				if(tmp != null && tmp.size() > 0 && tmp.get(0) != null)
-					m.appendReplacement(sb, MetricsHelper.getValueString(tmp.get(0)));
-				else
-					m.appendReplacement(sb, "");
+				String key = m.group(1);
+				if(key.equals("__ID")) {
+					m.appendReplacement(sb, id);
+				}
+				else {
+					ArrayList<Object> tmp = propValMap.get(key);
+					if(tmp != null && tmp.size() > 0 && tmp.get(0) != null)
+						m.appendReplacement(sb, MetricsHelper.getValueString(tmp.get(0)));
+					else
+						m.appendReplacement(sb, "");
+				}
 			}
 			m.appendTail(sb);
 			return sb.toString().replaceAll("[^a-zA-Z0-9_]", "_");
