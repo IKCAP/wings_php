@@ -1242,6 +1242,13 @@ public class FileBackedDC implements DataCatalog {
 		this.request_id = id;
 	}
 
+	private String sanitize(String name) {
+		name = name.replaceAll("[^a-zA-Z0-9_\\-\\.]", "_");
+		if (name.matches("^([0-9]|\\.|\\-)"))
+			name = "_" + name;
+		return name;
+	}
+	   
 	public String createDataSetIDFromType(String id, String type, String metrics) {
 		String nameformat = this.conceptNameFormat.get(type);
 		if(nameformat != null && metrics != null) {
@@ -1263,7 +1270,7 @@ public class FileBackedDC implements DataCatalog {
 				}
 			}
 			m.appendTail(sb);
-			return sb.toString().replaceAll("[^a-zA-Z0-9_]", "_");
+			return this.sanitize(sb.toString());
 		}
 		
 		return null;
