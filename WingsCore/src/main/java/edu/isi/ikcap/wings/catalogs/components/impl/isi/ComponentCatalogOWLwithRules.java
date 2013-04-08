@@ -669,8 +669,8 @@ public class ComponentCatalogOWLwithRules extends ComponentCatalogOWL {
 				}
 				if(arg_value != null) {
 					tapi.setPropertyValue(varobj, dmap.get("hasValue"), arg_value);
-					tapi.addTriple(varobj, dmap.get("hasBindingID"), this.ontologyFactory.getDataObject(arg_value));
 				}
+				tapi.addTriple(varobj, dmap.get("hasBindingID"), this.ontologyFactory.getDataObject("Param"+arg.getName()));
 			}
 			this.copyObjectClassesIntoAPI(varobj.getID(), arg, tapi, null, null, true);
 			tapi.addTriple(varobj, dmap.get("hasArgumentID"), arg_paramid);
