@@ -21,7 +21,7 @@
 	<classpathentry kind="lib" path="lib/Pellet/xsdlib/xsdlib.jar"/>
 	<classpathentry kind="lib" path="lib/Pellet/xsdlib/relaxngDatatype.jar"/>
 	<classpathentry kind="lib" path="lib/Pellet/pellet-el.jar"/>
-	<classpathentry kind="lib" path="lib/KBAPI/kbapi.jar"/>
+	<classpathentry kind="lib" path="lib/KBAPI/kbapi.jar" sourcepath="/OntologyAPI"/>
 	<classpathentry kind="lib" path="lib/JSON/gson-1.4.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="classes"/>

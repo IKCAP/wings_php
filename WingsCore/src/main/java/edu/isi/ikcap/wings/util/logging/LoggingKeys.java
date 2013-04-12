@@ -37,6 +37,7 @@ public interface LoggingKeys {
 	public static String EVENT_WG_FORWARD_SWEEP = "event.wg.forwardsweep";
 	public static String EVENT_WG_CONFIGURE = "event.wg.configuretemplate";
 	public static String EVENT_WG_GET_DAX = "event.wg.getdax";
+	public static String EVENT_WG_GET_PPLAN = "event.wg.getpplan";
 
 	public static String EVENT_INFER_TEMPLATE = "event.matching.infertemplate";
 

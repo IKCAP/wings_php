@@ -58,4 +58,8 @@ public class ComponentVariable extends Variable {
 	public boolean isTemplate() {
 		return (this.template != null);
 	}
+	
+	public String toString() {
+		return super.toString() + (typeuri != null ? " (Type: " + typeuri + ")" : "");
+	}
 }

@@ -18,6 +18,8 @@ import edu.isi.ikcap.wings.workflows.util.DAX;
 import edu.isi.ikcap.wings.workflows.util.PropertiesHelper;
 import edu.isi.ikcap.wings.workflows.util.UuidGen;
 import edu.isi.ikcap.wings.workflows.util.WflowGenFactory;
+import edu.isi.ikcap.wings.workflows.util.wfinvocation.Plan;
+
 import org.apache.log4j.Logger;
 
 import com.google.gson.Gson;
@@ -362,6 +364,41 @@ public class AWG {
 		}
 	}
 
+	public ArrayList<Plan> getWFInvocationPlans(ArrayList<Template> configuredWorkflows) {
+		ArrayList<Plan> plans = new ArrayList<Plan>();
+		int i = 1;
+		for (Template instance : configuredWorkflows) {
+			Plan plan = swg.getWorkflowInvocationPlan(instance);
+			if (plan != null) {
+				plan.setIndex(i);
+				plans.add(plan);
+				i++;
+			}
+		}
+		ArrayList<String> planids = new ArrayList<String>();
+		// Store the request-id : plan-ids heirarchy in the log
+		for (Plan plan : plans) 
+			planids.add(plan.getID());
+		logger.info(LogEvent.createIdHierarchyLogMsg(LogEvent.REQUEST_ID, this.requestId, LogEvent.DAX_ID, planids.iterator()));
+
+		return plans;
+	}
+	
+	public void writePlans(ArrayList<Plan> plans) {
+		if (!PropertiesHelper.createDir(PropertiesHelper.getOutputDir())) {
+			String tmpdir = System.getProperty("java.io.tmpdir");
+			System.err.println("Using temporary directory: " + tmpdir);
+			PropertiesHelper.setOutputDir(tmpdir);
+		}
+
+		String outputDir = PropertiesHelper.getOutputDir() + "/" + this.requestId;
+		new File(outputDir).mkdir();
+		for (Plan plan : plans) {
+			plan.write(outputDir + "/" + plan.getFile());
+		}
+	}
+	
+	
 	public ArrayList<DAX> getDaxes(ArrayList<Template> configuredWorkflows) {
 		ArrayList<DAX> daxes = new ArrayList<DAX>();
 		int i = 1;
@@ -629,6 +666,15 @@ public class AWG {
 			awg.writeParameterSelections(configurations, options.get("getParameters"));
 			System.exit(0);
 		}
+
+		// Write P-Plans
+		ArrayList<Plan> plans = awg.getWFInvocationPlans(configurations);
+		if (plans.size() == 0) {
+			awg.end(ev, 1);
+		}
+		awg.writePlans(plans);
+
+		// Write DAXes
 		ArrayList<DAX> daxes = awg.getDaxes(configurations);
 		if (daxes.size() == 0) {
 			awg.end(ev, 1);

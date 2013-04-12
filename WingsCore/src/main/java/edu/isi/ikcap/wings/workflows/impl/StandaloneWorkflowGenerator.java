@@ -25,6 +25,8 @@ import edu.isi.ikcap.wings.workflows.template.sets.WingsSet;
 import edu.isi.ikcap.wings.workflows.template.sets.SetCreationRule.SetType;
 import edu.isi.ikcap.wings.workflows.template.variables.*;
 import edu.isi.ikcap.wings.workflows.util.*;
+import edu.isi.ikcap.wings.workflows.util.wfinvocation.Plan;
+import edu.isi.ikcap.wings.workflows.util.wfinvocation.Step;
 
 import org.apache.log4j.Logger;
 
@@ -1003,6 +1005,148 @@ public class StandaloneWorkflowGenerator implements AutomaticWorkflowGenerator {
 		binding.setMetrics(xml);
 	}
 
+	
+	public Plan getWorkflowInvocationPlan(Template template) {
+		LogEvent event = getEvent(LogEvent.EVENT_WG_GET_PPLAN);
+		logger.info(event.createStartLogMsg().addWQ(LogEvent.TEMPLATE, "" + template));
+
+		ComponentCatalog pc = this.getPc();
+		String planId = this.request_id;
+		
+		// Create the Plan
+		Plan plan = new Plan(planId);
+
+		int jobCounter = 0;
+		ArrayList<Node> nodesDone = new ArrayList<Node>();
+
+		ArrayList<Link> links = new ArrayList<Link>();
+		for (Link link : template.getInputLinks()) {
+			links.add(link);
+		}
+		while (!links.isEmpty()) {
+			Link currentLink = links.remove(0);
+			if (!currentLink.isOutputLink()) {
+				Node destNode = currentLink.getDestinationNode();
+
+				if (!nodesDone.contains(destNode)) {
+					nodesDone.add(destNode);
+					ComponentVariable component = destNode.getComponentVariable();
+					
+					ArrayList<Binding> cbindings = new ArrayList<Binding>();
+					cbindings.add(component.getBinding());
+
+					while (!cbindings.isEmpty()) {
+						Binding b = cbindings.remove(0);
+						if (b.isSet()) {
+							for (WingsSet s : b) {
+								cbindings.add((Binding) s);
+							}
+						} else {
+							ComponentVariable c = new ComponentVariable(b.getID());
+							c.setComponentType(b.getID());
+							String stepName = c.getName();
+							String stepDir = PropertiesHelper.
+									getPCPropertyForCurrentDomain("components.dir");
+							String dataDir = PropertiesHelper.
+									getDCPropertyForCurrentDomain("data.dir");
+
+							if (c.getComponentType() != null) {
+								ComponentVariable tmpComp = new ComponentVariable(c.getComponentType());
+								stepName = tmpComp.getName();
+							}
+							
+							//String stepId = UuidGen.generateAUuid("Step" + jobCounter);
+							String stepId = "Step" + jobCounter;
+							
+							// Create a Step
+							Step step = plan.getStep(stepId);
+							
+							// Set step Executable Id
+							step.setCodeBinding(stepDir+stepName);
+
+							HashMap<Role, Variable> inputMaps = new HashMap<Role, Variable>();
+							HashMap<Role, Variable> outputMaps = new HashMap<Role, Variable>();
+							ArrayList<String> variableIds = new ArrayList<String>();
+
+							PortBindingList pb = (PortBindingList) b.getData();
+
+							Link[] outputLinks = template.getOutputLinks(destNode);
+							for (Link outputLink : outputLinks) {
+								Variable variable = outputLink.getVariable();
+								Variable v = new Variable(variable.getID(), variable.getVariableType());
+								Binding xb = getPortBinding(pb.getPortBinding(), outputLink.getOriginPort());
+								v.setBinding(xb);
+								outputMaps.put(outputLink.getOriginPort().getRole(), v);
+								variableIds.add(v.getID());
+								if (v.isDataVariable()) {
+									edu.isi.ikcap.wings.workflows.util.wfinvocation.Variable pvar = 
+											plan.getVariable(xb.getName(), dataDir+xb.getName());
+									// Add Step Output Variables
+									step.addOutputVariable(pvar);
+								}
+								links.add(outputLink);
+							}
+
+							Link[] inputLinks = template.getInputLinks(destNode);
+							for (Link inputLink : inputLinks) {
+								Variable variable = inputLink.getVariable();
+								Variable v = new Variable(variable.getID(), variable.getVariableType());
+								Binding xb = getPortBinding(pb.getPortBinding(), inputLink.getDestinationPort());
+								v.setBinding(xb);
+								inputMaps.put(inputLink.getDestinationPort().getRole(), v);
+								variableIds.add(v.getID());
+								if (v.isDataVariable()) {
+									edu.isi.ikcap.wings.workflows.util.wfinvocation.Variable pvar = 
+											plan.getVariable(xb.getName(), dataDir+xb.getName());
+									// Add Step Input Variables
+									step.addInputVariable(pvar);
+								}
+								links.remove(inputLink);
+							}
+
+							ArrayList<KBTriple> relevantConstraints = template.getConstraintEngine().getConstraints(variableIds);
+
+							if (logger.isInfoEnabled()) {
+								HashMap<String, Object> args = new HashMap<String, Object>();
+								args.put("component", c);
+								args.put("inputMaps", inputMaps);
+								args.put("outputMaps", outputMaps);
+								logger.info(event.createLogMsg().addWQ(LogEvent.QUERY_NUMBER, "4.5").addMap(LogEvent.QUERY_ARGUMENTS, args));
+							}
+
+							ComponentMapsAndRequirements mapsAndRequirements = new ComponentMapsAndRequirements(c, inputMaps, outputMaps, relevantConstraints);
+
+							String argumentString = pc.getInvocationCommand(mapsAndRequirements);
+
+							if (argumentString == null) {
+								logger.warn(event.createLogMsg().addWQ(LogEvent.QUERY_NUMBER, "4.5").addWQ(LogEvent.QUERY_RESPONSE, LogEvent.NO_MATCH));
+								return null;
+							}
+
+							logger.info(event.createLogMsg().addWQ(LogEvent.QUERY_NUMBER, "4.5").addWQ(LogEvent.QUERY_RESPONSE, argumentString));
+
+							// Add Step invocation line
+							step.addInvocationLine(argumentString);
+							
+							if (this.storeProvenance)
+								wgpc.addQuery4point5ToProvenanceCatalog(getCurrentSeed().getSeedId(), mapsAndRequirements, argumentString);
+
+
+							if (this.storeProvenance)
+								wgpc.storeJobInformation(getCurrentSeed().getSeedId(), planId, stepId, mapsAndRequirements);
+
+							jobCounter++;
+						}
+					}
+				}
+			}
+		}
+
+		logger.info(event.createEndLogMsg().addWQ(LogEvent.TEMPLATE, "" + template));
+		return plan;
+	}
+
+	
 	public DAX getTemplateDAX(Template template) {
 		LogEvent event = getEvent(LogEvent.EVENT_WG_GET_DAX);
 		logger.info(event.createStartLogMsg().addWQ(LogEvent.TEMPLATE, "" + template));
