@@ -1,0 +1,133 @@
+{
+	input_st : [
+		"|take/use/utilise/apply/load/put| +ip"
+	],
+	input_comp_st: [
+		"|run/perform/do| +c on +ip",
+		"+cv {|with/on|} +ip"
+	],
+	input_st_gerund : [
+		"|taking/using/utilising/applying/loading/putting| +ip"
+	],
+	input_comp_st_gerund : [
+		"|running/performing/doing| +c on +ip",
+		"+cg {|with/on|} +ip"
+	],
+	output_st : [
+		"|produce/create/make/derive/build/get| +op"
+	],
+	output_st_gerund : [
+		"|producing/creating/making/deriving/building/getting| +op"
+	],
+	comp_st : [
+		"|run/perform/do| +c",
+		"+cv"
+	],
+	comp_st_gerund : [
+		"|running/performing/doing| +c",
+		"+cg"
+	],
+
+	component : {
+		"C_AddNode +c": [
+			"+comp_st",
+			"+comp_st_gerund"
+		],
+		"C_AddNodeWithInput +c +ip": [
+			"+input_st",
+			"+input_st as input to +c",
+			"+input_comp_st",
+			"+input_comp_st_gerund"
+		],
+		"C_AddNodeWith2Inputs +c +ip1 +ip2": [
+			"+input_st[ip=ip1] to +comp_st +ip2",
+			"+input_st[ip=ip1] for +comp_st_gerund +ip2",
+			"+input_comp_st[ip=ip1] +input_st_gerund[ip=ip2]"
+		],
+		"C_AddNodeWithOutput +c +op": [
+			"+output_st",
+			"+input_st_gerund , +output_st",
+			"+comp_st to +output_st"
+		],
+		"C_AddNodeWithInputOutput +c +ip +op": [
+			"+input_st to +output_st",
+			"+output_st from +ip",
+			"+output_st_gerund from +ip",
+			"+input_comp_st to +output_st",
+			"+input_comp_st in order to +output_st",
+			"+input_comp_st for +output_st_gerund",
+			"+output_st by +input_comp_st_gerund",
+			"+input_st_gerund , +output_st",
+			"+output_st {by} +input_st_gerund",
+			"+input_st for +output_st_gerund",
+			"+input_comp_st for +output_st_gerund"
+		],
+		"C_AddNodeWithOutput +op | C_AddNodeWithInput +c +ip": [
+			"+output_st to +input_comp_st"
+		],
+		"V_MergeVariables +v1 +v2": [
+			"+v1 |is the same as/equals/equal to/is same as/is equal to/=| +v2",
+			"+v1 and +v2 are |same/the same/equal|"
+		],
+		"X_RemoveItem +x": [
+			"|remove/delete/erase| +x"
+		]
+	},
+	property : {
+		"DataPropertyValue +d +p +val": [
+			"+d |with/having| +p of +val",
+			"+d |with/having| +val +p",
+			"+d in the +val +p",
+			"+d of +p +val"
+		],
+		"DataPropertyValue +d +p +val=true": [
+			"+pb +d"
+		],
+		"DataPropertyValue +d +p=hasDomain +val": [
+			"+domain +d"
+		]
+	},
+	data : {
+		"Unspecified +d": [
+			"|a/an/any/one/some other/other/new| +d",
+			"+d"
+		],
+		"Specified +d": [
+			"|the/the created| +d", 
+			"it"
+		],
+		"UnspecifiedCollection +d": [
+			"|a/an| |collection/bunch/array| of +d",
+			"|some/each/few/many/lots of| +d",
+			"|a/an| |collection/bunch/array| of +ds",
+			"|some/some other/new/each/few/many/lots of| +ds",
+			"+ds"
+		],
+		"SpecifiedCollection +d": [
+			"the |collection/bunch/array| of +d",
+			"the {|other/new/collection/bunch/array| of} +ds",
+			"them", 
+			"them all"
+		],
+		"Selected +d": [
+			"|this/that/these/those/selection/selected| {|item/variable|} +d"
+		]
+	},
+	statement : {
+		"ProcOrder" : [
+			"+proc2 after +proc1",
+			"+proc1 before +proc2",
+			"after +proc1 , +proc2",
+			"before +proc2 , +proc1",
+			"|first/firstly| {,} +proc1",
+			"|second/secondly| {,} +proc1",
+			"|third/thirdly| {,} +proc1",
+			"|fourth/fourthly| {,} +proc1",
+			"|final/finally| {,} +proc1",
+			"+proc1 |./,| then +proc2",
+			"+proc1 |./,| and then +proc2",
+			"+proc1 |./,| +proc2",
+			"+proc1 and +proc2"
+		]
+	}
+}

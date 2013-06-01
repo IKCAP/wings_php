@@ -582,11 +582,11 @@ public class ComponentCatalogOWLwithRules extends ComponentCatalogOWL {
 		map.putAll(outputMaps);
 		
 		HashMap<Variable, String> variableNameMap = new HashMap<Variable, String>();
-		System.out.println("--"+comp.getID());
+		//System.out.println("--"+comp.getID());
 		for (String argidstr : map.keySet()) {
 			Variable var = map.get(argidstr);
 			KBObject arg = argMaps.get(argidstr);
-			System.out.println(argidstr);
+			//System.out.println(argidstr);
 			KBObject arg_paramid = this.api.getPropertyValue(arg, dmap.get("hasArgumentID"));
 			String variableName = var.getID() + "_" + arg_paramid.getValue();
 			variableNameMap.put(var, variableName);

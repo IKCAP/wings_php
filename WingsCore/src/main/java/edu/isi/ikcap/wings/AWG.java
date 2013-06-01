@@ -107,6 +107,8 @@ public class AWG {
 
 	public ComponentCatalog initializePC(String libname) {
 		// Initialize the PC
+		if(libname == null) libname="library";
+		
 		LogEvent event = getEvent(LogEvent.EVENT_WG_INITIALIZE_PC);
 		logger.info(event.createStartLogMsg().addWQ(LogEvent.DOMAIN, PCDomain));
 
@@ -566,6 +568,10 @@ public class AWG {
 
 		if (options.get("outputdir") != null) {
 			PropertiesHelper.setOutputDir(options.get("outputdir"));
+		}
+		
+		if (options.get("ontdir") != null) {
+			PropertiesHelper.setOntologyDir(options.get("ontdir"));
 		}
 
 		String itemid = null;

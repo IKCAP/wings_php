@@ -264,7 +264,7 @@ public class PropertiesHelper {
 	public static void setOntologyDir(String dir) {
 		loadWingsProperties();
 		ontdir = dir;
-		conf.setProperty("ontology.dir", dir);
+		conf.setProperty("ontology.root.dir", dir);
 	}
 	
 	public static String getOntologyURL() {

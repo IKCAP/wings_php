@@ -137,6 +137,31 @@
             <jdkName>1.6</jdkName>
           </configuration>
         </plugin>
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+                <skipTests>false</skipTests>
+                <excludes>
+                    <exclude>**/*$*.java</exclude>
+                </excludes>
+                <systemProperties>
+                   <property>
+                      <name>-Dlog4j.configuration</name>
+                      <value>file:config/log-awg.config</value>
+                   </property>
+                   <property>
+                      <name>-Dpellet.configuration</name>
+                      <value>file:config/pellet.properties</value>
+                   </property>
+                </systemProperties>
+                <additionalClasspathElements>
+                    <additionalClasspathElement>${basedir}/config</additionalClasspathElement>
+                </additionalClasspathElements>
+            </configuration>
+        </plugin>
+
         <!-- eclipse users!  add useful stuff here! -->
         <plugin>
           <artifactId>maven-eclipse-plugin</artifactId>
@@ -146,28 +171,38 @@
     </pluginManagement>
   </build>
 
-  <dependencies>
+	<!-- Pellet Repository -->
+   <repositories>
+     <repository>
+       <id>floop</id>
+       <name>floop.org.uk Repository</name>
+       <url>http://maven.floop.org.uk</url>
+     </repository>
+   </repositories>
 
+  <dependencies>
 
     <!-- our libraries -->
 
-    <dependency>
+    <!--dependency>
       <groupId>edu.isi.ikcap</groupId>
       <artifactId>beamerj</artifactId>
       <version>1.0</version>
-    </dependency>
+    </dependency-->
 
     <dependency>
       <groupId>edu.isi.ikcap</groupId>
       <artifactId>ontapi</artifactId>
       <version>1.1</version>
+		<scope>system</scope>
+		<systemPath>${project.basedir}/lib/KBAPI/kbapi.jar</systemPath>
     </dependency>
 
-    <dependency>
+    <!--dependency>
       <groupId>edu.isi.ikcap</groupId>
       <artifactId>ikcap-utils</artifactId>
       <version>1.0</version>
-    </dependency>
+    </dependency-->
     <!-- end our libraries -->
 
     <!-- junit -->
@@ -186,6 +221,21 @@
      <classifier>jdk15</classifier>
      <scope>test</scope>
    </dependency> -->
+
+	 <!-- JSON -->
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.2.4</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.5</version>
+      <scope>test</scope>
+    </dependency>
 
     <!-- logging -->
 
@@ -307,8 +357,13 @@
     </dependency>
 
     <!-- BEGIN pellet -->
+     <dependency>
+       <groupId>com.owldl</groupId>
+       <artifactId>pellet</artifactId>
+       <version>2.1.0</version>
+     </dependency>
 
-    <dependency>
+    <!--dependency>
       <groupId>edu.isi.ikcap</groupId>
       <artifactId>pellet-relaxngDatatype</artifactId>
       <version>2.0.0</version>
@@ -354,7 +409,7 @@
       <groupId>edu.isi.ikcap</groupId>
       <artifactId>pellet-rules</artifactId>
       <version>2.0.0</version>
-    </dependency>
+    </dependency-->
 
     <!-- END pellet -->
 

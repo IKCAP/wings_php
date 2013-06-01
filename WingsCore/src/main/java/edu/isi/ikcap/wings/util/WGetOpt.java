@@ -20,6 +20,7 @@ public class WGetOpt {
 		System.out.println(" -l, --logdir=<directory> Specify the directory to store logs");
 		System.out.println(" -L, --libname=<name> Specify the Concrete Components Library to use");
 		System.out.println(" -o, --outputdir=<directory> Specify the directory to store daxes");
+		System.out.println(" -O, --ontdir=<directory> Specify the ontologies directory");
 		System.out.println(" -d, --domaindir=<directory> Load a domain from the specified directory");
 		System.out.println(" -i, --initdomaindir=<directory> Initialize a new domain at the specified directory");
 		if (!program.equals(guiProgram)) {
@@ -44,14 +45,15 @@ public class WGetOpt {
 			return null;
 		}
 
-		String sopts = "hc:l:o:d:i:r:L:D:P:E:V:T:s:t:";
+		String sopts = "hc:l:o:O:d:i:r:L:D:P:E:V:T:s:t:";
 		if (program.equals(guiProgram))
-			sopts = "hc:l:o:d:i:";
+			sopts = "hc:l:o:O:d:i:";
 
 		LongOpt[] lopts = { new LongOpt("help", LongOpt.NO_ARGUMENT, null, 'h'), 
 				new LongOpt("conf", LongOpt.REQUIRED_ARGUMENT, null, 'c'),
 				new LongOpt("logdir", LongOpt.REQUIRED_ARGUMENT, null, 'l'), 
 				new LongOpt("outputdir", LongOpt.REQUIRED_ARGUMENT, null, 'o'),
+				new LongOpt("ontdir", LongOpt.REQUIRED_ARGUMENT, null, 'O'),
 				new LongOpt("domaindir", LongOpt.REQUIRED_ARGUMENT, null, 'd'),
 				new LongOpt("initdomaindir", LongOpt.REQUIRED_ARGUMENT, null, 'i'),
 				new LongOpt("requestid", LongOpt.REQUIRED_ARGUMENT, null, 'r'),
@@ -69,6 +71,7 @@ public class WGetOpt {
 					new LongOpt("conf", LongOpt.REQUIRED_ARGUMENT, null, 'c'),
 					new LongOpt("logdir", LongOpt.REQUIRED_ARGUMENT, null, 'l'), 
 					new LongOpt("outputdir", LongOpt.REQUIRED_ARGUMENT, null, 'o'),
+					new LongOpt("ontdir", LongOpt.REQUIRED_ARGUMENT, null, 'O'),
 					new LongOpt("domaindir", LongOpt.REQUIRED_ARGUMENT, null, 'd'),
 					new LongOpt("libname", LongOpt.REQUIRED_ARGUMENT, null, 'L'),
 					new LongOpt("initdomaindir", LongOpt.REQUIRED_ARGUMENT, null, 'i')
@@ -123,6 +126,9 @@ public class WGetOpt {
 				break;
 			case 'o':
 				options.put("outputdir", g.getOptarg());
+				break;
+			case 'O':
+				options.put("ontdir", g.getOptarg());
 				break;
 			case 'd':
 				options.put("domaindir", g.getOptarg());
