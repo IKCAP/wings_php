@@ -1,3 +1,10 @@
+***** NOTE ******
+
+This version is now deprecated. Please use the one at:
+https://github.com/varunratnakar/wings
+
+*****************
+
 This repository contains the source for the Wings Project (http://www.wings-workflows.org/)
 
 It Contains:
